@@ -1,0 +1,80 @@
+﻿l_english:
+### CITY STATES ###
+# Venice Area
+ I01: "Treviso"
+ I01_ADJ: "Trevisan"
+# Lombardy Area
+ I02: "Cremona"
+ I02_ADJ: "Cremonese"
+ I03: "Pavia"
+ I03_ADJ: "Pavese"
+ I04: "San Giulio"
+ I04_ADJ: "San Giulian"
+ I05: "Ivrea"
+ I05_ADJ: "Ivriano"
+# Po Valley Area
+ I06: "Bergamo"
+ I06_ADJ: "Bergamasque"
+ I07: "Brescia"
+ I07_ADJ: "Brescian"
+# Piedmont Area
+ I08: "Turin"
+ I08_ADJ: "Torinese"
+ I09: "Cuneo"
+ I09_ADJ: "Cuneese"
+# Liguria Area
+ I10: "Nice"
+ I10_ADJ: "Nican"
+ I11: "Albenga"
+ I11_ADJ: "Albenganese"
+# Corsica-Sardinia Area
+ I12: "Gallura"
+ I12_ADJ: "Galluresi"
+ I13: "Cagliari"
+ I13_ADJ: "Cagliaritano"
+ I14: "Arborea"
+ I14_ADJ: "Arborese"
+# Eastern Sicily Area
+ I15: "Messina"
+ I15_ADJ: "Messinese"
+ I16: "Syracuse"
+ I16_ADJ: "Syracusan"
+# Western Sicily Area
+ I17: "Palermo"
+ I17_ADJ: "Palermitan"
+ I18: "Trapani"
+ I18_ADJ: "Trapanese"
+ I19: "Girgenti"
+ I19_ADJ: "Girgentino"
+# Naples Area
+ I20: "Salerno"
+ I20_ADJ: "Salernitano"
+ I21: "Benevento"
+ I21_ADJ: "Beneventano"
+# Lazio-Umbria
+ I22: "Gaeta"
+ I22_ADJ: "Gaetano"
+# Calabria
+ I23: "Calabria"
+ I23_ADJ: "Calabrian"
+ I24: "Potenza" # Lucania?
+ I24_ADJ: "Potentian"
+ I25: "Cosenza"
+ I25_ADJ: "Cosentian"
+# Apulia
+ I26: "Taranto"
+ I26_ADJ: "Tarantino"
+ I27: "Apulia"
+ I27_ADJ: "Apulian"
+ I28: "Gargano"
+ I28_ADJ: "Gargano"
+ I29: "Foggia"
+ I29_ADJ: "Foggiano"
+# Emilia-Romagna
+ I30: "Ravenna"
+ I30_ADJ: "Ravennese"
+# Central Italy
+ I31: "Ancona"
+ I31_ADJ: "Anconetano"
+ I32: "Fermo"
+ I32_ADJ: "Fermano"

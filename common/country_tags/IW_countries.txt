@@ -1,0 +1,46 @@
+# Venice Area
+I01 = "countries/Treviso.txt"
+# Lombardy Area
+I02 = "countries/Cremona.txt"
+I03 = "countries/Pavia.txt"
+I04 = "countries/San Giulio.txt"
+I05 = "countries/Ivrea.txt"
+# Po Valley Area
+I06 = "countries/Bergamo.txt"
+I07 = "countries/Brescia.txt"
+# Piedmont Area
+I08 = "countries/Turin.txt"
+I09 = "countries/Cuneo.txt"
+# Liguria Area
+I10 = "countries/Nice.txt"
+I11 = "countries/Albenga.txt"
+# Corsica-Sardinia Area
+I12 = "countries/Gallura.txt"
+I13 = "countries/Cagliari.txt"
+I14 = "countries/Arborea.txt"
+# Eastern Sicily Area
+I15 = "countries/Messina.txt"
+I16 = "countries/Syracuse.txt"
+# Western Sicily Area
+I17 = "countries/Palermo.txt"
+I18 = "countries/Trapani.txt"
+I19 = "countries/Girgenti.txt"
+# Naples Area
+I20 = "countries/Salerno.txt"
+I21 = "countries/Benevento.txt"
+# Lazio-Umbria
+I22 = "countries/Gaeta.txt"
+# Calabria
+I23 = "countries/Calabria.txt"
+I24 = "countries/Potenza.txt"
+I25 = "countries/Cosenza.txt"
+# Apulia
+I26 = "countries/Taranto.txt"
+I27 = "countries/Apulia.txt"
+I28 = "countries/Gargano.txt"
+I29 = "countries/Foggia.txt"
+# Emilia-Romagna
+I30 = "countries/Ravenna.txt"
+# Central Italy
+I31 = "countries/Ancona.txt"
+I32 = "countries/Fermo.txt"
