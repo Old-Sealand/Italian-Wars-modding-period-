@@ -1,0 +1,194 @@
+########################################
+# Italian Wars Setup Events            #
+########################################
+
+namespace = IW_setup
+
+# The DYNASTYNAME shogunate has fallen!
+country_event = {
+	id = IW_setup.1
+	title = "IW_setup.1.t"
+	picture = COURT_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	desc = { # usurping Italian leader
+		trigger = {
+			overlord = { TAG = event_target:IW_italian_league_leader }
+		}
+		desc = IW_setup.1.d1
+	}
+
+	desc = { # Italian leader died
+		trigger = {
+			OR = {
+				IW_italian_leader_died = yes
+			}
+		}
+		desc = IW_setup.1.d2
+	}
+	
+	desc = { # usurping French leader
+		trigger = {
+			overlord = { TAG = event_target:IW_french_league_leader }
+		}
+		desc = IW_setup.1.d3
+	}
+
+	desc = { # French leader died
+		trigger = {
+			IW_french_leader_died = yes
+		}
+		desc = IW_setup.1.d4
+	}
+	
+	desc = { # usurping Iberian leader
+		trigger = {
+			overlord = { TAG = event_target:IW_iberian_league_leader }
+		}
+		desc = IW_setup.1.d5
+	}
+
+	desc = { # Iberian leader died
+		trigger = {
+			IW_iberian_leader_died = yes
+		}
+		desc = IW_setup.1.d6
+	}
+
+	desc = { # new HRE emperor
+		trigger = {
+			is_emperor = yes
+		}
+		desc = IW_setup.1.d7
+	}
+	
+	trigger = {
+		OR = { # When league leader ceases to exist, selects new league leader as highest dev nation in region which is not a member of another league
+			IW_italian_leader_died = yes
+			IW_french_leader_died = yes
+			IW_iberian_leader_died = yes
+		}
+	}
+	
+	option = {
+		name = "IW_setup.1.a"
+		# Become new leader
+		hidden_effect = {
+				if = { # Italian League
+					limit = {
+						OR = {
+							overlord = { TAG = event_target:IW_italian_league_leader }
+							IW_italian_leader_died = yes
+						}
+					}
+					grant_independence = yes
+					clear_global_event_target = IW_italian_league_leader
+					save_global_event_target_as = IW_italian_league_leader
+					#Vassalize all of the league members
+					every_country = {
+						limit = {
+							has_country_flag = IW_italian_league_member
+							NOT = { TAG = event_target:IW_italian_league_leader }
+						}
+						event_target:IW_italian_league_leader = {
+							create_subject = {
+								subject_type = IW_league_member
+								subject = PREV
+							}
+						}
+					}
+				}
+				else_if = { # French League
+					limit = {
+						OR = {
+							overlord = { TAG = event_target:IW_french_league_leader }
+							IW_french_leader_died = yes
+						}
+					}
+					grant_independence = yes
+					clear_global_event_target = IW_french_league_leader
+					save_global_event_target_as = IW_french_league_leader
+					#Vassalize all of the league members
+					every_country = {
+						limit = {
+							has_country_flag = IW_french_league_member
+							NOT = { TAG = event_target:IW_french_league_leader }
+						}
+						event_target:IW_french_league_leader = {
+							create_subject = {
+								subject_type = IW_league_member
+								subject = PREV
+							}
+						}
+					}
+				}
+				else_if = { # Iberian League
+					limit = {
+						OR = {
+							overlord = { TAG = event_target:IW_iberian_league_leader }
+							IW_iberian_leader_died = yes
+						}
+					}
+					grant_independence = yes
+					clear_global_event_target = IW_iberian_league_leader
+					save_global_event_target_as = IW_iberian_league_leader
+					#Vassalize all of the league members
+					every_country = {
+						limit = {
+							has_country_flag = IW_iberian_league_member
+							NOT = { TAG = event_target:IW_iberian_league_leader }
+						}
+						event_target:IW_iberian_league_leader = {
+							create_subject = {
+								subject_type = IW_league_member
+								subject = PREV
+							}
+						}
+					}
+				}
+				else_if = { # HRE League
+					limit = {
+						OR = {
+							overlord = { TAG = event_target:IW_HRE_league_leader }
+							is_emperor = yes
+						}
+					}
+					grant_independence = yes
+					clear_global_event_target = IW_HRE_league_leader
+					save_global_event_target_as = IW_HRE_league_leader
+					#Vassalize all of the league members
+					every_country = {
+						limit = {
+							has_country_flag = IW_HRE_league_member
+							NOT = { TAG = event_target:IW_HRE_league_leader }
+						}
+						event_target:IW_HRE_league_leader = {
+							create_subject = {
+								subject_type = IW_league_member
+								subject = PREV
+							}
+						}
+					}
+				}
+				# overlord = {
+				# 	save_event_target_as = IW_former_leader
+				# }
+				# grant_independence = yes
+		}
+	}
+	
+	option = {
+		name = "IW_setup.1.b"
+		trigger = {
+			OR = { # League leader ceased to exist
+				IW_italian_leader_died = yes
+				IW_french_leader_died = yes
+				IW_iberian_leader_died = yes
+			}
+		}
+		# Reject role
+		set_country_flag = IW_declined_league_leadership
+	}
+}

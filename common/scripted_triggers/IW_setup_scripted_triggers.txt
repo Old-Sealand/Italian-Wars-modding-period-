@@ -1,0 +1,120 @@
+#GENERAL TRIGGERS
+IW_italian_leader_died = {
+	AND = { # for Italian league
+		has_saved_global_event_target = IW_italian_league_leader
+		NOT = { exists = event_target:IW_italian_league_leader }
+		ROOT = {
+			capital_scope = { region = italy_region }
+			is_free_or_tributary_trigger = yes
+			OR = {
+				NOT = { has_country_flag = IW_declined_league_leadership }
+				had_country_flag = {
+					flag = IW_declined_league_leadership
+					days = 30
+				}
+			}
+		}
+		NOT = {
+			any_country = {
+				NOT = { tag = ROOT }
+				capital_scope = { region = italy_region }
+				total_development = ROOT
+				is_free_or_tributary_trigger = yes
+				NOT = {
+					OR = {
+						has_country_flag = IW_french_league_member
+						has_country_flag = IW_iberian_league_member
+						has_country_flag = IW_HRE_league_member
+					}
+				}
+				OR = {
+					NOT = { has_country_flag = IW_declined_league_leadership }
+					had_country_flag = {
+						flag = IW_declined_league_leadership
+						days = 30
+					}
+				}
+			}
+		}
+	}
+}
+
+IW_french_leader_died = {
+	AND = { # for French league
+		has_saved_global_event_target = IW_french_league_leader
+		NOT = { exists = event_target:IW_french_league_leader }
+		ROOT = {
+			capital_scope = { region = france_region }
+			is_free_or_tributary_trigger = yes
+			OR = {
+				NOT = { has_country_flag = IW_declined_league_leadership }
+				had_country_flag = {
+					flag = IW_declined_league_leadership
+					days = 30
+				}
+			}
+		}
+		NOT = {
+			any_country = {
+				NOT = { tag = ROOT }
+				capital_scope = { region = france_region }
+				total_development = ROOT
+				is_free_or_tributary_trigger = yes
+				NOT = {
+					OR = {
+						has_country_flag = IW_italian_league_member
+						has_country_flag = IW_iberian_league_member
+						has_country_flag = IW_HRE_league_member
+					}
+				}
+				OR = {
+					NOT = { has_country_flag = IW_declined_league_leadership }
+					had_country_flag = {
+						flag = IW_declined_league_leadership
+						days = 30
+					}
+				}
+			}
+		}
+	}
+}
+
+IW_iberian_leader_died = {
+	AND = { # for Iberian league
+		has_saved_global_event_target = IW_iberian_league_leader
+		NOT = { exists = event_target:IW_iberian_league_leader }
+		ROOT = {
+			capital_scope = { region = iberia_region }
+			is_free_or_tributary_trigger = yes
+			OR = {
+				NOT = { has_country_flag = IW_declined_league_leadership }
+				had_country_flag = {
+					flag = IW_declined_league_leadership
+					days = 30
+				}
+			}
+		}
+		NOT = {
+			any_country = {
+				NOT = { tag = ROOT }
+				capital_scope = { region = iberia_region }
+				total_development = ROOT
+				is_free_or_tributary_trigger = yes
+				NOT = {
+					OR = {
+						has_country_flag = IW_italian_league_member
+						has_country_flag = IW_french_league_member
+						has_country_flag = IW_HRE_league_member
+					}
+				}
+				OR = {
+					NOT = { has_country_flag = IW_declined_league_leadership }
+					had_country_flag = {
+						flag = IW_declined_league_leadership
+						days = 30
+					}
+				}
+			}
+		}
+	}
+}
