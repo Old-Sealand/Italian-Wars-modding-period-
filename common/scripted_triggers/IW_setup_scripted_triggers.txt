@@ -1,4 +1,17 @@
 #GENERAL TRIGGERS
+
+is_free_or_tributary_trigger = { #I.e. Tags that can conduct independent diplomacy
+	custom_trigger_tooltip = {
+		tooltip = is_free_or_tributary_trigger_tooltip
+		OR = {
+			is_subject = no
+			is_subject_of_type = tributary_state
+			is_subject_of_type = cultural_sphere_of_influence_subject
+			is_subject_of_type = IW_league_member
+		}
+	}
+}
+
 IW_italian_leader_died = {
 	AND = { # for Italian league
 		has_saved_global_event_target = IW_italian_league_leader
