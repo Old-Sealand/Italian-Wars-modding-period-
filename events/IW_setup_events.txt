@@ -4,18 +4,18 @@
 
 namespace = IW_setup
 
-# The DYNASTYNAME shogunate has fallen!
+# New Leader of the XYZ League
 country_event = {
 	id = IW_setup.1
 	title = "IW_setup.1.t"
 	picture = COURT_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
+	# is_triggered_only = yes
 	
 	desc = { # usurping Italian leader
 		trigger = {
-			overlord = { TAG = event_target:IW_italian_league_leader }
+			overlord = { tag = event_target:IW_italian_league_leader }
 		}
 		desc = IW_setup.1.d1
 	}
@@ -31,7 +31,7 @@ country_event = {
 	
 	desc = { # usurping French leader
 		trigger = {
-			overlord = { TAG = event_target:IW_french_league_leader }
+			overlord = { tag = event_target:IW_french_league_leader }
 		}
 		desc = IW_setup.1.d3
 	}
@@ -45,7 +45,7 @@ country_event = {
 	
 	desc = { # usurping Iberian leader
 		trigger = {
-			overlord = { TAG = event_target:IW_iberian_league_leader }
+			overlord = { tag = event_target:IW_iberian_league_leader }
 		}
 		desc = IW_setup.1.d5
 	}
@@ -79,7 +79,7 @@ country_event = {
 				if = { # Italian League
 					limit = {
 						OR = {
-							overlord = { TAG = event_target:IW_italian_league_leader }
+							overlord = { tag = event_target:IW_italian_league_leader }
 							IW_italian_leader_died = yes
 						}
 					}
@@ -90,7 +90,7 @@ country_event = {
 					every_country = {
 						limit = {
 							has_country_flag = IW_italian_league_member
-							NOT = { TAG = event_target:IW_italian_league_leader }
+							NOT = { tag = event_target:IW_italian_league_leader }
 						}
 						event_target:IW_italian_league_leader = {
 							create_subject = {
@@ -103,7 +103,7 @@ country_event = {
 				else_if = { # French League
 					limit = {
 						OR = {
-							overlord = { TAG = event_target:IW_french_league_leader }
+							overlord = { tag = event_target:IW_french_league_leader }
 							IW_french_leader_died = yes
 						}
 					}
@@ -114,7 +114,7 @@ country_event = {
 					every_country = {
 						limit = {
 							has_country_flag = IW_french_league_member
-							NOT = { TAG = event_target:IW_french_league_leader }
+							NOT = { tag = event_target:IW_french_league_leader }
 						}
 						event_target:IW_french_league_leader = {
 							create_subject = {
@@ -127,7 +127,7 @@ country_event = {
 				else_if = { # Iberian League
 					limit = {
 						OR = {
-							overlord = { TAG = event_target:IW_iberian_league_leader }
+							overlord = { tag = event_target:IW_iberian_league_leader }
 							IW_iberian_leader_died = yes
 						}
 					}
@@ -138,7 +138,7 @@ country_event = {
 					every_country = {
 						limit = {
 							has_country_flag = IW_iberian_league_member
-							NOT = { TAG = event_target:IW_iberian_league_leader }
+							NOT = { tag = event_target:IW_iberian_league_leader }
 						}
 						event_target:IW_iberian_league_leader = {
 							create_subject = {
@@ -151,7 +151,7 @@ country_event = {
 				else_if = { # HRE League
 					limit = {
 						OR = {
-							overlord = { TAG = event_target:IW_HRE_league_leader }
+							overlord = { tag = event_target:IW_HRE_league_leader }
 							is_emperor = yes
 						}
 					}
@@ -162,7 +162,7 @@ country_event = {
 					every_country = {
 						limit = {
 							has_country_flag = IW_HRE_league_member
-							NOT = { TAG = event_target:IW_HRE_league_leader }
+							NOT = { tag = event_target:IW_HRE_league_leader }
 						}
 						event_target:IW_HRE_league_leader = {
 							create_subject = {
@@ -177,6 +177,7 @@ country_event = {
 				# }
 				# grant_independence = yes
 		}
+		custom_tooltip = " " # Become leader of X league
 	}
 	
 	option = {
@@ -190,5 +191,162 @@ country_event = {
 		}
 		# Reject role
 		set_country_flag = IW_declined_league_leadership
+	}
+}
+
+# French league creation
+country_event = {
+	id = IW_setup.2
+	title = "IW_setup.2.t"
+	picture = COURT_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+	desc = { # France (claims of Anjou-Valois on Naples)
+		trigger = {
+			tag = FRA
+		}
+		desc = IW_setup.3.d1
+	}
+
+	desc = { # Burgundy
+		trigger = {
+			OR = {
+				tag = BUR
+			}
+		}
+		desc = IW_setup.3.d2
+	}
+	
+	trigger = {
+		OR = {
+			is_year = 1460
+			ARA = { has_country_flag = alfonso_died_yes_really }
+		}
+		OR = {
+			AND = {
+				tag = FRA
+				is_free_or_tributary_trigger = yes
+			}
+			AND = {
+				tag = BUR
+				is_free_or_tributary_trigger = yes
+				FRA = { NOT = { is_free_or_tributary_trigger = yes } }
+			}
+		}
+	}
+	
+	option = {
+		name = "IW_setup.2.a"
+		hidden_effect = {
+			ROOT = {
+				save_global_event_target_as = IW_french_league_leader
+				set_country_flag = IW_french_league_member
+			}
+			every_country = {
+				limit = {
+					capital_scope = {
+						OR = {
+							region = france_region
+							region = iberia_region
+							region = italy_region
+							region = south_german_region
+						}
+					}
+					is_free_or_tributary_trigger = yes
+					NOT = {
+						OR = {
+							is_emperor = yes
+							tag = ARA
+							tag = CAS
+							tag = SPA
+						}
+					}
+				}
+				country_event = { id = IW_setup.3 }
+			}
+		}
+		custom_tooltip = " " # Form the French League, with [ROOT.CountryName] at its head. _ will be called to join the cause.
+	}
+}
+
+# Option to join French league on its creation
+country_event = {
+	id = IW_setup.3
+	title = "IW_setup.3.t"
+	desc = IW_setup.3.t
+	picture = COURT_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	# trigger = { }
+	
+	option = {
+		name = "IW_setup.3.a"
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 20
+				OR = {
+					ai_attitude = {
+						who = overlord
+						attitude = attitude_friendly
+					}
+					ai_attitude = {
+						who = overlord
+						attitude = attitude_loyal
+					}
+					ai_attitude = {
+						who = overlord
+						attitude = attitude_allied
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					ai_attitude = {
+						who = event_target:IW_french_league_leader
+						attitude = attitude_rivalry
+					}
+					ai_attitude = {
+						who = event_target:IW_french_league_leader
+						attitude = attitude_hostile
+					}
+					ai_attitude = {
+						who = event_target:IW_french_league_leader
+						attitude = attitude_threatened
+					}
+					ai_attitude = {
+						who = event_target:IW_french_league_leader
+						attitude = attitude_outraged
+					}
+					ai_attitude = {
+						who = event_target:IW_french_league_leader
+						attitude = attitude_disloyal
+					}
+					ai_attitude = {
+						who = event_target:IW_french_league_leader
+						attitude = attitude_rebellious
+					}
+				}
+			}
+		}
+		ROOT = { set_country_flag = IW_french_league_member }
+		event_target:IW_french_league_leader = {
+			create_subject = {
+				subject_type = IW_league_member
+				subject = ROOT
+			}
+		}
+	}
+	
+	option = {
+		name = "IW_setup.3.b"
+		ai_chance = {
+			factor = 95
+		}
 	}
 }
