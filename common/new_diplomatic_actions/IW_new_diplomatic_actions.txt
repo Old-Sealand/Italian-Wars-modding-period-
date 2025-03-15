@@ -1,0 +1,938 @@
+# Triggers and effects will be given the Actor's scope, with the Recipient's as FROM
+# Icons are used from the messageicons.dds
+
+# Sphere of Cultural Influence
+invite_into_italian_league = {
+	category = influence
+	require_acceptance = yes
+
+	alert_index = 4
+	alert_tooltip = invite_into_italian_league_alert_tooltip
+
+	is_visible = {
+		OR = {
+			tag = event_target:IW_italian_league_leader
+			tag = event_target:IW_french_league_leader
+			tag = event_target:IW_iberian_league_leader
+			tag = event_target:IW_HRE_league_leader
+		}
+		is_subject = no
+		if = {
+			limit = { FROM = { is_subject = yes } }
+			FROM = {
+				is_subject_of_type = IW_league_member
+				NOT = { overlord = { tag = ROOT } }
+			}
+		}
+		FROM = { capital_scope = { continent = europe } }
+		# FROM = { is_subject = no }
+	}
+	is_allowed = {
+		if = {
+			limit = {
+				NOT = {
+					FROM = {
+						capital_scope = {
+							trade_range = ROOT
+						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = REQUIRES_CAPITAL_IN_TRADE_RANGE_TT
+				FROM = {
+					capital_scope = {
+						trade_range = ROOT
+					}
+				}
+			}
+		}
+		# if = {
+		# 	limit = {
+		# 		FROM = { is_at_war = yes }
+		# 	}
+		# 	custom_trigger_tooltip = {
+		# 		tooltip = FROM_IS_AT_WAR_TT
+		# 		FROM = { is_at_war = no }
+		# 	}
+		# }
+		if = {
+			limit = {
+				is_at_war = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = ROOT_IS_AT_WAR_TT
+				is_at_war = no
+			}
+		}
+		# if = {
+		# 	limit = { FROM = { NOT = { religion = root } } }
+		# 	custom_trigger_tooltip = {
+		# 		tooltip = FROM_IS_NOT_ROOT_RELIGION_TT
+		# 		FROM = { religion = root }
+		# 	}
+		# }
+		# if = {
+		# 	limit = { FROM = { is_great_power = yes } }
+		# 	custom_trigger_tooltip = {
+		# 		tooltip = FROM_IS_GREAT_POWER_TT
+		# 		FROM = { is_great_power = no }
+		# 	}
+		# }
+		# if = {
+		# 	limit = { FROM = { total_development = root } }
+		# 	custom_trigger_tooltip = {
+		# 		tooltip = FROM_MORE_DEV_THAN_ROOT_TT
+		# 		FROM = { NOT = { total_development = root } }
+		# 	}
+		# }
+		if = {
+			limit = {
+				has_global_flag = IW_peace_of_lodi_flag
+				tag = event_target:IW_italian_league_leader
+				NOT = {
+					FROM = {
+						capital_scope = {
+							region = italy_region
+						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = PEACE_OF_LODI_OUTSIDE_ITALY_TT
+				FROM = {
+					capital_scope = {
+						region = italy_region
+					}
+				}
+				NOT = { has_global_flag = IW_peace_of_lodi_flag }
+			}
+		}
+	}
+	on_accept = {
+		create_subject = {
+			subject_type = IW_league_member
+			subject = FROM
+		}
+		if = {
+			limit = { ROOT = { tag = event_target:IW_italian_league_leader } }
+			FROM = {
+				set_country_flag = IW_italian_league_member
+				clr_country_flag = IW_french_league_member
+				clr_country_flag = IW_iberian_league_member
+				clr_country_flag = IW_HRE_league_member
+			}
+		}
+		else_if = {
+			limit = { ROOT = { tag = event_target:IW_french_league_leader } }
+			FROM = {
+				clr_country_flag = IW_italian_league_member
+				set_country_flag = IW_french_league_member
+				clr_country_flag = IW_iberian_league_member
+				clr_country_flag = IW_HRE_league_member
+			}
+		}
+		else_if = {
+			limit = { ROOT = { tag = event_target:IW_iberian_league_leader } }
+			FROM = {
+				clr_country_flag = IW_italian_league_member
+				clr_country_flag = IW_french_league_member
+				set_country_flag = IW_iberian_league_member
+				clr_country_flag = IW_HRE_league_member
+			}
+		}
+		else_if = {
+			limit = { ROOT = { tag = event_target:IW_HRE_league_leader } }
+			FROM = {
+				clr_country_flag = IW_italian_league_member
+				clr_country_flag = IW_french_league_member
+				clr_country_flag = IW_iberian_league_member
+				set_country_flag = IW_HRE_league_member
+			}
+		}
+	}
+	on_decline = {
+	}
+
+	ai_will_do = { # this is a trigger
+		OR = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_friendly
+			}
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_protective
+			}
+			FROM = {
+				any_neighbor_country = {
+					NOT = { tag = ROOT }
+					FROM = {
+						ai_attitude = {
+							who = PREV
+							attitude = attitude_threatened
+						}
+					}
+				}
+			}
+			FROM = {
+				ai_attitude = {
+					who = ROOT
+					attitude = attitude_threatened
+				}
+			}
+			FROM = {
+				ai_attitude = {
+					who = overlord
+					attitude = attitude_disloyal
+				}
+			}
+			FROM = { # added
+				any_country = {
+					OR = {
+						tag = event_target:IW_italian_league_leader
+						tag = event_target:IW_french_league_leader
+						tag = event_target:IW_iberian_league_leader
+						tag = event_target:IW_HRE_league_leader
+					}
+					NOT = { tag = ROOT }
+					OR = {
+						FROM = {
+							ai_attitude = {
+								who = PREV
+								attitude = attitude_threatened
+							}
+						}
+						FROM = {
+							ai_attitude = {
+								who = PREV
+								attitude = attitude_hostile
+							}
+						}
+						FROM = {
+							ai_attitude = {
+								who = PREV
+								attitude = attitude_outraged
+							}
+						}
+					}
+				}
+			}
+		}
+		NOT = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_domineering
+			}
+		}
+		NOT = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_hostile
+			}
+		}
+		NOT = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_outraged
+			}
+		}
+		has_opinion = {
+			who = FROM
+			value = 50
+		}
+		# NOT = {
+		# 	FROM = {
+		# 		has_country_modifier = just_left_italian_league_timer
+		# 	}
+		# }
+	}
+
+	ai_acceptance = {
+        add_entry = {
+            name = DIPLO_OPPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+			multiply_variable = {
+				which = ai_value 
+				value = 0.125
+			}
+        }
+		add_entry = {
+			name = AI_TRUST_TOWARDS_ROOT
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = ROOT
+			}			
+			subtract_variable = { 
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = 0.4
+			}
+		}
+		add_entry = {
+			name = AI_DIPLOMATIC_REPUTATION
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:diplomatic_reputation
+			}
+			#1 rep = 3
+			multiply_variable = {
+				which = ai_value
+				value = 3
+			}
+		}
+		add_entry = {
+			name = AI_TOTAL_DEVELOPMENT
+			export_to_variable = {
+				variable_name = ai_value
+				value = total_development
+				who = FROM
+			}
+			#20 dev = -1
+			multiply_variable = {
+				which = ai_value
+				value = -0.05
+			}
+		}
+		# add_entry = {
+		# 	name = DIPLO_HAS_AI_HAS_OWN_SUBJECTS_TT
+		# 	limit = {
+		# 		FROM = { num_of_subjects = 1 }
+		# 	}
+		# 	export_to_variable = {
+		# 		variable_name = ai_value
+		# 		value = 1
+		# 	}
+		# 	multiply_variable = {
+		# 		which = ai_value
+		# 		value = -20
+		# 	}
+		# }
+		add_entry = { # IW addition
+			name = ROOT_IS_GREAT_POWER_TT
+			limit = { FROM = { is_great_power = yes } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -30 }
+		}
+		add_entry = {
+			name = ADDITIONAL_REASONS_FROM_EVENTS_AND_MISSIONS_TO_ACCEPT_TT
+			limit = { FROM = { has_country_flag = easier_to_get_into_persian_sphere } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = 25 }
+		}
+		add_entry = {
+			name = attitude_neutral_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -10 }
+		}
+		add_entry = {
+			name = attitude_rivalry_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_rivalry } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -1000 }
+		}
+		add_entry = {
+			name = attitude_hostile_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_hostile } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -1000 }
+		}
+		add_entry = {
+			name = attitude_friendly_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = 20 }
+		}
+		add_entry = {
+			name = attitude_threatened_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = 20 }
+		}
+		add_entry = {
+			name = attitude_outraged_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_outraged } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -1000 }
+		}
+		add_entry = {
+			name = attitude_domineering_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_domineering } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -1000 }
+		}
+		add_entry = {
+			name = DIPLO_BORDER_DISTANCE_TT
+			export_to_variable = {
+				variable_name = ai_value
+				value = border_distance
+				who = FROM
+				with = ROOT
+			}
+			#10 units = -1
+			multiply_variable = {
+				which = ai_value
+				value = -0.10
+			}
+		}
+		# add_entry = { Wanted to do distance from Rome, but doesn't seem to work
+		# 	name = ROME_BORDER_DISTANCE_TT
+		# 	export_to_variable = {
+		# 		variable_name = ai_value
+		# 		value = province_distance
+		# 		who = FROM # FROM
+		# 		with = 118 # ROOT
+		# 	}
+		# 	#4 units = -1
+		# 	multiply_variable = {
+		# 		which = ai_value
+		# 		value = -0.25
+		# 	}
+		# }
+	}
+}
+
+remove_them_from_italian_league = {
+	category = influence
+	require_acceptance = no
+
+	is_visible = {
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = IW_league_member
+		}
+	}
+	is_allowed = {
+	}
+	on_accept = {
+		FROM = {
+			grant_independence = yes
+			# add_country_modifier = {
+			# 	name = just_left_italian_league_timer
+			# 	duration = 3650
+			# 	hidden = yes
+			# }
+		}
+		FROM = {
+			clr_country_flag = IW_italian_league_member
+			clr_country_flag = IW_french_league_member
+			clr_country_flag = IW_iberian_league_member
+			clr_country_flag = IW_HRE_league_member
+		}
+		reverse_add_opinion = {
+			who = from
+			modifier = IW_was_removed_from_our_league
+		}
+		add_opinion = {
+			who = from
+			modifier = IW_removed_from_our_league
+		}
+		# add_truce_with = from
+	}
+	on_decline = {
+	}
+
+	ai_will_do = { # Overlords will never want to break the relationship
+		always = no
+	}
+}
+
+leave_the_italian_league = {
+	category = influence
+	require_acceptance = no
+
+	is_visible = {
+		is_subject_of = FROM
+		is_subject_of_type = IW_league_member
+	}
+	is_allowed = {
+	}
+	on_accept = {
+		# if = {
+		# 	limit = {
+		# 		is_subject_of = FROM
+		# 		is_subject_of_type = IW_league_member
+		# 		NOT = { liberty_desire = 100 }
+		# 	}
+		# 	if = {
+		# 		limit = {
+		# 			has_stab_reduction_from_dip_action_modifier = yes
+		# 		}
+		# 		add_prestige = -1
+		# 	}
+		# 	else = {
+		# 		add_stability = -1
+		# 	}
+		# }
+		grant_independence = yes
+		clr_country_flag = IW_italian_league_member
+		clr_country_flag = IW_french_league_member
+		clr_country_flag = IW_iberian_league_member
+		clr_country_flag = IW_HRE_league_member
+		reverse_add_opinion = {
+			who = from
+			modifier = IW_left_our_league
+		}
+		add_opinion = {
+			who = from
+			modifier = IW_left_their_league
+		}
+		# add_country_modifier = {
+		# 	name = just_left_italian_league_timer
+		# 	duration = 3650
+		# 	hidden = yes
+		# }
+	}
+	on_decline = {
+	}
+
+	ai_will_do = { # Overlords will never want to break the relationship
+		is_subject_of = FROM
+		OR = {
+			liberty_desire = 100
+			AND = {
+				# stability = 1
+				liberty_desire = 90
+				NOT = {
+					has_opinion = {
+						who = ROOT
+						value = -50
+					}
+				}
+			}
+			AND = {
+				# stability = 1
+				liberty_desire = 80
+				NOT = {
+					has_opinion = {
+						who = ROOT
+						value = -100
+					}
+				}
+			}
+			AND = {
+				# stability = 1
+				liberty_desire = 70
+				NOT = {
+					has_opinion = {
+						who = ROOT
+						value = -150
+					}
+				}
+			}
+			AND = {
+				# stability = 1
+				liberty_desire = 60
+				NOT = {
+					has_opinion = {
+						who = ROOT
+						value = -199
+					}
+				}
+			}
+		}
+		NOT = {
+			any_neighbor_country = {
+				ROOT = {
+					ai_attitude = {
+						who = PREV
+						attitude = attitude_threatened
+					}
+				}
+			}
+		}
+		NOT = {
+			AND = {
+				has_global_flag = IW_peace_of_lodi_flag
+				OR = {
+					tag = MLO
+					tag = VEN
+				}
+			}
+		}
+	}
+}
+
+join_italian_league = {
+	category = influence
+	require_acceptance = yes
+
+	alert_index = 4
+	alert_tooltip = join_italian_league_alert_tooltip
+
+	is_visible = {
+		FROM = {
+			OR = {
+				tag = event_target:IW_italian_league_leader
+				tag = event_target:IW_french_league_leader
+				tag = event_target:IW_iberian_league_leader
+				tag = event_target:IW_HRE_league_leader
+			}
+		}
+		NOT = {
+			OR = {
+				tag = event_target:IW_italian_league_leader
+				tag = event_target:IW_french_league_leader
+				tag = event_target:IW_iberian_league_leader
+				tag = event_target:IW_HRE_league_leader
+			}
+		}
+		# is_subject = no
+		if = {
+			limit = { is_subject = yes }
+			is_subject_of_type = IW_league_member
+			NOT = { overlord = { tag = FROM } }
+		}
+		FROM = { is_subject = no }
+		capital_scope = { continent = europe }
+	}
+	is_allowed = {
+		if = {
+			limit = {
+				NOT = {
+					capital_scope = {
+						trade_range = FROM
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = REQUIRES_FROM_TO_BE_IN_TRADE_RANGE_TT
+				capital_scope = {
+					trade_range = FROM
+				}
+			}
+		}
+		# if = {
+		# 	limit = {
+		# 		FROM = { is_at_war = yes }
+		# 	}
+		# 	custom_trigger_tooltip = {
+		# 		tooltip = FROM_IS_AT_WAR_TT
+		# 		FROM = { is_at_war = no }
+		# 	}
+		# }
+		if = {
+			limit = {
+				is_at_war = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = ROOT_IS_AT_WAR_TT
+				is_at_war = no
+			}
+		}
+		# if = {
+		# 	limit = { NOT = { religion = from } }
+		# 	custom_trigger_tooltip = {
+		# 		tooltip = ROOT_IS_NOT_FROM_RELIGION_TT
+		# 		religion = from
+		# 	}
+		# }
+		# if = {
+		# 	limit = { is_great_power = yes }
+		# 	custom_trigger_tooltip = {
+		# 		tooltip = ROOT_IS_GREAT_POWER_TT
+		# 		is_great_power = no
+		# 	}
+		# }
+		# if = {
+		# 	limit = { total_development = from }
+		# 	custom_trigger_tooltip = {
+		# 		tooltip = ROOT_MORE_DEV_THAN_FROM_TT
+		# 		NOT = { total_development = from }
+		# 	}
+		# }
+		if = {
+			limit = {
+				has_global_flag = IW_peace_of_lodi_flag
+				FROM = { tag = event_target:IW_italian_league_leader }
+				NOT = {
+					capital_scope = {
+						region = italy_region
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = PEACE_OF_LODI_OUTSIDE_ITALY_TT
+				capital_scope = {
+					region = italy_region
+				}
+				NOT = { has_global_flag = IW_peace_of_lodi_flag }
+			}
+		}
+	}
+	on_accept = {
+		FROM = {
+			create_subject = {
+				subject_type = IW_league_member
+				subject = ROOT
+			}
+		}
+		if = {
+			limit = { FROM = { tag = event_target:IW_italian_league_leader } }
+			set_country_flag = IW_italian_league_member
+			clr_country_flag = IW_french_league_member
+			clr_country_flag = IW_iberian_league_member
+			clr_country_flag = IW_HRE_league_member
+		}
+		else_if = {
+			limit = { FROM = { tag = event_target:IW_french_league_leader } }
+			clr_country_flag = IW_italian_league_member
+			set_country_flag = IW_french_league_member
+			clr_country_flag = IW_iberian_league_member
+			clr_country_flag = IW_HRE_league_member
+		}
+		else_if = {
+			limit = { FROM = { tag = event_target:IW_iberian_league_leader } }
+			clr_country_flag = IW_italian_league_member
+			clr_country_flag = IW_french_league_member
+			set_country_flag = IW_iberian_league_member
+			clr_country_flag = IW_HRE_league_member
+		}
+		else_if = {
+			limit = { FROM = { tag = event_target:IW_HRE_league_leader } }
+			clr_country_flag = IW_italian_league_member
+			clr_country_flag = IW_french_league_member
+			clr_country_flag = IW_iberian_league_member
+			set_country_flag = IW_HRE_league_member
+		}
+	}
+	on_decline = {
+	}
+
+	ai_will_do = { # this is a trigger
+		OR = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_threatened
+			}
+			ai_attitude = {
+				who = overlord
+				attitude = attitude_disloyal
+			}
+			any_neighbor_country = {
+				NOT = { tag = FROM }
+				ROOT = {
+					ai_attitude = {
+						who = PREV
+						attitude = attitude_threatened
+					}
+				}
+			}
+			FROM = {
+				OR = {
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_domineering
+					}
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_protective
+					}
+				}
+			}
+			any_country = { # added
+				OR = {
+					tag = event_target:IW_italian_league_leader
+					tag = event_target:IW_french_league_leader
+					tag = event_target:IW_iberian_league_leader
+					tag = event_target:IW_HRE_league_leader
+				}
+				NOT = { tag = FROM }
+				OR = {
+					ROOT = {
+						ai_attitude = {
+							who = PREV
+							attitude = attitude_threatened
+						}
+					}
+					ROOT = {
+						ai_attitude = {
+							who = PREV
+							attitude = attitude_hostile
+						}
+					}
+					ROOT = {
+						ai_attitude = {
+							who = PREV
+							attitude = attitude_outraged
+						}
+					}
+				}
+			}
+		}
+		# NOT = { mil_tech = FROM }
+		# OR = {
+		# 	NOT = { army_size = FROM }
+		# 	AND = {
+		# 		capital_scope = { is_island = yes }
+		# 		NOT = { navy_size = FROM }
+		# 	}
+		# 	FROM = {
+		# 		military_strength = {
+		# 			who = ROOT
+		# 			value = 2
+		# 		}
+		# 	}
+		# }
+		# NOT = { has_country_modifier = dissolve_protectorate_timer }
+		NOT = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_rivalry
+			}
+		}
+		NOT = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_hostile
+			}
+		}
+		NOT = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_outraged
+			}
+		}
+		NOT = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_domineering
+			}
+		}
+		is_emperor = no
+		is_emperor_of_china = no
+	}
+
+	ai_acceptance = {
+        add_entry = {
+            name = DIPLO_OPPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+			multiply_variable = {
+				which = ai_value 
+				value = 0.125
+			}
+        }
+		add_entry = {
+			name = AI_TRUST_TOWARDS_ROOT
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = ROOT
+			}			
+			subtract_variable = { 
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = 0.4
+			}
+		}
+		add_entry = {
+			name = AI_DIPLOMATIC_REPUTATION
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:diplomatic_reputation
+			}
+			#1 rep = 3
+			multiply_variable = {
+				which = ai_value
+				value = 3
+			}
+		}
+		add_entry = {
+			name = DIPLO_OUR_TOTAL_DEVELOPMENT_TT
+			export_to_variable = {
+				variable_name = ai_value
+				value = total_development
+				who = ROOT
+			}
+			#20 dev = +1
+			multiply_variable = {
+				which = ai_value
+				value = 0.05
+			}
+		}
+		add_entry = {
+			name = attitude_neutral_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -20 }
+		}
+		add_entry = {
+			name = attitude_rivalry_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_rivalry } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -1000 }
+		}
+		add_entry = {
+			name = attitude_hostile_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_hostile } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -1000 }
+		}
+		add_entry = {
+			name = attitude_friendly_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = 50 }
+		}
+		add_entry = {
+			name = attitude_outraged_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_outraged } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -1000 }
+		}
+		add_entry = {
+			name = attitude_domineering_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_domineering } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = 1000 }
+		}
+		add_entry = {
+			name = attitude_protective_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_protective } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = 1000 }
+		}
+		add_entry = {
+			name = DIPLO_BORDER_DISTANCE_TT
+			export_to_variable = {
+				variable_name = ai_value
+				value = border_distance
+				who = FROM
+				with = ROOT
+			}
+			#10 units = -1
+			multiply_variable = {
+				which = ai_value
+				value = -0.10
+			}
+		}
+		add_entry = {
+			name = ADDITIONAL_REASONS_FROM_EVENTS_AND_MISSIONS_TO_ACCEPT_TT
+			limit = { has_country_flag = easier_to_get_into_persian_sphere }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = 25 }
+		}
+	}
+}
