@@ -1,5 +1,15 @@
 ﻿l_english:
 
+### CUSTOMIZABLE LOC ###
+ string_french_league: "French"
+ string_angevin_league: "Angevin"
+ string_imperial_league: "Imperial"
+ string_german_league: "German"
+ string_in_italic_league: "Italic"
+ string_in_french_league: "[GetFrenchLeagueName]"
+ string_in_iberian_league: "Iberian"
+ string_in_HRE_league: "[GetHRELeagueName]"
+
 ### FLAGS ###
  IW_HRE_league_leader: "Leader of the Italic League"
  IW_HRE_league_leader: "Leader of the [GetFrenchLeagueName] League"
@@ -21,6 +31,40 @@
 ## TRIGGERED MODIFIERS ##
  IW_treaty_of_lodi_tm: "Peace of Lodi"
  IW_treaty_of_lodi_tt: "The §YTreaty of Lodi§! is in effect"
+
+## DIPLOACTIONS ##
+ invite_into_italian_league: "Invite into League"
+ invite_into_italian_league_title: "Invite into League"
+ invite_into_italian_league_tooltip: "We will invite them into our League, making them a volunteer subject state."
+ invite_into_italian_league_desc: "Do you wish to invite §Y[From.GetName]§! to join your §YLeague§!, turning them into a subject country?\nAs their Overlord you will receive a Call to Arms should they be attacked by foreign powers. They will be able to have independent diplomatic relations with other countries.\n\nIf an §YItalian War§! is started, they will be expected to fight alongside us."
+ invite_into_italian_league_alert_tooltip: "An §Yinvitation§! to join their League"
+ invite_into_italian_league_dialog: "[This.GetName] wants to invite us into their League, promising to protect us from foreign threats in exchange for a monthly fee."
+ remove_them_from_italian_league: "Remove from League"
+ remove_them_from_italian_league_title: "Remove from League"
+ remove_them_from_italian_league_tooltip: "Remove them from our League"
+ remove_them_from_italian_league_desc: "Do you wish to remove §Y[From.GetName]§! from our League? This will cause our relations to worsen."
+ remove_them_from_italian_league_alert_tooltip: "A forceful Removal of us form their §YLeague§!"
+ remove_them_from_italian_league_dialog: "[This.GetName] wants us to be removed from their League, ending the onesided protective alliance."
+ leave_the_italian_league: "Leave the League"
+ leave_the_italian_league_title: "Leave the League"
+ leave_the_italian_league_tooltip: "Leave their League."
+ leave_the_italian_league_desc: "Do you wish to leave the §YLeague§! of §Y[From.GetName]§!? This will cause our relations to worsen."
+ leave_the_italian_league_alert_tooltip: "Leaving Our League"
+ leave_the_italian_league_dialog: "[This.GetName] is leaving our League, ending the arrangement of mutual protection."
+ join_italian_league: "Join League"
+ join_italian_league_title: "Join League"
+ join_italian_league_tooltip: "Ask if you can join their League, turning us into a subject that is protected from foreign forces and gains a variety of benefits."
+ join_italian_league_desc: "Do you wish to join the §YLeague§! of §Y[From.GetName]§! in the struggle for dominance over Italy?\nIf they accept they will protect us from foreign powers and we will receive §Gvarious bonuses§!.\nWe will be able to have independent diplomatic relations with other countries.\nIf an §YItalian War§! is started, we will be expected to fight alongside §Y[From.GetName]§!."
+ join_italian_league_alert_tooltip: "A §Yrequest§! to join our League"
+ join_italian_league_dialog: "[This.GetName] wants to join our League, becoming a subject state to our state."
+ PEACE_OF_LODI_OUTSIDE_ITALY_TT: "§R- Only countries with their capital in the §YItaly§! region can join the Italic League while the §YTreaty of Lodi§! is active.§!"
+#  ROME_BORDER_DISTANCE_TT: "Distance from Italy"
+
+ ###OPINION MODIFIERS###
+ IW_left_our_league: "Left our League"
+ IW_left_their_league: "Left their League"
+ IW_was_removed_from_our_league: "Has been removed from Our League"
+ IW_removed_from_our_league: "Has been removed from their League"
 
 ### SETUP EVENTS ###
  IW_setup.1.t: "The [IW_former_leader.GetAdjective] League is No More"
@@ -44,8 +88,6 @@
  IW_setup.2.d3: "Something something Lotharingia?"
  IW_setup.2.a: "We will reclaim the legacy of Anjou!"
  IW_setup.2a.tt: "Form the §Y[GetFrenchLeagueName] League§! with [Root.GetName] at its head. Nations across Europe will be called to join the cause."
- string_french_league: "French"
- string_angevin_league: "Angevin"
 
  IW_setup.3.t: "The [GetFrenchLeagueName] League Calls"
  IW_setup.3.a: "Finally, a worthy cause!"
@@ -63,8 +105,6 @@
  IW_setup.6.d: "Something something Imperial Lands!"
  IW_setup.6.a: "The situation in Italy is getting out of hand... time to step in"
  IW_setup.6a.tt: "Form the §Y[GetHRELeagueName] League§! with [Root.GetName] at its head. Nations across Europe will be called to join the cause."
- string_imperial_league: "Imperial"
- string_german_league: "German"
 
  IW_setup.7.t: "The Imperial League Calls"
  IW_setup.7.b: "[IW_HRE_league_leader.GetName]'s claims of grandeur mean little to us"

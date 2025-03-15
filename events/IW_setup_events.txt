@@ -106,6 +106,9 @@ country_event = {
 					}
 				}
 				set_country_flag = IW_italian_league_member
+				clr_country_flag = IW_french_league_member
+				clr_country_flag = IW_iberian_league_member
+				clr_country_flag = IW_HRE_league_member
 			}
 			custom_tooltip = IW_setup.1a.tt1
 		}
@@ -134,7 +137,10 @@ country_event = {
 						}
 					}
 				}
+				clr_country_flag = IW_italian_league_member
 				set_country_flag = IW_french_league_member
+				clr_country_flag = IW_iberian_league_member
+				clr_country_flag = IW_HRE_league_member
 			}
 			custom_tooltip = IW_setup.1a.tt2
 		}
@@ -163,7 +169,10 @@ country_event = {
 						}
 					}
 				}
+				clr_country_flag = IW_italian_league_member
+				clr_country_flag = IW_french_league_member
 				set_country_flag = IW_iberian_league_member
+				clr_country_flag = IW_HRE_league_member
 			}
 			custom_tooltip = IW_setup.1a.tt3
 		}
@@ -192,6 +201,9 @@ country_event = {
 						}
 					}
 				}
+				clr_country_flag = IW_italian_league_member
+				clr_country_flag = IW_french_league_member
+				clr_country_flag = IW_iberian_league_member
 				set_country_flag = IW_HRE_league_member
 			}
 			custom_tooltip = IW_setup.1a.tt4
@@ -380,7 +392,7 @@ country_event = {
 		ai_chance = {
 			factor = 5
 			modifier = {
-				factor = 10
+				factor = 5
 				OR = {
 					ai_attitude = {
 						who = event_target:IW_french_league_leader
@@ -426,7 +438,12 @@ country_event = {
 				}
 			}
 		}
-		ROOT = { set_country_flag = IW_french_league_member }
+		ROOT = {
+			clr_country_flag = IW_italian_league_member
+			set_country_flag = IW_french_league_member
+			clr_country_flag = IW_iberian_league_member
+			clr_country_flag = IW_HRE_league_member
+		}
 		event_target:IW_french_league_leader = {
 			create_subject = {
 				subject_type = IW_league_member
@@ -547,7 +564,7 @@ country_event = {
 		ai_chance = {
 			factor = 5
 			modifier = {
-				factor = 10
+				factor = 5
 				OR = {
 					ai_attitude = {
 						who = event_target:IW_iberian_league_leader
@@ -593,7 +610,12 @@ country_event = {
 				}
 			}
 		}
-		ROOT = { set_country_flag = IW_iberian_league_member }
+		ROOT = {
+			clr_country_flag = IW_italian_league_member
+			clr_country_flag = IW_french_league_member
+			set_country_flag = IW_iberian_league_member
+			clr_country_flag = IW_HRE_league_member
+		}
 		event_target:IW_iberian_league_leader = {
 			create_subject = {
 				subject_type = IW_league_member
@@ -693,7 +715,7 @@ country_event = {
 		ai_chance = {
 			factor = 5
 			modifier = {
-				factor = 10
+				factor = 5
 				OR = {
 					ai_attitude = {
 						who = event_target:IW_HRE_league_leader
@@ -739,7 +761,12 @@ country_event = {
 				}
 			}
 		}
-		ROOT = { set_country_flag = IW_HRE_league_member }
+		ROOT = {
+			clr_country_flag = IW_italian_league_member
+			clr_country_flag = IW_french_league_member
+			clr_country_flag = IW_iberian_league_member
+			set_country_flag = IW_HRE_league_member
+		}
 		event_target:IW_HRE_league_leader = {
 			create_subject = {
 				subject_type = IW_league_member
@@ -830,7 +857,12 @@ country_event = {
 		ai_chance = {
 			factor = 50
 		}
-		ROOT = { set_country_flag = IW_italian_league_member }
+		ROOT = {
+			set_country_flag = IW_italian_league_member
+			clr_country_flag = IW_french_league_member
+			clr_country_flag = IW_iberian_league_member
+			clr_country_flag = IW_HRE_league_member
+		}
 		event_target:IW_italian_league_leader = {
 			create_subject = {
 				subject_type = IW_league_member
