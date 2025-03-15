@@ -1,0 +1,100 @@
+declarewar = {
+	# condition = {
+	# 	tooltip = IW_peace_of_lodi_tooltip
+	# 	potential = {
+	# 		has_global_flag = IW_peace_of_lodi_flag
+	# 		is_subject_of_type_with_overlord = {
+	# 			who = event_target:IW_italian_league_leader
+	# 			type = IW_league_member
+	# 		}
+	# 		FROM = {
+	# 			is_subject_of_type_with_overlord = {
+	# 				who = event_target:IW_italian_league_leader
+	# 				type = IW_league_member
+	# 			}
+	# 		}
+	# 	}
+	# 	allow = {
+	# 		always = no
+	# 	}
+	# }
+	effect = {
+		#################
+		## Italian War ## Other Leagues join
+		#################
+		if = {
+			limit = {
+				is_in_war = {
+					casus_belli = IW_cb_italian_war
+					attacker_leader = ROOT
+					defender_leader = FROM
+				}
+			}
+			FROM = { 
+				save_event_target_as = IW_defender
+				every_subject_country = {
+					limit = { is_subject_of_type = IW_league_member }
+					country_event = { id = IW_setup.12 }
+					# join_all_defensive_wars_of = FROM
+				}
+			}
+			ROOT = { 
+				save_event_target_as = IW_attacker
+			}
+			every_subject_country = {
+				limit = { is_subject_of_type = IW_league_member }
+				country_event = { id = IW_setup.11 }
+				# join_all_offensive_wars_of = ROOT
+			}
+			every_country = {
+				limit = {
+					NOT = {
+						is_in_war = {
+							casus_belli = IW_cb_italian_war
+						}
+					}
+					OR = {
+						tag = event_target:IW_italian_league_leader
+						tag = event_target:IW_french_league_leader
+						tag = event_target:IW_iberian_league_leader
+						tag = event_target:IW_HRE_league_leader
+					}
+				}
+				country_event = {
+					id = IW_setup.10
+					days = 30
+					random = 30
+				}
+			}
+		}
+	}
+}
+
+requestpeace = {
+	condition = {
+		tooltip = IW_cb_italian_war_peace_tooltip 
+		potential = {
+			OR = {
+				AND = {
+					is_in_war = {
+						casus_belli = IW_cb_italian_war
+						attacker_leader = ROOT
+						defenders = FROM
+					}
+					NOT = { is_in_war = { defender_leader = FROM } }
+				}
+				AND = {
+					is_in_war = {
+						casus_belli = IW_cb_italian_war
+						defender_leader = ROOT
+						attackers = FROM
+					}
+					NOT = { is_in_war = { attacker_leader = FROM } }
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}

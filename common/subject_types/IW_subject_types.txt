@@ -51,7 +51,7 @@ IW_league_member = {
 
 	# Properties:
 	can_send_tribute = no
-	overlord_protects_external = no # make protection only against another league?
+	overlord_protects_external = yes # make protection only against another league?
 	
 	overlord_opinion_modifier = is_tributary
 	subject_opinion_modifier = is_tributary
@@ -86,4 +86,18 @@ IW_league_member = {
 	# Modifiers:
 	modifier_subject = clear # League members don't get the ordinary subject_nation penalty 
 	modifier_overlord = clear
+	# modifier_overlord = {
+	# 	modifier = IW_treaty_exclusive_trade_overlord
+	# 	trigger = {
+	# 		tag = event_target:IW_treaty_exclusive_trade_passed
+	# 	}
+	# }
+	# modifier_subject = {
+	# 	modifier = IW_treaty_exclusive_trade_subject
+	# 	trigger = {
+	# 		overlord = {
+	# 			tag = event_target:IW_treaty_exclusive_trade_passed
+	# 		}
+	# 	}
+	# }
 }

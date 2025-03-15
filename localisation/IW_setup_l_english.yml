@@ -1,0 +1,91 @@
+﻿l_english:
+
+### FLAGS ###
+ IW_HRE_league_leader: "Leader of the Italic League"
+ IW_HRE_league_leader: "Leader of the [GetFrenchLeagueName] League"
+ IW_HRE_league_leader: "Leader of the Iberian League"
+ IW_HRE_league_leader: "Leader of the [GetHRELeagueName] League"
+ IW_HRE_league_member: "Member of the Italic League"
+ IW_HRE_league_member: "Member of the [GetFrenchLeagueName] League"
+ IW_HRE_league_member: "Member of the Iberian League"
+ IW_HRE_league_member: "Member of the [GetHRELeagueName] League"
+
+## CB / WAR TYPE ##
+ IW_cb_italian_war: "Italian War"
+ IW_cb_italian_war_desc: "Let us assert our hegemony over the peninsula.\n§RALL §YLeague Members§! on BOTH sides will be called into the war!§!"
+ ITALIAN_WAR_WAR_NAME: "$ORDER$War of the League of [Root.GetName]"
+ IW_cb_italian_war_peace_tooltip: "§RParticipants in an Italian War cannot sign a separate peace.§!"
+ IW_peace_of_lodi_tooltip: "§RMembers of the Italic League cannot attack each other, as long as the Treaty of Lodi is in place.§!"
+ superiority_italian_war_desc: "War goal is to show them superiority by winning battles."
+
+## TRIGGERED MODIFIERS ##
+ IW_treaty_of_lodi_tm: "Peace of Lodi"
+ IW_treaty_of_lodi_tt: "The §YTreaty of Lodi§! is in effect"
+
+### SETUP EVENTS ###
+ IW_setup.1.t: "The [IW_former_leader.GetAdjective] League is No More"
+ IW_setup.1.d1: "Threatened by foreign interlopers on all sides, the brave remaining coalition states of the Italic League will require strong leadership to ensure their very survival. The [IW_former_leader.GetAdjective] [IW_former_leader.Monarch.GetTitle] has proven himself to be unworthy of the title, and the member council has called [Root.Monarch.GetName] to assume the role of defender of Italy." # usurping Italian leader
+ IW_setup.1.d2: "" # Italian leader died
+ IW_setup.1.d3: "The [IW_former_leader.GetAdjective] have failed, against all odds, to reassert Frankish dominance in Italy. Perhaps the memory of Charles d'Anjou would be better served with us at the head of this coalition." # usurping French leader
+ IW_setup.1.d4: "The [IW_former_leader.Monarch.GetTitle]s of [IW_former_leader.GetName] [event_target:IW_former_leader.GetName] thought to rally his allies in reclaiming the legacy of Charles d'Anjou, but their hubris was their downfall. Will we be the ones to take up the mantle and continue the fight for Italy?" # French leader died
+ IW_setup.1.d5: "" # usurping Iberian leader
+ IW_setup.1.d6: "" # Iberian leader died
+ IW_setup.1.d7: "" # new HRE emperor
+ IW_setup.1.a: "The [IW_former_leader.GetAdjective] were not worthy of the position"
+ IW_setup.1.b: "The trifling matters of the Italians do not concern us"
+ IW_setup.1a.tt1: "Take control of Italic League"
+ IW_setup.1a.tt2: "Take control of [GetFrenchLeagueName] League"
+ IW_setup.1a.tt3: "Take control of Iberian League"
+ IW_setup.1a.tt4: "Take control of [GetHRELeagueName] League"
+
+ IW_setup.2.t: "The [GetFrenchLeagueName] League"
+ IW_setup.2.d1: "Something something Charles d'Anjou"
+ IW_setup.2.d2: "Something something Norman conquests"
+ IW_setup.2.d3: "Something something Lotharingia?"
+ IW_setup.2.a: "We will reclaim the legacy of Anjou!"
+ IW_setup.2a.tt: "Form the §Y[GetFrenchLeagueName] League§! with [Root.GetName] at its head. Nations across Europe will be called to join the cause."
+ string_french_league: "French"
+ string_angevin_league: "Angevin"
+
+ IW_setup.3.t: "The [GetFrenchLeagueName] League Calls"
+ IW_setup.3.a: "Finally, a worthy cause!"
+ IW_setup.3.b: "[IW_french_league_leader.GetName]'s claims of grandeur mean little to us"
+
+ IW_setup.4.t: "The Iberian League"
+ IW_setup.4.d: "Something something we want Naples back too!"
+ IW_setup.4.a: "The French want Naples back?? To hell with Alfons' will then!"
+ IW_setup.4a.tt: "Form the §YIberian League§! with [Root.GetName] at its head. Nations across Europe will be called to join the cause."
+
+ IW_setup.5.t: "The Iberian League Calls"
+ IW_setup.5.b: "[IW_iberian_league_leader.GetName]'s claims of grandeur mean little to us"
+
+ IW_setup.6.t: "The [GetHRELeagueName] League"
+ IW_setup.6.d: "Something something Imperial Lands!"
+ IW_setup.6.a: "The situation in Italy is getting out of hand... time to step in"
+ IW_setup.6a.tt: "Form the §Y[GetHRELeagueName] League§! with [Root.GetName] at its head. Nations across Europe will be called to join the cause."
+ string_imperial_league: "Imperial"
+ string_german_league: "German"
+
+ IW_setup.7.t: "The Imperial League Calls"
+ IW_setup.7.b: "[IW_HRE_league_leader.GetName]'s claims of grandeur mean little to us"
+
+ IW_setup.8.t: "The Treaty of Lodi"
+ IW_setup.8.d: "War has ravaged Lombardy for decades. Young men, never knowing their progenitors who were felled in the earlier years of the meaningless territorial conflict, have laid to rest on the same battlefields as their fathers.\n\nNow, gathered at the Broletto Palace in Lodi, the wise [MLO.Monarch.GetTitle] of [MLO.GetName] and [VEN.Monarch.GetTitle] of [VEN.GetName] have finally decided to put an end to the conflict, hoping to usher in a new era of peace and prosperity for all Italia. [LAN.Monarch.GetName] [LAN.Monarch.Dynasty.GetName] of the powerful [LAN.GetAdjective] [LAN.GovernmentName] sits at the end of the table, the last to sign the treaty: a guarantor of the peaceful days to come."
+ IW_setup.8.a: "Surely such war will never again visit upon the face of this land!"
+ IW_setup.8a.tt: "Form the §YItalic League§! with §Y[Root.GetName]§! at its head. Nations across the peninsula will be called to ratify the treaty. \n\nAs long as the §YTreaty of Lodi§! is in place, members of the League §Rcannot declare war on one another§!, and gain the following effects:\nReform Progress Growth: §G+10.0%§!\nGlobal Prosperity Growth: §G+0.50§!\nOpinion of same Culture Group: §G+20§!"
+
+ IW_setup.9.t: "The Italic League Ushers in Peace"
+ IW_setup.9.a: "Surely such war will never again visit upon the face of this land!" # A marvelous idea!
+ IW_setup.9a.tt: "\n\nWe will ratify the treaty, joining the §YItalic League§! under the leadership of §Y[IW_italian_league_leader.GetName]§!. \n\nAs long as the §YTreaty of Lodi§! is in place, members of the League §Rcannot declare war on one another§!, and gain the following effects:\nReform Progress Growth: §G+10.0%§!\nGlobal Prosperity Growth: §G+0.50§!\nOpinion of same Culture Group: §G+20§!"
+ IW_setup.9.b: "Peace is overrated..."
+
+ IW_setup.10.t: "War Breaks Out in Italy"
+ IW_setup.10.d: "All hell has broken loose in Italy. The rising tensions of factional politics have boiled over into an armed conflict that no one can stop. Only one question remains... does [Root.Monarch.GetName]'s heart beat to the drums of war?"
+ IW_setup.10.a: "We should aid [IW_attacker.GetName]!"
+ IW_setup.10.b: "We should aid [IW_defender.GetName]!"
+ IW_setup.10.c: "We'll use the chaos to press our own claims!"
+ IW_setup.10.e: "Let's sit this one out..."
+
+ IW_setup.11.d: "All hell has broken loose in Italy. The rising tensions of factional politics have boiled over into an armed conflict that no one can stop. We must stand with our League in this conflict for the ages."
+ IW_setup.11.a: "To arms!"
+ IW_setup.11.b: "Seems like a good time to renounce our oaths"
