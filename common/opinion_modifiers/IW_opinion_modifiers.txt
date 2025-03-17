@@ -1,0 +1,31 @@
+#########################################################################
+# OPINION MODIFIERS
+##########################################################################
+
+##############
+# FIXED STATE
+##############
+
+##############
+# TIMED
+##############
+
+IW_left_our_league = {
+	opinion = -25
+	yearly_decay = 2
+}
+
+IW_left_their_league = {
+	opinion = -25
+	yearly_decay = 2
+}
+
+IW_was_removed_from_our_league = {
+	opinion = -25
+	yearly_decay = 2
+}
+
+IW_removed_from_our_league = {
+	opinion = -25
+	yearly_decay = 2
+}

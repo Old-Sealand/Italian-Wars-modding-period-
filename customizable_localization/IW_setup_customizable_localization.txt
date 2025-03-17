@@ -1,0 +1,58 @@
+#AVIALABLE CUSTOM LOCALISATION KEYS
+#When adding new custom loc keys, add them to the appropriate category (or add a new one) and describe them. Name the strings "String_X" where x is its content.
+# To not display anything, you can use 'localisation_key = ""'
+# Please add one example sentence for each key.
+
+#As this list grow organize with categories.
+#Current loc keys in this file:
+#GetTributaryOverlord
+#GetOldEra
+#GetLocalPowerStructure
+#GetGovernmentSupporters
+#GetNoblesReplacementForOtherGovernments
+
+
+### French(Angevin) League Name
+defined_text = {
+    name = GetFrenchLeagueName
+
+    text = {
+        localisation_key = string_french_league
+        trigger = {
+			OR = {
+				NOT = { has_saved_global_event_target = IW_french_league_leader }
+				AND = {
+					has_saved_global_event_target = IW_french_league_leader
+					event_target:IW_french_league_leader = { NOT = { has_country_flag = eng_took_ave_branch } }
+				}
+			}
+        }
+    }
+    text = {
+        localisation_key = string_angevin_league
+        trigger = {
+			AND = {
+				has_saved_global_event_target = IW_french_league_leader
+				event_target:IW_french_league_leader = { has_country_flag = eng_took_ave_branch }
+			}
+        }
+    }
+}
+
+### Imperial(German) League Name
+defined_text = {
+    name = GetHRELeagueName
+
+    text = {
+        localisation_key = string_imperial_league
+        trigger = {
+			NOT = { has_global_flag = IW_HRE_dismantled }
+        }
+    }
+    text = {
+        localisation_key = string_german_league
+        trigger = {
+			has_global_flag = IW_HRE_dismantled
+        }
+    }
+}

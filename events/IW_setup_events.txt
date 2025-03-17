@@ -1,0 +1,1130 @@
+########################################
+# Italian Wars Setup Events            #
+########################################
+
+namespace = IW_setup
+
+# New Leader of the XYZ League
+country_event = {
+	id = IW_setup.1
+	title = IW_setup.1.t
+	picture = COURT_eventPicture
+	
+	major = yes
+	# is_triggered_only = yes
+	
+	desc = { # usurping Italian leader
+		trigger = {
+			overlord = { tag = event_target:IW_italian_league_leader }
+		}
+		desc = IW_setup.1.d1
+	}
+
+	desc = { # Italian leader died
+		trigger = { IW_italian_leader_died = yes }
+		desc = IW_setup.1.d2
+	}
+	
+	desc = { # usurping French leader
+		trigger = {
+			overlord = { tag = event_target:IW_french_league_leader }
+		}
+		desc = IW_setup.1.d3
+	}
+
+	desc = { # French leader died
+		trigger = { IW_french_leader_died = yes }
+		desc = IW_setup.1.d4
+	}
+	
+	desc = { # usurping Iberian leader
+		trigger = {
+			overlord = { tag = event_target:IW_iberian_league_leader }
+		}
+		desc = IW_setup.1.d5
+	}
+
+	desc = { # Iberian leader died
+		trigger = { IW_iberian_leader_died = yes }
+		desc = IW_setup.1.d6
+	}
+
+	desc = { # new HRE emperor
+		trigger = {
+			is_emperor = yes
+		}
+		desc = IW_setup.1.d7
+	}
+	
+	trigger = {
+		OR = { # When league leader ceases to exist, selects new league leader as highest dev nation in region which is not a member of another league
+			IW_italian_leader_died = yes
+			IW_french_leader_died = yes
+			IW_iberian_leader_died = yes
+			AND = {
+				is_emperor = yes
+				has_saved_global_event_target = IW_HRE_league_leader
+				event_target:IW_HRE_league_leader = { is_emperor = no }
+			}
+		}
+		# OR = { # When league leader ceases to exist, selects new league leader as highest dev nation in region which is not a member of another league
+		# 	FROM = { tag = event_target:IW_italian_league_leader }
+		# 	FROM = { tag = event_target:IW_french_league_leader }
+		# 	FROM = { tag = event_target:IW_iberian_league_leader }
+		# }
+	}
+	
+	option = {
+		name = IW_setup.1.a
+		ai_chance = {
+			factor = 1
+		}
+		# Become new leader
+		if = { # Italian League
+			limit = {
+				OR = {
+					overlord = { tag = event_target:IW_italian_league_leader }
+					IW_italian_leader_died = yes
+				}
+			}
+			hidden_effect = {
+				grant_independence = yes
+				event_target:IW_italian_league_leader = { save_event_target_as = IW_former_leader }
+				clear_global_event_target = IW_italian_league_leader
+				save_global_event_target_as = IW_italian_league_leader
+				#Vassalize all of the league members
+				every_country = {
+					limit = {
+						has_country_flag = IW_italian_league_member
+						NOT = { tag = event_target:IW_italian_league_leader }
+					}
+					event_target:IW_italian_league_leader = {
+						create_subject = {
+							subject_type = IW_league_member
+							subject = PREV
+						}
+					}
+				}
+				set_country_flag = IW_italian_league_member
+				clr_country_flag = IW_french_league_member
+				clr_country_flag = IW_iberian_league_member
+				clr_country_flag = IW_HRE_league_member
+			}
+			custom_tooltip = IW_setup.1a.tt1
+		}
+		else_if = { # French League
+			limit = {
+				OR = {
+					overlord = { tag = event_target:IW_french_league_leader }
+					IW_french_leader_died = yes
+				}
+			}
+			hidden_effect = {
+				grant_independence = yes
+				event_target:IW_french_league_leader = { save_event_target_as = IW_former_leader }
+				clear_global_event_target = IW_french_league_leader
+				save_global_event_target_as = IW_french_league_leader
+				#Vassalize all of the league members
+				every_country = {
+					limit = {
+						has_country_flag = IW_french_league_member
+						NOT = { tag = event_target:IW_french_league_leader }
+					}
+					event_target:IW_french_league_leader = {
+						create_subject = {
+							subject_type = IW_league_member
+							subject = PREV
+						}
+					}
+				}
+				clr_country_flag = IW_italian_league_member
+				set_country_flag = IW_french_league_member
+				clr_country_flag = IW_iberian_league_member
+				clr_country_flag = IW_HRE_league_member
+			}
+			custom_tooltip = IW_setup.1a.tt2
+		}
+		else_if = { # Iberian League
+			limit = {
+				OR = {
+					overlord = { tag = event_target:IW_iberian_league_leader }
+					IW_iberian_leader_died = yes
+				}
+			}
+			hidden_effect = {
+				grant_independence = yes
+				event_target:IW_iberian_league_leader = { save_event_target_as = IW_former_leader }
+				clear_global_event_target = IW_iberian_league_leader
+				save_global_event_target_as = IW_iberian_league_leader
+				#Vassalize all of the league members
+				every_country = {
+					limit = {
+						has_country_flag = IW_iberian_league_member
+						NOT = { tag = event_target:IW_iberian_league_leader }
+					}
+					event_target:IW_iberian_league_leader = {
+						create_subject = {
+							subject_type = IW_league_member
+							subject = PREV
+						}
+					}
+				}
+				clr_country_flag = IW_italian_league_member
+				clr_country_flag = IW_french_league_member
+				set_country_flag = IW_iberian_league_member
+				clr_country_flag = IW_HRE_league_member
+			}
+			custom_tooltip = IW_setup.1a.tt3
+		}
+		else_if = { # HRE League
+			limit = {
+				OR = {
+					overlord = { tag = event_target:IW_HRE_league_leader }
+					is_emperor = yes
+				}
+			}
+			hidden_effect = {
+				grant_independence = yes
+				event_target:IW_HRE_league_leader = { save_event_target_as = IW_former_leader }
+				clear_global_event_target = IW_HRE_league_leader
+				save_global_event_target_as = IW_HRE_league_leader
+				#Vassalize all of the league members
+				every_country = {
+					limit = {
+						has_country_flag = IW_HRE_league_member
+						NOT = { tag = event_target:IW_HRE_league_leader }
+					}
+					event_target:IW_HRE_league_leader = {
+						create_subject = {
+							subject_type = IW_league_member
+							subject = PREV
+						}
+					}
+				}
+				clr_country_flag = IW_italian_league_member
+				clr_country_flag = IW_french_league_member
+				clr_country_flag = IW_iberian_league_member
+				set_country_flag = IW_HRE_league_member
+			}
+			custom_tooltip = IW_setup.1a.tt4
+		}
+		# overlord = {
+		# 	save_event_target_as = IW_former_leader
+		# }
+		# grant_independence = yes
+		# custom_tooltip = IW_setup.1a.tt # Become leader of X league
+	}
+	
+	option = {
+		name = IW_setup.1.b
+		trigger = {
+			OR = { # League leader ceased to exist
+				IW_italian_leader_died = yes
+				IW_french_leader_died = yes
+				IW_iberian_leader_died = yes
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+		# Reject role
+		set_country_flag = IW_declined_league_leadership
+	}
+}
+
+# French league creation
+country_event = {
+	id = IW_setup.2
+	title = IW_setup.2.t
+	picture = ITALIAN_wars_eventPicture
+	
+	major = yes
+	fire_only_once = yes
+	# is_triggered_only = yes
+
+	desc = { # France (claims of Anjou-Valois on Naples)
+		trigger = {
+			tag = FRA
+		}
+		desc = IW_setup.2.d1
+	}
+
+	desc = { # Angevins
+		trigger = {
+			has_country_flag = eng_took_ave_branch
+		}
+		desc = IW_setup.2.d2
+	}
+
+	desc = { # Burgundy
+		trigger = {
+			OR = {
+				tag = BUR
+			}
+		}
+		desc = IW_setup.2.d3
+	}
+	
+	trigger = {
+		OR = {
+			is_year = 1460
+			ARA = { has_country_flag = alfonso_died_yes_really }
+		}
+		is_at_war = no
+		# if = {
+		# 	limit = { FRA = { is_free_or_tributary_trigger = yes } }
+		# 	tag = FRA
+		# }
+		# else_if = {
+		# 	limit = {
+				
+		# 	}
+		# }
+		OR = {
+			AND = {
+				tag = FRA
+				is_free_or_tributary_trigger = yes
+				# NOT = {
+				# 	is_in_war = {
+				# 		casus_belli = cb_hundred_years_union
+				# 		defender_leader = THIS
+				# 	}
+				# }
+			}
+			AND = {
+				has_country_flag = eng_took_ave_branch
+				# FRA = {
+				# 	is_subject_of_type_with_overlord = {
+				# 		who = ROOT
+				# 		type = personal_union
+				# 	}
+				# }
+				183 = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			AND = {
+				tag = BUR
+				is_free_or_tributary_trigger = yes
+				FRA = { NOT = { is_free_or_tributary_trigger = yes } }
+				NOT = {
+					any_country = {
+						has_country_flag = eng_took_ave_branch
+						# FRA = {
+						# 	is_subject_of_type_with_overlord = {
+						# 		who = ROOT
+						# 		type = personal_union
+						# 	}
+						# }
+						183 = {
+							country_or_non_sovereign_subject_holds = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			ROOT = {
+				save_global_event_target_as = IW_french_league_leader
+				set_country_flag = IW_french_league_member
+			}
+			clr_global_flag = IW_peace_of_lodi_flag
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	option = {
+		name = IW_setup.2.a
+		hidden_effect = {
+			# ROOT = {
+			# 	save_global_event_target_as = IW_french_league_leader
+			# 	set_country_flag = IW_french_league_member
+			# }
+			every_country = {
+				limit = {
+					capital_scope = {
+						OR = {
+							region = france_region
+							region = iberia_region
+							region = italy_region
+							region = south_german_region
+						}
+					}
+					is_free_or_tributary_trigger = yes
+					NOT = {
+						OR = {
+							tag = ROOT
+							tag = event_target:IW_italian_league_leader
+							is_emperor = yes
+							tag = ARA
+							tag = CAS
+							tag = SPA
+						}
+					}
+				}
+				country_event = { id = IW_setup.3 }
+			}
+		}
+		custom_tooltip = IW_setup.2a.tt # Form the French League, with [ROOT.CountryName] at its head. _ will be called to join the cause.
+	}
+}
+
+# Option to join French league on its creation
+country_event = {
+	id = IW_setup.3
+	title = IW_setup.3.t
+	desc = IW_setup.3.d
+	picture = NOBLE_ESTATE_DEMANDS_eventPicture
+	
+	# major = yes
+	is_triggered_only = yes
+	
+	# trigger = { }
+	
+	option = {
+		name = IW_setup.3.a
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 5
+				OR = {
+					ai_attitude = {
+						who = event_target:IW_french_league_leader
+						attitude = attitude_friendly
+					}
+					ai_attitude = {
+						who = event_target:IW_french_league_leader
+						attitude = attitude_loyal
+					}
+					# ai_attitude = {
+					# 	who = event_target:IW_french_league_leader
+					# 	attitude = attitude_allied
+					# }
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					ai_attitude = {
+						who = event_target:IW_french_league_leader
+						attitude = attitude_rivalry
+					}
+					ai_attitude = {
+						who = event_target:IW_french_league_leader
+						attitude = attitude_hostile
+					}
+					ai_attitude = {
+						who = event_target:IW_french_league_leader
+						attitude = attitude_threatened
+					}
+					ai_attitude = {
+						who = event_target:IW_french_league_leader
+						attitude = attitude_outraged
+					}
+					ai_attitude = {
+						who = event_target:IW_french_league_leader
+						attitude = attitude_disloyal
+					}
+					ai_attitude = {
+						who = event_target:IW_french_league_leader
+						attitude = attitude_rebellious
+					}
+				}
+			}
+		}
+		ROOT = {
+			clr_country_flag = IW_italian_league_member
+			set_country_flag = IW_french_league_member
+			clr_country_flag = IW_iberian_league_member
+			clr_country_flag = IW_HRE_league_member
+		}
+		event_target:IW_french_league_leader = {
+			create_subject = {
+				subject_type = IW_league_member
+				subject = ROOT
+			}
+		}
+	}
+	
+	option = {
+		name = IW_setup.3.b
+		ai_chance = {
+			factor = 95
+		}
+	}
+}
+
+# Iberian league creation
+country_event = {
+	id = IW_setup.4
+	title = IW_setup.4.t
+	desc = IW_setup.4.d
+	picture = EMPEROR_eventPicture
+	
+	major = yes
+	fire_only_once = yes
+	# is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			ARA = { has_country_flag = alfonso_died_yes_really }
+			NAP = { is_free_or_tributary_trigger = yes }
+		}
+		has_saved_global_event_target = IW_french_league_leader
+		is_at_war = no
+		# if = {
+		# 	limit = { FRA = { is_free_or_tributary_trigger = yes } }
+		# 	tag = FRA
+		# }
+		# else_if = {
+		# 	limit = {
+				
+		# 	}
+		# }
+		OR = {
+			AND = {
+				OR = {
+					tag = SPA
+					tag = ARA
+				}
+				is_free_or_tributary_trigger = yes
+			}
+			AND = {
+				tag = CAS
+				is_free_or_tributary_trigger = yes
+				ARA = { NOT = { is_free_or_tributary_trigger = yes } }
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			ROOT = {
+				save_global_event_target_as = IW_iberian_league_leader
+				set_country_flag = IW_iberian_league_member
+			}
+			clr_global_flag = IW_peace_of_lodi_flag
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	option = {
+		name = IW_setup.4.a
+		hidden_effect = {
+			every_country = {
+				limit = {
+					capital_scope = {
+						OR = {
+							region = france_region
+							region = iberia_region
+							region = italy_region
+							region = south_german_region
+						}
+					}
+					is_free_or_tributary_trigger = yes
+					NOT = {
+						OR = {
+							tag = ROOT
+							tag = event_target:IW_italian_league_leader
+							is_emperor = yes
+							tag = FRA
+						}
+					}
+				}
+				country_event = { id = IW_setup.5 }
+			}
+		}
+		custom_tooltip = IW_setup.4a.tt # Form the French League, with [ROOT.CountryName] at its head. _ will be called to join the cause.
+	}
+}
+
+# Option to join Iberian league on its creation
+country_event = {
+	id = IW_setup.5
+	title = IW_setup.5.t
+	desc = IW_setup.5.t
+	picture = NOBLE_ESTATE_DEMANDS_eventPicture
+	
+	# major = yes
+	is_triggered_only = yes
+	
+	# trigger = { }
+	
+	option = {
+		name = IW_setup.3.a
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 5
+				OR = {
+					ai_attitude = {
+						who = event_target:IW_iberian_league_leader
+						attitude = attitude_friendly
+					}
+					ai_attitude = {
+						who = event_target:IW_iberian_league_leader
+						attitude = attitude_loyal
+					}
+					# ai_attitude = {
+					# 	who = event_target:IW_iberian_league_leader
+					# 	attitude = attitude_allied
+					# }
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					ai_attitude = {
+						who = event_target:IW_iberian_league_leader
+						attitude = attitude_rivalry
+					}
+					ai_attitude = {
+						who = event_target:IW_iberian_league_leader
+						attitude = attitude_hostile
+					}
+					ai_attitude = {
+						who = event_target:IW_iberian_league_leader
+						attitude = attitude_threatened
+					}
+					ai_attitude = {
+						who = event_target:IW_iberian_league_leader
+						attitude = attitude_outraged
+					}
+					ai_attitude = {
+						who = event_target:IW_iberian_league_leader
+						attitude = attitude_disloyal
+					}
+					ai_attitude = {
+						who = event_target:IW_iberian_league_leader
+						attitude = attitude_rebellious
+					}
+				}
+			}
+		}
+		ROOT = {
+			clr_country_flag = IW_italian_league_member
+			clr_country_flag = IW_french_league_member
+			set_country_flag = IW_iberian_league_member
+			clr_country_flag = IW_HRE_league_member
+		}
+		event_target:IW_iberian_league_leader = {
+			create_subject = {
+				subject_type = IW_league_member
+				subject = ROOT
+			}
+		}
+	}
+	
+	option = {
+		name = IW_setup.5.b
+		ai_chance = {
+			factor = 95
+		}
+	}
+}
+
+# HRE league creation
+country_event = {
+	id = IW_setup.6
+	title = IW_setup.6.t
+	desc = IW_setup.6.d
+	picture = HRE_eventPicture
+	
+	major = yes
+	fire_only_once = yes
+	# is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			has_saved_global_event_target = IW_french_league_leader
+			has_saved_global_event_target = IW_iberian_league_leader
+		}
+		is_at_war = no
+		is_emperor = yes
+	}
+
+	immediate = {
+		hidden_effect = {
+			ROOT = {
+				save_global_event_target_as = IW_HRE_league_leader
+				set_country_flag = IW_HRE_league_member
+			}
+			clr_global_flag = IW_peace_of_lodi_flag
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	option = {
+		name = IW_setup.6.a
+		hidden_effect = {
+			every_country = {
+				limit = {
+					capital_scope = {
+						OR = {
+							region = france_region
+							region = iberia_region
+							region = italy_region
+							region = south_german_region
+						}
+					}
+					is_free_or_tributary_trigger = yes
+					NOT = {
+						OR = {
+							tag = ROOT
+							tag = event_target:IW_italian_league_leader
+							tag = FRA
+							tag = CAS
+							tag = ARA
+							tag = SPA
+						}
+					}
+				}
+				country_event = { id = IW_setup.7 }
+			}
+		}
+		custom_tooltip = IW_setup.6a.tt
+	}
+}
+
+# Option to join HRE league on its creation
+country_event = {
+	id = IW_setup.7
+	title = IW_setup.7.t
+	desc = IW_setup.7.t
+	picture = NOBLE_ESTATE_DEMANDS_eventPicture
+	
+	# major = yes
+	is_triggered_only = yes
+	
+	# trigger = { }
+	
+	option = {
+		name = IW_setup.3.a
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 5
+				OR = {
+					ai_attitude = {
+						who = event_target:IW_HRE_league_leader
+						attitude = attitude_friendly
+					}
+					ai_attitude = {
+						who = event_target:IW_HRE_league_leader
+						attitude = attitude_loyal
+					}
+					# ai_attitude = {
+					# 	who = event_target:IW_HRE_league_leader
+					# 	attitude = attitude_allied
+					# }
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					ai_attitude = {
+						who = event_target:IW_HRE_league_leader
+						attitude = attitude_rivalry
+					}
+					ai_attitude = {
+						who = event_target:IW_HRE_league_leader
+						attitude = attitude_hostile
+					}
+					ai_attitude = {
+						who = event_target:IW_HRE_league_leader
+						attitude = attitude_threatened
+					}
+					ai_attitude = {
+						who = event_target:IW_HRE_league_leader
+						attitude = attitude_outraged
+					}
+					ai_attitude = {
+						who = event_target:IW_HRE_league_leader
+						attitude = attitude_disloyal
+					}
+					ai_attitude = {
+						who = event_target:IW_HRE_league_leader
+						attitude = attitude_rebellious
+					}
+				}
+			}
+		}
+		ROOT = {
+			clr_country_flag = IW_italian_league_member
+			clr_country_flag = IW_french_league_member
+			clr_country_flag = IW_iberian_league_member
+			set_country_flag = IW_HRE_league_member
+		}
+		event_target:IW_HRE_league_leader = {
+			create_subject = {
+				subject_type = IW_league_member
+				subject = ROOT
+			}
+		}
+	}
+	
+	option = {
+		name = IW_setup.7.b
+		ai_chance = {
+			factor = 95
+		}
+	}
+}
+
+# Italic league creation (Treaty of Lodi)
+country_event = {
+	id = IW_setup.8
+	title = IW_setup.8.t
+	desc = IW_setup.8.d
+	picture = DIPLOMACY_eventPicture
+	
+	major = yes
+	fire_only_once = yes
+	# is_triggered_only = yes
+	
+	trigger = {
+		is_year = 1445
+		if = {
+			limit = { LAN = { num_of_cities = 1 } }
+			tag = LAN
+		}
+		else = {
+			OR = {
+				tag = VEN
+				tag = MLO
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			ROOT = {
+				save_global_event_target_as = IW_italian_league_leader
+				set_country_flag = IW_italian_league_member
+			}
+			set_global_flag = IW_peace_of_lodi_flag
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	option = {
+		name = IW_setup.8.a
+		hidden_effect = {
+			every_country = {
+				limit = {
+					capital_scope = { region = italy_region }
+					is_free_or_tributary_trigger = yes
+					NOT = {
+						tag = ROOT
+					}
+				}
+				country_event = { id = IW_setup.9 }
+			}
+		}
+		custom_tooltip = IW_setup.8a.tt
+	}
+}
+
+# Option to join Italic league on its creation
+country_event = {
+	id = IW_setup.9
+	title = IW_setup.9.t
+	desc = IW_setup.8.d
+	picture = COURT_eventPicture
+	
+	# major = yes
+	is_triggered_only = yes
+	
+	# trigger = { }
+	
+	option = {
+		name = IW_setup.9.a
+		ai_chance = {
+			factor = 50
+		}
+		ROOT = {
+			set_country_flag = IW_italian_league_member
+			clr_country_flag = IW_french_league_member
+			clr_country_flag = IW_iberian_league_member
+			clr_country_flag = IW_HRE_league_member
+		}
+		event_target:IW_italian_league_leader = {
+			create_subject = {
+				subject_type = IW_league_member
+				subject = ROOT
+			}
+		}
+		custom_tooltip = IW_setup.9a.tt
+	}
+	
+	option = {
+		name = IW_setup.9.b
+		trigger = {
+			NOT = { tag = VEN }
+			NOT = { tag = MLO }
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# Other Leagues - Join Italian War?
+country_event = {
+	id = IW_setup.10
+	title = IW_setup.10.t
+	desc = IW_setup.10.d
+	picture = SWEDEN_LEAGUE_WAR_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	# trigger = { }
+	
+	option = { # side with attacker
+		name = IW_setup.10.a
+		trigger = {
+			AND = {
+				OR = {
+					NOT = { has_global_flag = IW_league_sided_with_attacker }
+					had_global_flag = {
+						flag = IW_league_sided_with_attacker
+						days = 60
+					}
+				}
+				OR = {
+					NOT = { has_global_flag = IW_league_ffa }
+					had_global_flag = {
+						flag = IW_league_ffa
+						days = 60
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+
+		set_global_flag = IW_league_sided_with_attacker
+
+		join_all_offensive_wars_of = event_target:IW_attacker
+		every_subject_country = {
+			limit = { is_subject_of_type = IW_league_member }
+			join_all_offensive_wars_of = event_target:IW_attacker
+		}
+
+		# custom_tooltip = IW_setup.10a.tt
+	}
+	
+	option = { # side with defender
+		name = IW_setup.10.b
+		trigger = {
+			AND = {
+				OR = {
+					NOT = { has_global_flag = IW_league_sided_with_defender }
+					had_global_flag = {
+						flag = IW_league_sided_with_defender
+						days = 60
+					}
+				}
+				OR = {
+					NOT = { has_global_flag = IW_league_ffa }
+					had_global_flag = {
+						flag = IW_league_ffa
+						days = 60
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+
+		set_global_flag = IW_league_sided_with_defender
+
+		join_all_defensive_wars_of = event_target:IW_defender
+		every_subject_country = {
+			limit = { is_subject_of_type = IW_league_member }
+			join_all_defensive_wars_of = event_target:IW_defender
+		}
+
+		# custom_tooltip = IW_setup.10b.tt
+	}
+
+	option = { # free for all
+		name = IW_setup.10.c
+		trigger = {
+			AND = {
+				OR = {
+					NOT = { has_global_flag = IW_league_sided_with_attacker }
+					had_global_flag = {
+						flag = IW_league_sided_with_attacker
+						days = 60
+					}
+				}
+				OR = {
+					NOT = { has_global_flag = IW_league_sided_with_defender }
+					had_global_flag = {
+						flag = IW_league_sided_with_defender
+						days = 60
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+
+		set_global_flag = IW_league_ffa
+
+		declare_war_with_cb = {
+			who = event_target:IW_defender
+			casus_belli = IW_cb_italian_war
+		}
+		declare_war_with_cb = {
+			who = event_target:IW_attacker
+			casus_belli = IW_cb_italian_war
+		}
+		if = {
+			limit = { has_saved_global_event_target = IW_third_party }
+			declare_war_with_cb = {
+				who = event_target:IW_third_party
+				casus_belli = IW_cb_italian_war
+			}
+			event_target:IW_third_party = {
+				every_subject_country = {
+					limit = { is_subject_of_type = IW_league_member }
+					join_all_defensive_wars_of = PREV
+				}
+			}
+		}
+
+		event_target:IW_defender = {
+			every_subject_country = {
+				limit = { is_subject_of_type = IW_league_member }
+				join_all_defensive_wars_of = PREV
+			}
+		}
+
+		event_target:IW_attacker = {
+			every_subject_country = {
+				limit = { is_subject_of_type = IW_league_member }
+				join_all_defensive_wars_of = PREV
+			}
+		}
+
+		every_subject_country = {
+			limit = { is_subject_of_type = IW_league_member }
+			join_all_offensive_wars_of = ROOT # should probably swap this out with event, so player always has choice
+		}
+
+		save_global_event_target_as = IW_third_party
+		# custom_tooltip = IW_setup.10c.tt
+	}
+
+	option = { # not interested
+		name = IW_setup.10.e
+		ai_chance = {
+			factor = 50
+		}
+
+		# custom_tooltip = IW_setup.10e.tt
+	}
+}
+
+# League Members join war
+country_event = {
+	id = IW_setup.11
+	title = IW_setup.10.t
+	desc = IW_setup.11.d
+	picture = SWEDEN_LEAGUE_WAR_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	# trigger = { }
+	
+	option = {
+		name = IW_setup.11.a
+		ai_chance = {
+			factor = 1
+		}
+
+		join_all_offensive_wars_of = overlord # event_target:IW_attacker
+
+	}
+
+	option = {
+		name = IW_setup.11.b
+		ai_chance = {
+			factor = 0
+		}
+
+		clr_country_flag = IW_italian_league_member
+		clr_country_flag = IW_french_league_member
+		clr_country_flag = IW_iberian_league_member
+		clr_country_flag = IW_HRE_league_member
+		grant_independence = yes
+		# insert negative opinion modifier
+		add_prestige = -25
+		add_stability = -1
+
+	}
+	
+}
+
+# League Members join war
+country_event = {
+	id = IW_setup.12
+	title = IW_setup.10.t
+	desc = IW_setup.11.d
+	picture = SWEDEN_LEAGUE_WAR_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	# trigger = { }
+	
+	option = {
+		name = IW_setup.11.a
+		ai_chance = {
+			factor = 1
+		}
+
+		join_all_defensive_wars_of = overlord # event_target:IW_defender
+
+	}
+
+	option = {
+		name = IW_setup.11.b
+		ai_chance = {
+			factor = 0
+		}
+
+		clr_country_flag = IW_italian_league_member
+		clr_country_flag = IW_french_league_member
+		clr_country_flag = IW_iberian_league_member
+		clr_country_flag = IW_HRE_league_member
+		grant_independence = yes
+		# insert negative opinion modifier
+		add_prestige = -25
+		add_stability = -1
+
+	}
+	
+}

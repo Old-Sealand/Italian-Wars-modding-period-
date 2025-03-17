@@ -101,4 +101,28 @@ spriteTypes = {
 		texturefile = "gfx\\interface\\alert_pick_church_aspect_jewish.dds"
 		alwaystransparent = yes
 	}
+
+	# No clue why any of the abvoe is here, but.
+	# New assets start here.
+	spriteType = {
+		name = "GFX_menubar_flipped"
+		texturefile = "gfx//interface//menubar_flipped.dds"
+		noOfFrames = 1
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_IW_gui_button"
+		texturefile = "gfx//interface//IW_gui_button.dds"
+		noOfFrames = 1
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_IW_gui_window"
+		texturefile = "gfx//interface//IW_gui_window.dds"
+		noOfFrames = 1
+		loadType = "INGAME"
+	}
 }

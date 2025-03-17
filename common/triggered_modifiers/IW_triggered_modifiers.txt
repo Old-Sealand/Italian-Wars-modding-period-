@@ -1,0 +1,71 @@
+# Triggered modifiers are here.
+# these are checked for each countries once/month and then applied.
+#
+# Effects are fully scriptable here.
+
+###########################################
+# Discovery of the East Indian trade route.
+###########################################
+IW_treaty_of_lodi_tm = {
+	potential = {
+		has_global_flag = IW_peace_of_lodi_flag
+		capital_scope = { region = italy_region }
+	}
+
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = IW_treaty_of_lodi_tt
+			has_global_flag = IW_peace_of_lodi_flag
+		}
+		OR = {
+			TAG = event_target:IW_italian_league_leader
+			overlord = {
+				TAG = event_target:IW_italian_league_leader
+			}
+		}
+	}
+
+	relation_with_same_culture_group = 20
+	global_prosperity_growth = 0.5
+	reform_progress_growth = 0.1
+}
+
+# IW_treaty_exclusive_trade_tm = {
+# 	potential = {
+# 		has_country_flag = IW_in_league
+# 	}
+
+# 	trigger = {
+# 		custom_trigger_tooltip = {
+# 			tooltip = IW_treaty_exclusive_trade_passed_tt
+# 			OR = {
+# 				TAG = event_target:IW_treaty_exclusive_trade_passed
+# 				overlord = {
+# 					TAG = event_target:IW_treaty_exclusive_trade_passed
+# 				}
+# 			}
+# 		}
+# 	}
+
+# 	trade_efficiency = 0.05	
+# }
+
+# IW_treaty_venetian_trade_tm = {
+# 	potential = {
+# 		has_country_flag = IW_in_league
+# 	}
+
+# 	trigger = {
+# 		custom_trigger_tooltip = {
+# 			tooltip = IW_treaty_venetian_trade_passed_tt
+# 			OR = {
+# 				has_country_flag = IW_treaty_venetian_trade_passed
+# 				overlord = {
+# 					has_country_flag = IW_treaty_venetian_trade_passed
+# 				}
+# 			}
+# 		}
+# 	}
+
+# 	trade_efficiency = 0.05	
+# }

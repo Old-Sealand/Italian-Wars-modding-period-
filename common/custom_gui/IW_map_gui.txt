@@ -1,0 +1,97 @@
+custom_icon = {
+    name = menubar_flipped
+    potential = {
+		# Appears only if you're in a League, your overlord is, OR you're in the HRE OR you're in Iberia OR in Italy
+		OR = {
+			has_country_flag = IW_french_league_member
+			has_country_flag = IW_italian_league_member
+			has_country_flag = IW_iberian_league_member
+			has_country_flag = IW_HRE_league_member
+			overlord = {
+				OR = {
+					has_country_flag = IW_french_league_member
+					has_country_flag = IW_italian_league_member
+					has_country_flag = IW_iberian_league_member
+					has_country_flag = IW_HRE_league_member					
+				}
+			}
+			AND = {
+				any_country = { has_country_flag = IW_HRE_league_member }
+				is_part_of_hre = yes
+			}
+			AND = {
+				any_country = { has_country_flag = IW_iberian_league_member }
+				capital_scope = { region = iberia_region }
+			}
+			AND = {
+				any_country = { has_country_flag = IW_italian_league_member }
+				capital_scope = { region = italy_region }
+			}
+		}
+    }
+}
+
+custom_button = {
+    name = IW_gui_button
+    potential = {
+		# Appears only if you're in a League, your overlord is, OR you're in the HRE OR you're in Iberia OR in Italy
+		OR = {
+			has_country_flag = IW_french_league_member
+			has_country_flag = IW_italian_league_member
+			has_country_flag = IW_iberian_league_member
+			has_country_flag = IW_HRE_league_member
+			overlord = {
+				OR = {
+					has_country_flag = IW_french_league_member
+					has_country_flag = IW_italian_league_member
+					has_country_flag = IW_iberian_league_member
+					has_country_flag = IW_HRE_league_member					
+				}
+			}
+			AND = {
+				any_country = { has_country_flag = IW_HRE_league_member }
+				is_part_of_hre = yes
+			}
+			AND = {
+				any_country = { has_country_flag = IW_iberian_league_member }
+				capital_scope = { region = iberia_region }
+			}
+			AND = {
+				any_country = { has_country_flag = IW_italian_league_member }
+				capital_scope = { region = italy_region }
+			}
+		}
+    }
+    trigger = { 
+		hidden_trigger = {
+			always = yes
+		}
+	}
+    effect = { 
+		if = {
+			limit = { has_country_flag = IW_gui_open }
+			clr_country_flag = IW_gui_open
+		}
+		else = {
+			set_country_flag = IW_gui_open
+		}
+	}
+    tooltip = IW_gui_button_tt
+}
+
+custom_window = {
+	name = IW_window
+	potential = {
+		has_country_flag = IW_gui_open
+	}
+}
+
+custom_icon = {
+    name = IW_gui_window
+    potential = { }
+}
+
+custom_text_box = {
+    name = IW_gui_window_text
+    potential = { } 
+}
