@@ -44,6 +44,12 @@ IW_cb_italian_war = {
 	war_goal = superiority_italian_war
 }
 
+cb_league_of_cambrai = {
+	is_triggered_only = yes
+	
+	war_goal = league_of_cambrai_wargoal
+}
+
 
 # Restoration of recently broken PU
 cb_restore_personal_union = {
@@ -1893,7 +1899,7 @@ cb_enforce_electorate_right = {
 #	war_goal = superiority_grand_crusade
 #}
 #cb_grand_crusade: "Grand Crusade"
-#cb_grand_crusade_desc: "They are accursed yet powerful infidels, and a threat to the Christian world!\n�YCatholic and the enemy's brethren of faith can join their respected side mid this war.�!\n�RCannot declare other wars while using this casus belli.�!"
+#cb_grand_crusade_desc: "They are accursed yet powerful infidels, and a threat to the Christian world!\n YCatholic and the enemy's brethren of faith can join their respected side mid this war. !\n RCannot declare other wars while using this casus belli. !"
 
 # Unite the Balkans cb - dangerously close to fantasy here
 cb_unite_balkans = {

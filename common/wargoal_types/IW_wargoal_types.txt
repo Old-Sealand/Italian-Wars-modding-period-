@@ -85,3 +85,31 @@ superiority_italian_war = {
 	
 	war_name = ITALIAN_WAR_WAR_NAME
 }
+
+league_of_cambrai_wargoal = {
+	type = superiority
+	
+	attacker = {
+		badboy_factor = 0.75
+		prestige_factor = 2.0
+		peace_cost_factor = 0.8
+		
+		peace_options = {
+			po_demand_provinces
+			po_humiliate
+		}
+	}
+	
+	defender = {
+		badboy_factor = 1
+		prestige_factor = 2.0
+		peace_cost_factor = 1
+		
+		peace_options = {
+			po_demand_provinces
+            po_humiliate
+		}
+	}
+	
+	war_name = LEAGUE_OF_CAMBRAI_NAME	
+}
