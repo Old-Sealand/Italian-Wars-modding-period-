@@ -1,0 +1,5 @@
+cb_league_of_cambrai = {
+	is_triggered_only = yes
+	
+	war_goal = league_of_cambrai_wargoal
+}

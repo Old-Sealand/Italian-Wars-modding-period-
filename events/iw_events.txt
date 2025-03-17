@@ -1,0 +1,418 @@
+namespace = iw_events
+
+#Start of the Italian Wars
+
+country_event = {
+	id = iw_events.1
+	title = iw_events.1.t
+	desc = iw_events.1.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+    major = yes
+
+	trigger = {
+        culture_group = latin
+		any_country = {
+            NOT = { culture_group = latin }
+            is_part_of_hre = no
+            OR = {
+                is_great_power = yes
+                total_development = 300
+            }
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 15
+                region = italy_region
+            }
+        }
+	}
+
+    immediate = {
+        hidden_effect = {
+            set_global_flag = iw_started_flag
+            random_country = {
+                limit = {
+                    NOT = { culture_group = latin }
+                    is_part_of_hre = no
+                    OR = {
+                        is_great_power = yes
+                        total_development = 300
+                    }
+                    num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                        value = 15
+                        region = italy_region
+                    }
+                }
+                save_event_target_as = italian_war_aggressor
+            }
+
+            emperor = {
+                save_event_target_as = emperor_country
+            }
+        }
+    }
+
+	mean_time_to_happen = {
+		months = 5
+	}
+	
+	option = {
+		name = iw_events.1.a
+
+	}
+}
+
+#Ottomans Sending Aid to France
+country_event = {
+	id = iw_events.2
+	title = iw_events.2.t
+	desc = iw_events.2.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+    major = yes
+    major_trigger = {
+        tag = FRA
+    }
+
+	trigger = {
+        tag = TUR
+        is_great_power = yes
+        FRA = {
+            exists = yes
+            #Is leading a league
+        }
+	}
+
+    immediate = {
+        hidden_effect = {
+            export_to_variable = {
+                which = money_to_transfer
+                value = monthly_income
+                who = ROOT
+            }
+            multiply_variable = {
+                which = money_to_transfer
+                value = 3
+            }
+            set_variable = {
+                which = money_to_transfer_info
+                which = money_to_transfer
+            }
+        }
+    }
+
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	option = {
+		name = iw_events.1.a
+
+        FRA = {
+            set_country_flag = iw_unlocked_ottoman_volunteers_merc_company_flag
+        }
+
+        custom_tooltip = fra_unlocks_ottoman_volunteers_tt
+	}
+
+    option = {
+		name = iw_events.1.b
+
+        transfer_treasury = {
+			custom_tooltip = iw_events.2.b.tt
+			giver = ROOT
+			taker = FRA
+			variable = money_to_transfer
+		}
+	}
+
+    option = {
+		name = iw_events.1.c
+
+        add_prestige_or_monarch_power = { amount = 5 }
+	}
+}
+
+#French Pressure on Florence
+country_event = {
+	id = iw_events.1000
+	title = iw_events.1000.t
+	desc = iw_events.1000.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+    major = yes
+
+	trigger = {
+        has_global_flag = iw_started_flag
+        tag = FRA
+        OR = {
+            exists = TUS
+            exists = LAN
+        }
+        exists = FRA
+        #Trigger for France to be a leader of a league
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+    immediate = {
+        hidden_effect = {
+            if = {
+                limit = {
+                    exists = TUS
+                }
+                TUS = {
+                    save_event_target_as = florence_nation
+                }
+            }
+            else_if = {
+                limit = {
+                    exists = LAN
+                }
+                LAN = {
+                    save_event_target_as = florence_nation
+                }
+            }
+        }
+    }
+	
+	option = {
+		name = iw_events.1000.a
+        
+        custom_tooltip = iw_request_florence_to_join_our_league_tt
+        hidden_effect = {
+            country_event = { id = iw_events.1001 }
+        }
+	}
+
+    option = {
+		name = iw_events.1000.b
+        
+        add_casus_belli = {
+            target = event_target:florence_nation
+            type = cb_vassalize
+            months = 120
+        }
+	}
+}
+
+#French Pressure on Florence
+country_event = {
+	id = iw_events.1001
+	title = iw_events.1001.t
+	desc = iw_events.1001.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+    is_triggered_only = yes
+
+	mean_time_to_happen = {
+		months = 120
+	}
+	
+	option = {
+		name = iw_events.1001.a
+        
+        #Florence joins French league
+
+        add_opinion = {
+            who = from
+            modifier = joined_our_league
+        }
+        reverse_add_opinion = {
+            who = from
+            modifier = joined_our_league
+        }
+	}
+
+    option = {
+		name = iw_events.1001.b
+        
+        add_prestige_or_monarch_power = { amount = 5 }
+
+        add_opinion = {
+            who = from
+            modifier = rejected_joining_french_league
+        }
+        reverse_add_opinion = {
+            who = from
+            modifier = rejected_joining_french_league
+        }
+	}
+}
+
+#Crowning of Maximilian I
+country_event = {
+	id = iw_events.1100
+	title = iw_events.1100.t
+	desc = iw_events.1100.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+    major = yes
+
+	trigger = {
+        ruler_has_personality = last_knight_personality
+        is_emperor = yes
+	}
+
+	mean_time_to_happen = {
+		months = 100
+	}
+	
+	option = {
+		name = iw_events.1100.a
+
+        add_imperial_influence = 5
+        add_prestige_or_monarch_power = { amount = 10 }
+        add_legitimacy = 10
+	}
+
+    option = {
+		name = iw_events.1100.b
+
+        PAP = { country_event = { id = iw_events.1101 } }
+	}
+}
+
+country_event = {
+	id = iw_events.1101
+	title = iw_events.1101.t
+	desc = iw_events.1101.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+    is_triggered_only = yes
+    major = yes
+    major_trigger = {
+        is_emperor = yes
+    }
+	
+	option = {
+		name = iw_events.1101.a
+
+        from = {
+            add_imperial_influence = 10
+            add_prestige_or_monarch_power = { amount = 15 }
+            add_legitimacy = 15
+        }
+        
+        add_opinion = {
+            who = from
+            modifier = crowned_by_pope
+        }
+        reverse_add_opinion = {
+            who = from
+            modifier = crowned_by_pope
+        }
+	}
+
+    option = {
+		name = iw_events.1101.b
+
+        from = {
+            add_imperial_influence = -5
+            add_prestige_or_monarch_power = { amount = -5 }
+            add_legitimacy = -5
+        }
+
+        add_opinion = {
+            who = from
+            modifier = rejected_crowning
+        }
+        reverse_add_opinion = {
+            who = from
+            modifier = rejected_crowning
+        }
+	}
+}
+
+#League of Cambrai
+
+country_event = {
+	id = iw_events.1200
+	title = iw_events.1200.t
+	desc = iw_events.1200.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+    trigger = {
+        is_year = 1500
+        tag = PAP
+        is_rival = VEN
+        VEN = {
+            is_great_power = yes
+            #Is leading a league
+        }
+    }
+
+    mean_time_to_happen = {
+		months = 100
+	}
+	
+	option = {
+		name = iw_events.1200.a
+
+        add_casus_belli = {
+            target = VEN
+            type = cb_league_of_cambrai
+            months = 120
+        }
+
+        every_known_country = {
+            limit = {
+                #Is leading a league
+                is_rival = VEN
+            }
+            country_event = { id = iw_events.1200 }
+        }
+	}
+
+    option = {
+		name = iw_events.1200.b
+
+        add_prestige_or_monarch_power = { amount = 10 }
+	}
+}
+
+country_event = {
+	id = iw_events.1201
+	title = iw_events.1201.t
+	desc = iw_events.1201.d
+	picture = BORDER_TENSION_eventPicture
+    major = yes
+    major_trigger = {
+        tag = PAP
+    }
+
+    is_triggered_only = yes
+	
+	option = {
+		name = iw_events.1201.a
+
+        set_country_flag = joined_league_of_cambrai
+        custom_tooltip = should_pap_declare_war_on_venice_we_will_join_tt
+	}
+
+    option = {
+		name = iw_events.1201.b
+
+        add_opinion = {
+            who = from
+            modifier = did_not_join_league_of_cambrai
+        }
+        reverse_add_opinion = {
+            who = from
+            modifier = did_not_join_league_of_cambrai
+        }
+	}
+}
