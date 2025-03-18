@@ -77,14 +77,7 @@ guiTypes = {
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
-
-		iconType = {
-			name ="menubar_flipped" # Put here so that the Player Shield displays over the thing.
-			spriteType = "GFX_menubar_flipped"
-			position = { x= 50 y = 130 }
-			Orientation = "UPPER_LEFT"
-			scripted = yes
-		}
+		
 		
 		guiButtonType = {
 			name = "player_shield"
@@ -190,50 +183,6 @@ guiTypes = {
 			position = { x= 862 y = 9 }
 			Orientation = "UPPER_LEFT"
 			hint_tag = "hint_missionary"
-		}
-
-	##########################################
-	# Italian Wars
-
-		guiButtonType = {
-			name ="IW_gui_button"
-			spriteType = "GFX_IW_gui_button"
-			position = { x= 50 y = 125 }
-			Orientation = "UPPER_LEFT"
-			scripted = yes
-		}
-
-		windowType = { ## Actual window
-			name = "IW_window"
-			scripted = yes
-			backGround=""
-			position = { x=-340 y=-300 }	
-			size = { x=756 y=719 }
-			moveable = 1
-			dontRender = ""
-			horizontalBorder= ""
-			verticalBorder= ""
-			fullScreen = no
-			Orientation = "CENTER"
-			#upsound = religion_sunni
-
-			iconType = {
-				name ="IW_gui_window"
-				scripted = yes
-				spriteType = "GFX_IW_gui_window"
-				position = { x= 0 y = 0 }
-			}
-
-			instantTextBoxType = {
-				name = "IW_gui_window_text"
-				scripted = yes
-				position = { x = 0 y = 40 }
-				format = centre
-				font = "vic_29s"
-				borderSize = {x = 4 y = 4}
-				maxWidth = 756
-				maxHeight = 32			
-			}
 		}
 
 	##########################################
@@ -781,6 +730,471 @@ guiTypes = {
 				maxWidth = 120
 				maxHeight = 32
 				format = center
+			}
+		}
+		# IW Map:
+		## IW open/close:
+		guiButtonType = {
+				name = "IW_map_open_close"
+				position = { x =46 y =131 }
+				quadTextureSprite ="GFX_IW_map_open_close_button"
+				scripted = yes
+				Orientation = "UPPER_LEFT"
+		}
+			
+		windowType = {
+			name = "IW_map_window"
+			backGround =""
+			position = { x=200 y =200 }
+			size = { x=450 y=450 }
+			moveable = 0
+			dontRender = ""
+			horizontalBorder = ""
+			Orientation = "LEFT"
+			scripted = yes
+			
+			IconType = {
+				name = "IW_map_background"
+				position = { x=0 y = 0}
+				quadTextureSprite ="GFX_IW_map_background"
+				scripted = yes
+			}
+			
+			# Map prov:
+			guiButtonType = {
+				name = "IW_map_prov_01"
+				position = { x= 213 y = 36 }
+				quadTextureSprite ="GFX_IW_prov_01"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_02"
+				position = { x= 185 y = 36 }
+				quadTextureSprite ="GFX_IW_prov_02"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_03"
+				position = { x= 201 y = 68 }
+				quadTextureSprite ="GFX_IW_prov_03"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_04"
+				position = { x= 175 y = 62 }
+				quadTextureSprite ="GFX_IW_prov_04"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_05"
+				position = { x= 157 y = 52 }
+				quadTextureSprite ="GFX_IW_prov_05"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_06"
+				position = { x= 139 y = 76 }
+				quadTextureSprite ="GFX_IW_prov_06"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_07"
+				position = { x= 145 y = 44 }
+				quadTextureSprite ="GFX_IW_prov_07"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_08"
+				position = { x= 123 y = 42 }
+				quadTextureSprite ="GFX_IW_prov_08"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_09"
+				position = { x= 111 y = 76 }
+				quadTextureSprite ="GFX_IW_prov_09"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_10"
+				position = { x= 97 y = 60 }
+				quadTextureSprite ="GFX_IW_prov_10"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_11"
+				position = { x= 95 y = 36 }
+				quadTextureSprite ="GFX_IW_prov_11"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_12"
+				position = { x= 79 y = 44 }
+				quadTextureSprite ="GFX_IW_prov_12"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_13"
+				position = { x= 89 y = 80 }
+				quadTextureSprite ="GFX_IW_prov_13"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_14"
+				position = { x= 69 y = 80 }
+				quadTextureSprite ="GFX_IW_prov_14"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_15"
+				position = { x= 51 y = 62 }
+				quadTextureSprite ="GFX_IW_prov_15"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_16"
+				position = { x= 41 y = 88 }
+				quadTextureSprite ="GFX_IW_prov_16"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_17"
+				position = { x= 53 y = 98 }
+				quadTextureSprite ="GFX_IW_prov_17"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_18"
+				position = { x= 43 y = 124 }
+				quadTextureSprite ="GFX_IW_prov_18"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_19"
+				position = { x= 69 y = 110 }
+				quadTextureSprite ="GFX_IW_prov_19"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_20"
+				position = { x= 97 y = 102 }
+				quadTextureSprite ="GFX_IW_prov_20"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_21"
+				position = { x= 119 y = 94 }
+				quadTextureSprite ="GFX_IW_prov_21"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_22"
+				position = { x= 151 y = 100 }
+				quadTextureSprite ="GFX_IW_prov_22"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_23"
+				position = { x= 169 y = 106 }
+				quadTextureSprite ="GFX_IW_prov_23"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_24"
+				position = { x= 179 y = 88 }
+				quadTextureSprite ="GFX_IW_prov_24"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_25"
+				position = { x= 195 y = 108 }
+				quadTextureSprite ="GFX_IW_prov_25"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_26"
+				position = { x= 187 y = 126 }
+				quadTextureSprite ="GFX_IW_prov_26"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_27"
+				position = { x= 167 y = 128 }
+				quadTextureSprite ="GFX_IW_prov_27"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_28"
+				position = { x= 137 y = 122 }
+				quadTextureSprite ="GFX_IW_prov_28"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_29"
+				position = { x= 147 y = 146 }
+				quadTextureSprite ="GFX_IW_prov_29"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_30"
+				position = { x= 165 y = 160 }
+				quadTextureSprite ="GFX_IW_prov_30"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_31"
+				position = { x= 205 y = 128 }
+				quadTextureSprite ="GFX_IW_prov_31"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_32"
+				position = { x= 229 y = 142 }
+				quadTextureSprite ="GFX_IW_prov_32"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_33"
+				position = { x= 243 y = 178 }
+				quadTextureSprite ="GFX_IW_prov_33"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_34"
+				position = { x= 219 y = 172 }
+				quadTextureSprite ="GFX_IW_prov_34"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_35"
+				position = { x= 203 y = 152 }
+				quadTextureSprite ="GFX_IW_prov_35"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_36"
+				position = { x= 191 y = 186 }
+				quadTextureSprite ="GFX_IW_prov_36"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_37"
+				position = { x= 227 y = 208 }
+				quadTextureSprite ="GFX_IW_prov_37"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_38"
+				position = { x= 263 y = 200 }
+				quadTextureSprite ="GFX_IW_prov_38"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_39"
+				position = { x= 297 y = 214 }
+				quadTextureSprite ="GFX_IW_prov_39"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_40"
+				position = { x= 327 y = 234 }
+				quadTextureSprite ="GFX_IW_prov_40"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_41"
+				position = { x= 353 y = 252 }
+				quadTextureSprite ="GFX_IW_prov_41"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_42"
+				position = { x= 291 y = 226 }
+				quadTextureSprite ="GFX_IW_prov_42"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_43"
+				position = { x= 259 y = 222 }
+				quadTextureSprite ="GFX_IW_prov_43"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_44"
+				position = { x= 281 y = 246 }
+				quadTextureSprite ="GFX_IW_prov_44"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_45"
+				position = { x= 315 y = 248 }
+				quadTextureSprite ="GFX_IW_prov_45"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_46"
+				position = { x= 321 y = 278 }
+				quadTextureSprite ="GFX_IW_prov_46"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_47"
+				position = { x= 319 y = 314 }
+				quadTextureSprite ="GFX_IW_prov_47"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_48"
+				position = { x= 275 y = 352 }
+				quadTextureSprite ="GFX_IW_prov_48"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_49"
+				position = { x= 271 y = 374 }
+				quadTextureSprite ="GFX_IW_prov_49"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_50"
+				position = { x= 269 y = 428 }
+				quadTextureSprite ="GFX_IW_prov_50"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_51"
+				position = { x= 241 y = 370 }
+				quadTextureSprite ="GFX_IW_prov_51"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_52"
+				position = { x= 235 y = 352 }
+				quadTextureSprite ="GFX_IW_prov_52"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_53"
+				position = { x= 219 y = 356 }
+				quadTextureSprite ="GFX_IW_prov_53"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_54"
+				position = { x= 93 y = 274 }
+				quadTextureSprite ="GFX_IW_prov_54"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_55"
+				position = { x= 93 y = 270 }
+				quadTextureSprite ="GFX_IW_prov_55"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_56"
+				position = { x= 85 y = 238 }
+				quadTextureSprite ="GFX_IW_prov_56"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_map_prov_57"
+				position = { x= 99 y = 174 }
+				quadTextureSprite ="GFX_IW_prov_57"
+				scripted = yes
+			}
+		}
+		# IW Province:
+		windowType = {
+			name = "IW_province_window"
+			backGround =""
+			position = { x=650 y=200 }
+			size = { x=451 y=450 }
+			moveable = 0
+			dontRender = ""
+			horizontalBorder = ""
+			Orientation = "MIDDLE"
+			scripted = yes
+			
+			IconType = {
+				name = "IW_province_background"
+				position = { x=0 y = 0}
+				quadTextureSprite ="GFX_IW_province_background"
+				scripted = yes
+			}
+			IconType = {
+				name = "IW_province_frame"
+				position = { x=29 y = 225}
+				quadTextureSprite ="GFX_IW_province_frame"
+				scripted = yes
+			}
+			IconType = {
+				name = "IW_province_arrow"
+				position = { x=205 y = 312}
+				quadTextureSprite ="GFX_IW_province_arrow"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_province_start"
+				position = { x=24 y = 305}
+				quadTextureSprite ="GFX_IW_province_button_start"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_province_finish"
+				position = { x=375 y = 297}
+				quadTextureSprite ="GFX_IW_province_button_finish"
+				scripted = yes
+			}
+			# Peace:
+			guiButtonType = {
+				name = "IW_province_peace_connect"
+				position = { x=194 y = 278}
+				quadTextureSprite ="GFX_IW_province_button_peace"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_province_peace_left"
+				position = { x=101 y = 256}
+				quadTextureSprite ="GFX_IW_province_button_peace"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_province_peace_mid"
+				position = { x=194 y = 223}
+				quadTextureSprite ="GFX_IW_province_button_peace"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_province_peace_right"
+				position = { x=287 y = 256}
+				quadTextureSprite ="GFX_IW_province_button_peace"
+				scripted = yes
+			}
+			# War:
+			guiButtonType = {
+				name = "IW_province_war_connect"
+				position = { x=194 y = 332}
+				quadTextureSprite ="GFX_IW_province_button_war"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_province_war_left"
+				position = { x=101 y = 354}
+				quadTextureSprite ="GFX_IW_province_button_war"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_province_war_mid"
+				position = { x=194 y = 387}
+				quadTextureSprite ="GFX_IW_province_button_war"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_province_war_right"
+				position = { x=287 y = 354}
+				quadTextureSprite ="GFX_IW_province_button_war"
+				scripted = yes
 			}
 		}
 	} ### end of "topbar"

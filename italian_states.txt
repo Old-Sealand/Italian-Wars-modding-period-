@@ -1,0 +1,72 @@
+# Venetia
+111 = { add_core = AQU cede_province = AQU }	# Friuli
+1774 = { add_core = I01 cede_province = I01 }	# Treviso
+112 = { add_core = VEN cede_province = VEN }	# Venezia
+4729 = { add_core = PDV cede_province = PDV }	# Padova
+108 = { add_core = VRN cede_province = VRN }	# Verona
+# Po Valley
+109 = { add_core = MAN cede_province = MAN }	# Mantova
+107 = { add_core = I07 cede_province = I07 }	# Brescia
+4739 = { add_core = I06 cede_province = I06 }	# Bergamo
+# Lombardy
+1862 = { add_core = I02 cede_province = I02 }	# Cremona
+104 = { add_core = MLO cede_province = MLO }	# Milano
+4740 = { add_core = I04 cede_province = I04 }	# Como
+2979 = { add_core = I05 cede_province = I05 }	# Novara
+4728 = { add_core = I03 cede_province = I03 }	# Pavia
+# Piedmont
+2981 = { add_core = MFA cede_province = MFA }	# Monferrato
+103 = { add_core = I08 cede_province = I08 }	# Torino
+4727 = { add_core = SZO cede_province = SZO }	# Saluzzo
+1875 = { add_core = I09 cede_province = I09 }	# Cuneo
+# Liguria
+102 = { add_core = I10 cede_province = I10 }	# Nizza
+2992 = { add_core = I11 cede_province = I11 }	# Albenga
+101 = { add_core = GEN cede_province = GEN }	# Genova
+# Emilia_Romagna
+105 = { add_core = PAR cede_province = PAR }	# Parma
+106 = { add_core = MOD cede_province = MOD }	# Modena
+113 = { add_core = FER cede_province = FER }	# Ferrara
+4730 = { add_core = BLG cede_province = BLG }	# Bologna
+114 = { add_core = I30 cede_province = I30 }	# Ravenna
+# Tuscany
+2980 = { add_core = LUC cede_province = LUC }	# Lucca
+115 = { add_core = PIS cede_province = PIS }	# Pisa
+116 = { add_core = LAN cede_province = LAN }	# Firenze
+2978 = { add_core = ETR cede_province = ETR }	# Arezzo
+117 = { add_core = SIE cede_province = SIE }	# Siena
+# Marche-Abruzzo
+2977 = { add_core = URB cede_province = URB }	# Urbino
+119 = { add_core = I31 cede_province = I31 }	# Ancona
+120 = { add_core = I32 cede_province = I32 }	# Abruzzi
+# Lazio-Umbria
+2976 = { add_core = PGA cede_province = PGA }	# Perugia
+4731 = { add_core = SPL cede_province = SPL }	# Spoleto
+118 = { add_core = PAP cede_province = PAP }	# Roma
+4732 = { add_core = I22 cede_province = I22 }	# Terracina
+# Apuila
+4733 = { add_core = I29 cede_province = I29 }	# Molise
+2985 = { add_core = I28 cede_province = I28 }	# Capitanata
+1933 = { add_core = I27 cede_province = I27 }	# Bari
+122 = { add_core = I26 cede_province = I26 }	# Salento
+# Campania
+121 = { add_core = NAP cede_province = NAP }	# Napoli
+4734 = { add_core = I21 cede_province = I21 }	# Avellino
+2983 = { add_core = I20 cede_province = I20 }	# Salerno
+# Calabria
+1934 = { add_core = I24 cede_province = I24 }	# Lucania
+2984 = { add_core = I25 cede_province = I25 }	# Cosenza
+123 = { add_core = I23 cede_province = I23 }	# Calabria
+# Eastern Sicily
+124 = { add_core = I15 cede_province = I15 }	# Messina
+2982 = { add_core = I16 cede_province = I16 }	# Syracusa
+126 = { add_core = JAI cede_province = JAI }	# Malta
+# Western Sicily
+125 = { add_core = I17 cede_province = I17 }	# Palermo
+4737 = { add_core = I19 cede_province = I19 }	# Girgenti
+4736 = { add_core = I18 cede_province = I18 }	# Trapani
+# Tyrrhenian Isles
+1247 = { add_core = COR cede_province = COR }	# Corsica
+127 = { add_core = I12 cede_province = I12 }	# Sasser
+4735 = { add_core = I14 cede_province = I14 }	# Arborea
+2986 = { add_core = I13 cede_province = I13 }	# Cagliari

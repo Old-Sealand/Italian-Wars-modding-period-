@@ -1,0 +1,107 @@
+
+# IW map:
+set_IW_map_prov_window_flag = {
+	if = {
+		limit = {
+			has_country_flag = IW_map_prov_$number$_window
+			has_country_flag = IW_province_window
+		}
+		clr_country_flag = IW_map_prov_$number$_window
+		clr_country_flag = IW_province_window
+	}
+	else_if = {
+		limit = {
+			NOT = { has_country_flag = IW_map_prov_$number$_window }
+			NOT = { has_country_flag = IW_province_window }
+		}
+		set_country_flag = IW_map_prov_$number$_window
+		set_country_flag = IW_province_window
+	}
+	else = {
+	if = { limit = { has_country_flag = IW_map_prov_01_window } clr_country_flag = IW_map_prov_01_window }
+	if = { limit = { has_country_flag = IW_map_prov_02_window } clr_country_flag = IW_map_prov_02_window }
+	if = { limit = { has_country_flag = IW_map_prov_03_window } clr_country_flag = IW_map_prov_03_window }
+	if = { limit = { has_country_flag = IW_map_prov_04_window } clr_country_flag = IW_map_prov_04_window }
+	if = { limit = { has_country_flag = IW_map_prov_05_window } clr_country_flag = IW_map_prov_05_window }
+	if = { limit = { has_country_flag = IW_map_prov_06_window } clr_country_flag = IW_map_prov_06_window }
+	if = { limit = { has_country_flag = IW_map_prov_07_window } clr_country_flag = IW_map_prov_07_window }
+	if = { limit = { has_country_flag = IW_map_prov_08_window } clr_country_flag = IW_map_prov_08_window }
+	if = { limit = { has_country_flag = IW_map_prov_09_window } clr_country_flag = IW_map_prov_09_window }
+	if = { limit = { has_country_flag = IW_map_prov_10_window } clr_country_flag = IW_map_prov_10_window }
+	if = { limit = { has_country_flag = IW_map_prov_11_window } clr_country_flag = IW_map_prov_11_window }
+	if = { limit = { has_country_flag = IW_map_prov_12_window } clr_country_flag = IW_map_prov_12_window }
+	if = { limit = { has_country_flag = IW_map_prov_13_window } clr_country_flag = IW_map_prov_13_window }
+	if = { limit = { has_country_flag = IW_map_prov_14_window } clr_country_flag = IW_map_prov_14_window }
+	if = { limit = { has_country_flag = IW_map_prov_15_window } clr_country_flag = IW_map_prov_15_window }
+	if = { limit = { has_country_flag = IW_map_prov_16_window } clr_country_flag = IW_map_prov_16_window }
+	if = { limit = { has_country_flag = IW_map_prov_17_window } clr_country_flag = IW_map_prov_17_window }
+	if = { limit = { has_country_flag = IW_map_prov_18_window } clr_country_flag = IW_map_prov_18_window }
+	if = { limit = { has_country_flag = IW_map_prov_19_window } clr_country_flag = IW_map_prov_19_window }
+	if = { limit = { has_country_flag = IW_map_prov_20_window } clr_country_flag = IW_map_prov_20_window }
+	if = { limit = { has_country_flag = IW_map_prov_21_window } clr_country_flag = IW_map_prov_21_window }
+	if = { limit = { has_country_flag = IW_map_prov_22_window } clr_country_flag = IW_map_prov_22_window }
+	if = { limit = { has_country_flag = IW_map_prov_23_window } clr_country_flag = IW_map_prov_23_window }
+	if = { limit = { has_country_flag = IW_map_prov_24_window } clr_country_flag = IW_map_prov_24_window }
+	if = { limit = { has_country_flag = IW_map_prov_25_window } clr_country_flag = IW_map_prov_25_window }
+	if = { limit = { has_country_flag = IW_map_prov_26_window } clr_country_flag = IW_map_prov_26_window }
+	if = { limit = { has_country_flag = IW_map_prov_27_window } clr_country_flag = IW_map_prov_27_window }
+	if = { limit = { has_country_flag = IW_map_prov_28_window } clr_country_flag = IW_map_prov_28_window }
+	if = { limit = { has_country_flag = IW_map_prov_29_window } clr_country_flag = IW_map_prov_29_window }
+	if = { limit = { has_country_flag = IW_map_prov_30_window } clr_country_flag = IW_map_prov_30_window }
+	if = { limit = { has_country_flag = IW_map_prov_31_window } clr_country_flag = IW_map_prov_31_window }
+	if = { limit = { has_country_flag = IW_map_prov_32_window } clr_country_flag = IW_map_prov_32_window }
+	if = { limit = { has_country_flag = IW_map_prov_33_window } clr_country_flag = IW_map_prov_33_window }
+	if = { limit = { has_country_flag = IW_map_prov_34_window } clr_country_flag = IW_map_prov_34_window }
+	if = { limit = { has_country_flag = IW_map_prov_35_window } clr_country_flag = IW_map_prov_35_window }
+	if = { limit = { has_country_flag = IW_map_prov_36_window } clr_country_flag = IW_map_prov_36_window }
+	if = { limit = { has_country_flag = IW_map_prov_37_window } clr_country_flag = IW_map_prov_37_window }
+	if = { limit = { has_country_flag = IW_map_prov_38_window } clr_country_flag = IW_map_prov_38_window }
+	if = { limit = { has_country_flag = IW_map_prov_39_window } clr_country_flag = IW_map_prov_39_window }
+	if = { limit = { has_country_flag = IW_map_prov_40_window } clr_country_flag = IW_map_prov_40_window }
+	if = { limit = { has_country_flag = IW_map_prov_41_window } clr_country_flag = IW_map_prov_41_window }
+	if = { limit = { has_country_flag = IW_map_prov_42_window } clr_country_flag = IW_map_prov_42_window }
+	if = { limit = { has_country_flag = IW_map_prov_43_window } clr_country_flag = IW_map_prov_43_window }
+	if = { limit = { has_country_flag = IW_map_prov_44_window } clr_country_flag = IW_map_prov_44_window }
+	if = { limit = { has_country_flag = IW_map_prov_45_window } clr_country_flag = IW_map_prov_45_window }
+	if = { limit = { has_country_flag = IW_map_prov_46_window } clr_country_flag = IW_map_prov_46_window }
+	if = { limit = { has_country_flag = IW_map_prov_47_window } clr_country_flag = IW_map_prov_47_window }
+	if = { limit = { has_country_flag = IW_map_prov_48_window } clr_country_flag = IW_map_prov_48_window }
+	if = { limit = { has_country_flag = IW_map_prov_49_window } clr_country_flag = IW_map_prov_49_window }
+	if = { limit = { has_country_flag = IW_map_prov_50_window } clr_country_flag = IW_map_prov_50_window }
+	if = { limit = { has_country_flag = IW_map_prov_51_window } clr_country_flag = IW_map_prov_51_window }
+	if = { limit = { has_country_flag = IW_map_prov_52_window } clr_country_flag = IW_map_prov_52_window }
+	if = { limit = { has_country_flag = IW_map_prov_53_window } clr_country_flag = IW_map_prov_53_window }
+	if = { limit = { has_country_flag = IW_map_prov_54_window } clr_country_flag = IW_map_prov_54_window }
+	if = { limit = { has_country_flag = IW_map_prov_55_window } clr_country_flag = IW_map_prov_55_window }
+	if = { limit = { has_country_flag = IW_map_prov_56_window } clr_country_flag = IW_map_prov_56_window }
+	if = { limit = { has_country_flag = IW_map_prov_57_window } clr_country_flag = IW_map_prov_57_window }
+		set_country_flag = IW_map_prov_$number$_window
+	}
+	set_variable = {
+		which = IW_map_prov_inf
+		which = IW_map_prov_$number$_inf
+	}
+}
+# IW province:
+# Peace:
+set_IW_province_peace_flag = {
+	if = { limit = { has_country_flag = IW_map_prov_01_window } set_IW_p_p_f = { number = 01 } } if = { limit = { has_country_flag = IW_map_prov_02_window } set_IW_p_p_f = { number = 02 } } if = { limit = { has_country_flag = IW_map_prov_03_window } set_IW_p_p_f = { number = 03 } } if = { limit = { has_country_flag = IW_map_prov_04_window } set_IW_p_p_f = { number = 04 } } if = { limit = { has_country_flag = IW_map_prov_05_window } set_IW_p_p_f = { number = 05 } } if = { limit = { has_country_flag = IW_map_prov_06_window } set_IW_p_p_f = { number = 06 } } if = { limit = { has_country_flag = IW_map_prov_07_window } set_IW_p_p_f = { number = 07 } } if = { limit = { has_country_flag = IW_map_prov_08_window } set_IW_p_p_f = { number = 08 } } if = { limit = { has_country_flag = IW_map_prov_09_window } set_IW_p_p_f = { number = 09 } } if = { limit = { has_country_flag = IW_map_prov_10_window } set_IW_p_p_f = { number = 10 } } if = { limit = { has_country_flag = IW_map_prov_11_window } set_IW_p_p_f = { number = 11 } } if = { limit = { has_country_flag = IW_map_prov_12_window } set_IW_p_p_f = { number = 12 } } if = { limit = { has_country_flag = IW_map_prov_13_window } set_IW_p_p_f = { number = 13 } } if = { limit = { has_country_flag = IW_map_prov_14_window } set_IW_p_p_f = { number = 14 } } if = { limit = { has_country_flag = IW_map_prov_15_window } set_IW_p_p_f = { number = 15 } } if = { limit = { has_country_flag = IW_map_prov_16_window } set_IW_p_p_f = { number = 16 } } if = { limit = { has_country_flag = IW_map_prov_17_window } set_IW_p_p_f = { number = 17 } } if = { limit = { has_country_flag = IW_map_prov_18_window } set_IW_p_p_f = { number = 18 } } if = { limit = { has_country_flag = IW_map_prov_19_window } set_IW_p_p_f = { number = 19 } } if = { limit = { has_country_flag = IW_map_prov_20_window } set_IW_p_p_f = { number = 20 } } if = { limit = { has_country_flag = IW_map_prov_21_window } set_IW_p_p_f = { number = 21 } } if = { limit = { has_country_flag = IW_map_prov_22_window } set_IW_p_p_f = { number = 22 } } if = { limit = { has_country_flag = IW_map_prov_23_window } set_IW_p_p_f = { number = 23 } } if = { limit = { has_country_flag = IW_map_prov_24_window } set_IW_p_p_f = { number = 24 } } if = { limit = { has_country_flag = IW_map_prov_25_window } set_IW_p_p_f = { number = 25 } } if = { limit = { has_country_flag = IW_map_prov_26_window } set_IW_p_p_f = { number = 26 } } if = { limit = { has_country_flag = IW_map_prov_27_window } set_IW_p_p_f = { number = 27 } } if = { limit = { has_country_flag = IW_map_prov_28_window } set_IW_p_p_f = { number = 28 } } if = { limit = { has_country_flag = IW_map_prov_29_window } set_IW_p_p_f = { number = 29 } } if = { limit = { has_country_flag = IW_map_prov_30_window } set_IW_p_p_f = { number = 30 } } if = { limit = { has_country_flag = IW_map_prov_31_window } set_IW_p_p_f = { number = 31 } } if = { limit = { has_country_flag = IW_map_prov_32_window } set_IW_p_p_f = { number = 32 } } if = { limit = { has_country_flag = IW_map_prov_33_window } set_IW_p_p_f = { number = 33 } } if = { limit = { has_country_flag = IW_map_prov_34_window } set_IW_p_p_f = { number = 34 } } if = { limit = { has_country_flag = IW_map_prov_35_window } set_IW_p_p_f = { number = 35 } } if = { limit = { has_country_flag = IW_map_prov_36_window } set_IW_p_p_f = { number = 36 } } if = { limit = { has_country_flag = IW_map_prov_37_window } set_IW_p_p_f = { number = 37 } } if = { limit = { has_country_flag = IW_map_prov_38_window } set_IW_p_p_f = { number = 38 } } if = { limit = { has_country_flag = IW_map_prov_39_window } set_IW_p_p_f = { number = 39 } } if = { limit = { has_country_flag = IW_map_prov_40_window } set_IW_p_p_f = { number = 40 } } if = { limit = { has_country_flag = IW_map_prov_41_window } set_IW_p_p_f = { number = 41 } } if = { limit = { has_country_flag = IW_map_prov_42_window } set_IW_p_p_f = { number = 42 } } if = { limit = { has_country_flag = IW_map_prov_43_window } set_IW_p_p_f = { number = 43 } } if = { limit = { has_country_flag = IW_map_prov_44_window } set_IW_p_p_f = { number = 44 } } if = { limit = { has_country_flag = IW_map_prov_45_window } set_IW_p_p_f = { number = 45 } } if = { limit = { has_country_flag = IW_map_prov_46_window } set_IW_p_p_f = { number = 46 } } if = { limit = { has_country_flag = IW_map_prov_47_window } set_IW_p_p_f = { number = 47 } } if = { limit = { has_country_flag = IW_map_prov_48_window } set_IW_p_p_f = { number = 48 } } if = { limit = { has_country_flag = IW_map_prov_49_window } set_IW_p_p_f = { number = 49 } } if = { limit = { has_country_flag = IW_map_prov_50_window } set_IW_p_p_f = { number = 50 } } if = { limit = { has_country_flag = IW_map_prov_51_window } set_IW_p_p_f = { number = 51 } } if = { limit = { has_country_flag = IW_map_prov_52_window } set_IW_p_p_f = { number = 52 } } if = { limit = { has_country_flag = IW_map_prov_53_window } set_IW_p_p_f = { number = 53 } } if = { limit = { has_country_flag = IW_map_prov_54_window } set_IW_p_p_f = { number = 54 } } if = { limit = { has_country_flag = IW_map_prov_55_window } set_IW_p_p_f = { number = 55 } } if = { limit = { has_country_flag = IW_map_prov_56_window } set_IW_p_p_f = { number = 56 } } if = { limit = { has_country_flag = IW_map_prov_57_window } set_IW_p_p_f = { number = 57 } }
+}
+set_IW_p_p_f = {
+	if = {
+		limit = { NOT = { has_country_flag = IW_province_$number$_arrow_flag } }
+		set_country_flag = IW_province_$number$_arrow_flag
+		set_country_flag = IW_province_$number$_peace_flag
+	}
+}
+# War:
+set_IW_province_war_flag = {
+	if = { limit = { has_country_flag = IW_map_prov_01_window } set_IW_p_w_f = { number = 01 } } if = { limit = { has_country_flag = IW_map_prov_02_window } set_IW_p_w_f = { number = 02 } } if = { limit = { has_country_flag = IW_map_prov_03_window } set_IW_p_w_f = { number = 03 } } if = { limit = { has_country_flag = IW_map_prov_04_window } set_IW_p_w_f = { number = 04 } } if = { limit = { has_country_flag = IW_map_prov_05_window } set_IW_p_w_f = { number = 05 } } if = { limit = { has_country_flag = IW_map_prov_06_window } set_IW_p_w_f = { number = 06 } } if = { limit = { has_country_flag = IW_map_prov_07_window } set_IW_p_w_f = { number = 07 } } if = { limit = { has_country_flag = IW_map_prov_08_window } set_IW_p_w_f = { number = 08 } } if = { limit = { has_country_flag = IW_map_prov_09_window } set_IW_p_w_f = { number = 09 } } if = { limit = { has_country_flag = IW_map_prov_10_window } set_IW_p_w_f = { number = 10 } } if = { limit = { has_country_flag = IW_map_prov_11_window } set_IW_p_w_f = { number = 11 } } if = { limit = { has_country_flag = IW_map_prov_12_window } set_IW_p_w_f = { number = 12 } } if = { limit = { has_country_flag = IW_map_prov_13_window } set_IW_p_w_f = { number = 13 } } if = { limit = { has_country_flag = IW_map_prov_14_window } set_IW_p_w_f = { number = 14 } } if = { limit = { has_country_flag = IW_map_prov_15_window } set_IW_p_w_f = { number = 15 } } if = { limit = { has_country_flag = IW_map_prov_16_window } set_IW_p_w_f = { number = 16 } } if = { limit = { has_country_flag = IW_map_prov_17_window } set_IW_p_w_f = { number = 17 } } if = { limit = { has_country_flag = IW_map_prov_18_window } set_IW_p_w_f = { number = 18 } } if = { limit = { has_country_flag = IW_map_prov_19_window } set_IW_p_w_f = { number = 19 } } if = { limit = { has_country_flag = IW_map_prov_20_window } set_IW_p_w_f = { number = 20 } } if = { limit = { has_country_flag = IW_map_prov_21_window } set_IW_p_w_f = { number = 21 } } if = { limit = { has_country_flag = IW_map_prov_22_window } set_IW_p_w_f = { number = 22 } } if = { limit = { has_country_flag = IW_map_prov_23_window } set_IW_p_w_f = { number = 23 } } if = { limit = { has_country_flag = IW_map_prov_24_window } set_IW_p_w_f = { number = 24 } } if = { limit = { has_country_flag = IW_map_prov_25_window } set_IW_p_w_f = { number = 25 } } if = { limit = { has_country_flag = IW_map_prov_26_window } set_IW_p_w_f = { number = 26 } } if = { limit = { has_country_flag = IW_map_prov_27_window } set_IW_p_w_f = { number = 27 } } if = { limit = { has_country_flag = IW_map_prov_28_window } set_IW_p_w_f = { number = 28 } } if = { limit = { has_country_flag = IW_map_prov_29_window } set_IW_p_w_f = { number = 29 } } if = { limit = { has_country_flag = IW_map_prov_30_window } set_IW_p_w_f = { number = 30 } } if = { limit = { has_country_flag = IW_map_prov_31_window } set_IW_p_w_f = { number = 31 } } if = { limit = { has_country_flag = IW_map_prov_32_window } set_IW_p_w_f = { number = 32 } } if = { limit = { has_country_flag = IW_map_prov_33_window } set_IW_p_w_f = { number = 33 } } if = { limit = { has_country_flag = IW_map_prov_34_window } set_IW_p_w_f = { number = 34 } } if = { limit = { has_country_flag = IW_map_prov_35_window } set_IW_p_w_f = { number = 35 } } if = { limit = { has_country_flag = IW_map_prov_36_window } set_IW_p_w_f = { number = 36 } } if = { limit = { has_country_flag = IW_map_prov_37_window } set_IW_p_w_f = { number = 37 } } if = { limit = { has_country_flag = IW_map_prov_38_window } set_IW_p_w_f = { number = 38 } } if = { limit = { has_country_flag = IW_map_prov_39_window } set_IW_p_w_f = { number = 39 } } if = { limit = { has_country_flag = IW_map_prov_40_window } set_IW_p_w_f = { number = 40 } } if = { limit = { has_country_flag = IW_map_prov_41_window } set_IW_p_w_f = { number = 41 } } if = { limit = { has_country_flag = IW_map_prov_42_window } set_IW_p_w_f = { number = 42 } } if = { limit = { has_country_flag = IW_map_prov_43_window } set_IW_p_w_f = { number = 43 } } if = { limit = { has_country_flag = IW_map_prov_44_window } set_IW_p_w_f = { number = 44 } } if = { limit = { has_country_flag = IW_map_prov_45_window } set_IW_p_w_f = { number = 45 } } if = { limit = { has_country_flag = IW_map_prov_46_window } set_IW_p_w_f = { number = 46 } } if = { limit = { has_country_flag = IW_map_prov_47_window } set_IW_p_w_f = { number = 47 } } if = { limit = { has_country_flag = IW_map_prov_48_window } set_IW_p_w_f = { number = 48 } } if = { limit = { has_country_flag = IW_map_prov_49_window } set_IW_p_w_f = { number = 49 } } if = { limit = { has_country_flag = IW_map_prov_50_window } set_IW_p_w_f = { number = 50 } } if = { limit = { has_country_flag = IW_map_prov_51_window } set_IW_p_w_f = { number = 51 } } if = { limit = { has_country_flag = IW_map_prov_52_window } set_IW_p_w_f = { number = 52 } } if = { limit = { has_country_flag = IW_map_prov_53_window } set_IW_p_w_f = { number = 53 } } if = { limit = { has_country_flag = IW_map_prov_54_window } set_IW_p_w_f = { number = 54 } } if = { limit = { has_country_flag = IW_map_prov_55_window } set_IW_p_w_f = { number = 55 } } if = { limit = { has_country_flag = IW_map_prov_56_window } set_IW_p_w_f = { number = 56 } } if = { limit = { has_country_flag = IW_map_prov_57_window } set_IW_p_w_f = { number = 57 } }
+}
+set_IW_p_w_f = {
+	if = {
+		limit = { NOT = { has_country_flag = IW_province_$number$_arrow_flag } }
+		set_country_flag = IW_province_$number$_arrow_flag
+		set_country_flag = IW_province_$number$_war_flag
+	}
+}

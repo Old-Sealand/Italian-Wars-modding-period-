@@ -1,97 +1,662 @@
-custom_icon = {
-    name = menubar_flipped
-    potential = {
-		# Appears only if you're in a League, your overlord is, OR you're in the HRE OR you're in Iberia OR in Italy
-		OR = {
-			has_country_flag = IW_french_league_member
-			has_country_flag = IW_italian_league_member
-			has_country_flag = IW_iberian_league_member
-			has_country_flag = IW_HRE_league_member
-			overlord = {
-				OR = {
-					has_country_flag = IW_french_league_member
-					has_country_flag = IW_italian_league_member
-					has_country_flag = IW_iberian_league_member
-					has_country_flag = IW_HRE_league_member					
-				}
-			}
-			AND = {
-				any_country = { has_country_flag = IW_HRE_league_member }
-				is_part_of_hre = yes
-			}
-			AND = {
-				any_country = { has_country_flag = IW_iberian_league_member }
-				capital_scope = { region = iberia_region }
-			}
-			AND = {
-				any_country = { has_country_flag = IW_italian_league_member }
-				capital_scope = { region = italy_region }
-			}
-		}
-    }
-}
 
 custom_button = {
-    name = IW_gui_button
-    potential = {
-		# Appears only if you're in a League, your overlord is, OR you're in the HRE OR you're in Iberia OR in Italy
-		OR = {
-			has_country_flag = IW_french_league_member
-			has_country_flag = IW_italian_league_member
-			has_country_flag = IW_iberian_league_member
-			has_country_flag = IW_HRE_league_member
-			overlord = {
-				OR = {
-					has_country_flag = IW_french_league_member
-					has_country_flag = IW_italian_league_member
-					has_country_flag = IW_iberian_league_member
-					has_country_flag = IW_HRE_league_member					
-				}
-			}
-			AND = {
-				any_country = { has_country_flag = IW_HRE_league_member }
-				is_part_of_hre = yes
-			}
-			AND = {
-				any_country = { has_country_flag = IW_iberian_league_member }
-				capital_scope = { region = iberia_region }
-			}
-			AND = {
-				any_country = { has_country_flag = IW_italian_league_member }
-				capital_scope = { region = italy_region }
-			}
-		}
-    }
-    trigger = { 
-		hidden_trigger = {
-			always = yes
-		}
-	}
-    effect = { 
+    name = IW_map_open_close
+    effect = {
 		if = {
-			limit = { has_country_flag = IW_gui_open }
-			clr_country_flag = IW_gui_open
+			limit = { has_country_flag = IW_map_window }
+			clr_country_flag = IW_map_window
 		}
-		else = {
-			set_country_flag = IW_gui_open
-		}
+		else = { set_country_flag = IW_map_window }
 	}
-    tooltip = IW_gui_button_tt
+    tooltip = IW_map_open_close_loc
 }
+# IW Window:
 
+######################
+# IW Map Window:
 custom_window = {
-	name = IW_window
-	potential = {
-		has_country_flag = IW_gui_open
-	}
+    name = IW_map_window
+    potential = { has_country_flag = IW_map_window }
 }
-
 custom_icon = {
-    name = IW_gui_window
-    potential = { }
+	name = IW_map_background
 }
+custom_button = {
+    name = IW_map_prov_01
+    effect = {
+		set_IW_map_prov_window_flag = { number = 01 }
+	}
+    tooltip = IW_map_prov_01_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_01_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_01_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_01_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_02
+    effect = {
+		set_IW_map_prov_window_flag = { number = 02 }
+	}
+    tooltip = IW_map_prov_02_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_02_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_02_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_02_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_03
+    effect = {
+		set_IW_map_prov_window_flag = { number = 03 }
+	}
+    tooltip = IW_map_prov_03_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_03_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_03_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_03_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_04
+    effect = {
+		set_IW_map_prov_window_flag = { number = 04 }
+	}
+    tooltip = IW_map_prov_04_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_04_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_04_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_04_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_05
+    effect = {
+		set_IW_map_prov_window_flag = { number = 05 }
+	}
+    tooltip = IW_map_prov_05_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_05_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_05_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_05_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_06
+    effect = {
+		set_IW_map_prov_window_flag = { number = 06 }
+	}
+    tooltip = IW_map_prov_06_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_06_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_06_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_06_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_07
+    effect = {
+		set_IW_map_prov_window_flag = { number = 07 }
+	}
+    tooltip = IW_map_prov_07_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_07_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_07_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_07_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_08
+    effect = {
+		set_IW_map_prov_window_flag = { number = 08 }
+	}
+    tooltip = IW_map_prov_08_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_08_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_08_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_08_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_09
+    effect = {
+		set_IW_map_prov_window_flag = { number = 09 }
+	}
+    tooltip = IW_map_prov_09_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_09_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_09_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_09_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_10
+    effect = {
+		set_IW_map_prov_window_flag = { number = 10 }
+	}
+    tooltip = IW_map_prov_10_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_10_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_10_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_10_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_11
+    effect = {
+		set_IW_map_prov_window_flag = { number = 11 }
+	}
+    tooltip = IW_map_prov_11_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_11_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_11_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_11_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_12
+    effect = {
+		set_IW_map_prov_window_flag = { number = 12 }
+	}
+    tooltip = IW_map_prov_12_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_12_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_12_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_12_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_13
+    effect = {
+		set_IW_map_prov_window_flag = { number = 13 }
+	}
+    tooltip = IW_map_prov_13_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_13_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_13_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_13_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_14
+    effect = {
+		set_IW_map_prov_window_flag = { number = 14 }
+	}
+    tooltip = IW_map_prov_14_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_14_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_14_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_14_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_15
+    effect = {
+		set_IW_map_prov_window_flag = { number = 15 }
+	}
+    tooltip = IW_map_prov_15_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_15_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_15_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_15_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_16
+    effect = {
+		set_IW_map_prov_window_flag = { number = 16 }
+	}
+    tooltip = IW_map_prov_16_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_16_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_16_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_16_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_17
+    effect = {
+		set_IW_map_prov_window_flag = { number = 17 }
+	}
+    tooltip = IW_map_prov_17_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_17_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_17_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_17_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_18
+    effect = {
+		set_IW_map_prov_window_flag = { number = 18 }
+	}
+    tooltip = IW_map_prov_18_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_18_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_18_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_18_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_19
+    effect = {
+		set_IW_map_prov_window_flag = { number = 19 }
+	}
+    tooltip = IW_map_prov_19_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_19_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_19_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_19_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_20
+    effect = {
+		set_IW_map_prov_window_flag = { number = 20 }
+	}
+    tooltip = IW_map_prov_20_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_20_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_20_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_20_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_21
+    effect = {
+		set_IW_map_prov_window_flag = { number = 21 }
+	}
+    tooltip = IW_map_prov_21_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_21_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_21_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_21_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_22
+    effect = {
+		set_IW_map_prov_window_flag = { number = 22 }
+	}
+    tooltip = IW_map_prov_22_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_22_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_22_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_22_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_23
+    effect = {
+		set_IW_map_prov_window_flag = { number = 23 }
+	}
+    tooltip = IW_map_prov_23_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_23_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_23_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_23_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_24
+    effect = {
+		set_IW_map_prov_window_flag = { number = 24 }
+	}
+    tooltip = IW_map_prov_24_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_24_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_24_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_24_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_25
+    effect = {
+		set_IW_map_prov_window_flag = { number = 25 }
+	}
+    tooltip = IW_map_prov_25_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_25_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_25_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_25_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_26
+    effect = {
+		set_IW_map_prov_window_flag = { number = 26 }
+	}
+    tooltip = IW_map_prov_26_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_26_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_26_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_26_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_27
+    effect = {
+		set_IW_map_prov_window_flag = { number = 27 }
+	}
+    tooltip = IW_map_prov_27_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_27_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_27_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_27_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_28
+    effect = {
+		set_IW_map_prov_window_flag = { number = 28 }
+	}
+    tooltip = IW_map_prov_28_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_28_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_28_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_28_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_29
+    effect = {
+		set_IW_map_prov_window_flag = { number = 29 }
+	}
+    tooltip = IW_map_prov_29_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_29_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_29_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_29_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_30
+    effect = {
+		set_IW_map_prov_window_flag = { number = 30 }
+	}
+    tooltip = IW_map_prov_30_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_30_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_30_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_30_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_31
+    effect = {
+		set_IW_map_prov_window_flag = { number = 31 }
+	}
+    tooltip = IW_map_prov_31_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_31_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_31_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_31_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_32
+    effect = {
+		set_IW_map_prov_window_flag = { number = 32 }
+	}
+    tooltip = IW_map_prov_32_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_32_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_32_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_32_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_33
+    effect = {
+		set_IW_map_prov_window_flag = { number = 33 }
+	}
+    tooltip = IW_map_prov_33_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_33_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_33_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_33_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_34
+    effect = {
+		set_IW_map_prov_window_flag = { number = 34 }
+	}
+    tooltip = IW_map_prov_34_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_34_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_34_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_34_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_35
+    effect = {
+		set_IW_map_prov_window_flag = { number = 35 }
+	}
+    tooltip = IW_map_prov_35_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_35_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_35_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_35_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_36
+    effect = {
+		set_IW_map_prov_window_flag = { number = 36 }
+	}
+    tooltip = IW_map_prov_36_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_36_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_36_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_36_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_37
+    effect = {
+		set_IW_map_prov_window_flag = { number = 37 }
+	}
+    tooltip = IW_map_prov_37_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_37_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_37_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_37_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_38
+    effect = {
+		set_IW_map_prov_window_flag = { number = 38 }
+	}
+    tooltip = IW_map_prov_38_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_38_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_38_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_38_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_39
+    effect = {
+		set_IW_map_prov_window_flag = { number = 39 }
+	}
+    tooltip = IW_map_prov_39_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_39_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_39_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_39_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_40
+    effect = {
+		set_IW_map_prov_window_flag = { number = 40 }
+	}
+    tooltip = IW_map_prov_40_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_40_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_40_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_40_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_41
+    effect = {
+		set_IW_map_prov_window_flag = { number = 41 }
+	}
+    tooltip = IW_map_prov_41_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_41_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_41_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_41_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_42
+    effect = {
+		set_IW_map_prov_window_flag = { number = 42 }
+	}
+    tooltip = IW_map_prov_42_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_42_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_42_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_42_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_43
+    effect = {
+		set_IW_map_prov_window_flag = { number = 43 }
+	}
+    tooltip = IW_map_prov_43_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_43_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_43_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_43_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_44
+    effect = {
+		set_IW_map_prov_window_flag = { number = 44 }
+	}
+    tooltip = IW_map_prov_44_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_44_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_44_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_44_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_45
+    effect = {
+		set_IW_map_prov_window_flag = { number = 45 }
+	}
+    tooltip = IW_map_prov_45_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_45_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_45_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_45_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_46
+    effect = {
+		set_IW_map_prov_window_flag = { number = 46 }
+	}
+    tooltip = IW_map_prov_46_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_46_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_46_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_46_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_47
+    effect = {
+		set_IW_map_prov_window_flag = { number = 47 }
+	}
+    tooltip = IW_map_prov_47_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_47_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_47_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_47_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_48
+    effect = {
+		set_IW_map_prov_window_flag = { number = 48 }
+	}
+    tooltip = IW_map_prov_48_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_48_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_48_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_48_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_49
+    effect = {
+		set_IW_map_prov_window_flag = { number = 49 }
+	}
+    tooltip = IW_map_prov_49_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_49_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_49_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_49_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_50
+    effect = {
+		set_IW_map_prov_window_flag = { number = 50 }
+	}
+    tooltip = IW_map_prov_50_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_50_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_50_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_50_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_51
+    effect = {
+		set_IW_map_prov_window_flag = { number = 51 }
+	}
+    tooltip = IW_map_prov_51_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_51_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_51_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_51_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_52
+    effect = {
+		set_IW_map_prov_window_flag = { number = 52 }
+	}
+    tooltip = IW_map_prov_52_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_52_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_52_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_52_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_53
+    effect = {
+		set_IW_map_prov_window_flag = { number = 53 }
+	}
+    tooltip = IW_map_prov_53_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_53_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_53_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_53_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_54
+    effect = {
+		set_IW_map_prov_window_flag = { number = 54 }
+	}
+    tooltip = IW_map_prov_54_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_54_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_54_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_54_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_55
+    effect = {
+		set_IW_map_prov_window_flag = { number = 55 }
+	}
+    tooltip = IW_map_prov_55_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_55_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_55_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_55_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_56
+    effect = {
+		set_IW_map_prov_window_flag = { number = 56 }
+	}
+    tooltip = IW_map_prov_56_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_56_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_56_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_56_inf value = 100 } } }
+}
+custom_button = {
+    name = IW_map_prov_57
+    effect = {
+		set_IW_map_prov_window_flag = { number = 57 }
+	}
+    tooltip = IW_map_prov_57_loc
+    frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_57_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_57_inf value = 100 } } } }
+    frame = { number = 3 trigger = { check_variable = { which = IW_map_prov_57_inf value = 100 } } }
+}
+######################
+# IW Province Window:
+custom_window = {
+    name = IW_province_window
+    potential = { has_country_flag = IW_province_window has_country_flag = IW_map_window } # Temporary IW_map_window flag
+}
+custom_icon = {
+	name = IW_province_frame
+}
+custom_icon = {
+	name = IW_province_bar
+	tooltip = IW_province_bar_loc
+	frame_variable = IW_map_prov_inf
+}
+custom_icon = {
+	name = IW_province_arrow
+    frame = { number = 2 trigger = { has_IW_province_arrow_flag = yes check_variable = { which = IW_map_prov_inf value = 50 } } }
+    frame = { number = 3 trigger = { has_IW_province_peace_flag = yes } }
+    frame = { number = 4 trigger = { has_IW_province_war_flag = yes } }
+	tooltip = IW_province_arrow_loc
+}
+custom_button = {
+    name = IW_province_start
+	trigger = {
+	}
+    effect = {
+	}
+    tooltip = IW_province_start_loc
+}
+custom_button = {
+    name = IW_province_finish
+	trigger = {
+		OR = {
+			has_IW_province_peace_flag = yes
+			has_IW_province_war_flag = yes
+		}
+	}
+    effect = {
+	}
+    tooltip = IW_province_finish_loc
+    frame = { number = 2 trigger = { has_IW_province_peace_flag = yes } }
+    frame = { number = 3 trigger = { has_IW_province_war_flag = yes } }
+}
+# Peace:
+custom_button = {
+    name = IW_province_peace_connect
+	trigger = {
+		has_IW_province_peace_selected = yes
+	}
+    effect = {
+		set_IW_province_peace_flag = yes
+	}
+    tooltip = IW_province_peace_connect_loc
+}
+custom_button = {
+    name = IW_province_peace_left
+	trigger = {
+		has_IW_province_peace_flag = yes
+	}
+    effect = {
+	}
+    tooltip = IW_province_peace_left_loc
+}
+custom_button = {
+    name = IW_province_peace_mid
+	trigger = {
+		has_IW_province_peace_flag = yes
+	}
+    effect = {
+	}
+    tooltip = IW_province_peace_mid_loc
+}
+custom_button = {
+    name = IW_province_peace_right
+	trigger = {
+		has_IW_province_peace_flag = yes
+	}
+    effect = {
+	}
+    tooltip = IW_province_peace_right_loc
+}
+# War:
+custom_button = {
+    name = IW_province_war_connect
+	trigger = {
+		has_IW_province_war_selected = yes
+	}
+    effect = {
+		set_IW_province_war_flag = yes
+	}
+    tooltip = IW_province_war_connect_loc
+}
+custom_button = {
+    name = IW_province_war_left
+	trigger = {
+		has_IW_province_war_flag = yes
+	}
+    effect = {
+	}
+    tooltip = IW_province_war_left_loc
+}
+custom_button = {
+    name = IW_province_war_mid
+	trigger = {
+		has_IW_province_war_flag = yes
+	}
+    effect = {
+	}
+    tooltip = IW_province_war_mid_loc
+}
+custom_button = {
+    name = IW_province_war_right
+	trigger = {
+		has_IW_province_war_flag = yes
+	}
+    effect = {
+	}
+    tooltip = IW_province_war_right_loc
+}
+######################
+# IW Reforms? Window:
+######################
+# IW Diplo Window:
 
-custom_text_box = {
-    name = IW_gui_window_text
-    potential = { } 
-}
+######################
+# IW League Window:

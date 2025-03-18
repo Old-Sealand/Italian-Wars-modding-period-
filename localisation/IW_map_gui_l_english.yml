@@ -1,3 +1,7 @@
 ﻿l_english:
-  IW_gui_button_tt: "Open Italian Wars Menu"
-  IW_gui_window_text: "THE ITALIAN LEAGUES"
+ 
+
+
+ # Monuments:
+ orsini_odescalchi_castle: "Castello Orsini-Odescalchi"
+ rome_colosseum: "Colosseum"
