@@ -549,17 +549,14 @@ custom_icon = {
 	frame_variable = IW_map_prov_inf
 }
 custom_icon = {
-	name = IW_province_arrow
-    frame = { number = 2 trigger = { has_IW_province_arrow_flag = yes check_variable = { which = IW_map_prov_inf value = 50 } } }
-    frame = { number = 3 trigger = { has_IW_province_peace_flag = yes } }
-    frame = { number = 4 trigger = { has_IW_province_war_flag = yes } }
-	tooltip = IW_province_arrow_loc
+	name = IW_province_frame_bar
 }
 custom_button = {
     name = IW_province_start
 	trigger = {
 	}
     effect = {
+		set_IW_province_progress_bar = yes
 	}
     tooltip = IW_province_start_loc
 }
@@ -580,7 +577,12 @@ custom_button = {
 # Peace:
 custom_button = {
     name = IW_province_peace_connect
+	potential = {
+		NOT = { has_IW_province_peace_flag = yes }
+		NOT = { has_IW_province_war_flag = yes }
+	}
 	trigger = {
+		check_variable = { which = IW_map_prov_inf value = 50 }
 		has_IW_province_peace_selected = yes
 	}
     effect = {
@@ -618,7 +620,12 @@ custom_button = {
 # War:
 custom_button = {
     name = IW_province_war_connect
+	potential = {
+		NOT = { has_IW_province_peace_flag = yes }
+		NOT = { has_IW_province_war_flag = yes }
+	}
 	trigger = {
+		check_variable = { which = IW_map_prov_inf value = 50 }
 		has_IW_province_war_selected = yes
 	}
     effect = {
@@ -652,6 +659,14 @@ custom_button = {
     effect = {
 	}
     tooltip = IW_province_war_right_loc
+}
+###
+custom_icon = {
+	name = IW_province_arrow
+	potential = { OR = { has_IW_province_peace_flag = yes has_IW_province_war_flag = yes } }
+    frame = { number = 1 trigger = { has_IW_province_peace_flag = yes } }
+    frame = { number = 2 trigger = { has_IW_province_war_flag = yes } }
+    tooltip = IW_province_arrow_loc
 }
 ######################
 # IW Reforms? Window:

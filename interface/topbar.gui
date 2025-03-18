@@ -1128,10 +1128,16 @@ guiTypes = {
 				quadTextureSprite ="GFX_IW_province_frame"
 				scripted = yes
 			}
+			iconType = {
+				name ="IW_province_bar"
+				spriteType = "GFX_IW_province_bar"
+				position = { x= 63 y = 317 }
+				scripted = yes
+			}
 			IconType = {
-				name = "IW_province_arrow"
-				position = { x=205 y = 312}
-				quadTextureSprite ="GFX_IW_province_arrow"
+				name = "IW_province_frame_bar"
+				position = { x=56 y = 316}
+				quadTextureSprite ="GFX_IW_province_frame_bar"
 				scripted = yes
 			}
 			guiButtonType = {
@@ -1150,7 +1156,7 @@ guiTypes = {
 			guiButtonType = {
 				name = "IW_province_peace_connect"
 				position = { x=194 y = 278}
-				quadTextureSprite ="GFX_IW_province_button_peace"
+				quadTextureSprite ="GFX_IW_province_button_arrow_peace"
 				scripted = yes
 			}
 			guiButtonType = {
@@ -1175,7 +1181,7 @@ guiTypes = {
 			guiButtonType = {
 				name = "IW_province_war_connect"
 				position = { x=194 y = 332}
-				quadTextureSprite ="GFX_IW_province_button_war"
+				quadTextureSprite ="GFX_IW_province_button_arrow_war"
 				scripted = yes
 			}
 			guiButtonType = {
@@ -1194,6 +1200,13 @@ guiTypes = {
 				name = "IW_province_war_right"
 				position = { x=287 y = 354}
 				quadTextureSprite ="GFX_IW_province_button_war"
+				scripted = yes
+			}
+			###
+			IconType = {
+				name = "IW_province_arrow"
+				position = { x=194 y = 278}
+				quadTextureSprite ="GFX_IW_province_arrow"
 				scripted = yes
 			}
 		}

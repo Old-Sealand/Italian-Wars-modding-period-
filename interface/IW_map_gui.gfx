@@ -367,11 +367,19 @@ spriteTypes = {
 		loadType = "INGAME"
 		transparencecheck = yes
 	}
+	progressbartype = {
+		name = "GFX_IW_province_bar"
+		color = { 0.0 0.5 0.0 }
+		colortwo = { 1.0 0.0 0.0 }
+		textureFile1 = "gfx\\interface\\technologyView_progressbar_w151_h10_green.dds"
+		textureFile2 = "gfx\\interface\\technologyView_progressbar_w151_h10_black.dds"
+		size = { x = 300 y = 12 }
+		effectFile = "gfx/FX/progress.lua"
+	}
 	spriteType = {
-		name = "GFX_IW_province_arrow"
-		texturefile = "gfx/interface/IW_map_gui/IW_province_arrow.dds"
+		name = "GFX_IW_province_frame_bar"
+		texturefile = "gfx/interface/IW_map_gui/IW_province_frame_bar.dds"
 		loadType = "INGAME"
-		noOfFrames = 4
 		transparencecheck = yes
 	}
 	spriteType = {
@@ -388,8 +396,20 @@ spriteTypes = {
 		transparencecheck = yes
 	}
 	spriteType = {
+		name = "GFX_IW_province_button_arrow_peace"
+		texturefile = "gfx/interface/IW_map_gui/IW_province_button_arrow_peace.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
 		name = "GFX_IW_province_button_peace"
 		texturefile = "gfx/interface/IW_map_gui/IW_province_button_peace.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_IW_province_button_arrow_war"
+		texturefile = "gfx/interface/IW_map_gui/IW_province_button_arrow_war.dds"
 		loadType = "INGAME"
 		transparencecheck = yes
 	}
@@ -397,6 +417,13 @@ spriteTypes = {
 		name = "GFX_IW_province_button_war"
 		texturefile = "gfx/interface/IW_map_gui/IW_province_button_war.dds"
 		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_IW_province_arrow"
+		texturefile = "gfx/interface/IW_map_gui/IW_province_arrow.dds"
+		loadType = "INGAME"
+		noOfFrames = 2
 		transparencecheck = yes
 	}
 	##################
