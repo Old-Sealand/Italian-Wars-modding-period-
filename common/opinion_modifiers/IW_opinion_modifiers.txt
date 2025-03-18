@@ -29,3 +29,13 @@ IW_removed_from_our_league = {
 	opinion = -25
 	yearly_decay = 2
 }
+
+IW_sacked_the_holy_see = {
+	opinion = -25
+	yearly_decay = 0.5
+}
+
+IW_conceded_disputed_lands = {
+	opinion = 25
+	yearly_decay = 2	
+}

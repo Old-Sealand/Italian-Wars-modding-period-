@@ -1,0 +1,50 @@
+﻿l_english:
+  IW_flavor.1.t: "Intervention in the Italian War"
+  IW_flavor.1.d: "Something something 'we have form to protect our interests, but we must now decide the way this will show to start with'."
+  IW_flavor.1.a: "French hegemony in Italy cannot be accepted!"
+  IW_join_against_france: "Our League will intervene in support of the §YItalic League§!."
+  IW_flavor.1.b: "If you cannot beat them, join them."
+  IW_join_with_france: "Our League will intervene in support of the §Y[GetFrenchLeagueName] League§!."
+  IW_flavor.1.c: "It is not yet our time."
+
+  IW_flavor.2.t: "Sacco di Roma"
+  IW_flavor.2.d: " "
+  IW_flavor.2.a: "The tragedy of a few rowdy men."
+  iw_half_roman_dev: "Half of the development of §Y[118.GetName]§! will be lost and converted into ¤ and £mil£."
+  iw_catholics_angry: "All other §YCatholics§! will lose §R-25§! opinion of us."
+  IW_sacked_the_holy_see: "Sacked the Holy See"
+
+  IW_flavor.3.t: "Deal Behind Close Doors"
+  IW_flavor.3.d: " "
+  IW_flavor.3.a: "What a bargain!"
+  iw_explain_naples_deal: "If accepted, we will partition §YNaples§! between us in exchange for their support in the next Italian War, with some disputed lands we will need to iron out."
+  IW_flavor.3.b: "Naples will be ours!"
+
+  IW_flavor.4.d: " "
+
+  IW_flavor.5.t: "The Deal Falls Through"
+  IW_flavor.5.d: " "
+  IW_flavor.5.a: "Quite the pity."
+  iw_deal_no_longer_applies: "Our deal with the §YIberian League§! will no longer apply."
+
+  IW_flavor.6.t: "Traitors on Both Sides"
+  IW_flavor.6.d: " "
+  IW_flavor.6.a: "Their victory has been ensured."
+  iw_we_will_be_partioned: "We will be partitioned between the §Y[GetFrenchLeagueName]§! and §YIberian§! Leagues, with us becoming a §YPersonal Union§! of §Y[IW_french_league_leader.GetName]§!."
+  IW_flavor.6.b: "Insanity!"
+
+  IW_flavor.7.t: "The Neapolitan Deal"
+  IW_flavor.7.d: "The King of Naples has at last fled the country as he realizes that his situation is untenable. As such, the forces of us and [IW_iberian_league_leader.GetName] have finally obtained supremacy. With this, we are now made to owe up to our deal that was made before we began this campaign in the first place, one that has so far been of utmost secrecy beyond a few select delegates between our court and theirs.\n\n[IW_iberian_league_leader.GetName] will acknowledge our rightful claim to the Kingdom of Naples through the lineage of Rene the Good, but will recieve many lands in the south to make up for their illegtimate claim to the throne of the south, and to make up for their contributions to the war effort.\n\nWhilst much of the treaty was precise on what lands would be transferred to whom, a few lands inbetween them, having once been part of the provinces in which we ceded lands to [IW_iberian_league_leader.GetName], have become disputed. We will have to see how this dispute goes forward, but for now, Naples has finally been reclaimed by the heirs to the holdings of Anjou!"
+  IW_flavor.7.a: "Excellent!"
+  iw_partition_naples: "We will recieve much of the north of Naples, whilst §Y[IW_iberian_league_leader.GetName]§! recieves much of the south. Regions inbetween may been disputed and will have to be rectified in due time."
+
+  IW_flavor.8.t: "The Disputes in Naples"
+  IW_flavor.8.d: " "
+  IW_flavor.8.a: "It is too valuable to give up!"
+  iw_impending_war: "§Y[IW_iberian_league_leader.GetName]§! is very likely to declare war over this matter."
+  IW_flavor.8.b: "We must have peace in our time."
+  iw_concede_disputed_lands: "We will concede any disputed lands in Naples to §Y[IW_iberian_league_leader.GetName]§!."
+  IW_conceded_disputed_lands: "Conceded disputed lands"
+
+  IW_flavor.9.d: " "
+  IW_flavor.9.a: "We will avenge this wrong."
