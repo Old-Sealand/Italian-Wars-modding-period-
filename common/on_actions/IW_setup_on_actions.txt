@@ -32,4 +32,37 @@ on_war_won = {
 		limit = { ROOT = { tag = event_target:IW_third_party } }
 		clear_global_event_target = IW_third_party
 	}
+	if = {
+		limit = { 
+			OR = {
+				ROOT = { has_country_flag = iw_took_deal_nap }
+				FROM = { has_country_flag = iw_took_deal_nap }
+			}
+			NOT = { event_target:IW_french_league_leader = { has_country_flag = iw_killed_nap } }
+		}
+		event_target:IW_french_league_leader = {
+			country_event = { id = IW_flavor.5 }
+		}
+	}
+}
+
+# country
+# root = winning country, from = location
+on_siege_won_country = {
+	if = {
+		limit = {
+			OR = {
+				tag = event_target:IW_HRE_league_leader
+				overlord = { tag = event_target:IW_HRE_league_leader }
+			}
+			FROM = {
+				owner = {
+					tag = PAP
+					is_in_war = { casus_belli = IW_cb_italian_war }
+				}
+				province_id = 118
+			}
+		}
+		country_event = { id = IW_flavor.2 }
+	}
 }

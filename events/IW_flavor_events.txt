@@ -1,0 +1,480 @@
+namespace = IW_flavor
+
+country_event = {
+	id = IW_flavor.1 # Intervention in the Italian War
+	title = IW_flavor.1.t
+	desc = IW_flavor.1.d
+	picture = SWEDEN_LEAGUE_WAR_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	trigger = {
+		# Italian League is losing against the French League Leader
+		event_target:IW_italian_league_leader = {
+			is_in_war = {
+				attacker_leader = event_target:IW_french_league_leader
+				defender_leader = THIS
+			}
+			NOT = {
+				war_score_against = {
+					who = event_target:IW_french_league_leader
+					value = -25
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = IW_flavor.1.a # French hegemony in Italy cannot be accepted!
+		ai_chance = {
+			factor = 10
+		}
+		custom_tooltip = IW_join_against_france
+		hidden_effect = {
+			join_all_defensive_wars_of = event_target:IW_italian_league_leader
+			every_subject_country = {
+				limit = { is_subject_of_type = IW_league_member }
+				join_all_defensive_wars_of = event_target:IW_italian_league_leader
+			}			
+		}
+	}
+
+	option = {
+		name = IW_flavor.1.b # If you cannot beat them, join them.
+		ai_chance = {
+			factor = 1
+		}
+		custom_tooltip = IW_join_with_france
+		hidden_effect = {
+			join_all_offensive_wars_of = event_target:IW_french_league_leader
+			every_subject_country = {
+				limit = { is_subject_of_type = IW_league_member }
+				join_all_offensive_wars_of = event_target:IW_french_league_leader
+			}			
+		}
+	}
+
+	option = {
+		name = IW_flavor.1.c # It is not yet our time.
+		ai_chance = {
+			factor = 2
+		}
+		add_prestige = -10
+	}
+}
+
+country_event = {
+	id = IW_flavor.2 # Sacco di Roma
+	title = IW_flavor.2.t
+	desc = IW_flavor.2.d
+	picture = SIEGE_PRAGUE_CASTLE_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = IW_flavor.2.a # The tragedy of a few rowdy men.
+		add_imperial_influence = 10
+		add_treasury = 500
+		add_curia_treasury = -50
+		118 = {
+			add_devastation = 50
+			custom_tooltip = iw_half_roman_dev
+			hidden_effect = {
+				export_to_variable = {
+					which = iw_province_dev
+					value = trigger_value:development
+				}
+				divide_variable = {
+					which = iw_province_dev
+					value = 2
+				}
+				while = {
+					limit = {
+						check_variable = {
+							which = iw_province_dev
+							value = 1
+						}
+					}
+					random_list = {
+						1 = { trigger = { base_tax = 2 } add_base_tax = -1 }
+						1 = { trigger = { base_production = 2 } add_base_production = -1 }
+						1 = { trigger = { base_manpower = 2 } add_base_manpower = -1 }
+					}
+					ROOT = {
+						add_treasury = 25
+						add_mil_power = 5
+					}
+					subtract_variable = {
+						which = iw_province_dev
+						value = 1
+					}
+				}
+			}
+		}
+		reverse_add_opinion = {
+			who = PAP
+			modifier = sack_of_x
+		}
+		custom_tooltip = iw_catholics_angry
+		hidden_effect = {
+			every_country = {
+				limit = { 
+					religion = catholic
+					NOT = { tag = PAP }
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = IW_sacked_the_holy_see
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = IW_flavor.3 # Deal Behind Close Doors
+	title = IW_flavor.3.t
+	desc = IW_flavor.3.d
+	picture = CONQUEST_eventPicture
+	
+	fire_only_once = yes
+	trigger = {
+		tag = event_target:IW_french_league_leader
+		NOT = { is_in_war = { casus_belli = IW_cb_italian_war } }
+		exists = NAP
+		NAP = { is_subject = no }
+		NOT = { war_with = event_target:IW_iberian_league_leader }
+	}
+
+	mean_time_to_happen = {
+		years = 3
+	}
+	
+	option = {
+		name = IW_flavor.3.a # What a bargain!
+		ai_chance = {
+			factor = 9
+		}
+		custom_tooltip = iw_explain_naples_deal
+		tooltip = { add_treasury = -250 }
+		event_target:IW_iberian_league_leader = {
+			country_event = { id = IW_flavor.4 }
+		}
+	}
+
+	option = {
+		name = IW_flavor.3.b # Naples will be ours!
+		ai_chance = {
+			factor = 1
+		}
+		add_prestige = 10
+	}
+}
+
+country_event = {
+	id = IW_flavor.4 # Deal Behind Close Doors
+	title = IW_flavor.3.t
+	desc = IW_flavor.4.d
+	picture = CONQUEST_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	major_trigger = {
+		OR = {
+			is_subject_of = ROOT
+			tag = event_target:IW_french_league_leader
+			overlord = { tag = event_target:IW_french_league_leader }
+		}	
+	}
+	
+	option = {
+		name = IW_flavor.3.a # What a bargain!
+		ai_chance = {
+			factor = 1
+		}
+		custom_tooltip = iw_explain_naples_deal
+		add_treasury = 250
+		hidden_effect = {
+			FROM = { add_treasury = -250 }
+			set_country_flag = iw_took_deal_nap
+		}
+	}
+
+	option = {
+		name = IW_flavor.3.b # Naples will be ours!
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = 10
+	}
+}
+
+country_event = {
+	id = IW_flavor.5 # The Deal Falls Through
+	title = IW_flavor.5.t
+	desc = IW_flavor.5.d
+	picture = OVEREXTENSION_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	major_trigger = {
+		OR = {
+			tag = event_target:IW_iberian_league_leader
+			overlord = { tag = event_target:IW_iberian_league_leader }
+		}	
+	}
+	
+	option = {
+		name = IW_flavor.5.a # Quite the pity.
+		add_prestige = -10
+		custom_tooltip = iw_deal_no_longer_applies
+		hidden_effect = {
+			event_target:IW_iberian_league_leader = { clr_country_flag = iw_took_deal_nap }
+		}
+	}
+}
+
+country_event = {
+	id = IW_flavor.6 # Traitors on Both Sides
+	title = IW_flavor.6.t
+	desc = IW_flavor.6.d
+	picture = OVEREXTENSION_eventPicture
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = NAP
+		is_in_war = { casus_belli = IW_cb_italian_war }
+		event_target:IW_iberian_league_leader = { has_country_flag = iw_took_deal_nap }
+		capital_scope = {
+			controller = {
+				OR = {
+					tag = event_target:IW_french_league_leader
+					tag = event_target:IW_iberian_league_leader
+					overlord = { tag = event_target:IW_french_league_leader }
+					overlord = { tag = event_target:IW_iberian_league_leader }
+				}
+			}
+		}
+		NOT = {
+			war_score_against = {
+				who =  event_target:IW_french_league_leader
+				value = -50
+			}
+		}
+	}
+	
+	option = {
+		name = IW_flavor.6.a # Their victory has been ensured.
+		ai_chance = { factor = 1 }
+		custom_tooltip = iw_we_will_be_partioned
+		hidden_effect = { country_event = { id = IW_flavor.7 } }
+	}
+
+	option = {
+		name = IW_flavor.6.b # Insanity!
+		ai_chance = { factor = 0 }
+		add_stability = -1
+	}
+}
+
+country_event = {
+	id = IW_flavor.7 # The Neapolitan Deal
+	title = IW_flavor.7.t
+	desc = IW_flavor.7.d
+	picture = DIPLOMACY_SIGNING_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = IW_flavor.7.a # Excellent!
+		custom_tooltip = iw_partition_naples
+		hidden_effect = {
+			create_union = NAP
+			set_country_flag = IW_debate_pending
+			calabria_area = {
+				limit = { owned_by = NAP }
+				cede_province =  event_target:IW_iberian_league_leader
+				add_core = event_target:IW_iberian_league_leader
+			}
+			apulia_area = {
+				limit = { owned_by = NAP }
+				cede_province =  event_target:IW_iberian_league_leader
+				add_core = event_target:IW_iberian_league_leader				
+			}
+			event_target:IW_iberian_league_leader = {
+				clr_country_flag = iw_took_deal_nap 
+				if = {
+					limit = {
+						num_of_owned_provinces_with = {
+							area = calabria_area
+							value = 3
+						}
+					}
+					1934 = {
+						if = {
+							limit = { owned_by = ARA }
+							cede_province = NAP
+						}
+					}
+					ROOT = { set_country_flag = fra_disputed_historical }
+				}
+				if = {
+					limit = {
+						num_of_owned_provinces_with = {
+							area = apulia_area
+							value = 3
+						}
+					}
+					4733 = {
+						if = {
+							limit = { owned_by = ARA }
+							cede_province = NAP
+						}
+					}
+					2985 = {
+						if = {
+							limit = { owned_by = ARA }
+							cede_province = NAP
+						}
+					}
+					ROOT = { set_country_flag = fra_disputed_historical }
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = IW_flavor.8 # The Disputes in Naples
+	title = IW_flavor.8.t
+	desc = IW_flavor.8.d
+	picture = OVEREXTENSION_eventPicture
+	
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = IW_debate_pending
+		is_at_war = no
+		event_target:IW_iberian_league_leader = {
+			is_at_war = no
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = IW_flavor.8.a # It is too valuable to give up!
+		ai_chance = { factor = 9 }
+		custom_tooltip = iw_impending_war
+		hidden_effect = {
+			event_target:IW_iberian_league_leader = {
+				country_event = { id = IW_flavor.9 }
+			}
+		}
+	}
+
+	option = {
+		name = IW_flavor.8.b # We must have peace in our time.
+		ai_chance = { factor = 1 }
+		add_stability = -1
+		add_prestige = -10
+		custom_tooltip = iw_concede_disputed_lands
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = fra_disputed_historical }
+				apulia_area = {
+					limit = { owned_by = NAP }
+					cede_province = event_target:IW_iberian_league_leader
+				}
+				calabria_area = {
+					limit = { owned_by = NAP }
+					cede_province = event_target:IW_iberian_league_leader
+				}
+			}
+			else = {
+				random_province = {
+					limit = { owned_by = NAP }
+					area = {
+						cede_province = event_target:IW_iberian_league_leader
+						add_core = event_target:IW_iberian_league_leader
+					}
+				}
+			}
+		}
+		reverse_add_opinion = {
+			who = event_target:IW_iberian_league_leader
+			modifier = IW_conceded_disputed_lands
+		}
+	}
+}
+
+country_event = {
+	id = IW_flavor.9 # The Disputes in Naples
+	title = IW_flavor.8.t
+	desc = IW_flavor.9.d
+	picture = ACCUSATION_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = IW_flavor.9.a # We will avenge this wrong.
+		ai_chance = {
+			factor = 9
+		}
+		declare_war_with_cb = {
+			casus_belli = IW_cb_italian_war
+			who = event_target:IW_french_league_leader
+		}
+		hidden_effect = {
+			event_target:IW_french_league_leader = {
+				save_event_target_as = IW_defender
+				every_subject_country = {
+					limit = { is_subject_of_type = IW_league_member }
+					country_event = { id = IW_setup.12 }
+					# join_all_defensive_wars_of = FROM
+				}
+			}
+			save_event_target_as = IW_attacker
+			every_subject_country = {
+				limit = { is_subject_of_type = IW_league_member }
+				country_event = { id = IW_setup.11 }
+				# join_all_offensive_wars_of = ROOT
+			}
+			every_country = {
+				limit = {
+					NOT = {
+						is_in_war = {
+							casus_belli = IW_cb_italian_war
+						}
+					}
+					OR = {
+						tag = event_target:IW_italian_league_leader
+						tag = event_target:IW_french_league_leader
+						tag = event_target:IW_iberian_league_leader
+						tag = event_target:IW_HRE_league_leader
+					}
+				}
+				country_event = {
+					id = IW_setup.10
+					days = 30
+					random = 30
+				}
+			}
+		}
+	}
+
+	option = {
+		name = IW_flavor.8.b # We must have peace in our time.
+		ai_chance = {
+			factor = 1
+		}
+		add_stability = -1
+		add_prestige = -10
+	}
+}

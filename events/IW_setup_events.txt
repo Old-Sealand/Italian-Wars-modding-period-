@@ -501,6 +501,19 @@ country_event = {
 				ARA = { NOT = { is_free_or_tributary_trigger = yes } }
 			}
 		}
+		# Italian League is losing against the French League Leader
+		event_target:IW_italian_league_leader = {
+			is_in_war = {
+				attacker_leader = event_target:IW_french_league_leader
+				defender_leader = THIS
+			}
+			NOT = {
+				war_score_against = {
+					who = event_target:IW_french_league_leader
+					value = -25
+				}
+			}
+		}
 	}
 
 	immediate = {
@@ -542,6 +555,10 @@ country_event = {
 				}
 				country_event = { id = IW_setup.5 }
 			}
+			country_event = {
+				id = IW_flavor.1
+				days = 30
+			} 
 		}
 		custom_tooltip = IW_setup.4a.tt # Form the French League, with [ROOT.CountryName] at its head. _ will be called to join the cause.
 	}
@@ -650,6 +667,19 @@ country_event = {
 		}
 		is_at_war = no
 		is_emperor = yes
+		# Italian League is losing against the French League Leader
+		event_target:IW_italian_league_leader = {
+			is_in_war = {
+				attacker_leader = event_target:IW_french_league_leader
+				defender_leader = THIS
+			}
+			NOT = {
+				war_score_against = {
+					who = event_target:IW_french_league_leader
+					value = -50
+				}
+			}
+		}
 	}
 
 	immediate = {
@@ -692,6 +722,10 @@ country_event = {
 					}
 				}
 				country_event = { id = IW_setup.7 }
+			}
+			country_event = {
+				id = IW_flavor.1
+				days = 30
 			}
 		}
 		custom_tooltip = IW_setup.6a.tt
@@ -899,6 +933,17 @@ country_event = {
 	option = { # side with attacker
 		name = IW_setup.10.a
 		trigger = {
+			NOT = {	
+				AND = {
+					has_country_flag = iw_took_deal_nap 
+					event_target:IW_attacker = {
+						OR = {
+							tag = event_target:IW_french_league_leader
+							overlord = { tag = event_target:IW_french_league_leader }
+						}
+					}
+				}
+			}
 			AND = {
 				OR = {
 					NOT = { has_global_flag = IW_league_sided_with_attacker }
@@ -934,6 +979,17 @@ country_event = {
 	option = { # side with defender
 		name = IW_setup.10.b
 		trigger = {
+			NOT = {	
+				AND = {
+					has_country_flag = iw_took_deal_nap 
+					event_target:IW_defender = {
+						OR = {
+							tag = event_target:IW_french_league_leader
+							overlord = { tag = event_target:IW_french_league_leader }
+						}
+					}
+				}
+			}
 			AND = {
 				OR = {
 					NOT = { has_global_flag = IW_league_sided_with_defender }
@@ -969,6 +1025,7 @@ country_event = {
 	option = { # free for all
 		name = IW_setup.10.c
 		trigger = {
+			NOT = { has_country_flag = iw_took_deal_nap }
 			AND = {
 				OR = {
 					NOT = { has_global_flag = IW_league_sided_with_attacker }
