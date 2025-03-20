@@ -88,6 +88,14 @@ country_event = {
 				}
 			}
 			hidden_effect = {
+				# set_variable = { doubles it for some reason
+				# 	which = numLeagueMembers
+				# 	which = event_target:IW_italian_league_leader
+				# }
+				export_to_variable = {
+					which = numLeagueMembers
+					who = event_target:IW_italian_league_leader
+				}
 				grant_independence = yes
 				event_target:IW_italian_league_leader = { save_event_target_as = IW_former_leader }
 				clear_global_event_target = IW_italian_league_leader
@@ -120,6 +128,10 @@ country_event = {
 				}
 			}
 			hidden_effect = {
+				export_to_variable = {
+					which = numLeagueMembers
+					who = event_target:IW_french_league_leader
+				}
 				grant_independence = yes
 				event_target:IW_french_league_leader = { save_event_target_as = IW_former_leader }
 				clear_global_event_target = IW_french_league_leader
@@ -152,6 +164,10 @@ country_event = {
 				}
 			}
 			hidden_effect = {
+				export_to_variable = {
+					which = numLeagueMembers
+					who = event_target:IW_iberian_league_leader
+				}
 				grant_independence = yes
 				event_target:IW_iberian_league_leader = { save_event_target_as = IW_former_leader }
 				clear_global_event_target = IW_iberian_league_leader
@@ -184,6 +200,10 @@ country_event = {
 				}
 			}
 			hidden_effect = {
+				export_to_variable = {
+					which = numLeagueMembers
+					who = event_target:IW_HRE_league_leader
+				}
 				grant_independence = yes
 				event_target:IW_HRE_league_leader = { save_event_target_as = IW_former_leader }
 				clear_global_event_target = IW_HRE_league_leader
@@ -334,6 +354,10 @@ country_event = {
 			ROOT = {
 				save_global_event_target_as = IW_french_league_leader
 				set_country_flag = IW_french_league_member
+				set_variable = {
+					which = numLeagueMembers
+					value = 0
+				}
 			}
 			clr_global_flag = IW_peace_of_lodi_flag
 		}
@@ -442,7 +466,8 @@ country_event = {
 				}
 			}
 		}
-		ROOT = {
+		IW_overlord_scope_league_member_lost_effect = yes # ensures numLeagueMember variable goes down if they were in another league
+		ROOT = { # clr effects redundant due to above
 			clr_country_flag = IW_italian_league_member
 			set_country_flag = IW_french_league_member
 			clr_country_flag = IW_iberian_league_member
@@ -525,6 +550,10 @@ country_event = {
 			ROOT = {
 				save_global_event_target_as = IW_iberian_league_leader
 				set_country_flag = IW_iberian_league_member
+				set_variable = {
+					which = numLeagueMembers
+					value = 0
+				}
 			}
 			clr_global_flag = IW_peace_of_lodi_flag
 		}
@@ -631,6 +660,7 @@ country_event = {
 				}
 			}
 		}
+		IW_overlord_scope_league_member_lost_effect = yes # ensures numLeagueMember variable goes down if they were in another league
 		ROOT = {
 			clr_country_flag = IW_italian_league_member
 			clr_country_flag = IW_french_league_member
@@ -691,6 +721,10 @@ country_event = {
 			ROOT = {
 				save_global_event_target_as = IW_HRE_league_leader
 				set_country_flag = IW_HRE_league_member
+				set_variable = {
+					which = numLeagueMembers
+					value = 0
+				}
 			}
 			clr_global_flag = IW_peace_of_lodi_flag
 		}
@@ -799,6 +833,7 @@ country_event = {
 				}
 			}
 		}
+		IW_overlord_scope_league_member_lost_effect = yes # ensures numLeagueMember variable goes down if they were in another league
 		ROOT = {
 			clr_country_flag = IW_italian_league_member
 			clr_country_flag = IW_french_league_member
@@ -851,6 +886,10 @@ country_event = {
 			ROOT = {
 				save_global_event_target_as = IW_italian_league_leader
 				set_country_flag = IW_italian_league_member
+				set_variable = {
+					which = numLeagueMembers
+					value = 0
+				}
 			}
 			set_global_flag = IW_peace_of_lodi_flag
 		}
@@ -895,6 +934,7 @@ country_event = {
 		ai_chance = {
 			factor = 50
 		}
+		IW_overlord_scope_league_member_lost_effect = yes # ensures numLeagueMember variable goes down if they were in another league
 		ROOT = {
 			set_country_flag = IW_italian_league_member
 			clr_country_flag = IW_french_league_member

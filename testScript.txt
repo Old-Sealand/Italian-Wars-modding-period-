@@ -47,3 +47,22 @@
 # LUC = {
 # 	join_all_offensive_wars_of = LAN
 # }
+
+# set_variable = {
+# 	which = numLeagueMembers
+# 	which = event_target:IW_italian_league_leader
+# }
+
+# MLO = {
+# 	grant_independence = yes
+# }
+
+if = {
+	limit = {
+		# 118 = { owned_by_subject_of = LAN }
+		check_variable = { which = numLeagueMembers value = 7 }
+		# IW_league_member = 10
+		# has_country_flag = IW_italian_league_member
+	}
+	add_treasury = 1
+}

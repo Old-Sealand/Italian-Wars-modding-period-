@@ -527,6 +527,10 @@ remove_them_from_italian_league = {
 		# 	modifier = IW_removed_from_our_league
 		# }
 		# add_truce_with = from
+		subtract_variable = {
+			which = numLeagueMembers
+			value = 1
+		}
 	}
 	on_decline = {
 	}
@@ -590,6 +594,12 @@ leave_the_italian_league = {
 		# 	duration = 3650
 		# 	hidden = yes
 		# }
+		FROM = {
+			subtract_variable = {
+				which = numLeagueMembers
+				value = 1
+			}
+		}
 	}
 	on_decline = {
 	}

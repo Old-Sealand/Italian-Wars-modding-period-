@@ -1,0 +1,180 @@
+IW_league_member_lost_effect = {
+	if = {
+		limit = {
+			AND = {
+				tag = event_target:IW_italian_league_leader
+				FROM = { has_country_flag = IW_italian_league_member }
+			}
+		}
+		FROM = { clr_country_flag = IW_italian_league_member }
+		subtract_variable = {
+			which = numLeagueMembers
+			value = 1
+		}
+	}
+	else_if = {
+		limit = {
+			AND = {
+				tag = event_target:IW_french_league_leader
+				FROM = { has_country_flag = IW_french_league_member }
+			}
+		}
+		FROM = { clr_country_flag = IW_french_league_member }
+		subtract_variable = {
+			which = numLeagueMembers
+			value = 1
+		}
+	}
+	else_if = {
+		limit = {
+			AND = {
+				tag = event_target:IW_iberian_league_leader
+				FROM = { has_country_flag = IW_iberian_league_member }
+			}
+		}
+		FROM = { clr_country_flag = IW_iberian_league_member }
+		subtract_variable = {
+			which = numLeagueMembers
+			value = 1
+		}
+	}
+	else_if = {
+		limit = {
+			AND = {
+				tag = event_target:IW_HRE_league_leader
+				FROM = { has_country_flag = IW_HRE_league_member }
+			}
+		}
+		FROM = { clr_country_flag = IW_HRE_league_member }
+		subtract_variable = {
+			which = numLeagueMembers
+			value = 1
+		}
+	}
+}
+
+IW_overlord_scope_league_member_lost_effect = {
+	if = {
+		limit = {
+			AND = {
+				overlord = { tag = event_target:IW_italian_league_leader }
+				has_country_flag = IW_italian_league_member
+			}
+		}
+		clr_country_flag = IW_italian_league_member
+		overlord = {
+			subtract_variable = {
+				which = numLeagueMembers
+				value = 1
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			AND = {
+				overlord = { tag = event_target:IW_french_league_leader }
+				has_country_flag = IW_french_league_member
+			}
+		}
+		clr_country_flag = IW_french_league_member
+		overlord = {
+			subtract_variable = {
+				which = numLeagueMembers
+				value = 1
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			AND = {
+				overlord = { tag = event_target:IW_iberian_league_leader }
+				has_country_flag = IW_iberian_league_member
+			}
+		}
+		clr_country_flag = IW_iberian_league_member
+		overlord = {
+			subtract_variable = {
+				which = numLeagueMembers
+				value = 1
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			AND = {
+				overlord = { tag = event_target:IW_HRE_league_leader }
+				has_country_flag = IW_HRE_league_member
+			}
+		}
+		clr_country_flag = IW_HRE_league_member
+		overlord = {
+			subtract_variable = {
+				which = numLeagueMembers
+				value = 1
+			}
+		}
+	}
+}
+
+# IW_FROM_league_member_lost_effect = {
+# 	if = {
+# 		limit = {
+# 			AND = {
+# 				FROM = { tag = event_target:IW_italian_league_leader }
+# 				has_country_flag = IW_italian_league_member
+# 			}
+# 		}
+# 		clr_country_flag = IW_italian_league_member
+# 		FROM = {
+# 			subtract_variable = {
+# 				which = numLeagueMembers
+# 				value = 1
+# 			}
+# 		}
+# 	}
+# 	if = {
+# 		limit = {
+# 			AND = {
+# 				FROM = { tag = event_target:IW_italian_league_leader }
+# 				has_country_flag = IW_italian_league_member
+# 			}
+# 		}
+# 		clr_country_flag = IW_italian_league_member
+# 		FROM = {
+# 			subtract_variable = {
+# 				which = numLeagueMembers
+# 				value = 1
+# 			}
+# 		}
+# 	}
+# 	if = {
+# 		limit = {
+# 			AND = {
+# 				FROM = { tag = event_target:IW_italian_league_leader }
+# 				has_country_flag = IW_italian_league_member
+# 			}
+# 		}
+# 		clr_country_flag = IW_italian_league_member
+# 		FROM = {
+# 			subtract_variable = {
+# 				which = numLeagueMembers
+# 				value = 1
+# 			}
+# 		}
+# 	}
+# 	if = {
+# 		limit = {
+# 			AND = {
+# 				FROM = { tag = event_target:IW_italian_league_leader }
+# 				has_country_flag = IW_italian_league_member
+# 			}
+# 		}
+# 		clr_country_flag = IW_italian_league_member
+# 		FROM = {
+# 			subtract_variable = {
+# 				which = numLeagueMembers
+# 				value = 1
+# 			}
+# 		}
+# 	}
+# }
