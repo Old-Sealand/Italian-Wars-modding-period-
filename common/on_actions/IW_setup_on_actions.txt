@@ -642,7 +642,6 @@ on_province_owner_change = {
 		limit = { region = italy_region }
 		set_IW_on_province_owner_change = yes
 	}
-	FROM = { add_prestige = 10 }
 }
 # country (country annexing, root = target)
 on_diplomatic_annex = {

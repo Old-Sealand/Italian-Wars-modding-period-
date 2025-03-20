@@ -496,7 +496,7 @@ custom_button = {
 	}
     tooltip = IW_map_prov_40_loc
     frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_40_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_40_inf value = 51 } } NOT = { has_country_flag = IW_province_40_peace_flag } NOT = { has_country_flag = IW_province_40_war_flag } } }
-    frame = { number = 4 trigger = { has_country_flag = IW_province_40_intervention_flag } }
+    frame = { number = 3 trigger = { has_country_flag = IW_province_40_intervention_flag } }
     frame = { number = 4 trigger = { NOT = { check_variable = { which = IW_map_prov_40_inf value = 100 } } has_country_flag = IW_province_40_peace_flag } }
     frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_40_inf value = 100 } } has_country_flag = IW_province_40_war_flag } }
     frame = { number = 6 trigger = { check_variable = { which = IW_map_prov_40_inf value = 100 } } }
@@ -508,7 +508,7 @@ custom_button = {
 	}
     tooltip = IW_map_prov_41_loc
     frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_41_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_41_inf value = 51 } } NOT = { has_country_flag = IW_province_41_peace_flag } NOT = { has_country_flag = IW_province_41_war_flag } } }
-    frame = { number = 4 trigger = { has_country_flag = IW_province_41_intervention_flag } }
+    frame = { number = 3 trigger = { has_country_flag = IW_province_41_intervention_flag } }
     frame = { number = 4 trigger = { NOT = { check_variable = { which = IW_map_prov_41_inf value = 100 } } has_country_flag = IW_province_41_peace_flag } }
     frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_41_inf value = 100 } } has_country_flag = IW_province_41_war_flag } }
     frame = { number = 6 trigger = { check_variable = { which = IW_map_prov_41_inf value = 100 } } }
@@ -520,7 +520,7 @@ custom_button = {
 	}
     tooltip = IW_map_prov_42_loc
     frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_42_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_42_inf value = 51 } } NOT = { has_country_flag = IW_province_42_peace_flag } NOT = { has_country_flag = IW_province_42_war_flag } } }
-    frame = { number = 4 trigger = { has_country_flag = IW_province_42_intervention_flag } }
+    frame = { number = 3 trigger = { has_country_flag = IW_province_42_intervention_flag } }
     frame = { number = 4 trigger = { NOT = { check_variable = { which = IW_map_prov_42_inf value = 100 } } has_country_flag = IW_province_42_peace_flag } }
     frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_42_inf value = 100 } } has_country_flag = IW_province_42_war_flag } }
     frame = { number = 6 trigger = { check_variable = { which = IW_map_prov_42_inf value = 100 } } }
@@ -532,7 +532,7 @@ custom_button = {
 	}
     tooltip = IW_map_prov_43_loc
     frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_43_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_43_inf value = 51 } } NOT = { has_country_flag = IW_province_43_peace_flag } NOT = { has_country_flag = IW_province_43_war_flag } } }
-    frame = { number = 4 trigger = { has_country_flag = IW_province_43_intervention_flag } }
+    frame = { number = 3 trigger = { has_country_flag = IW_province_43_intervention_flag } }
     frame = { number = 4 trigger = { NOT = { check_variable = { which = IW_map_prov_43_inf value = 100 } } has_country_flag = IW_province_43_peace_flag } }
     frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_43_inf value = 100 } } has_country_flag = IW_province_43_war_flag } }
     frame = { number = 6 trigger = { check_variable = { which = IW_map_prov_43_inf value = 100 } } }
@@ -544,7 +544,7 @@ custom_button = {
 	}
     tooltip = IW_map_prov_44_loc
     frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_44_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_44_inf value = 51 } } NOT = { has_country_flag = IW_province_44_peace_flag } NOT = { has_country_flag = IW_province_44_war_flag } } }
-    frame = { number = 4 trigger = { has_country_flag = IW_province_44_intervention_flag } }
+    frame = { number = 3 trigger = { has_country_flag = IW_province_44_intervention_flag } }
     frame = { number = 4 trigger = { NOT = { check_variable = { which = IW_map_prov_44_inf value = 100 } } has_country_flag = IW_province_44_peace_flag } }
     frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_44_inf value = 100 } } has_country_flag = IW_province_44_war_flag } }
     frame = { number = 6 trigger = { check_variable = { which = IW_map_prov_44_inf value = 100 } } }
@@ -556,7 +556,7 @@ custom_button = {
 	}
     tooltip = IW_map_prov_45_loc
     frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_45_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_45_inf value = 51 } } NOT = { has_country_flag = IW_province_45_peace_flag } NOT = { has_country_flag = IW_province_45_war_flag } } }
-    frame = { number = 4 trigger = { has_country_flag = IW_province_45_intervention_flag } }
+    frame = { number = 3 trigger = { has_country_flag = IW_province_45_intervention_flag } }
     frame = { number = 4 trigger = { NOT = { check_variable = { which = IW_map_prov_45_inf value = 100 } } has_country_flag = IW_province_45_peace_flag } }
     frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_45_inf value = 100 } } has_country_flag = IW_province_45_war_flag } }
     frame = { number = 6 trigger = { check_variable = { which = IW_map_prov_45_inf value = 100 } } }
@@ -568,7 +568,7 @@ custom_button = {
 	}
     tooltip = IW_map_prov_46_loc
     frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_46_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_46_inf value = 51 } } NOT = { has_country_flag = IW_province_46_peace_flag } NOT = { has_country_flag = IW_province_46_war_flag } } }
-    frame = { number = 4 trigger = { has_country_flag = IW_province_46_intervention_flag } }
+    frame = { number = 3 trigger = { has_country_flag = IW_province_46_intervention_flag } }
     frame = { number = 4 trigger = { NOT = { check_variable = { which = IW_map_prov_46_inf value = 100 } } has_country_flag = IW_province_46_peace_flag } }
     frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_46_inf value = 100 } } has_country_flag = IW_province_46_war_flag } }
     frame = { number = 6 trigger = { check_variable = { which = IW_map_prov_46_inf value = 100 } } }
@@ -580,7 +580,7 @@ custom_button = {
 	}
     tooltip = IW_map_prov_47_loc
     frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_47_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_47_inf value = 51 } } NOT = { has_country_flag = IW_province_47_peace_flag } NOT = { has_country_flag = IW_province_47_war_flag } } }
-    frame = { number = 4 trigger = { has_country_flag = IW_province_47_intervention_flag } }
+    frame = { number = 3 trigger = { has_country_flag = IW_province_47_intervention_flag } }
     frame = { number = 4 trigger = { NOT = { check_variable = { which = IW_map_prov_47_inf value = 100 } } has_country_flag = IW_province_47_peace_flag } }
     frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_47_inf value = 100 } } has_country_flag = IW_province_47_war_flag } }
     frame = { number = 6 trigger = { check_variable = { which = IW_map_prov_47_inf value = 100 } } }
@@ -592,7 +592,7 @@ custom_button = {
 	}
     tooltip = IW_map_prov_48_loc
     frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_48_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_48_inf value = 51 } } NOT = { has_country_flag = IW_province_48_peace_flag } NOT = { has_country_flag = IW_province_48_war_flag } } }
-    frame = { number = 4 trigger = { has_country_flag = IW_province_48_intervention_flag } }
+    frame = { number = 3 trigger = { has_country_flag = IW_province_48_intervention_flag } }
     frame = { number = 4 trigger = { NOT = { check_variable = { which = IW_map_prov_48_inf value = 100 } } has_country_flag = IW_province_48_peace_flag } }
     frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_48_inf value = 100 } } has_country_flag = IW_province_48_war_flag } }
     frame = { number = 6 trigger = { check_variable = { which = IW_map_prov_48_inf value = 100 } } }
@@ -604,7 +604,7 @@ custom_button = {
 	}
     tooltip = IW_map_prov_49_loc
     frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_49_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_49_inf value = 51 } } NOT = { has_country_flag = IW_province_49_peace_flag } NOT = { has_country_flag = IW_province_49_war_flag } } }
-    frame = { number = 4 trigger = { has_country_flag = IW_province_49_intervention_flag } }
+    frame = { number = 3 trigger = { has_country_flag = IW_province_49_intervention_flag } }
     frame = { number = 4 trigger = { NOT = { check_variable = { which = IW_map_prov_49_inf value = 100 } } has_country_flag = IW_province_49_peace_flag } }
     frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_49_inf value = 100 } } has_country_flag = IW_province_49_war_flag } }
     frame = { number = 6 trigger = { check_variable = { which = IW_map_prov_49_inf value = 100 } } }
@@ -616,8 +616,8 @@ custom_button = {
 	}
     tooltip = IW_map_prov_50_loc
     frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_50_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_50_inf value = 51 } } NOT = { has_country_flag = IW_province_50_peace_flag } NOT = { has_country_flag = IW_province_50_war_flag } } }
-    frame = { number = 5 trigger = { has_country_flag = IW_province_50_intervention_flag } }
-    frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_50_inf value = 100 } } has_country_flag = IW_province_50_peace_flag } }
+    frame = { number = 3 trigger = { has_country_flag = IW_province_50_intervention_flag } }
+    frame = { number = 4 trigger = { NOT = { check_variable = { which = IW_map_prov_50_inf value = 100 } } has_country_flag = IW_province_50_peace_flag } }
     frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_50_inf value = 100 } } has_country_flag = IW_province_50_war_flag } }
     frame = { number = 6 trigger = { check_variable = { which = IW_map_prov_50_inf value = 100 } } }
 }
@@ -628,8 +628,8 @@ custom_button = {
 	}
     tooltip = IW_map_prov_51_loc
     frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_51_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_51_inf value = 51 } } NOT = { has_country_flag = IW_province_51_peace_flag } NOT = { has_country_flag = IW_province_51_war_flag } } }
-    frame = { number = 5 trigger = { has_country_flag = IW_province_51_intervention_flag } }
-    frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_51_inf value = 100 } } has_country_flag = IW_province_51_peace_flag } }
+    frame = { number = 3 trigger = { has_country_flag = IW_province_51_intervention_flag } }
+    frame = { number = 4 trigger = { NOT = { check_variable = { which = IW_map_prov_51_inf value = 100 } } has_country_flag = IW_province_51_peace_flag } }
     frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_51_inf value = 100 } } has_country_flag = IW_province_51_war_flag } }
     frame = { number = 6 trigger = { check_variable = { which = IW_map_prov_51_inf value = 100 } } }
 }
@@ -640,8 +640,8 @@ custom_button = {
 	}
     tooltip = IW_map_prov_52_loc
     frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_52_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_52_inf value = 51 } } NOT = { has_country_flag = IW_province_52_peace_flag } NOT = { has_country_flag = IW_province_52_war_flag } } }
-    frame = { number = 5 trigger = { has_country_flag = IW_province_52_intervention_flag } }
-    frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_52_inf value = 100 } } has_country_flag = IW_province_52_peace_flag } }
+    frame = { number = 3 trigger = { has_country_flag = IW_province_52_intervention_flag } }
+    frame = { number = 4 trigger = { NOT = { check_variable = { which = IW_map_prov_52_inf value = 100 } } has_country_flag = IW_province_52_peace_flag } }
     frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_52_inf value = 100 } } has_country_flag = IW_province_52_war_flag } }
     frame = { number = 6 trigger = { check_variable = { which = IW_map_prov_52_inf value = 100 } } }
 }
@@ -652,8 +652,8 @@ custom_button = {
 	}
     tooltip = IW_map_prov_53_loc
     frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_53_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_53_inf value = 51 } } NOT = { has_country_flag = IW_province_53_peace_flag } NOT = { has_country_flag = IW_province_53_war_flag } } }
-    frame = { number = 5 trigger = { has_country_flag = IW_province_53_intervention_flag } }
-    frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_53_inf value = 100 } } has_country_flag = IW_province_53_peace_flag } }
+    frame = { number = 3 trigger = { has_country_flag = IW_province_53_intervention_flag } }
+    frame = { number = 4 trigger = { NOT = { check_variable = { which = IW_map_prov_53_inf value = 100 } } has_country_flag = IW_province_53_peace_flag } }
     frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_53_inf value = 100 } } has_country_flag = IW_province_53_war_flag } }
     frame = { number = 6 trigger = { check_variable = { which = IW_map_prov_53_inf value = 100 } } }
 }
@@ -664,8 +664,8 @@ custom_button = {
 	}
     tooltip = IW_map_prov_54_loc
     frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_54_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_54_inf value = 51 } } NOT = { has_country_flag = IW_province_54_peace_flag } NOT = { has_country_flag = IW_province_54_war_flag } } }
-    frame = { number = 5 trigger = { has_country_flag = IW_province_54_intervention_flag } }
-    frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_54_inf value = 100 } } has_country_flag = IW_province_54_peace_flag } }
+    frame = { number = 3 trigger = { has_country_flag = IW_province_54_intervention_flag } }
+    frame = { number = 4 trigger = { NOT = { check_variable = { which = IW_map_prov_54_inf value = 100 } } has_country_flag = IW_province_54_peace_flag } }
     frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_54_inf value = 100 } } has_country_flag = IW_province_54_war_flag } }
     frame = { number = 6 trigger = { check_variable = { which = IW_map_prov_54_inf value = 100 } } }
 }
@@ -676,8 +676,8 @@ custom_button = {
 	}
     tooltip = IW_map_prov_55_loc
     frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_55_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_55_inf value = 51 } } NOT = { has_country_flag = IW_province_55_peace_flag } NOT = { has_country_flag = IW_province_55_war_flag } } }
-    frame = { number = 5 trigger = { has_country_flag = IW_province_55_intervention_flag } }
-    frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_55_inf value = 100 } } has_country_flag = IW_province_55_peace_flag } }
+    frame = { number = 3 trigger = { has_country_flag = IW_province_55_intervention_flag } }
+    frame = { number = 4 trigger = { NOT = { check_variable = { which = IW_map_prov_55_inf value = 100 } } has_country_flag = IW_province_55_peace_flag } }
     frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_55_inf value = 100 } } has_country_flag = IW_province_55_war_flag } }
     frame = { number = 6 trigger = { check_variable = { which = IW_map_prov_55_inf value = 100 } } }
 }
@@ -688,8 +688,8 @@ custom_button = {
 	}
     tooltip = IW_map_prov_56_loc
     frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_56_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_56_inf value = 51 } } NOT = { has_country_flag = IW_province_56_peace_flag } NOT = { has_country_flag = IW_province_56_war_flag } } }
-    frame = { number = 5 trigger = { has_country_flag = IW_province_56_intervention_flag } }
-    frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_56_inf value = 100 } } has_country_flag = IW_province_56_peace_flag } }
+    frame = { number = 3 trigger = { has_country_flag = IW_province_56_intervention_flag } }
+    frame = { number = 4 trigger = { NOT = { check_variable = { which = IW_map_prov_56_inf value = 100 } } has_country_flag = IW_province_56_peace_flag } }
     frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_56_inf value = 100 } } has_country_flag = IW_province_56_war_flag } }
     frame = { number = 6 trigger = { check_variable = { which = IW_map_prov_56_inf value = 100 } } }
 }
@@ -700,8 +700,8 @@ custom_button = {
 	}
     tooltip = IW_map_prov_57_loc
     frame = { number = 2 trigger = { check_variable = { which = IW_map_prov_57_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_57_inf value = 51 } } NOT = { has_country_flag = IW_province_57_peace_flag } NOT = { has_country_flag = IW_province_57_war_flag } } }
-    frame = { number = 5 trigger = { has_country_flag = IW_province_57_intervention_flag } }
-    frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_57_inf value = 100 } } has_country_flag = IW_province_57_peace_flag } }
+    frame = { number = 3 trigger = { has_country_flag = IW_province_57_intervention_flag } }
+    frame = { number = 4 trigger = { NOT = { check_variable = { which = IW_map_prov_57_inf value = 100 } } has_country_flag = IW_province_57_peace_flag } }
     frame = { number = 5 trigger = { NOT = { check_variable = { which = IW_map_prov_57_inf value = 100 } } has_country_flag = IW_province_57_war_flag } }
     frame = { number = 6 trigger = { check_variable = { which = IW_map_prov_57_inf value = 100 } } }
 }
