@@ -266,6 +266,10 @@ country_event = {
 	}
 	
 	trigger = {
+		had_global_flag = {
+			flag = IW_peace_of_lodi_flag
+			days = 365
+		}
 		OR = {
 			is_year = 1460
 			ARA = { has_country_flag = alfonso_died_yes_really }
@@ -944,6 +948,7 @@ country_event = {
 					}
 				}
 			}
+			NOT = { truce_with = event_target:IW_defender } # won't be able to join offensive war if they have a truce
 			AND = {
 				OR = {
 					NOT = { has_global_flag = IW_league_sided_with_attacker }
@@ -969,8 +974,9 @@ country_event = {
 
 		join_all_offensive_wars_of = event_target:IW_attacker
 		every_subject_country = {
-			limit = { is_subject_of_type = IW_league_member }
-			join_all_offensive_wars_of = event_target:IW_attacker
+			limit = { is_IW_league_subject = yes }
+			# join_all_offensive_wars_of = event_target:IW_attacker
+			country_event = { id = IW_setup.11 }
 		}
 
 		# custom_tooltip = IW_setup.10a.tt
@@ -1015,8 +1021,9 @@ country_event = {
 
 		join_all_defensive_wars_of = event_target:IW_defender
 		every_subject_country = {
-			limit = { is_subject_of_type = IW_league_member }
-			join_all_defensive_wars_of = event_target:IW_defender
+			limit = { is_IW_league_subject = yes }
+			# join_all_defensive_wars_of = event_target:IW_defender
+			country_event = { id = IW_setup.12 }
 		}
 
 		# custom_tooltip = IW_setup.10b.tt
@@ -1065,7 +1072,7 @@ country_event = {
 			}
 			event_target:IW_third_party = {
 				every_subject_country = {
-					limit = { is_subject_of_type = IW_league_member }
+					limit = { is_IW_league_subject = yes }
 					join_all_defensive_wars_of = PREV
 				}
 			}
@@ -1073,21 +1080,22 @@ country_event = {
 
 		event_target:IW_defender = {
 			every_subject_country = {
-				limit = { is_subject_of_type = IW_league_member }
+				limit = { is_IW_league_subject = yes }
 				join_all_defensive_wars_of = PREV
 			}
 		}
 
 		event_target:IW_attacker = {
 			every_subject_country = {
-				limit = { is_subject_of_type = IW_league_member }
+				limit = { is_IW_league_subject = yes }
 				join_all_defensive_wars_of = PREV
 			}
 		}
 
 		every_subject_country = {
-			limit = { is_subject_of_type = IW_league_member }
-			join_all_offensive_wars_of = ROOT # should probably swap this out with event, so player always has choice
+			limit = { is_IW_league_subject = yes }
+			# join_all_offensive_wars_of = ROOT # should probably swap this out with event, so player always has choice
+			country_event = { id = IW_setup.11 }
 		}
 
 		save_global_event_target_as = IW_third_party
@@ -1104,7 +1112,7 @@ country_event = {
 	}
 }
 
-# League Members join war
+# League Members join war (offensive)
 country_event = {
 	id = IW_setup.11
 	title = IW_setup.10.t
@@ -1112,6 +1120,7 @@ country_event = {
 	picture = SWEDEN_LEAGUE_WAR_eventPicture
 	
 	major = yes
+	major_trigger = { tag = overlord }
 	is_triggered_only = yes
 	
 	# trigger = { }
@@ -1122,7 +1131,23 @@ country_event = {
 			factor = 1
 		}
 
-		join_all_offensive_wars_of = overlord # event_target:IW_attacker
+		hidden_effect = {
+			overlord = {
+				create_subject = {
+					subject_type = IW_league_member_dummy
+					subject = ROOT
+				}
+			}
+			# join_all_offensive_wars_of = overlord # event_target:IW_attacker
+			overlord = {
+				create_subject = {
+					subject_type = IW_league_member
+					subject = ROOT
+				}
+			}
+		}
+		tooltip = { join_all_offensive_wars_of = overlord }
+
 
 	}
 
@@ -1145,7 +1170,7 @@ country_event = {
 	
 }
 
-# League Members join war
+# League Members join war (defensive)
 country_event = {
 	id = IW_setup.12
 	title = IW_setup.10.t
@@ -1153,6 +1178,7 @@ country_event = {
 	picture = SWEDEN_LEAGUE_WAR_eventPicture
 	
 	major = yes
+	major_trigger = { tag = overlord }
 	is_triggered_only = yes
 	
 	# trigger = { }
@@ -1181,6 +1207,29 @@ country_event = {
 		# insert negative opinion modifier
 		add_prestige = -25
 		add_stability = -1
+
+	}
+	
+}
+
+# Inform league leader of betrayal
+country_event = {
+	id = IW_setup.13
+	title = IW_setup.13.t
+	desc = IW_setup.13.d
+	picture = SWEDEN_LEAGUE_WAR_eventPicture
+	
+	major = yes
+	major_trigger = { is_in_war = { casus_belli = IW_cb_italian_war } }
+	is_triggered_only = yes
+	
+	# trigger = { }
+	
+	option = {
+		name = IW_setup.13.a
+		ai_chance = {
+			factor = 1
+		}
 
 	}
 	

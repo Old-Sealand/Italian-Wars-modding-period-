@@ -30,6 +30,8 @@
 
 # Forward declaring all subject types so they can refer to each other in triggers etc.
 IW_league_member = {}
+IW_league_member_permanent = {}
+IW_league_member_dummy = {}
 
 
 IW_league_member = {
@@ -103,4 +105,21 @@ IW_league_member = {
 	# 		}
 	# 	}
 	# }
+}
+
+IW_league_member_permanent = {
+	#If similar subject added check if it needs to be added to these scripted triggers:
+	#is_subject_except_tributary_trigger
+	#is_free_or_tributary_trigger
+	copy_from = IW_league_member
+
+}
+
+IW_league_member_dummy = {
+	#If similar subject added check if it needs to be added to these scripted triggers:
+	#is_subject_except_tributary_trigger
+	#is_free_or_tributary_trigger
+	copy_from = IW_league_member
+
+	joins_overlords_wars = yes
 }
