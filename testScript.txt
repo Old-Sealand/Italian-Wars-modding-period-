@@ -1,0 +1,49 @@
+# MLO = {
+# 	# join_all_offensive_wars_of = LAN
+# 	# declare_war_with_cb = {
+# 	# 	who = VEN
+# 	# 	casus_belli = IW_cb_italian_war
+# 	# }
+# 	white_peace = VEN
+# }
+
+# FRA = {
+# 	# join_all_offensive_wars_of = LAN
+# 	declare_war_with_cb = {
+# 		who = LAN
+# 		casus_belli = IW_cb_italian_war
+# 	}
+# 	# white_peace = VEN
+# }
+
+# set_variable = {
+#     which = numLeagueMembers
+#     value = 0
+# }
+
+# export_to_variable = {
+#     which = numLeagueMembers
+#     value = trigger_value:IW_league_member
+#     who = ROOT
+# }
+
+# if = {
+# 	limit = {
+# 		# check_variable = { which = numLeagueMembers value = 14 }
+# 		IW_league_member = 10
+# 	}
+# 	add_treasury = 1
+# }
+
+# create_subject = {
+# 	subject_type = IW_league_member_dummy
+# 	subject = BLG
+# }
+
+# BLG = {
+# 	join_all_defensive_wars_of = ROOT
+# }
+
+# LUC = {
+# 	join_all_offensive_wars_of = LAN
+# }

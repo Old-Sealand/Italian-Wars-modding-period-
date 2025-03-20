@@ -20,10 +20,13 @@
  IW_HRE_league_member: "Member of the Iberian League"
  IW_HRE_league_member: "Member of the [GetHRELeagueName] League"
 
+### SCRIPTED TRIGGERS ###
+ is_IW_league_subject_tooltip: "Is a Member of Our League."
+
 ## CB / WAR TYPE ##
  IW_cb_italian_war: "Italian War"
  IW_cb_italian_war_desc: "Let us assert our hegemony over the peninsula.\n§RALL §YLeague Members§! on BOTH sides will be called into the war!§!"
- ITALIAN_WAR_WAR_NAME: "$ORDER$War of the League of [Root.GetName]"
+ ITALIAN_WAR_WAR_NAME: "$ORDER$Italian War"
  IW_cb_italian_war_peace_tooltip: "§RParticipants in an Italian War cannot sign a separate peace.§!"
  IW_peace_of_lodi_tooltip: "§RMembers of the Italic League cannot attack each other, as long as the Treaty of Lodi is in place.§!"
  superiority_italian_war_desc: "War goal is to show them superiority by winning battles."
@@ -59,6 +62,14 @@
  join_italian_league_dialog: "[This.GetName] wants to join our League, becoming a subject state to our state."
  PEACE_OF_LODI_OUTSIDE_ITALY_TT: "§R- Only countries with their capital in the §YItaly§! region can join the Italic League while the §YTreaty of Lodi§! is active.§!"
 #  ROME_BORDER_DISTANCE_TT: "Distance from Italy"
+ WE_ARE_IN_ITALIAN_WAR_TT: "§R- We cannot remove §Y[From.GetName]§! from our League while they are fighting alongside us in an §YItalian War§!!§!"
+ FROM_IS_IN_ITALIAN_WAR_TT: "§R- We cannot leave the League of §Y[From.GetName]§! while we are fighting alongside them in an §YItalian War§!!§!"
+ THEY_ARE_GREAT_POWER_TT: "Is a Great Power"
+ THEY_ALREADY_IN_LEAGUE_TT: "Already in another League"
+ THEY_IN_LEAGUE_WAR_TT: "Currently fighting in an Italian War"
+ NUM_LEAGUE_MEMBERS_10_TT: "Has at least 10 League Members (excluding permanent members)"
+ NUM_LEAGUE_MEMBERS_15_TT: "Has at least 15 League Members (excluding permanent members)"
+ NUM_LEAGUE_MEMBERS_20_TT: "Has at least 20 League Members (excluding permanent members)"
 
  ###OPINION MODIFIERS###
  IW_left_our_league: "Left our League"
@@ -129,3 +140,7 @@
  IW_setup.11.d: "All hell has broken loose in Italy. The rising tensions of factional politics have boiled over into an armed conflict that no one can stop. We must stand with our League in this conflict for the ages."
  IW_setup.11.a: "To arms!"
  IW_setup.11.b: "Seems like a good time to renounce our oaths"
+
+ IW_setup.13.t: "[IW_turncoat.GetName] Turns Coat!"
+ IW_setup.13.d: "The traitorous [IW_turncoat.Monarch.GetTitle] of [IW_turncoat.GetName] has secretly conspired with the enemy, renouncing their membership in our Most Holy League, and joining the Damnable League of [IW_accepter_of_turncoat.GetName]. Their treachery will not soon be forgotten..."
+ IW_setup.13.a: "Damnation!"

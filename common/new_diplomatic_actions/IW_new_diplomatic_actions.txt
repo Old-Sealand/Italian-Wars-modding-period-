@@ -56,7 +56,7 @@ invite_into_italian_league = {
 		# 		FROM = { is_at_war = no }
 		# 	}
 		# }
-		if = {
+		if = { # Added back. Remove if figure out how to allow turncoat
 			limit = {
 				is_at_war = yes
 			}
@@ -110,6 +110,51 @@ invite_into_italian_league = {
 		}
 	}
 	on_accept = {
+		if = {
+			limit = { FROM = { is_subject_of_type = IW_league_member } }
+			FROM = {
+				reverse_add_opinion = {
+					who = overlord
+					modifier = IW_left_our_league
+				}
+			}
+		}
+		###### Removed for Now. Seems game is hardcoded not to allow rejoining a war ######
+		# if = {
+		# 	limit = { FROM = { is_in_war = { casus_belli = IW_cb_italian_war } } }
+		# 	# white_peace = FROM
+		# 	save_event_target_as = IW_accepter_of_turncoat
+		# 	FROM = {
+		# 		save_event_target_as = IW_turncoat
+		# 		overlord = { country_event = { id = IW_setup.13 } }
+		# 	}
+		# 	create_subject = {
+		# 		subject_type = IW_league_member_dummy
+		# 		subject = FROM
+		# 	}
+		# 	if = {
+		# 		limit = {
+		# 			ROOT = {
+		# 				is_in_war = {
+		# 					casus_belli = IW_cb_italian_war
+		# 					attackers = ROOT
+		# 				}
+		# 			}
+		# 		}
+		# 		join_all_offensive_wars_of = ROOT
+		# 	}
+		# 	if = {
+		# 		limit = {
+		# 			ROOT = {
+		# 				is_in_war = {
+		# 					casus_belli = IW_cb_italian_war
+		# 					defenders = ROOT
+		# 				}
+		# 			}
+		# 		}
+		# 		join_all_defensive_wars_of = ROOT
+		# 	}
+		# }
 		create_subject = {
 			subject_type = IW_league_member
 			subject = FROM
@@ -299,10 +344,10 @@ invite_into_italian_league = {
 				value = total_development
 				who = FROM
 			}
-			#20 dev = -1
+			#10 dev = -1
 			multiply_variable = {
 				which = ai_value
-				value = -0.05
+				value = -0.10
 			}
 		}
 		# add_entry = {
@@ -319,18 +364,12 @@ invite_into_italian_league = {
 		# 		value = -20
 		# 	}
 		# }
-		add_entry = { # IW addition
-			name = ROOT_IS_GREAT_POWER_TT
-			limit = { FROM = { is_great_power = yes } }
-			export_to_variable = { variable_name = ai_value value = 1 }
-			multiply_variable = { which = ai_value value = -30 }
-		}
-		add_entry = {
-			name = ADDITIONAL_REASONS_FROM_EVENTS_AND_MISSIONS_TO_ACCEPT_TT
-			limit = { FROM = { has_country_flag = easier_to_get_into_persian_sphere } }
-			export_to_variable = { variable_name = ai_value value = 1 }
-			multiply_variable = { which = ai_value value = 25 }
-		}
+		# add_entry = {
+		# 	name = ADDITIONAL_REASONS_FROM_EVENTS_AND_MISSIONS_TO_ACCEPT_TT
+		# 	limit = { FROM = { has_country_flag = easier_to_get_into_persian_sphere } }
+		# 	export_to_variable = { variable_name = ai_value value = 1 }
+		# 	multiply_variable = { which = ai_value value = 25 }
+		# }
 		add_entry = {
 			name = attitude_neutral_DIPLO_ATTITUDE_TT
 			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
@@ -381,12 +420,60 @@ invite_into_italian_league = {
 				who = FROM
 				with = ROOT
 			}
-			#10 units = -1
+			#20 units = -1
 			multiply_variable = {
 				which = ai_value
-				value = -0.10
+				value = -0.05
 			}
 		}
+		add_entry = { # IW addition
+			name = THEY_ARE_GREAT_POWER_TT
+			limit = { FROM = { is_great_power = yes } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -10 }
+		}
+		add_entry = { # IW addition
+			name = THEY_ALREADY_IN_LEAGUE_TT
+			limit = { FROM = { is_subject_of_type = IW_league_member } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -10 }
+		}
+		###### Removed for Now. Seems game is hardcoded not to allow rejoining a war ######
+		# add_entry = { # IW addition
+		# 	name = THEY_IN_LEAGUE_WAR_TT
+		# 	limit = { FROM = { is_in_war = { casus_belli = IW_cb_italian_war } } }
+		# 	export_to_variable = { variable_name = ai_value value = 1 }
+		# 	multiply_variable = { which = ai_value value = -5 }
+		# }
+		add_entry = { # IW addition
+			name = NUM_LEAGUE_MEMBERS_10_TT
+			limit = {
+				AND = {
+					IW_league_member = 10
+					NOT = { IW_league_member = 15 }
+				}
+			}
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -10 }
+		}
+		add_entry = { # IW addition
+			name = NUM_LEAGUE_MEMBERS_15_TT
+			limit = {
+				AND = {
+					IW_league_member = 15
+					NOT = { IW_league_member = 20 }
+				}
+			}
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -15 }
+		}
+		add_entry = { # IW addition
+			name = NUM_LEAGUE_MEMBERS_20_TT
+			limit = { IW_league_member = 20 }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -20 }
+		}
+		
 		# add_entry = { Wanted to do distance from Rome, but doesn't seem to work
 		# 	name = ROME_BORDER_DISTANCE_TT
 		# 	export_to_variable = {
@@ -435,10 +522,10 @@ remove_them_from_italian_league = {
 			who = from
 			modifier = IW_was_removed_from_our_league
 		}
-		add_opinion = {
-			who = from
-			modifier = IW_removed_from_our_league
-		}
+		# add_opinion = {
+		# 	who = from
+		# 	modifier = IW_removed_from_our_league
+		# }
 		# add_truce_with = from
 	}
 	on_decline = {
@@ -458,6 +545,15 @@ leave_the_italian_league = {
 		is_subject_of_type = IW_league_member
 	}
 	is_allowed = {
+		if = {
+			limit = {
+				is_in_war = { casus_belli = IW_cb_italian_war }
+			}
+			custom_trigger_tooltip = {
+				tooltip = WE_ARE_IN_ITALIAN_WAR_TT
+				NOT = { is_in_war = { casus_belli = IW_cb_italian_war } }
+			}
+		}
 	}
 	on_accept = {
 		# if = {
@@ -485,10 +581,10 @@ leave_the_italian_league = {
 			who = from
 			modifier = IW_left_our_league
 		}
-		add_opinion = {
-			who = from
-			modifier = IW_left_their_league
-		}
+		# add_opinion = {
+		# 	who = from
+		# 	modifier = IW_left_their_league
+		# }
 		# add_country_modifier = {
 		# 	name = just_left_italian_league_timer
 		# 	duration = 3650
@@ -623,7 +719,7 @@ join_italian_league = {
 		# 		FROM = { is_at_war = no }
 		# 	}
 		# }
-		if = {
+		if = { # Added back. Remove if figure out how to allow turncoat
 			limit = {
 				is_at_war = yes
 			}
@@ -673,6 +769,26 @@ join_italian_league = {
 		}
 	}
 	on_accept = {
+		if = {
+			limit = { is_subject_of_type = IW_league_member }
+			reverse_add_opinion = {
+				who = overlord
+				modifier = IW_left_our_league
+			}
+		}
+		###### Removed for Now. Seems game is hardcoded not to allow rejoining a war ######
+		# if = {
+		# 	limit = { is_in_war = { casus_belli = IW_cb_italian_war } }
+		# 	save_event_target_as = IW_turncoat
+		# 	FROM = { save_event_target_as = IW_accepter_of_turncoat }
+		# 	overlord = { country_event = { id = IW_setup.13 } }
+		# 	FROM = {
+		# 		create_subject = {
+		# 			subject_type = IW_league_member_dummy
+		# 			subject = ROOT
+		# 		}
+		# 	}
+		# }
 		FROM = {
 			create_subject = {
 				subject_type = IW_league_member
@@ -866,12 +982,25 @@ join_italian_league = {
 				value = total_development
 				who = ROOT
 			}
-			#20 dev = +1
+			#10 dev = +1
 			multiply_variable = {
 				which = ai_value
-				value = 0.05
+				value = 0.1
 			}
 		}
+		# add_entry = { # IW addition
+		# 	name = DIPLO_ARMY_SIZE
+		# 	export_to_variable = {
+		# 		variable_name = ai_value
+		# 		value = army_size
+		# 		who = ROOT
+		# 	}
+		# 	#relative 
+		# 	multiply_variable = {
+		# 		which = ai_value
+		# 		value = 0.05
+		# 	}
+		# }
 		add_entry = {
 			name = attitude_neutral_DIPLO_ATTITUDE_TT
 			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
@@ -922,17 +1051,49 @@ join_italian_league = {
 				who = FROM
 				with = ROOT
 			}
-			#10 units = -1
+			#20 units = -1
 			multiply_variable = {
 				which = ai_value
-				value = -0.10
+				value = -0.05
 			}
 		}
-		add_entry = {
-			name = ADDITIONAL_REASONS_FROM_EVENTS_AND_MISSIONS_TO_ACCEPT_TT
-			limit = { has_country_flag = easier_to_get_into_persian_sphere }
+		# add_entry = {
+		# 	name = ADDITIONAL_REASONS_FROM_EVENTS_AND_MISSIONS_TO_ACCEPT_TT
+		# 	limit = { has_country_flag = easier_to_get_into_persian_sphere }
+		# 	export_to_variable = { variable_name = ai_value value = 1 }
+		# 	multiply_variable = { which = ai_value value = 25 }
+		# }
+		add_entry = { # IW addition
+			name = NUM_LEAGUE_MEMBERS_10_TT
+			limit = {
+				FROM = {
+					AND = {
+						IW_league_member = 10
+						NOT = { IW_league_member = 15 }
+					}
+				}
+			}
 			export_to_variable = { variable_name = ai_value value = 1 }
-			multiply_variable = { which = ai_value value = 25 }
+			multiply_variable = { which = ai_value value = -10 }
+		}
+		add_entry = { # IW addition
+			name = NUM_LEAGUE_MEMBERS_15_TT
+			limit = {
+				FROM = {
+					AND = {
+						IW_league_member = 15
+						NOT = { IW_league_member = 20 }
+					}
+				}
+			}
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -15 }
+		}
+		add_entry = { # IW addition
+			name = NUM_LEAGUE_MEMBERS_20_TT
+			limit = { FROM = { IW_league_member = 20 } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -20 }
 		}
 	}
 }

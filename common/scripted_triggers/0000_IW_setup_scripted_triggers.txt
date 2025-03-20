@@ -8,6 +8,18 @@ is_free_or_tributary_trigger = { #I.e. Tags that can conduct independent diploma
 			is_subject_of_type = tributary_state
 			is_subject_of_type = cultural_sphere_of_influence_subject
 			is_subject_of_type = IW_league_member
+			is_subject_of_type = IW_league_member_dummy
+		}
+	}
+}
+
+is_IW_league_subject = { #I.e. Tags that can conduct independent diplomacy
+	custom_trigger_tooltip = {
+		tooltip = is_IW_league_subject_tooltip
+		OR = {
+			is_subject_of_type = IW_league_member
+			is_subject_of_type = IW_league_member_permanent
+			is_subject_of_type = IW_league_member_dummy
 		}
 	}
 }
