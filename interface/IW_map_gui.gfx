@@ -16,342 +16,399 @@ spriteTypes = {
 		name = "GFX_IW_prov_01"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_01.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_02"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_02.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_03"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_03.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_04"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_04.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_05"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_05.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_06"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_06.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_07"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_07.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_08"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_08.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_09"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_09.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_10"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_10.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_11"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_11.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_12"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_12.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_13"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_13.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_14"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_14.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_15"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_15.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_16"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_16.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_17"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_17.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_18"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_18.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_19"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_19.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_20"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_20.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_21"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_21.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_22"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_22.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_23"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_23.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_24"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_24.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_25"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_25.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_26"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_26.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_27"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_27.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_28"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_28.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_29"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_29.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_30"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_30.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_31"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_31.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_32"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_32.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_33"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_33.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_34"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_34.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_35"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_35.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_36"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_36.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_37"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_37.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_38"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_38.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_39"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_39.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_40"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_40.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_41"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_41.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_42"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_42.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_43"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_43.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_44"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_44.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_45"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_45.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_46"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_46.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_47"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_47.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_48"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_48.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_49"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_49.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_50"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_50.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_51"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_51.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_52"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_52.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_53"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_53.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_54"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_54.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_55"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_55.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_56"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_56.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	spriteType = {
 		name = "GFX_IW_prov_57"
 		texturefile = "gfx/interface/IW_map_gui/IW_prov_57.dds"
 		loadType = "INGAME"
+		noOfFrames = 6
 		transparencecheck = yes
 	}
 	##################

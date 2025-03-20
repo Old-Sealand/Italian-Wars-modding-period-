@@ -26,22 +26,22 @@
 # Emilia_Romagna
 105 = { add_core = PAR cede_province = PAR }	# Parma
 106 = { add_core = MOD cede_province = MOD }	# Modena
-113 = { add_core = FER cede_province = FER }	# Ferrara
 4730 = { add_core = BLG cede_province = BLG }	# Bologna
+113 = { add_core = FER cede_province = FER }	# Ferrara
 114 = { add_core = I30 cede_province = I30 }	# Ravenna
 # Tuscany
+2978 = { add_core = ETR cede_province = ETR }	# Arezzo
+116 = { add_core = LAN cede_province = LAN }	# Firenze
 2980 = { add_core = LUC cede_province = LUC }	# Lucca
 115 = { add_core = PIS cede_province = PIS }	# Pisa
-116 = { add_core = LAN cede_province = LAN }	# Firenze
-2978 = { add_core = ETR cede_province = ETR }	# Arezzo
 117 = { add_core = SIE cede_province = SIE }	# Siena
 # Marche-Abruzzo
 2977 = { add_core = URB cede_province = URB }	# Urbino
 119 = { add_core = I31 cede_province = I31 }	# Ancona
 120 = { add_core = I32 cede_province = I32 }	# Abruzzi
 # Lazio-Umbria
-2976 = { add_core = PGA cede_province = PGA }	# Perugia
 4731 = { add_core = SPL cede_province = SPL }	# Spoleto
+2976 = { add_core = PGA cede_province = PGA }	# Perugia
 118 = { add_core = PAP cede_province = PAP }	# Roma
 4732 = { add_core = I22 cede_province = I22 }	# Terracina
 # Apuila
@@ -50,8 +50,8 @@
 1933 = { add_core = I27 cede_province = I27 }	# Bari
 122 = { add_core = I26 cede_province = I26 }	# Salento
 # Campania
-121 = { add_core = NAP cede_province = NAP }	# Napoli
 4734 = { add_core = I21 cede_province = I21 }	# Avellino
+121 = { add_core = NAP cede_province = NAP }	# Napoli
 2983 = { add_core = I20 cede_province = I20 }	# Salerno
 # Calabria
 1934 = { add_core = I24 cede_province = I24 }	# Lucania
@@ -62,11 +62,62 @@
 2982 = { add_core = I16 cede_province = I16 }	# Syracusa
 126 = { add_core = JAI cede_province = JAI }	# Malta
 # Western Sicily
-125 = { add_core = I17 cede_province = I17 }	# Palermo
 4737 = { add_core = I19 cede_province = I19 }	# Girgenti
+125 = { add_core = I17 cede_province = I17 }	# Palermo
 4736 = { add_core = I18 cede_province = I18 }	# Trapani
 # Tyrrhenian Isles
-1247 = { add_core = COR cede_province = COR }	# Corsica
-127 = { add_core = I12 cede_province = I12 }	# Sasser
-4735 = { add_core = I14 cede_province = I14 }	# Arborea
 2986 = { add_core = I13 cede_province = I13 }	# Cagliari
+4735 = { add_core = I14 cede_province = I14 }	# Arborea
+127 = { add_core = I12 cede_province = I12 }	# Sasser
+1247 = { add_core = COR cede_province = COR }	# Corsica
+
+
+
+
+
+Add text province info.
+
+When you choose Peace or War, then it changes province colour to blue/yellow and the arrow button also changes to blue/red.
+Fixe when transfer from finish with peace, it stays peace and 100%.
+Integration works?
+When somone vassalizes your vassal.
+When someone releases tags and vassals.
+breaking vassal on own.
+When revolt tag is intergrated, remove core.
+When someone switches revolter tag to your side, then prev revolter overlord still shows red on map (make it not show) and is on 100%, make it 0% and clr flags.
+When gaining province and someone has influence over 50%, then mark for them in red.
+When releasing vassal, then can't have province menu open at the same time.
+When selling province.ˇ
+When vassalizing, it should set to 100% and war. But is 50% and peace.
+
+
+Influence (%) colours on map:
+Grey = 0%. Blue = 1%-50%. Teal = 50%-99%(Peace). Yellow = 50%-99%(War). Green = 100%.
+Red = Target nation has 50%-99% on your province.
+
+1. 0%-50% Influence is +5% per click? 50%-100% Influence is +5% per click?
+
+2. Anyone (except subjects) can Influence provinces from 0% to 100%, including own provinces.
+2.1. Same province can be Influenced by multiple tags.
+2.2. Nations that became subjects, sets all their Influenced provinces to 0% and lose access to Influence.
+
+3. At 50% can choose Peace or War, and from there can Influence further.
+3.1. Peace (slightly more expensive to Influence): at 100% province changes ownership.
+3.2. War (slightly less exppensive to Influence or 10% per click?): at 100% uprising happens in a province as Influencer subject and target nation goes to war with Influencer with special CB.
+3.2.1. Special CB: Infleuncer can only keep uprising tag. Target nation can only take uprising tag. Not allowed to take other provinces or release anything, etc.
+
+4. Once someone gets to 100%, it resets others to 0% or 50%? (Or those who had less than 50% set to 0% and those who had more than 50% set to 50% and have to choose Peace or War again?)
+
+5. Once you conquer a province, it is set to 50% (unless had more) and set to Peace (even if chose War).
+5.1. Vassalizing if vassal has core sets to 100%, otherwise 50%.
+5.2. Conquered provinces are cheaper to Influence or Influence is +10% per click?
+5.3. Integrated provinces is set to 100%.
+
+6. Losing province to target nation reduces Influence on that province.
+6.1. If had 100% Influence, then reduces to 50%.
+6.2. If had less than 100% Influence, then reduces to 0% (in case someone conquered (5.) it and didn't get to 100% Influence).
+
+7. When target nation Influences your province to 50% (must choose Peace or War), it is marked Red on map and you can Counter-Influence it (own button or uses the leftmost button next to progressbar).
+7.1. Counter-Influence progressbar shows 50% red line, that can be reduce to 0%.
+7.2. Counter-Influence is -5% or -10% per click?
+7.3. Once reduced to 0%, everyone's Influence (who chose Peace or War) on that province is set to 0%.
