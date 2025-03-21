@@ -727,9 +727,21 @@ custom_button = {
 	trigger = {
 		is_subject = no
 		NOT = { check_variable = { which = IW_map_prov_inf value = 50 } }
+        OR = { #Cooldown
+            had_country_flag = {
+                flag = iw_influence_cooldown
+                days = 365
+            }
+            NOT = { has_country_flag = iw_influence_cooldown }
+        }
+        iw_province_cooldown_flag_check = yes
 	}
     effect = {
-		set_IW_province_progress_bar = yes
+        set_IW_province_progress_bar = yes
+
+        set_IW_event_target = yes
+
+        country_event = { id = iw_interaction_events.1 }
 	}
     tooltip = IW_province_start_loc
 }
@@ -773,9 +785,74 @@ custom_button = {
 	trigger = {
 		has_IW_province_peace_flag = yes
 		NOT = { check_variable = { which = IW_map_prov_inf value = 100 } }
+
+        OR = { #Cooldown
+            had_country_flag = {
+                flag = iw_influence_cooldown
+                days = 365
+            }
+            NOT = { has_country_flag = iw_influence_cooldown }
+        }
+        iw_province_cooldown_flag_check = yes
+
+        if = {
+            limit = {
+                NOT = { owns_iw_province = yes }
+            }
+            owner = {
+                OR = {
+                    NOT = {
+                        estate_loyalty = {
+                            estate = estate_burghers
+                            loyalty = 40
+                        }
+                    }
+                    NOT = {
+                        estate_loyalty = {
+                            estate = estate_church
+                            loyalty = 40
+                        }
+                    }
+                    NOT = {
+                        estate_loyalty = {
+                            estate = estate_nobles
+                            loyalty = 40
+                        }
+                    }
+                }
+            }
+        }
+        else = {
+            crown_land_share = 5
+        }
 	}
     effect = {
 		set_IW_province_progress_bar = yes
+
+        set_IW_event_target = yes
+
+        if = {
+            limit = {
+                owns_iw_province = yes
+            }
+
+            change_estate_land_share = {
+                estate = all
+                share = 5
+            }
+
+            add_estate_loyalty = {
+                estate = all
+                loyalty = 10
+            }
+        }
+        else = {
+            country_event = { id = iw_interaction_events.2 }
+
+            custom_tooltip = " "
+
+            custom_tooltip = iw_gain_influence_over_estate_tt
+        }
 	}
     tooltip = IW_province_peace_left_loc
 }
@@ -787,6 +864,51 @@ custom_button = {
 	}
     effect = {
 		set_IW_province_progress_bar = yes
+
+        if = {
+            limit = {
+                dip = 0
+            }
+            add_prestige_or_monarch_power = { amount = -40 }
+        }
+        else_if = {
+            limit = {
+                dip = 1
+            }
+            add_prestige_or_monarch_power = { amount = -35 }
+        }
+        else_if = {
+            limit = {
+                dip = 2
+            }
+            add_prestige_or_monarch_power = { amount = -30 }
+        }
+        else_if = {
+            limit = {
+                dip = 3
+            }
+            add_prestige_or_monarch_power = { amount = -25 }
+        }
+        else_if = {
+            limit = {
+                dip = 4
+            }
+            add_prestige_or_monarch_power = { amount = -20 }
+        }
+        else_if = {
+            limit = {
+                dip = 5
+            }
+            add_prestige_or_monarch_power = { amount = -15 }
+        }
+        else_if = {
+            limit = {
+                dip = 6
+            }
+            add_prestige_or_monarch_power = { amount = -10 }
+        }
+
+        custom_tooltip = iw_prestige_cost_depends_on_ruler_dip
 	}
     tooltip = IW_province_peace_mid_loc
 }
@@ -795,9 +917,21 @@ custom_button = {
 	trigger = {
 		has_IW_province_peace_flag = yes
 		NOT = { check_variable = { which = IW_map_prov_inf value = 100 } }
+        NOT = { owns_iw_province = yes }
 	}
     effect = {
 		set_IW_province_progress_bar = yes
+
+        set_IW_event_target = yes
+
+        event_target:selected_province = {
+            add_province_modifier = {
+                name = iw_sent_artisans
+                duration = 365
+            }
+
+            add_years_of_income = -1
+        }
 	}
     tooltip = IW_province_peace_right_loc
 }
@@ -824,9 +958,30 @@ custom_button = {
 	trigger = {
 		has_IW_province_war_flag = yes
 		NOT = { check_variable = { which = IW_map_prov_inf value = 100 } }
+
+        owner = {
+            has_spy_network_from = {
+                who = ROOT
+                value = 25
+            }
+        }
 	}
     effect = {
 		set_IW_province_progress_bar = yes
+
+        owner = {
+            add_spy_network_from = {
+                who = ROOT
+                value = -25
+            }
+        }
+
+        event_target:selected_province = {
+            add_province_modifier = {
+                name = iw_city_officials_couped
+                duration = 365
+            }
+        }
 	}
     tooltip = IW_province_war_left_loc
 }
@@ -835,9 +990,18 @@ custom_button = {
 	trigger = {
 		has_IW_province_war_flag = yes
 		NOT = { check_variable = { which = IW_map_prov_inf value = 100 } }
+        any_neighbor_province = { 
+            owner = ROOT
+        }
 	}
     effect = {
 		set_IW_province_progress_bar = yes
+
+        add_yearly_manpower = -0.5
+
+        event_target:selected_province = {
+            add_claim = ROOT
+        }
 	}
     tooltip = IW_province_war_mid_loc
 }
@@ -849,6 +1013,15 @@ custom_button = {
 	}
     effect = {
 		set_IW_province_progress_bar = yes
+
+        event_target:selected_province = {
+            add_province_modifier = {
+                name = iw_disloyal_garrison
+                duration = 365
+            }
+        }
+
+        custom_tooltip = iw_if_province_changes_side_whilst_modifier_active_gain_1_mil_power_tt
 	}
     tooltip = IW_province_war_right_loc
 }

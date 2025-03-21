@@ -615,5 +615,154 @@ set_IW_p_f = {
 				clr_country_flag = IW_province_$number$_intervention_flag
 			}
 		}
+
+		if = {
+			limit = {
+				capital = {
+					has_province_modifier = iw_disloyal_garrison
+				}
+			}
+			capital = {
+				add_base_manpower = 1
+				remove_province_modifier = iw_disloyal_garrison
+			}
+		}
 	}
+}
+
+#QoL Stuff
+set_IW_event_target = { # Trigger this for events
+	if = { limit = { has_country_flag = IW_map_prov_01_window } IW_save_location_as_event_target = { province = 111 } }
+	if = { limit = { has_country_flag = IW_map_prov_02_window } IW_save_location_as_event_target = { province = 1774 } }
+	if = { limit = { has_country_flag = IW_map_prov_03_window } IW_save_location_as_event_target = { province = 112 } }
+	if = { limit = { has_country_flag = IW_map_prov_04_window } IW_save_location_as_event_target = { province = 4729 } }
+	if = { limit = { has_country_flag = IW_map_prov_05_window }	IW_save_location_as_event_target = { province = 108 } }
+	if = { limit = { has_country_flag = IW_map_prov_06_window } IW_save_location_as_event_target = { province = 109 } }
+	if = { limit = { has_country_flag = IW_map_prov_07_window } IW_save_location_as_event_target = { province = 107 } }
+	if = { limit = { has_country_flag = IW_map_prov_08_window } IW_save_location_as_event_target = { province = 4739 } }
+	if = { limit = { has_country_flag = IW_map_prov_09_window } IW_save_location_as_event_target = { province = 1862 } }
+	if = { limit = { has_country_flag = IW_map_prov_10_window } IW_save_location_as_event_target = { province = 104 } }
+	if = { limit = { has_country_flag = IW_map_prov_11_window } IW_save_location_as_event_target = { province = 4740 } }
+	if = { limit = { has_country_flag = IW_map_prov_12_window } IW_save_location_as_event_target = { province = 2979 } }
+	if = { limit = { has_country_flag = IW_map_prov_13_window } IW_save_location_as_event_target = { province = 4728 } }
+	if = { limit = { has_country_flag = IW_map_prov_14_window } IW_save_location_as_event_target = { province = 2981 } }
+	if = { limit = { has_country_flag = IW_map_prov_15_window } IW_save_location_as_event_target = { province = 103 } }
+	if = { limit = { has_country_flag = IW_map_prov_16_window } IW_save_location_as_event_target = { province = 4727 } }
+	if = { limit = { has_country_flag = IW_map_prov_17_window } IW_save_location_as_event_target = { province = 1875 } }
+	if = { limit = { has_country_flag = IW_map_prov_18_window } IW_save_location_as_event_target = { province = 102 } }
+	if = { limit = { has_country_flag = IW_map_prov_19_window } IW_save_location_as_event_target = { province = 2992 } }
+	if = { limit = { has_country_flag = IW_map_prov_20_window } IW_save_location_as_event_target = { province = 101 } }
+	if = { limit = { has_country_flag = IW_map_prov_21_window } IW_save_location_as_event_target = { province = 105 } }
+	if = { limit = { has_country_flag = IW_map_prov_22_window } IW_save_location_as_event_target = { province = 106 } }
+	if = { limit = { has_country_flag = IW_map_prov_23_window } IW_save_location_as_event_target = { province = 4730 } }
+	if = { limit = { has_country_flag = IW_map_prov_24_window } IW_save_location_as_event_target = { province = 113 } }
+	if = { limit = { has_country_flag = IW_map_prov_25_window } IW_save_location_as_event_target = { province = 114 } }
+	if = { limit = { has_country_flag = IW_map_prov_26_window } IW_save_location_as_event_target = { province = 2978 } }
+	if = { limit = { has_country_flag = IW_map_prov_27_window } IW_save_location_as_event_target = { province = 116 } }
+	if = { limit = { has_country_flag = IW_map_prov_28_window } IW_save_location_as_event_target = { province = 2980 } }
+	if = { limit = { has_country_flag = IW_map_prov_29_window } IW_save_location_as_event_target = { province = 115 } }
+	if = { limit = { has_country_flag = IW_map_prov_30_window } IW_save_location_as_event_target = { province = 117 } }
+	if = { limit = { has_country_flag = IW_map_prov_31_window } IW_save_location_as_event_target = { province = 2977 } }
+	if = { limit = { has_country_flag = IW_map_prov_32_window } IW_save_location_as_event_target = { province = 119 } }
+	if = { limit = { has_country_flag = IW_map_prov_33_window } IW_save_location_as_event_target = { province = 120 } }
+	if = { limit = { has_country_flag = IW_map_prov_34_window } IW_save_location_as_event_target = { province = 4731 } }
+	if = { limit = { has_country_flag = IW_map_prov_35_window } IW_save_location_as_event_target = { province = 2976 } }
+	if = { limit = { has_country_flag = IW_map_prov_36_window } IW_save_location_as_event_target = { province = 118 } }
+	if = { limit = { has_country_flag = IW_map_prov_37_window } IW_save_location_as_event_target = { province = 4732 } }
+	if = { limit = { has_country_flag = IW_map_prov_38_window } IW_save_location_as_event_target = { province = 4733 } }
+	if = { limit = { has_country_flag = IW_map_prov_39_window } IW_save_location_as_event_target = { province = 2985 } }
+	if = { limit = { has_country_flag = IW_map_prov_40_window } IW_save_location_as_event_target = { province = 1933 } }
+	if = { limit = { has_country_flag = IW_map_prov_41_window } IW_save_location_as_event_target = { province = 122 } }
+	if = { limit = { has_country_flag = IW_map_prov_42_window } IW_save_location_as_event_target = { province = 4734 } }
+	if = { limit = { has_country_flag = IW_map_prov_43_window } IW_save_location_as_event_target = { province = 121 } }
+	if = { limit = { has_country_flag = IW_map_prov_44_window } IW_save_location_as_event_target = { province = 2983 } }
+	if = { limit = { has_country_flag = IW_map_prov_45_window } IW_save_location_as_event_target = { province = 1934 } }
+	if = { limit = { has_country_flag = IW_map_prov_46_window } IW_save_location_as_event_target = { province = 2984 } }
+	if = { limit = { has_country_flag = IW_map_prov_47_window } IW_save_location_as_event_target = { province = 123 } }
+	if = { limit = { has_country_flag = IW_map_prov_48_window } IW_save_location_as_event_target = { province = 124 } }
+	if = { limit = { has_country_flag = IW_map_prov_49_window } IW_save_location_as_event_target = { province = 2982 } }
+	if = { limit = { has_country_flag = IW_map_prov_50_window } IW_save_location_as_event_target = { province = 126 } }
+	if = { limit = { has_country_flag = IW_map_prov_51_window } IW_save_location_as_event_target = { province = 4737 } }
+	if = { limit = { has_country_flag = IW_map_prov_52_window } IW_save_location_as_event_target = { province = 125 } }
+	if = { limit = { has_country_flag = IW_map_prov_53_window } IW_save_location_as_event_target = { province = 4736 } }
+	if = { limit = { has_country_flag = IW_map_prov_54_window } IW_save_location_as_event_target = { province = 2986 } }
+	if = { limit = { has_country_flag = IW_map_prov_55_window } IW_save_location_as_event_target = { province = 4735 } }
+	if = { limit = { has_country_flag = IW_map_prov_56_window } IW_save_location_as_event_target = { province = 127 } }
+	if = { limit = { has_country_flag = IW_map_prov_57_window } IW_save_location_as_event_target = { province = 1247 } }
+}
+
+IW_save_location_as_event_target = {
+	$province$ = {
+		save_global_event_target_as = selected_province
+	}
+}
+
+IW_set_specific_province_cooldown_flag = {
+	if = {
+		limit = {
+			has_country_flag = IW_province_$number$_cooldown_flag
+		}
+		clr_country_flag = IW_province_$number$_cooldown_flag
+	}
+	set_country_flag = IW_province_$number$_cooldown_flag
+}
+
+IW_set_province_cooldown_flag = {
+	if = { limit = { has_country_flag = IW_map_prov_01_window } IW_set_specific_province_cooldown_flag = { number = 01 } } 
+	if = { limit = { has_country_flag = IW_map_prov_02_window } IW_set_specific_province_cooldown_flag = { number = 02 } } 
+	if = { limit = { has_country_flag = IW_map_prov_03_window } IW_set_specific_province_cooldown_flag = { number = 03 } } 
+	if = { limit = { has_country_flag = IW_map_prov_04_window } IW_set_specific_province_cooldown_flag = { number = 04 } } 
+	if = { limit = { has_country_flag = IW_map_prov_05_window } IW_set_specific_province_cooldown_flag = { number = 05 } } 
+	if = { limit = { has_country_flag = IW_map_prov_06_window } IW_set_specific_province_cooldown_flag = { number = 06 } } 
+	if = { limit = { has_country_flag = IW_map_prov_07_window } IW_set_specific_province_cooldown_flag = { number = 07 } } 
+	if = { limit = { has_country_flag = IW_map_prov_08_window } IW_set_specific_province_cooldown_flag = { number = 08 } } 
+	if = { limit = { has_country_flag = IW_map_prov_09_window } IW_set_specific_province_cooldown_flag = { number = 09 } } 
+	if = { limit = { has_country_flag = IW_map_prov_10_window } IW_set_specific_province_cooldown_flag = { number = 10 } } 
+	if = { limit = { has_country_flag = IW_map_prov_11_window } IW_set_specific_province_cooldown_flag = { number = 11 } } 
+	if = { limit = { has_country_flag = IW_map_prov_12_window } IW_set_specific_province_cooldown_flag = { number = 12 } } 
+	if = { limit = { has_country_flag = IW_map_prov_13_window } IW_set_specific_province_cooldown_flag = { number = 13 } } 
+	if = { limit = { has_country_flag = IW_map_prov_14_window } IW_set_specific_province_cooldown_flag = { number = 14 } } 
+	if = { limit = { has_country_flag = IW_map_prov_15_window } IW_set_specific_province_cooldown_flag = { number = 15 } } 
+	if = { limit = { has_country_flag = IW_map_prov_16_window } IW_set_specific_province_cooldown_flag = { number = 16 } } 
+	if = { limit = { has_country_flag = IW_map_prov_17_window } IW_set_specific_province_cooldown_flag = { number = 17 } } 
+	if = { limit = { has_country_flag = IW_map_prov_18_window } IW_set_specific_province_cooldown_flag = { number = 18 } } 
+	if = { limit = { has_country_flag = IW_map_prov_19_window } IW_set_specific_province_cooldown_flag = { number = 19 } } 
+	if = { limit = { has_country_flag = IW_map_prov_20_window } IW_set_specific_province_cooldown_flag = { number = 20 } } 
+	if = { limit = { has_country_flag = IW_map_prov_21_window } IW_set_specific_province_cooldown_flag = { number = 21 } } 
+	if = { limit = { has_country_flag = IW_map_prov_22_window } IW_set_specific_province_cooldown_flag = { number = 22 } } 
+	if = { limit = { has_country_flag = IW_map_prov_23_window } IW_set_specific_province_cooldown_flag = { number = 23 } } 
+	if = { limit = { has_country_flag = IW_map_prov_24_window } IW_set_specific_province_cooldown_flag = { number = 24 } } 
+	if = { limit = { has_country_flag = IW_map_prov_25_window } IW_set_specific_province_cooldown_flag = { number = 25 } } 
+	if = { limit = { has_country_flag = IW_map_prov_26_window } IW_set_specific_province_cooldown_flag = { number = 26 } } 
+	if = { limit = { has_country_flag = IW_map_prov_27_window } IW_set_specific_province_cooldown_flag = { number = 27 } } 
+	if = { limit = { has_country_flag = IW_map_prov_28_window } IW_set_specific_province_cooldown_flag = { number = 28 } } 
+	if = { limit = { has_country_flag = IW_map_prov_29_window } IW_set_specific_province_cooldown_flag = { number = 29 } } 
+	if = { limit = { has_country_flag = IW_map_prov_30_window } IW_set_specific_province_cooldown_flag = { number = 30 } } 
+	if = { limit = { has_country_flag = IW_map_prov_31_window } IW_set_specific_province_cooldown_flag = { number = 31 } } 
+	if = { limit = { has_country_flag = IW_map_prov_32_window } IW_set_specific_province_cooldown_flag = { number = 32 } } 
+	if = { limit = { has_country_flag = IW_map_prov_33_window } IW_set_specific_province_cooldown_flag = { number = 33 } } 
+	if = { limit = { has_country_flag = IW_map_prov_34_window } IW_set_specific_province_cooldown_flag = { number = 34 } } 
+	if = { limit = { has_country_flag = IW_map_prov_35_window } IW_set_specific_province_cooldown_flag = { number = 35 } } 
+	if = { limit = { has_country_flag = IW_map_prov_36_window } IW_set_specific_province_cooldown_flag = { number = 36 } } 
+	if = { limit = { has_country_flag = IW_map_prov_37_window } IW_set_specific_province_cooldown_flag = { number = 37 } } 
+	if = { limit = { has_country_flag = IW_map_prov_38_window } IW_set_specific_province_cooldown_flag = { number = 38 } } 
+	if = { limit = { has_country_flag = IW_map_prov_39_window } IW_set_specific_province_cooldown_flag = { number = 39 } } 
+	if = { limit = { has_country_flag = IW_map_prov_40_window } IW_set_specific_province_cooldown_flag = { number = 40 } } 
+	if = { limit = { has_country_flag = IW_map_prov_41_window } IW_set_specific_province_cooldown_flag = { number = 41 } } 
+	if = { limit = { has_country_flag = IW_map_prov_42_window } IW_set_specific_province_cooldown_flag = { number = 42 } } 
+	if = { limit = { has_country_flag = IW_map_prov_43_window } IW_set_specific_province_cooldown_flag = { number = 43 } } 
+	if = { limit = { has_country_flag = IW_map_prov_44_window } IW_set_specific_province_cooldown_flag = { number = 44 } } 
+	if = { limit = { has_country_flag = IW_map_prov_45_window } IW_set_specific_province_cooldown_flag = { number = 45 } } 
+	if = { limit = { has_country_flag = IW_map_prov_46_window } IW_set_specific_province_cooldown_flag = { number = 46 } } 
+	if = { limit = { has_country_flag = IW_map_prov_47_window } IW_set_specific_province_cooldown_flag = { number = 47 } } 
+	if = { limit = { has_country_flag = IW_map_prov_48_window } IW_set_specific_province_cooldown_flag = { number = 48 } } 
+	if = { limit = { has_country_flag = IW_map_prov_49_window } IW_set_specific_province_cooldown_flag = { number = 49 } } 
+	if = { limit = { has_country_flag = IW_map_prov_50_window } IW_set_specific_province_cooldown_flag = { number = 50 } } 
+	if = { limit = { has_country_flag = IW_map_prov_51_window } IW_set_specific_province_cooldown_flag = { number = 51 } } 
+	if = { limit = { has_country_flag = IW_map_prov_52_window } IW_set_specific_province_cooldown_flag = { number = 52 } } 
+	if = { limit = { has_country_flag = IW_map_prov_53_window } IW_set_specific_province_cooldown_flag = { number = 53 } } 
+	if = { limit = { has_country_flag = IW_map_prov_54_window } IW_set_specific_province_cooldown_flag = { number = 54 } } 
+	if = { limit = { has_country_flag = IW_map_prov_55_window } IW_set_specific_province_cooldown_flag = { number = 55 } } 
+	if = { limit = { has_country_flag = IW_map_prov_56_window } IW_set_specific_province_cooldown_flag = { number = 56 } } 
+	if = { limit = { has_country_flag = IW_map_prov_57_window } IW_set_specific_province_cooldown_flag = { number = 57 } }
 }

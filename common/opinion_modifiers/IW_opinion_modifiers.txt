@@ -39,3 +39,8 @@ IW_conceded_disputed_lands = {
 	opinion = 25
 	yearly_decay = 2	
 }
+
+influenced_city = {
+	opinion = -25
+	yearly_decay = 2
+}
