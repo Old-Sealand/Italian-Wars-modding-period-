@@ -1,0 +1,5 @@
+IW_defender_of_the_peninsula = {
+	land_morale = 0.10
+	defensiveness = 0.20
+	war_exhaustion = -0.10
+}

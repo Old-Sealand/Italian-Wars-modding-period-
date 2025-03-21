@@ -360,6 +360,7 @@ country_event = {
 				}
 			}
 			clr_global_flag = IW_peace_of_lodi_flag
+			set_global_flag = IW_first_war_looming
 		}
 	}
 
@@ -393,10 +394,18 @@ country_event = {
 							tag = ARA
 							tag = CAS
 							tag = SPA
+							tag = NAP
 						}
 					}
 				}
 				country_event = { id = IW_setup.3 }
+			}
+			every_country = {
+				limit = { has_country_flag = IW_italian_league_member }
+				country_event = {
+					id = IW_setup.14
+					days = 10
+				}
 			}
 		}
 		custom_tooltip = IW_setup.2a.tt # Form the French League, with [ROOT.CountryName] at its head. _ will be called to join the cause.
@@ -466,7 +475,7 @@ country_event = {
 				}
 			}
 		}
-		IW_overlord_scope_league_member_lost_effect = yes # ensures numLeagueMember variable goes down if they were in another league
+		hidden_effect = { IW_overlord_scope_league_member_lost_effect = yes } # ensures numLeagueMember variable goes down if they were in another league
 		ROOT = { # clr effects redundant due to above
 			clr_country_flag = IW_italian_league_member
 			set_country_flag = IW_french_league_member
@@ -531,15 +540,23 @@ country_event = {
 			}
 		}
 		# Italian League is losing against the French League Leader
-		event_target:IW_italian_league_leader = {
-			is_in_war = {
-				attacker_leader = event_target:IW_french_league_leader
-				defender_leader = THIS
+		OR  = {
+			event_target:IW_italian_league_leader = {
+				is_in_war = {
+					attacker_leader = event_target:IW_french_league_leader
+					defender_leader = THIS
+				}
+				NOT = {
+					war_score_against = {
+						who = event_target:IW_french_league_leader
+						value = -25
+					}
+				}
 			}
-			NOT = {
-				war_score_against = {
+			event_target:IW_italian_league_leader = {
+				has_won_war_against = {
 					who = event_target:IW_french_league_leader
-					value = -25
+					max_years_since = 10
 				}
 			}
 		}
@@ -582,7 +599,8 @@ country_event = {
 							tag = ROOT
 							tag = event_target:IW_italian_league_leader
 							is_emperor = yes
-							tag = FRA
+							tag = event_target:IW_french_league_leader
+							is_in_war = { casus_belli = IW_cb_italian_war }
 						}
 					}
 				}
@@ -660,7 +678,7 @@ country_event = {
 				}
 			}
 		}
-		IW_overlord_scope_league_member_lost_effect = yes # ensures numLeagueMember variable goes down if they were in another league
+		hidden_effect = { IW_overlord_scope_league_member_lost_effect = yes } # ensures numLeagueMember variable goes down if they were in another league
 		ROOT = {
 			clr_country_flag = IW_italian_league_member
 			clr_country_flag = IW_french_league_member
@@ -752,10 +770,12 @@ country_event = {
 						OR = {
 							tag = ROOT
 							tag = event_target:IW_italian_league_leader
-							tag = FRA
+							tag = event_target:IW_french_league_leader
+							tag = event_target:IW_iberian_league_leader
 							tag = CAS
 							tag = ARA
 							tag = SPA
+							is_in_war = { casus_belli = IW_cb_italian_war }
 						}
 					}
 				}
@@ -833,7 +853,7 @@ country_event = {
 				}
 			}
 		}
-		IW_overlord_scope_league_member_lost_effect = yes # ensures numLeagueMember variable goes down if they were in another league
+		hidden_effect = { IW_overlord_scope_league_member_lost_effect = yes } # ensures numLeagueMember variable goes down if they were in another league
 		ROOT = {
 			clr_country_flag = IW_italian_league_member
 			clr_country_flag = IW_french_league_member
@@ -934,7 +954,7 @@ country_event = {
 		ai_chance = {
 			factor = 50
 		}
-		IW_overlord_scope_league_member_lost_effect = yes # ensures numLeagueMember variable goes down if they were in another league
+		hidden_effect = { IW_overlord_scope_league_member_lost_effect = yes } # ensures numLeagueMember variable goes down if they were in another league
 		ROOT = {
 			set_country_flag = IW_italian_league_member
 			clr_country_flag = IW_french_league_member
@@ -1252,7 +1272,7 @@ country_event = {
 	
 }
 
-# Inform league leader of betrayal
+# Inform league leader of betrayal (currently unused because of stupid PDX hardcoding)
 country_event = {
 	id = IW_setup.13
 	title = IW_setup.13.t
@@ -1273,4 +1293,163 @@ country_event = {
 
 	}
 	
+}
+
+# Inform Italians of impending war
+country_event = {
+	id = IW_setup.14
+	title = IW_setup.14.t
+	desc = IW_setup.14.d
+	picture = SPY_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = { has_country_flag = IW_italian_league_member }
+	
+	option = {
+		name = IW_setup.14.a
+		ai_chance = {
+			factor = 1
+		}
+		custom_tooltip = IW_impending_war_tt
+	}
+	
+}
+
+# Start 1st Italian War
+country_event = {
+	id = IW_setup.15
+	title = IW_setup.15.t
+	desc = IW_setup.15.d
+	picture = MILITARY_CAMP_eventPicture
+	
+	major = yes
+	major_trigger = { capital_scope = { continent = europe } }
+	
+	trigger = {
+		had_global_flag = {
+			flag = IW_first_war_looming
+			days = 365
+		}
+		tag = event_target:IW_french_league_leader
+		is_at_war = no
+	}
+	
+	immediate = {
+		clr_global_flag = IW_first_war_looming
+	}
+
+	option = {
+		name = IW_setup.15.a
+		ai_chance = {
+			factor = 1
+		}
+
+		declare_war_with_cb = {
+			who = event_target:IW_italian_league_leader
+			casus_belli = IW_cb_italian_war
+		}
+		clr_global_flag = IW_first_war_looming
+
+	}
+	
+	option = {
+		name = IW_setup.15.b
+		ai_chance = {
+			factor = 0
+		}
+
+		add_prestige = -10
+		set_global_flag = IW_first_war_looming
+
+		custom_tooltip = IW_fra_not_ready_tt
+
+	}
+}
+
+# Naples - Ask to Join Italic League?
+country_event = {
+	id = IW_setup.16
+	title = IW_setup.16.t
+	desc = IW_setup.16.d
+	picture = AULIC_COUNCIL_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = NAP
+		is_subject = no
+		has_global_flag = IW_first_war_looming
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = IW_setup.16.a
+		ai_chance = {
+			factor = 1
+		}
+
+		custom_tooltip = IW_setup_16a_tt
+		event_target:IW_italian_league_leader = {
+			country_event = { id = IW_setup.17 }
+		}
+
+	}
+	
+	option = {
+		name = IW_setup.16.b
+		ai_chance = {
+			factor = 0
+		}
+
+	}
+}
+
+# Italic League leader - let Naples join Italic League?
+country_event = {
+	id = IW_setup.17
+	title = IW_setup.17.t
+	desc = IW_setup.17.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = IW_setup.17.a
+		ai_chance = {
+			factor = 1
+		}
+
+		hidden_effect = {
+			NAP = {
+				set_country_flag = IW_italian_league_member
+				clr_country_flag = IW_french_league_member
+				clr_country_flag = IW_iberian_league_member
+				clr_country_flag = IW_HRE_league_member
+			}
+			create_subject = {
+				subject_type = IW_league_member
+				subject = NAP
+			}
+		}
+		custom_tooltip = IW_setup_17a_tt
+
+		add_country_modifier = { 
+			name = IW_defender_of_the_peninsula
+			duration = 3650
+		}
+
+	}
+	
+	option = {
+		name = IW_setup.17.b
+		ai_chance = {
+			factor = 0
+		}
+
+	}
 }

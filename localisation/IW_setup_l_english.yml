@@ -77,6 +77,10 @@
  IW_was_removed_from_our_league: "Has been removed from Our League"
  IW_removed_from_our_league: "Has been removed from their League"
 
+ ###EVENT MODIFIERS###
+ IW_defender_of_the_peninsula: "Defender of the Peninsula"
+ desc_IW_defender_of_the_peninsula: "In aiding Naples, we have demonstrated our dedication to the cause of the Italic League: Italy shall remian free from foreign influence."
+
 ### SETUP EVENTS ###
  IW_setup.1.t: "The [IW_former_leader.GetAdjective] League is No More"
  IW_setup.1.d1: "Threatened by foreign interlopers on all sides, the brave remaining coalition states of the Italic League will require strong leadership to ensure their very survival. The [IW_former_leader.GetAdjective] [IW_former_leader.Monarch.GetTitle] has proven himself to be unworthy of the title, and the member council has called [Root.Monarch.GetName] to assume the role of defender of Italy." # usurping Italian leader
@@ -98,7 +102,7 @@
  IW_setup.2.d2: "Something something Norman conquests"
  IW_setup.2.d3: "Something something Lotharingia?"
  IW_setup.2.a: "We will reclaim the legacy of Anjou!"
- IW_setup.2a.tt: "Form the §Y[GetFrenchLeagueName] League§! with [Root.GetName] at its head. Nations across Europe will be called to join the cause."
+ IW_setup.2a.tt: "Form the §Y[GetFrenchLeagueName] League§! with [Root.GetName] at its head. Nations across Europe will be called to join the cause.\n\nWe will have §Y12§! months to prepare before pressing our Angevin claims, which may lead to war with the §YItalic League§!..."
 
  IW_setup.3.t: "The [GetFrenchLeagueName] League Calls"
  IW_setup.3.a: "Finally, a worthy cause!"
@@ -144,3 +148,26 @@
  IW_setup.13.t: "[IW_turncoat.GetName] Turns Coat!"
  IW_setup.13.d: "The traitorous [IW_turncoat.Monarch.GetTitle] of [IW_turncoat.GetName] has secretly conspired with the enemy, renouncing their membership in our Most Holy League, and joining the Damnable League of [IW_accepter_of_turncoat.GetName]. Their treachery will not soon be forgotten..."
  IW_setup.13.a: "Damnation!"
+
+ IW_setup.14.t: "Impending War"
+ IW_setup.14.d: "Whispers of war echo through the courts of Italy. Rumors swirl of an ominous [IW_french_league_leader.GetAdjective] mobilization, their banners raised high as soldiers gather in numbers not seen in decades. [IW_french_league_leader.Monarch.GetName], young and ambitious, casts his gaze southward upon the riches and glories of the Italian peninsula, dreaming of conquest and domination. Diplomatic envoys bring grim tidings: the [IW_french_league_leader.GetAdjective] [IW_french_league_leader.Monarch.GetTitle] has begun mustering a mighty army with the intent of pressing his claim on [NAP.GetName], sparking fears across the region.\n\nMerchants in [MLO.GetName] whisper of heavily laden [IW_french_league_leader.GetAdjective] supply trains crossing the Alps. Spies in southern Germany report the presence of heavily armored knights and war-hardened Swiss mercenaries rallying to [IW_french_league_leader.Monarch.GetName]'s cause. Tensions rise, alliances are questioned, and the fragile peace teeters on the edge of destruction. The rulers of Italy must prepare, for within months, the thunder of war may resound across their lands."
+ IW_setup.14.a: "Apocalypse is nigh..."
+ IW_impending_war_tt: "We have §Y12§! months to prepare before §Y[IW_french_league_leader.GetName]§! may make a move against the §YItalic League§!..."
+
+ IW_setup.15.t: "The Drums of War Thunder"
+ IW_setup.15.d: "The armies of [IW_french_league_leader.GetName] stand ready, their ranks gleaming with steel and bristling with resolve. Months of preparation have come to fruition, and [IW_french_league_leader.Monarch.GetName] now watches as his forces assemble in the shadow of the Alps. The dream of reclaiming [NAP.GetName] and extending [IW_french_league_leader.GetAdjective] dominance into Italy is no longer a distant vision—it is within reach.\n\nKnights clad in shining armor mount their steeds, their banners fluttering with the royal fleur-de-lis. Swiss mercenaries, battle-hardened and hungry for glory, stand shoulder to shoulder with [IW_french_league_leader.GetAdjective] pikemen. The roads southward are cleared, supplies are gathered, and the finest tacticians prepare to guide the campaign.\n\n[IW_french_league_leader.Monarch.GetName], confident in his destiny, addresses his court. "The riches of Italy await us, and the world shall witness the might of France!" With these words, the drums of war echo, and the march on Italy begins. The [IW_french_league_leader.GetAdjective] army is determined to carve a path to greatness, and nothing will stand in its way."
+ IW_setup.15.a: "It's time to reclaim the legacy of Anjou"
+ IW_setup.15.b: "We still need more time to prepare!"
+ IW_fra_not_ready_tt: "\nWe will be given another §Y12§! months to prepare for war"
+
+ IW_setup.16.t: "Strength in Numbers"
+ IW_setup.16.d: "Dark clouds gather over [NAP.GetName] as the shadow of [IW_french_league_leader.GetName] stretches ever closer. The rumors have crystallized into reality—[IW_french_league_leader.Monarch.GetName] has prepared his mighty host, intent on pressing his claim to the [NAP.GetAdjective] throne. The court is rife with unease; the streets hum with whispers of invasion. [NAP.Monarch.GetTitle] [NAP.Monarch.GetName]'s advisors stand divided, torn between pride and pragmatism.\n\nThe prospect of appealing to [IW_italian_league_leader.GetName] and the Italic League for protection stirs heated debate. Some argue that Italy must unite in the face of foreign aggression, for only a combined strength can deter the [IW_french_league_leader.GetAdjective] war machine. Others fear the price of such alliances—[LAN.GetName]'s rivalry with [MLO.GetName], [VEN.GetName]'s ambitions, the meddling hands of Rome—could they trade one yoke for another?\n\nAs [NAP.GetName] deliberates, time grows short. Will the crown humble itself and reach out to its Italian neighbors, forging bonds to weather the storm? Or will they stand alone, resolved to face whatever comes? The fate of [NAP.GetName] hangs precariously, and the decisions made now will echo for generations."
+ IW_setup.16.a: "The way forward is a united Italy"
+ IW_setup.16.b: "We will not trade one master for another"
+ IW_setup_16a_tt: "We will ask §Y[IW_italian_league_leader.GetName]§! to allow us entry into the §YItalic League§!\n"
+
+ IW_setup.17.t: "[NAP.GetName] Requests Protection"
+ IW_setup.17.d: "In the halls of the Palazzo Vecchio, [IW_italian_league_leader.GetName] finds itself at a crossroads. Envoys from [NAP.GetName] have arrived, their words heavy with the weight of impending war. The [IW_french_league_leader.GetAdjective] king's ambitions are no secret, and the Neapolitans seek refuge under the banner of the Italic League. To deny their plea may leave [NAP.GetName] vulnerable to destruction—but to accept it risks drawing [IW_italian_league_leader.GetName] into the looming conflict and entangling its delicate web of alliances.\n\nThe [IW_italian_league_leader.GovernmentName] debates fiercely. Some see an opportunity to unite the Italian states against the northern invader and strengthen the League's influence. Others warn of the dangers: [NAP.GetName] could become a burden, dragging [IW_italian_league_leader.GetName] into a war it cannot afford. Trust is scarce in Italy, and who is to say [NAP.GetName] would remain a loyal ally once the [IW_french_league_leader.GetAdjective] threat is repelled?\n\nAs the bell tolls over [IW_italian_league_leader.GetName], the choice grows ever more urgent. Will the republic extend its hand to the [NAP.GovernmentName] of [NAP.GetName], forging a fragile solidarity in the face of [IW_french_league_leader.GetAdjective] aggression? Or will it preserve its own interests, allowing [NAP.GetName] to face its fate alone? The decision now rests in [IW_italian_league_leader.GetName]'s hands, and the consequences will reverberate across the peninsula."
+ IW_setup.17.a: "It is our duty as guarantor of the Italic League"
+ IW_setup.17.b: "Let us not further entangle ourselves"
+ IW_setup_17a_tt: "§Y[NAP.GetName]§! will be invited to the §YItalic League§!\n"

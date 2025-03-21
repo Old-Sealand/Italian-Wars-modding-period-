@@ -57,12 +57,19 @@
 # 	grant_independence = yes
 # }
 
-if = {
-	limit = {
-		# 118 = { owned_by_subject_of = LAN }
-		check_variable = { which = numLeagueMembers value = 7 }
-		# IW_league_member = 10
-		# has_country_flag = IW_italian_league_member
-	}
-	add_treasury = 1
-}
+# if = {
+# 	limit = {
+# 		# 118 = { owned_by_subject_of = LAN }
+# 		check_variable = { which = numLeagueMembers value = 7 }
+# 		# IW_league_member = 10
+# 		# has_country_flag = IW_italian_league_member
+# 	}
+# 	add_treasury = 1
+# }
+
+# declare_war_with_cb = {
+# 	who = event_target:IW_italian_league_leader
+# 	casus_belli = IW_cb_italian_war
+# }
+
+FRA = { country_event = { id = IW_setup.2 } }
