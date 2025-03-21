@@ -92,9 +92,15 @@ country_event = {
 				# 	which = numLeagueMembers
 				# 	which = event_target:IW_italian_league_leader
 				# }
-				export_to_variable = {
-					which = numLeagueMembers
-					who = event_target:IW_italian_league_leader
+				# export_to_variable = { works, but shouldn't need
+				# 	which = numLeagueMembers
+				# 	who = event_target:IW_italian_league_leader
+				# }
+				event_target:IW_italian_league_leader = { # in place of above - set former leader variable to 0
+					set_variable = {
+						which = numLeagueMembers
+						value = 0
+					}
 				}
 				grant_independence = yes
 				event_target:IW_italian_league_leader = { save_event_target_as = IW_former_leader }
@@ -117,6 +123,13 @@ country_event = {
 				clr_country_flag = IW_french_league_member
 				clr_country_flag = IW_iberian_league_member
 				clr_country_flag = IW_HRE_league_member
+				if = {
+					limit = {
+						has_global_flag = IW_new_leader_franco_iberian_war
+					}
+					clr_global_flag = IW_new_leader_franco_iberian_war
+					country_event = { id = IW_setup.18 }
+				}
 			}
 			custom_tooltip = IW_setup.1a.tt1
 		}
@@ -128,9 +141,15 @@ country_event = {
 				}
 			}
 			hidden_effect = {
-				export_to_variable = {
-					which = numLeagueMembers
-					who = event_target:IW_french_league_leader
+				# export_to_variable = {
+				# 	which = numLeagueMembers
+				# 	who = event_target:IW_french_league_leader
+				# }
+				event_target:IW_french_league_leader = { # in place of above - set former leader variable to 0
+					set_variable = {
+						which = numLeagueMembers
+						value = 0
+					}
 				}
 				grant_independence = yes
 				event_target:IW_french_league_leader = { save_event_target_as = IW_former_leader }
@@ -164,9 +183,15 @@ country_event = {
 				}
 			}
 			hidden_effect = {
-				export_to_variable = {
-					which = numLeagueMembers
-					who = event_target:IW_iberian_league_leader
+				# export_to_variable = {
+				# 	which = numLeagueMembers
+				# 	who = event_target:IW_iberian_league_leader
+				# }
+				event_target:IW_iberian_league_leader = { # in place of above - set former leader variable to 0
+					set_variable = {
+						which = numLeagueMembers
+						value = 0
+					}
 				}
 				grant_independence = yes
 				event_target:IW_iberian_league_leader = { save_event_target_as = IW_former_leader }
@@ -200,9 +225,15 @@ country_event = {
 				}
 			}
 			hidden_effect = {
-				export_to_variable = {
-					which = numLeagueMembers
-					who = event_target:IW_HRE_league_leader
+				# export_to_variable = {
+				# 	which = numLeagueMembers
+				# 	who = event_target:IW_HRE_league_leader
+				# }
+				event_target:IW_HRE_league_leader = { # in place of above - set former leader variable to 0
+					set_variable = {
+						which = numLeagueMembers
+						value = 0
+					}
 				}
 				grant_independence = yes
 				event_target:IW_HRE_league_leader = { save_event_target_as = IW_former_leader }
@@ -401,14 +432,34 @@ country_event = {
 				country_event = { id = IW_setup.3 }
 			}
 			every_country = {
-				limit = { has_country_flag = IW_italian_league_member }
+				limit = {
+					capital_scope = { continent = europe }
+					NOT = { tag = ROOT }
+			}
 				country_event = {
 					id = IW_setup.14
 					days = 10
 				}
 			}
 		}
-		custom_tooltip = IW_setup.2a.tt # Form the French League, with [ROOT.CountryName] at its head. _ will be called to join the cause.
+		if = {
+			limit = {
+				NAP = { # chose to keep Naples in the succession
+					OR = {
+						is_subject_of_type_with_overlord = {
+							who = ARA
+							type = personal_union
+						}
+						is_subject_of_type_with_overlord = {
+							who = SPA
+							type = personal_union
+						}
+					}
+				}
+			}
+			custom_tooltip = IW_setup.2a.tt2
+		}
+		else = { custom_tooltip = IW_setup.2a.tt }
 	}
 }
 
@@ -502,12 +553,54 @@ country_event = {
 country_event = {
 	id = IW_setup.4
 	title = IW_setup.4.t
-	desc = IW_setup.4.d
+	# desc = IW_setup.4.d
 	picture = EMPEROR_eventPicture
 	
 	major = yes
 	fire_only_once = yes
 	# is_triggered_only = yes
+
+	desc = {
+		trigger = {
+			NAP = { # chose to keep Naples in the succession
+				is_subject_of_type_with_overlord = {
+					who = ROOT
+					type = personal_union
+				}
+			}
+		}
+		desc = IW_setup.4.d1
+	}
+
+	desc = {
+		trigger = {
+			event_target:IW_italian_league_leader = { # Italian League is losing against the French League Leader
+				is_in_war = {
+					attacker_leader = event_target:IW_french_league_leader
+					defender_leader = THIS
+				}
+				NOT = {
+					war_score_against = {
+						who = event_target:IW_french_league_leader
+						value = -25
+					}
+				}
+			}
+		}
+		desc = IW_setup.4.d2
+	}
+
+	desc = {
+		trigger = {
+			event_target:IW_italian_league_leader = { # if Italic League never got low war score, create after 1st league war ends
+				has_won_war_against = {
+					who = event_target:IW_french_league_leader
+					max_years_since = 10
+				}
+			}
+		}
+		desc = IW_setup.4.d3
+	}
 	
 	trigger = {
 		OR = {
@@ -539,9 +632,8 @@ country_event = {
 				ARA = { NOT = { is_free_or_tributary_trigger = yes } }
 			}
 		}
-		# Italian League is losing against the French League Leader
 		OR  = {
-			event_target:IW_italian_league_leader = {
+			event_target:IW_italian_league_leader = { # Italian League is losing against the French League Leader
 				is_in_war = {
 					attacker_leader = event_target:IW_french_league_leader
 					defender_leader = THIS
@@ -553,10 +645,16 @@ country_event = {
 					}
 				}
 			}
-			event_target:IW_italian_league_leader = {
+			event_target:IW_italian_league_leader = { # if Italic League never got low war score, create after 1st league war ends
 				has_won_war_against = {
 					who = event_target:IW_french_league_leader
 					max_years_since = 10
+				}
+			}
+			NAP = { # chose to keep Naples in the succession
+				is_subject_of_type_with_overlord = {
+					who = ROOT
+					type = personal_union
 				}
 			}
 		}
@@ -992,7 +1090,7 @@ country_event = {
 	major = yes
 	is_triggered_only = yes
 	
-	# trigger = { }
+	trigger = { NOT = { has_global_flag = IW_franco_iberian_war } }
 	
 	option = { # side with attacker
 		name = IW_setup.10.a
@@ -1304,14 +1402,31 @@ country_event = {
 
 	is_triggered_only = yes
 	
-	trigger = { has_country_flag = IW_italian_league_member }
+	# trigger = {}
 	
 	option = {
 		name = IW_setup.14.a
 		ai_chance = {
 			factor = 1
 		}
-		custom_tooltip = IW_impending_war_tt
+		if = {
+			limit = {
+				NAP = { # chose to keep Naples in the succession
+					OR = {
+						is_subject_of_type_with_overlord = {
+							who = ARA
+							type = personal_union
+						}
+						is_subject_of_type_with_overlord = {
+							who = CAS
+							type = personal_union
+						}
+					}
+				}
+			}
+			custom_tooltip = IW_impending_war2_tt
+		}
+		else = { custom_tooltip = IW_impending_war_tt }
 	}
 	
 }
@@ -1345,9 +1460,33 @@ country_event = {
 			factor = 1
 		}
 
-		declare_war_with_cb = {
-			who = event_target:IW_italian_league_leader
-			casus_belli = IW_cb_italian_war
+		if = {
+			limit = {
+				has_saved_global_event_target = IW_iberian_league_leader
+				NAP = { # chose to keep Naples in the succession
+					OR = {
+						is_subject_of_type_with_overlord = {
+							who = ARA
+							type = personal_union
+						}
+						is_subject_of_type_with_overlord = {
+							who = CAS
+							type = personal_union
+						}
+					}
+				}
+			}
+			set_global_flag = IW_franco_iberian_war
+			declare_war_with_cb = {
+				who = event_target:IW_iberian_league_leader
+				casus_belli = IW_cb_italian_war
+			}
+		}
+		else = {
+			declare_war_with_cb = {
+				who = event_target:IW_italian_league_leader
+				casus_belli = IW_cb_italian_war
+			}
 		}
 		clr_global_flag = IW_first_war_looming
 
@@ -1451,5 +1590,158 @@ country_event = {
 			factor = 0
 		}
 
+	}
+}
+
+country_event = {
+	id = IW_setup.18 # Intervention in the Franco-Iberian
+	title = IW_setup.18.t
+	desc = IW_setup.18.d
+	picture = SWEDEN_LEAGUE_WAR_eventPicture
+	
+	major = yes
+	# is_triggered_only = yes
+	trigger = {
+		tag = event_target:IW_italian_league_leader
+		# NOT = { is_in_war = { casus_belli = IW_cb_italian_war } }
+		OR = {
+			event_target:IW_french_league_leader = { # French League is losing against the Iberian League Leader
+				is_in_war = {
+					attacker_leader = THIS
+					defender_leader = event_target:IW_iberian_league_leader
+				}
+				NOT = {
+					war_score_against = {
+						who = event_target:IW_iberian_league_leader
+						value = -25
+					}
+				}
+			}
+			event_target:IW_iberian_league_leader = { # Iberian League is losing against the French League Leader
+				is_in_war = {
+					attacker_leader = event_target:IW_french_league_leader
+					defender_leader = THIS
+				}
+				NOT = {
+					war_score_against = {
+						who = event_target:IW_french_league_leader
+						value = -25
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = IW_setup.18.a # Itay should remain Italian!
+		ai_chance = {
+			factor = 10
+		}
+		custom_tooltip = IW_free_for_all_tt
+		hidden_effect = {
+			declare_war_with_cb = {
+				who = event_target:IW_iberian_league_leader
+				casus_belli = IW_cb_italian_war
+			}
+			declare_war_with_cb = {
+				who = event_target:IW_french_league_leader
+				casus_belli = IW_cb_italian_war
+			}
+			every_subject_country = {
+				limit = { is_IW_league_subject = yes }
+				country_event = { id = IW_setup.11 }
+			}
+			event_target:IW_iberian_league_leader = {
+				every_subject_country = {
+					limit = { is_IW_league_subject = yes }
+					join_all_defensive_wars_of = PREV
+				}
+			}
+	
+			event_target:IW_french_league_leader = {
+				every_subject_country = {
+					limit = { is_IW_league_subject = yes }
+					join_all_defensive_wars_of = PREV
+				}
+			}
+			clr_global_flag = IW_franco_iberian_war
+		}
+	}
+
+	option = {
+		name = IW_setup.18.b # Iberian hegemony in Italy cannot be accepted!
+		trigger = {
+			event_target:IW_french_league_leader = {
+				is_in_war = {
+					attacker_leader = THIS
+					defender_leader = event_target:IW_iberian_league_leader
+				}
+				NOT = {
+					war_score_against = {
+						who = event_target:IW_iberian_league_leader
+						value = -25
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		custom_tooltip = IW_join_with_france
+		hidden_effect = {
+			join_all_offensive_wars_of = event_target:IW_french_league_leader
+			every_subject_country = {
+				limit = { is_IW_league_subject = yes }
+				country_event = { id = IW_setup.11 }
+			}
+			clr_global_flag = IW_franco_iberian_war
+		}
+	}
+
+	option = {
+		name = IW_setup.18.c # French hegemony in Italy cannot be accepted!
+		trigger = {
+			event_target:IW_iberian_league_leader = {
+				is_in_war = {
+					attacker_leader = event_target:IW_french_league_leader
+					defender_leader = THIS
+				}
+				NOT = {
+					war_score_against = {
+						who = event_target:IW_french_league_leader
+						value = -25
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		custom_tooltip = IW_join_against_france
+		hidden_effect = {
+			join_all_defensive_wars_of = event_target:IW_iberian_league_leader
+			every_subject_country = {
+				limit = { is_IW_league_subject = yes }
+				country_event = { id = IW_setup.12 }
+			}
+			clr_global_flag = IW_franco_iberian_war
+		}
+	}
+
+	option = {
+		name = IW_setup.18.e # It's time to embrace our foreign overlords
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = -25
+		hidden_effect = {
+			clr_country_flag = IW_italian_league_member
+			set_global_flag = IW_new_leader_franco_iberian_war
+			# random_country = {
+			# 	limit = { has_country_flag = IW_italian_league_member }
+			# 	country_event = { id = IW_setup.1 }
+			# }
+		}
+		custom_tooltip = IW_abandon_league
 	}
 }

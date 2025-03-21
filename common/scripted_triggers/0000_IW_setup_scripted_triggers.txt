@@ -52,6 +52,7 @@ IW_italian_leader_died = {
 		OR = {
 			NOT = { event_target:IW_italian_league_leader = { num_of_cities = 1 } }
 			NOT = { event_target:IW_italian_league_leader = { is_free_or_tributary_trigger = yes } }
+			has_global_flag = IW_new_leader_franco_iberian_war
 		}
 		capital_scope = { region = italy_region }
 		is_free_or_tributary_trigger = yes
