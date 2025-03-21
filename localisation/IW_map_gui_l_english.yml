@@ -5,3 +5,15 @@
  # Monuments:
  orsini_odescalchi_castle: "Castello Orsini-Odescalchi"
  rome_colosseum: "Colosseum"
+
+
+ #Custom Button interactions:
+ IW_province_start_loc: "Spread Influence"
+
+ iw_interaction_events.1.t: "Expanding Our Sphere of Influence"
+ iw_interaction_events.1.d: "With the orders of [ROOT.Country.Monarch.GetName], the court of [ROOT.Country.GetName] has been searching of new ways to spread its influence towards the province of [selected_province.GetName]. Some suggest that we simply buy land there, or even send capable men in order to influence the politics there. Our generals suggest that we send [target_country.GetName] some military aid, hoping to sway [target_country.Monarch.GetName] and gain the influence we want. There are some though that suggest other approaches. They would require us causing ruckus in the city, showing that their current overlords are not as capable as we, and then profiting as much as we can from the discord."
+ iw_interaction_events.1.a: "Let us simply buy land there."
+ iw_interaction_events.1.b: "A few government officials can sway the politics of the city."
+ iw_interaction_events.1.c: "Let us send [target_country.GetName] some military aid."
+ iw_interaction_events.1.dd: "Infiltrate the city, then cause a ruckus."
+ iw_interaction_events.1.e: "Let us use our favors to increase our influence there."

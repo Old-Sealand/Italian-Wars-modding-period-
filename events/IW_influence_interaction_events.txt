@@ -1,0 +1,286 @@
+namespace = iw_interaction_events
+
+country_event = { #Event for choosing to increase influence
+	id = iw_interaction_events.1
+	title = iw_interaction_events.1.t
+	desc = iw_interaction_events.1.d
+	picture = OVEREXTENSION_eventPicture
+	
+	is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            event_target:selected_province = {
+                owner = {
+                    save_event_target_as = target_country
+                }
+            }
+            IW_set_province_cooldown_flag = yes
+        }
+    }
+	
+	option = { #Generic peaceful option, just a small money sink
+		name = iw_interaction_events.1.a
+
+        add_years_of_income = -3
+	}
+
+    option = { #Generic peaceful option, being able to use favors for influence
+		name = iw_interaction_events.1.b
+
+        add_dip_power = -50
+        add_mil_power = -50
+        add_adm_power = -50
+	}
+
+    option = { #Generic peaceful option, sending the owner some AT (military aid). Not allowed if you're rivals to them or at war with them
+		name = iw_interaction_events.1.c
+
+        trigger = {
+            event_target:target_country = {
+                 NOT = { war_with = ROOT }
+                 NOT = { is_rival = ROOT }
+                 NOT = { is_enemy = ROOT }
+            }
+        }
+
+        add_army_tradition = -10
+        event_target:target_country = {
+            add_army_tradition = 10
+        }
+	}
+
+    option = { #Sabotage local officials of the province and offer them protection instead, requires espionage ideas
+		name = iw_interaction_events.1.dd
+
+        trigger = {
+            full_idea_group = espionage_ideas
+        }
+
+        reverse_add_opinion = {
+            who = event_target:target_country
+            modifier = influenced_city
+        }
+
+        reverse_add_opinion = {
+            who = event_target:target_country
+            modifier = influenced_city
+        }
+
+        event_target:selected_province = {
+            add_unrest = 5
+        }
+	}
+
+    option = { #Use favors with owner to gain some land there
+
+		name = iw_interaction_events.1.e
+
+        trigger = {
+            event_target:target_country = {
+                owes_favors = { 
+                    who = ROOT 
+                    value = 10 
+                }
+            }
+        }
+
+        add_favors = {
+            who = event_target:target_country
+            amount = -10
+        }
+	}
+}
+
+country_event = { #Using estate influence
+	id = iw_interaction_events.2
+	title = iw_interaction_events.2.t
+	desc = iw_interaction_events.2.d
+	picture = OVEREXTENSION_eventPicture
+	
+	is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            event_target:selected_province = {
+                owner = {
+                    save_event_target_as = target_country
+                }
+            }
+            IW_set_province_cooldown_flag = yes
+        }
+    }
+	
+	option = { #Nobles
+		name = iw_interaction_events.2.a
+
+        event_target:selected_province = {
+            add_province_modifier = {
+                name = iw_disloyal_nobility
+                duration = 365
+            }
+        }
+
+        custom_tooltip = iw_gain_prestige_per_nobles_disloyalty 
+        hidden_effect = {
+            if = {
+                limit = {
+                    estate_loyalty = {
+                        estate = estate_nobles
+                        loyalty = 0
+                    }
+                }
+                add_prestige_or_monarch_power = { amount = 20 }
+            }
+            else_if = {
+                limit = {
+                    estate_loyalty = {
+                        estate = estate_nobles
+                        loyalty = 5
+                    }
+                }
+                add_prestige_or_monarch_power = { amount = 19 }
+            }
+            else_if = {
+                limit = {
+                    estate_loyalty = {
+                        estate = estate_nobles
+                        loyalty = 10
+                    }
+                }
+                add_prestige_or_monarch_power = { amount = 18 }
+            }
+            else_if = {
+                limit = {
+                    estate_loyalty = {
+                        estate = estate_nobles
+                        loyalty = 15
+                    }
+                }
+                add_prestige_or_monarch_power = { amount = 17 }
+            }
+            else_if = {
+                limit = {
+                    estate_loyalty = {
+                        estate = estate_nobles
+                        loyalty = 20
+                    }
+                }
+                add_prestige_or_monarch_power = { amount = 16 }
+            }
+            else_if = {
+                limit = {
+                    estate_loyalty = {
+                        estate = estate_nobles
+                        loyalty = 25
+                    }
+                }
+                add_prestige_or_monarch_power = { amount = 15 }
+            }
+            else_if = {
+                limit = {
+                    estate_loyalty = {
+                        estate = estate_nobles
+                        loyalty = 30
+                    }
+                }
+                add_prestige_or_monarch_power = { amount = 14 }
+            }
+            else_if = {
+                limit = {
+                    estate_loyalty = {
+                        estate = estate_nobles
+                        loyalty = 35
+                    }
+                }
+                add_prestige_or_monarch_power = { amount = 13 }
+            }
+            else_if = {
+                limit = {
+                    estate_loyalty = {
+                        estate = estate_nobles
+                        loyalty = 40
+                    }
+                }
+                add_prestige_or_monarch_power = { amount = 12 }
+            }
+            else_if = {
+                limit = {
+                    estate_loyalty = {
+                        estate = estate_nobles
+                        loyalty = 45
+                    }
+                }
+                add_prestige_or_monarch_power = { amount = 11 }
+            }
+            else_if = {
+                limit = {
+                    estate_loyalty = {
+                        estate = estate_nobles
+                        loyalty = 49
+                    }
+                }
+                add_prestige_or_monarch_power = { amount = 10 }
+            }
+        }
+	}
+
+    option = { #Burghers
+		name = iw_interaction_events.2.b
+
+        event_target:selected_province = {
+            add_province_modifier = {
+                name = iw_disloyal_burghers
+                duration = 365
+            }
+        }
+
+        custom_tooltip = iw_gain_mercantilism_per_burghers_disloyalty
+        hidden_effect = {
+            if = {
+                limit = {
+                    estate_loyalty = {
+                        estate = estate_burghers
+                        loyalty = 0
+                    }
+                }
+                add_mercentilism = 3
+            }
+            else_if = {
+                limit = {
+                    estate_loyalty = {
+                        estate = estate_burghers
+                        loyalty = 25
+                    }
+                }
+                add_mercentilism = 2
+            }
+            else_if = {
+                limit = {
+                    estate_loyalty = {
+                        estate = estate_burghers
+                        loyalty = 49
+                    }
+                }
+                add_mercentilism = 1
+            }
+        }
+	}
+
+    option = { #Clergy
+		name = iw_interaction_events.2.c
+
+        event_target:selected_province = {
+            add_province_modifier = {
+                name = iw_disloyal_clergy
+                duration = 365
+            }
+        }
+
+        define_advisor = {
+            type = inquisitor
+            skill = 2
+            cost_multiplier = 0.5
+        }
+	}
+}
