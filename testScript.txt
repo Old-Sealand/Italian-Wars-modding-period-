@@ -57,19 +57,19 @@
 # 	grant_independence = yes
 # }
 
-if = {
-	limit = {
-		# 118 = { owned_by_subject_of = LAN }
-		# check_variable = { which = numLeagueMembers value = 8 }
-		# IW_league_member = 10
-		# has_country_flag = IW_italian_league_member
-		had_country_flag = {
-			flag = picked_cawa_privilege
-			days = 1825
-		}
-	}
-	add_treasury = 1
-}
+# if = {
+# 	limit = {
+# 		# 118 = { owned_by_subject_of = LAN }
+# 		# check_variable = { which = numLeagueMembers value = 8 }
+# 		# IW_league_member = 10
+# 		# has_country_flag = IW_italian_league_member
+# 		had_country_flag = {
+# 			flag = picked_cawa_privilege
+# 			days = 1825
+# 		}
+# 	}
+# 	add_treasury = 1
+# }
 
 # declare_war_with_cb = {
 # 	who = event_target:IW_italian_league_leader
@@ -107,3 +107,14 @@ if = {
 # 	casus_belli = IW_cb_italian_war
 # }
 # emperor = { white_peace = ROOT }
+
+save_global_event_target_as = IW_treaty_exclusive_trade_passed
+save_global_event_target_as = IW_treaty_universities_passed
+save_global_event_target_as = IW_treaty_land_rights_passed
+save_global_event_target_as = IW_treaty_impressment_passed
+save_global_event_target_as = IW_treaty_demil_passed
+
+        every_province = {
+            limit = { region = italy_region }
+			cede_province = ROOT
+        }

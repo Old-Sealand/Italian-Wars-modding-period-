@@ -65,8 +65,8 @@ IW_treaty_exclusive_trade_non_member = {
 		custom_trigger_tooltip = {
 			tooltip = IW_treaty_exclusive_trade_passed_tt
 			NOT = { overlord = { TAG = event_target:IW_treaty_exclusive_trade_passed } }
-			capital_scope = { region = italy_region }
 		}
+		capital_scope = { region = italy_region }
 	}
 
 	global_trade_power = -0.1
@@ -107,8 +107,8 @@ IW_treaty_universities_non_member = {
 		custom_trigger_tooltip = {
 			tooltip = IW_treaty_universities_passed_tt
 			NOT = { overlord = { TAG = event_target:IW_treaty_universities_passed } }
-			capital_scope = { region = italy_region }
 		}
+		capital_scope = { region = italy_region }
 	}
 
 	global_institution_spread = -0.2
@@ -191,8 +191,8 @@ IW_treaty_impressment_non_member = {
 		custom_trigger_tooltip = {
 			tooltip = IW_treaty_impressment_passed_tt
 			NOT = { overlord = { TAG = event_target:IW_treaty_impressment_passed } }
-			capital_scope = { region = italy_region }
 		}
+		capital_scope = { region = italy_region }
 	}
 
 	sailors_recovery_speed = -0.1
@@ -233,8 +233,8 @@ IW_treaty_demil_non_member = {
 		custom_trigger_tooltip = {
 			tooltip = IW_treaty_demil_passed_tt
 			NOT = { overlord = { TAG = event_target:IW_treaty_demil_passed } }
-			capital_scope = { region = italy_region }
 		}
+		capital_scope = { region = italy_region }
 	}
 
 	global_regiment_cost = 0.05

@@ -2158,9 +2158,12 @@ custom_button = {
             tag = event_target:IW_treaty_impressment_passed
             tag = event_target:IW_treaty_demil_passed
         }
-        every_province = {
+        all_province = {
             limit = { region = italy_region }
-            owns_or_subject_of = ROOT
+            OR  = {
+                owned_by = ROOT
+                owned_by_subject_of = ROOT
+            }
         }
     }
     effect = {
@@ -2242,20 +2245,20 @@ custom_button = {
                 clear_global_event_target = IW_iberian_league_leader
             }
         }
-        # country_event_with_effect_insight = {
-        #     id = IW_setup.19
-        #     effect = "
-        #         tooltip = {
-        #             118 = { add_province_triggered_modifier = IW_corona_ferrea_modifier }
-        #             custom_tooltip = IW_other_provinces_will_also_receive_this_modifier
-        #         }
+        country_event_with_effect_insight = {
+            id = IW_setup.19
+            effect = "
+                tooltip = {
+                    118 = { add_province_triggered_modifier = IW_corona_ferrea_modifier }
+                    custom_tooltip = IW_other_provinces_will_also_receive_this_modifier
+                }
                 
-        #         custom_tooltip = \" \"
+                custom_tooltip = \" \"
                 
-        #         custom_tooltip = IW_disband_other_leagues_tt
-        #     "
-        # }
-        country_event = { id = IW_setup.19 }
+                custom_tooltip = IW_disband_other_leagues_tt
+            "
+        }
+        # country_event = { id = IW_setup.19 }
     }
     tooltip = IW_unite_italy_button_loc
 }

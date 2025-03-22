@@ -70,6 +70,12 @@
  desc_IW_treaty_demil_member: "Our League has enforced the Treaty of Restrictio Militaris upon its enemies."
  desc_IW_treaty_demil_non_member: "The League of [IW_treaty_demil_passed.GetName] has forced us to ratify the Treaty of Restrictio Militaris."
 
+ IW_treaty_exclusive_trade_passed_tt: "In the League which passed the Treaty of Iura Mercaturae"
+ IW_treaty_universities_passed_tt: "In the League which passed the Treaty of Academiae Solae"
+ IW_treaty_land_rights_passed_tt: "In the League which passed the Treaty of Concessio Terrarum"
+ IW_treaty_impressment_passed_tt: "In the League which passed the Treaty of Pressio Nautarum"
+ IW_treaty_demil_passed_tt: "In the League which passed the Treaty of Restrictio Militaris"
+
   ###PROVINCE###
  IW_corona_ferrea_modifier: "The Iron Crown"
  desc_IW_corona_ferrea_modifier: "The undisputed crowning of the [IW_treaty_exclusive_trade_passed.GetAdjective] as the Kings of Italy has ushered in an era of prosperity for the peninsula."
@@ -261,7 +267,8 @@
  IW_beat_HRE_tt: "Defeated the leader of the §Y[GetHRELeagueName] League§! in the past year"
  IW_imposed_treaty: "Imposed a treaty during an §YItalian War§!"
  IW_already_enacted_treaty: "Treaty is NOT already enacted in favor of our League"
- IW_unite_italy_button_loc: "Test Loc why not work"
+ IW_unite_italy_button_loc: "End the Italian Wars and unify the peninsula under your rule. Claim the Iron Crown of Lombardy and crown yourself King of Italy, ushering in a new era of dominance and prestige for [Root.GetName]."
  IW_league_overthrow_button_loc: "[GetOverthrowButtonName]"
+ IW_league_overthrow_button_name_loc: "[GetOverthrowButtonName]"
  IW_must_be_league_member: "Must be a member of a League"
  IW_m_p_t_l_open_close_loc: "Italian Wars"
