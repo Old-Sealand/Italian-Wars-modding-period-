@@ -72,53 +72,46 @@
 1247 = { add_core = COR cede_province = COR }	# Corsica
 
 
+#Fixe when transfer from finish with peace, it stays peace and 100%.
+#Integration works?
+#When somone vassalizes your vassal.
+#When someone releases tags and vassals.
+#breaking vassal on own.
+#When revolt tag is intergrated, remove core.
+#When someone switches revolter tag to your side, then prev revolter overlord still shows red on map (make it not show) and is on 100%, make it 0% and clr flags.
+#When gaining province and someone has influence over 50%, then mark for them in red.
+#When releasing vassal, then can't have province menu open at the same time.
+#When selling province.
+#When vassalizing, it should set to 100% and war. But is 50% and peace.
 
 
-Sound add to buttons.!!!!!!!
-Add text province info.
-Remove "# Temporary IW_map_window flag"
+#Influence (%) colours on map:
+#Grey = 0%. Blue = 1%-50%. Teal = 50%-99%(Peace). Yellow = 50%-99%(War). Green = 100%.
+#Red = Target nation has 50%-99% on your province.
 
-When you choose Peace or War, then it changes province colour to blue/yellow and the arrow button also changes to blue/red.
-Fixe when transfer from finish with peace, it stays peace and 100%.
-Integration works?
-When somone vassalizes your vassal.
-When someone releases tags and vassals.
-breaking vassal on own.
-When revolt tag is intergrated, remove core.
-When someone switches revolter tag to your side, then prev revolter overlord still shows red on map (make it not show) and is on 100%, make it 0% and clr flags.
-When gaining province and someone has influence over 50%, then mark for them in red.
-When releasing vassal, then can't have province menu open at the same time.
-When selling province.
-When vassalizing, it should set to 100% and war. But is 50% and peace.
+#1. 0%-50% Influence is +5% per click? 50%-100% Influence is +5% per click?
 
+#2. Anyone (except subjects) can Influence provinces from 0% to 100%, including own provinces.
+#2.1. Same province can be Influenced by multiple tags.
+#2.2. Nations that became subjects, sets all their Influenced provinces to 0% and lose access to Influence.
 
-Influence (%) colours on map:
-Grey = 0%. Blue = 1%-50%. Teal = 50%-99%(Peace). Yellow = 50%-99%(War). Green = 100%.
-Red = Target nation has 50%-99% on your province.
+#3. At 50% can choose Peace or War, and from there can Influence further.
+#3.1. Peace (slightly more expensive to Influence): at 100% province changes ownership.
+#3.2. War (slightly less exppensive to Influence or 10% per click?): at 100% uprising happens in a province as Influencer subject and target nation goes to war with Influencer with special CB.
+#3.2.1. Special CB: Infleuncer can only keep uprising tag. Target nation can only take uprising tag. Not allowed to take other provinces or release anything, etc.
 
-1. 0%-50% Influence is +5% per click? 50%-100% Influence is +5% per click?
+#4. Once someone gets to 100%, it resets others to 0% or 50%? (Or those who had less than 50% set to 0% and those who had more than 50% set to 50% and have to choose Peace or War again?)
 
-2. Anyone (except subjects) can Influence provinces from 0% to 100%, including own provinces.
-2.1. Same province can be Influenced by multiple tags.
-2.2. Nations that became subjects, sets all their Influenced provinces to 0% and lose access to Influence.
+#5. Once you conquer a province, it is set to 50% (unless had more) and set to Peace (even if chose War).
+#5.1. Vassalizing if vassal has core sets to 100%, otherwise 50%.
+#5.2. Conquered provinces are cheaper to Influence or Influence is +10% per click?
+#5.3. Integrated provinces is set to 100%.
 
-3. At 50% can choose Peace or War, and from there can Influence further.
-3.1. Peace (slightly more expensive to Influence): at 100% province changes ownership.
-3.2. War (slightly less exppensive to Influence or 10% per click?): at 100% uprising happens in a province as Influencer subject and target nation goes to war with Influencer with special CB.
-3.2.1. Special CB: Infleuncer can only keep uprising tag. Target nation can only take uprising tag. Not allowed to take other provinces or release anything, etc.
+#6. Losing province to target nation reduces Influence on that province.
+#6.1. If had 100% Influence, then reduces to 50%.
+#6.2. If had less than 100% Influence, then reduces to 0% (in case someone conquered (5.) it and didn't get to 100% Influence).
 
-4. Once someone gets to 100%, it resets others to 0% or 50%? (Or those who had less than 50% set to 0% and those who had more than 50% set to 50% and have to choose Peace or War again?)
-
-5. Once you conquer a province, it is set to 50% (unless had more) and set to Peace (even if chose War).
-5.1. Vassalizing if vassal has core sets to 100%, otherwise 50%.
-5.2. Conquered provinces are cheaper to Influence or Influence is +10% per click?
-5.3. Integrated provinces is set to 100%.
-
-6. Losing province to target nation reduces Influence on that province.
-6.1. If had 100% Influence, then reduces to 50%.
-6.2. If had less than 100% Influence, then reduces to 0% (in case someone conquered (5.) it and didn't get to 100% Influence).
-
-7. When target nation Influences your province to 50% (must choose Peace or War), it is marked Red on map and you can Counter-Influence it (own button or uses the leftmost button next to progressbar).
-7.1. Counter-Influence progressbar shows 50% red line, that can be reduce to 0%.
-7.2. Counter-Influence is -5% or -10% per click?
-7.3. Once reduced to 0%, everyone's Influence (who chose Peace or War) on that province is set to 0%.
+#7. When target nation Influences your province to 50% (must choose Peace or War), it is marked Red on map and you can Counter-Influence it (own button or uses the leftmost button next to progressbar).
+#7.1. Counter-Influence progressbar shows 50% red line, that can be reduce to 0%.
+#7.2. Counter-Influence is -5% or -10% per click?
+#7.3. Once reduced to 0%, everyone's Influence (who chose Peace or War) on that province is set to 0%.

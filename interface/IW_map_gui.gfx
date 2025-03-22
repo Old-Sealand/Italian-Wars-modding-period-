@@ -629,6 +629,12 @@ spriteTypes = {
 		loadType = "INGAME"
 		transparencecheck = yes
 	}
+	spriteType = {
+		name = "GFX_IW_province_info"
+		texturefile = "gfx/interface/IW_map_gui/IW_province_info.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
 	progressbartype = {
 		name = "GFX_IW_province_bar"
 		color = { 0.0 0.5 0.0 }

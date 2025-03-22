@@ -1,4 +1,4 @@
 ROOT = { save_global_event_target_as = IW_iberian_league_leader }
 FRA = { save_global_event_target_as = IW_french_league_leader }
-LAN = { save_global_event_target_as = IW_italian_league_leader }
+VEN = { save_global_event_target_as = IW_italian_league_leader }
 HAB = { save_global_event_target_as = IW_HRE_league_leader }
