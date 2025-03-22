@@ -91,18 +91,15 @@ IW_league_member = {
 	# Modifiers:
 	modifier_subject = clear # League members don't get the ordinary subject_nation penalty 
 	modifier_overlord = clear
-	modifier_subject = {
-		modifier = IW_defense_spending_subject
-		trigger = {
-			always = yes
-		}
-	}
+
 	modifier_overlord = {
 		modifier = IW_defense_spending_overlord
 		trigger = {
-			check_variable = {
-				which = numLeagueMembers
-				value = 5
+			overlord = {
+				check_variable = {
+					which = numLeagueMembers
+					value = 5
+				}
 			}
 		}
 	}
@@ -120,11 +117,13 @@ IW_league_member = {
 	modifier_overlord = {
 		modifier = IW_drafting_overlord
 		trigger = {
-			check_variable = {
-				which = numLeagueMembers
-				value = 10
+			overlord = {
+				check_variable = {
+					which = numLeagueMembers
+					value = 10
+				}
+				has_country_flag = IW_chose_drafting
 			}
-			has_country_flag = IW_chose_drafting
 		}
 	}
 	modifier_subject = {
@@ -142,11 +141,13 @@ IW_league_member = {
 	modifier_overlord = {
 		modifier = IW_condot_overlord
 		trigger = {
-			check_variable = {
-				which = numLeagueMembers
-				value = 10
+			overlord = {
+				check_variable = {
+					which = numLeagueMembers
+					value = 10
+				}
+				has_country_flag = IW_chose_condot
 			}
-			has_country_flag = IW_chose_condot
 		}
 	}
 	modifier_subject = {
@@ -164,9 +165,11 @@ IW_league_member = {
 	modifier_overlord = {
 		modifier = IW_banking_overlord
 		trigger = {
-			check_variable = {
-				which = numLeagueMembers
-				value = 15
+			overlord = {
+				check_variable = {
+					which = numLeagueMembers
+					value = 15
+				}
 			}
 		}
 	}
@@ -184,9 +187,11 @@ IW_league_member = {
 	modifier_overlord = {
 		modifier = IW_congress_overlord
 		trigger = {
-			check_variable = {
-				which = numLeagueMembers
-				value = 20
+			overlord = {
+				check_variable = {
+					which = numLeagueMembers
+					value = 20
+				}
 			}
 		}
 	}
