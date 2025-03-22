@@ -337,7 +337,7 @@ country_event = {
 		name = IW_flavor.6.a # Their victory has been ensured.
 		ai_chance = { factor = 1 }
 		custom_tooltip = iw_we_will_be_partioned
-		hidden_effect = { country_event = { id = IW_flavor.7 } }
+		hidden_effect = { event_target:IW_french_league_leader = { country_event = { id = IW_flavor.7 } } }
 	}
 
 	option = {
