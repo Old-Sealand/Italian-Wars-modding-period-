@@ -74,3 +74,8 @@ rejected_crowning = {
 	opinion = -50
 	yearly_decay = 2
 }
+
+iw_supporting_our_enemies = {
+	opinion = -50
+	yearly_decay = 2	
+}

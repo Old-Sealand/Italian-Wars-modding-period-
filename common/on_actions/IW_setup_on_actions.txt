@@ -73,8 +73,12 @@ on_siege_won_country = {
 				}
 				province_id = 118
 			}
+			is_religion_enabled = protestant
 		}
-		country_event = { id = IW_flavor.2 }
+		random_list = {
+			1 = { country_event = { id = IW_flavor.2 } }
+			1 = { }
+		}
 	}
 }
 

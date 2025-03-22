@@ -102,3 +102,11 @@
   IW_flavor.17.b: "[From.Monarch.GetSheHe] was elected through corrupt methods."
   crowned_by_pope: "Crowned by the Pope"
   rejected_crowning: "Denied Papal approval"
+
+  IW_flavor.18.t: "The Call of the Italian Wars"
+  IW_flavor.18.d: " "
+  IW_flavor.18.a: "The enemy of our enemy is our friend!"
+  IW_not_formal_member: "We will not be a formal member of the §Y[GetFrenchLeagueName] League§!, but we will be able to assist them."
+  IW_all_other_leagues_upset: "All members of the other Leagues will lose §R-50§! opinion of us."
+  iw_supporting_our_enemies: "Supporting our enemies"
+  IW_flavor.18.b: "We have done enough."

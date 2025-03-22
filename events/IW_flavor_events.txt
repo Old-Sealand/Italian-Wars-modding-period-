@@ -777,6 +777,7 @@ country_event = {
         }
 
         custom_tooltip = fra_unlocks_ottoman_volunteers_tt
+		set_country_flag = fra_ottos_aid
 	}
 
     option = {
@@ -788,6 +789,7 @@ country_event = {
 			taker = FRA
 			variable = money_to_transfer
 		}
+		set_country_flag = fra_ottos_aid
 	}
 
     option = {
@@ -1001,5 +1003,72 @@ country_event = {
             who = from
             modifier = rejected_crowning
         }
+	}
+}
+
+
+country_event = {
+	id = IW_flavor.18 # The Call of the Italian Wars
+	title = IW_flavor.18.t
+	desc = IW_flavor.18.d
+	picture = DIPLOMACY_SIGNING_eventPicture
+	
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		tag = TUR
+		is_great_power = yes
+		has_saved_global_event_target = IW_french_league_leader
+		has_country_flag = fra_ottos_aid
+		NOT = { war_with = emperor } # Emperor will be a leader of a league
+		event_target:IW_french_league_leader = {
+			war_with = emperor
+			is_in_war = { casus_belli = IW_cb_italian_war }
+		}
+		NOT = { alliance_with = event_target:IW_french_league_leader }
+	}
+
+	mean_time_to_happen = {
+		years = 1
+	}
+	
+	option = {
+		name = IW_flavor.18.a # The enemy of our enemy is our friend!
+		ai_chance = {
+			factor = 8
+		}
+		create_alliance = event_target:IW_french_league_leader
+		if = {
+			limit = { emperor = { is_in_war = { defenders = event_target:IW_french_league_leader } } }
+			join_all_defensive_wars_of = event_target:IW_french_league_leader
+		}
+		else = {
+			join_all_offensive_wars_of = event_target:IW_french_league_leader
+		}
+		custom_tooltip = IW_not_formal_member
+		custom_tooltip = IW_all_other_leagues_upset
+		hidden_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						has_country_flag = IW_HRE_league_member
+						has_country_flag = IW_iberian_league_member
+						has_country_flag = IW_italian_league_member
+					}
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = iw_supporting_our_enemies
+				}
+			}
+		}
+	}
+
+	option = {
+		name = IW_flavor.18.b # We have done enough.
+		ai_chance = {
+			factor = 2
+		}
+		add_stability_or_adm_power_per_stab = { amount = 1 }
 	}
 }
