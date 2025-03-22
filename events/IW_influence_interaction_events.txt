@@ -54,7 +54,7 @@ country_event = { #Event for choosing to increase influence
 		name = iw_interaction_events.1.dd
 
         trigger = {
-            full_idea_group = espionage_ideas
+            full_idea_group = spy_ideas
         }
 
         reverse_add_opinion = {
