@@ -2248,12 +2248,9 @@ custom_button = {
             tag = event_target:IW_treaty_impressment_passed
             tag = event_target:IW_treaty_demil_passed
         }
-        all_province = {
-            limit = { region = italy_region }
-            OR  = {
-                owned_by = ROOT
-                owned_by_subject_of = ROOT
-            }
+        italy_region = {
+            type = all
+            country_or_non_sovereign_subject_holds = ROOT
         }
     }
     effect = {
@@ -2348,7 +2345,6 @@ custom_button = {
                 custom_tooltip = IW_disband_other_leagues_tt
             "
         }
-        # country_event = { id = IW_setup.19 }
     }
     tooltip = IW_unite_italy_button_loc
 }
