@@ -64,6 +64,7 @@ superiority_italian_war = {
 			po_release_annexed
 			po_gold
 			po_annul_treaties
+			po_pass_IW_treaty
 		}
 	}
 	
@@ -80,6 +81,7 @@ superiority_italian_war = {
 			po_release_annexed
 			po_gold
 			po_annul_treaties
+			po_pass_IW_treaty
 		}
 	}
 	

@@ -31,9 +31,25 @@
  IW_peace_of_lodi_tooltip: "§RMembers of the Italic League cannot attack each other, as long as the Treaty of Lodi is in place.§!"
  superiority_italian_war_desc: "War goal is to show them superiority by winning battles."
 
+ po_pass_IW_treaty: "Impose Treaty"
+ PEACE_po_pass_IW_treaty: "Impose Treaty"
+ CB_ALLOWED_po_pass_IW_treaty: "Impose Treaty"
+ po_pass_IW_treaty_desc: "[Root.GetName] gains the ability to pass a special treaty pertaining to their increasing hegemony over Italy."
+
 ## TRIGGERED MODIFIERS ##
  IW_treaty_of_lodi_tm: "Peace of Lodi"
  IW_treaty_of_lodi_tt: "The §YTreaty of Lodi§! is in effect"
+ IW_treaty_exclusive_trade_member: "Exclusive Trade Rights"
+ IW_treaty_exclusive_trade_non_member: "Exclusive Trade Rights"
+ IW_treaty_universities_member: "Monopolized Universities"
+ IW_treaty_universities_non_member: "Monopolized Universities"
+ IW_treaty_land_rights_member: "Concession of Land Rights"
+ IW_treaty_impressment_member: "Impressment of Foreign Sailors"
+ IW_treaty_impressment_non_member: "Impressment of Foreign Sailors"
+ IW_treaty_demil_member: "Forced Demilitarization"
+ IW_treaty_demil_non_member: "Forced Demilitarization"
+
+ IW_congress_effect: "Congress of Italy"
 
 ## DIPLOACTIONS ##
  invite_into_italian_league: "Invite into League"

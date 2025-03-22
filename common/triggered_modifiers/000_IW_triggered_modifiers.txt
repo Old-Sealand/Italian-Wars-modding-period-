@@ -81,42 +81,232 @@ IW_treaty_of_lodi_tm = {
 	reform_progress_growth = 0.1
 }
 
-# IW_treaty_exclusive_trade_tm = {
+IW_treaty_exclusive_trade_member = {
+	potential = {
+		has_saved_global_event_target = IW_treaty_exclusive_trade_passed
+		OR = {
+			has_country_flag = IW_italian_league_member
+			has_country_flag = IW_french_league_member
+			has_country_flag = IW_iberian_league_member
+			has_country_flag = IW_HRE_league_member
+		}
+	}
+
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = IW_treaty_exclusive_trade_passed_tt
+			OR = {
+				TAG = event_target:IW_treaty_exclusive_trade_passed
+				overlord = { TAG = event_target:IW_treaty_exclusive_trade_passed }
+			}
+		}
+	}
+
+	merchants = 1
+}
+
+IW_treaty_exclusive_trade_non_member = {
+	potential = {
+		has_saved_global_event_target = IW_treaty_exclusive_trade_passed
+		NOT = { overlord = { TAG = event_target:IW_treaty_exclusive_trade_passed } }
+		capital_scope = { region = italy_region }
+	}
+
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = IW_treaty_exclusive_trade_passed_tt
+			NOT = { overlord = { TAG = event_target:IW_treaty_exclusive_trade_passed } }
+			capital_scope = { region = italy_region }
+		}
+	}
+
+	global_trade_power = -0.1
+}
+
+IW_treaty_universities_member = {
+	potential = {
+		has_saved_global_event_target = IW_treaty_universities_passed
+		OR = {
+			has_country_flag = IW_italian_league_member
+			has_country_flag = IW_french_league_member
+			has_country_flag = IW_iberian_league_member
+			has_country_flag = IW_HRE_league_member
+		}
+	}
+
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = IW_treaty_universities_passed_tt
+			OR = {
+				TAG = event_target:IW_treaty_universities_passed
+				overlord = { TAG = event_target:IW_treaty_universities_passed }
+			}
+		}
+	}
+
+	technology_cost = -0.05
+}
+
+IW_treaty_universities_non_member = {
+	potential = {
+		has_saved_global_event_target = IW_treaty_universities_passed
+		NOT = { overlord = { TAG = event_target:IW_treaty_universities_passed } }
+		capital_scope = { region = italy_region }
+	}
+
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = IW_treaty_universities_passed_tt
+			NOT = { overlord = { TAG = event_target:IW_treaty_universities_passed } }
+			capital_scope = { region = italy_region }
+		}
+	}
+
+	global_institution_spread = -0.2
+}
+
+IW_treaty_land_rights_member = {
+	potential = {
+		has_saved_global_event_target = IW_treaty_land_rights_passed
+		OR = {
+			has_country_flag = IW_italian_league_member
+			has_country_flag = IW_french_league_member
+			has_country_flag = IW_iberian_league_member
+			has_country_flag = IW_HRE_league_member
+		}
+	}
+
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = IW_treaty_land_rights_passed_tt
+			OR = {
+				TAG = event_target:IW_treaty_land_rights_passed
+				overlord = { TAG = event_target:IW_treaty_land_rights_passed }
+			}
+		}
+	}
+
+	core_creation = -0.1
+	enemy_core_creation = 0.1
+}
+
+# IW_treaty_land_rights_non_member = {
 # 	potential = {
-# 		has_country_flag = IW_in_league
+# 		has_saved_global_event_target = IW_treaty_land_rights_passed
+# 		NOT = { overlord = { TAG = event_target:IW_treaty_land_rights_passed } }
+# 		capital_scope = { region = italy_region }
 # 	}
 
 # 	trigger = {
 # 		custom_trigger_tooltip = {
-# 			tooltip = IW_treaty_exclusive_trade_passed_tt
-# 			OR = {
-# 				TAG = event_target:IW_treaty_exclusive_trade_passed
-# 				overlord = {
-# 					TAG = event_target:IW_treaty_exclusive_trade_passed
-# 				}
-# 			}
+# 			tooltip = IW_treaty_land_rights_passed_tt
+# 			NOT = { overlord = { TAG = event_target:IW_treaty_land_rights_passed } }
+# 			capital_scope = { region = italy_region }
 # 		}
 # 	}
 
-# 	trade_efficiency = 0.05	
 # }
 
-# IW_treaty_venetian_trade_tm = {
-# 	potential = {
-# 		has_country_flag = IW_in_league
-# 	}
+IW_treaty_impressment_member = {
+	potential = {
+		has_saved_global_event_target = IW_treaty_impressment_passed
+		OR = {
+			has_country_flag = IW_italian_league_member
+			has_country_flag = IW_french_league_member
+			has_country_flag = IW_iberian_league_member
+			has_country_flag = IW_HRE_league_member
+		}
+	}
 
-# 	trigger = {
-# 		custom_trigger_tooltip = {
-# 			tooltip = IW_treaty_venetian_trade_passed_tt
-# 			OR = {
-# 				has_country_flag = IW_treaty_venetian_trade_passed
-# 				overlord = {
-# 					has_country_flag = IW_treaty_venetian_trade_passed
-# 				}
-# 			}
-# 		}
-# 	}
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = IW_treaty_impressment_passed_tt
+			OR = {
+				TAG = event_target:IW_treaty_impressment_passed
+				overlord = { TAG = event_target:IW_treaty_impressment_passed }
+			}
+		}
+	}
 
-# 	trade_efficiency = 0.05	
-# }
+	global_sailors_modifier = 0.20
+}
+
+IW_treaty_impressment_non_member = {
+	potential = {
+		has_saved_global_event_target = IW_treaty_impressment_passed
+		NOT = { overlord = { TAG = event_target:IW_treaty_impressment_passed } }
+		capital_scope = { region = italy_region }
+	}
+
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = IW_treaty_impressment_passed_tt
+			NOT = { overlord = { TAG = event_target:IW_treaty_impressment_passed } }
+			capital_scope = { region = italy_region }
+		}
+	}
+
+	sailors_recovery_speed = -0.1
+}
+
+IW_treaty_demil_member = {
+	potential = {
+		has_saved_global_event_target = IW_treaty_demil_passed
+		OR = {
+			has_country_flag = IW_italian_league_member
+			has_country_flag = IW_french_league_member
+			has_country_flag = IW_iberian_league_member
+			has_country_flag = IW_HRE_league_member
+		}
+	}
+
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = IW_treaty_demil_passed_tt
+			OR = {
+				TAG = event_target:IW_treaty_demil_passed
+				overlord = { TAG = event_target:IW_treaty_demil_passed }
+			}
+		}
+	}
+
+	drill_decay_modifier = -0.20
+}
+
+IW_treaty_demil_non_member = {
+	potential = {
+		has_saved_global_event_target = IW_treaty_demil_passed
+		NOT = { overlord = { TAG = event_target:IW_treaty_demil_passed } }
+		capital_scope = { region = italy_region }
+	}
+
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = IW_treaty_demil_passed_tt
+			NOT = { overlord = { TAG = event_target:IW_treaty_demil_passed } }
+			capital_scope = { region = italy_region }
+		}
+	}
+
+	global_regiment_cost = 0.05
+}
+
+IW_congress_effect = {
+	potential = {
+		OR = {
+			has_country_flag = IW_italian_league_member
+			has_country_flag = IW_french_league_member
+			has_country_flag = IW_iberian_league_member
+			has_country_flag = IW_HRE_league_member
+		}
+	}
+
+	trigger = {
+		check_variable = {
+			which = numLeagueMembers
+			value = 20
+		}
+	}
+
+	monarch_diplomatic_power = 1
+}

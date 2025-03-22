@@ -91,20 +91,116 @@ IW_league_member = {
 	# Modifiers:
 	modifier_subject = clear # League members don't get the ordinary subject_nation penalty 
 	modifier_overlord = clear
-	# modifier_overlord = {
-	# 	modifier = IW_treaty_exclusive_trade_overlord
-	# 	trigger = {
-	# 		tag = event_target:IW_treaty_exclusive_trade_passed
-	# 	}
-	# }
-	# modifier_subject = {
-	# 	modifier = IW_treaty_exclusive_trade_subject
-	# 	trigger = {
-	# 		overlord = {
-	# 			tag = event_target:IW_treaty_exclusive_trade_passed
-	# 		}
-	# 	}
-	# }
+	modifier_subject = {
+		modifier = IW_defense_spending_subject
+		trigger = {
+			always = yes
+		}
+	}
+	modifier_overlord = {
+		modifier = IW_defense_spending_overlord
+		trigger = {
+			check_variable = {
+				which = numLeagueMembers
+				value = 5
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = IW_defense_spending_subject
+		trigger = {
+			overlord = {
+				check_variable = {
+					which = numLeagueMembers
+					value = 5
+				}
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = IW_drafting_overlord
+		trigger = {
+			check_variable = {
+				which = numLeagueMembers
+				value = 10
+			}
+			has_country_flag = IW_chose_drafting
+		}
+	}
+	modifier_subject = {
+		modifier = IW_drafting_subject
+		trigger = {
+			overlord = {
+				check_variable = {
+					which = numLeagueMembers
+					value = 10
+				}
+				has_country_flag = IW_chose_drafting
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = IW_condot_overlord
+		trigger = {
+			check_variable = {
+				which = numLeagueMembers
+				value = 10
+			}
+			has_country_flag = IW_chose_condot
+		}
+	}
+	modifier_subject = {
+		modifier = IW_condot_subject
+		trigger = {
+			overlord = {
+				check_variable = {
+					which = numLeagueMembers
+					value = 10
+				}
+				has_country_flag = IW_chose_condot
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = IW_banking_overlord
+		trigger = {
+			check_variable = {
+				which = numLeagueMembers
+				value = 15
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = IW_banking_subject
+		trigger = {
+			overlord = {
+				check_variable = {
+					which = numLeagueMembers
+					value = 15
+				}
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = IW_congress_overlord
+		trigger = {
+			check_variable = {
+				which = numLeagueMembers
+				value = 20
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = IW_congress_subject
+		trigger = {
+			overlord = {
+				check_variable = {
+					which = numLeagueMembers
+					value = 20
+				}
+			}
+		}
+	}
 }
 
 IW_league_member_permanent = {

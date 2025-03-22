@@ -7,3 +7,15 @@
  IW_league_member_title: "member in the League"
  IW_league_member_title_plural: "League Members"
  is_IW_league_member: "League Member"
+
+# Subject Modifiers
+ IW_defense_spending_overlord: "Mandatory Defense Spending"
+ IW_defense_spending_subject: "Mandatory Defense Spending"
+ IW_drafting_overlord: "Member Drafting"
+ IW_drafting_subject: "Member Drafting"
+ IW_condot_overlord: "Incorporate Condottieri"
+ IW_condot_subject: "Incorporate Condottieri"
+ IW_banking_overlord: "League Banking Union"
+ IW_banking_subject: "League Banking Union"
+ IW_congress_overlord: "Congress of Italy"
+ IW_congress_subject: "Congress of Italy"

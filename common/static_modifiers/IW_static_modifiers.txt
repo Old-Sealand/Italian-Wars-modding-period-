@@ -1,0 +1,24 @@
+IW_defense_spending_overlord = { fort_maintenance_modifier = -0.01 }
+IW_defense_spending_subject = { fort_maintenance_modifier = -0.10 }
+IW_drafting_overlord = { global_manpower_modifier = 0.01 }
+IW_drafting_subject = { army_tradition_decay = -0.01 }
+IW_condot_overlord = {
+	allow_mercenaries_to_split = yes
+	allow_mercenary_drill = yes
+	mercenary_manpower = 0.01
+}
+IW_condot_subject = {
+	allow_mercenaries_to_split = yes
+	allow_mercenary_drill = yes
+	mercenary_cost = -0.10
+}
+IW_banking_overlord = { global_tax_income = 1 }
+IW_banking_subject = {
+	development_cost = -0.1
+	interest = -1
+}
+IW_congress_overlord = { advisor_cost = -0.01 }
+IW_congress_subject = {
+	global_prosperity_growth = 0.1
+	global_monthly_devastation = -0.1
+}

@@ -135,6 +135,36 @@ country_event = {
 				}
 			}
 			hidden_effect = {
+				if = { # Treaty transferrance
+					limit = {
+						event_target:IW_italian_league_leader = { tag = event_target:IW_treaty_exclusive_trade_passed }
+					}
+					save_global_event_target_as = IW_treaty_exclusive_trade_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_italian_league_leader = { tag = event_target:IW_treaty_universities_passed }
+					}
+					save_global_event_target_as = IW_treaty_universities_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_italian_league_leader = { tag = event_target:IW_treaty_land_rights_passed }
+					}
+					save_global_event_target_as = IW_treaty_land_rights_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_italian_league_leader = { tag = event_target:IW_treaty_impressment_passed }
+					}
+					save_global_event_target_as = IW_treaty_impressment_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_italian_league_leader = { tag = event_target:IW_treaty_demil_passed }
+					}
+					save_global_event_target_as = IW_treaty_demil_passed
+				}
 				# set_variable = { doubles it for some reason
 				# 	which = numLeagueMembers
 				# 	which = event_target:IW_italian_league_leader
@@ -188,6 +218,36 @@ country_event = {
 				}
 			}
 			hidden_effect = {
+				if = { # Treaty transferrance
+					limit = {
+						event_target:IW_french_league_leader = { tag = event_target:IW_treaty_exclusive_trade_passed }
+					}
+					save_global_event_target_as = IW_treaty_exclusive_trade_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_french_league_leader = { tag = event_target:IW_treaty_universities_passed }
+					}
+					save_global_event_target_as = IW_treaty_universities_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_french_league_leader = { tag = event_target:IW_treaty_land_rights_passed }
+					}
+					save_global_event_target_as = IW_treaty_land_rights_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_french_league_leader = { tag = event_target:IW_treaty_impressment_passed }
+					}
+					save_global_event_target_as = IW_treaty_impressment_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_french_league_leader = { tag = event_target:IW_treaty_demil_passed }
+					}
+					save_global_event_target_as = IW_treaty_demil_passed
+				}
 				# export_to_variable = {
 				# 	which = numLeagueMembers
 				# 	who = event_target:IW_french_league_leader
@@ -230,6 +290,36 @@ country_event = {
 				}
 			}
 			hidden_effect = {
+				if = { # Treaty transferrance
+					limit = {
+						event_target:IW_iberian_league_leader = { tag = event_target:IW_treaty_exclusive_trade_passed }
+					}
+					save_global_event_target_as = IW_treaty_exclusive_trade_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_iberian_league_leader = { tag = event_target:IW_treaty_universities_passed }
+					}
+					save_global_event_target_as = IW_treaty_universities_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_iberian_league_leader = { tag = event_target:IW_treaty_land_rights_passed }
+					}
+					save_global_event_target_as = IW_treaty_land_rights_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_iberian_league_leader = { tag = event_target:IW_treaty_impressment_passed }
+					}
+					save_global_event_target_as = IW_treaty_impressment_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_iberian_league_leader = { tag = event_target:IW_treaty_demil_passed }
+					}
+					save_global_event_target_as = IW_treaty_demil_passed
+				}
 				# export_to_variable = {
 				# 	which = numLeagueMembers
 				# 	who = event_target:IW_iberian_league_leader
@@ -273,6 +363,36 @@ country_event = {
 				}
 			}
 			hidden_effect = {
+				if = { # Treaty transferrance
+					limit = {
+						event_target:IW_HRE_league_leader = { tag = event_target:IW_treaty_exclusive_trade_passed }
+					}
+					save_global_event_target_as = IW_treaty_exclusive_trade_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_HRE_league_leader = { tag = event_target:IW_treaty_universities_passed }
+					}
+					save_global_event_target_as = IW_treaty_universities_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_HRE_league_leader = { tag = event_target:IW_treaty_land_rights_passed }
+					}
+					save_global_event_target_as = IW_treaty_land_rights_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_HRE_league_leader = { tag = event_target:IW_treaty_impressment_passed }
+					}
+					save_global_event_target_as = IW_treaty_impressment_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_HRE_league_leader = { tag = event_target:IW_treaty_demil_passed }
+					}
+					save_global_event_target_as = IW_treaty_demil_passed
+				}
 				# export_to_variable = {
 				# 	which = numLeagueMembers
 				# 	who = event_target:IW_HRE_league_leader
