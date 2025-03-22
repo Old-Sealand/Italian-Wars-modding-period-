@@ -1356,11 +1356,14 @@ country_event = {
 		set_global_flag = IW_league_sided_with_attacker
 
 		join_all_offensive_wars_of = event_target:IW_attacker
-		every_subject_country = {
-			limit = { is_IW_league_subject = yes }
-			# join_all_offensive_wars_of = event_target:IW_attacker
-			country_event = { id = IW_setup.11 }
+		hidden_effect = {
+			every_subject_country = {
+				limit = { is_IW_league_subject = yes }
+				# join_all_offensive_wars_of = event_target:IW_attacker
+				country_event = { id = IW_setup.11 }
+			}
 		}
+		custom_tooltip = IW_all_members_called_tt
 
 		# custom_tooltip = IW_setup.10a.tt
 	}
@@ -1403,13 +1406,15 @@ country_event = {
 		set_global_flag = IW_league_sided_with_defender
 
 		join_all_defensive_wars_of = event_target:IW_defender
-		every_subject_country = {
-			limit = { is_IW_league_subject = yes }
-			# join_all_defensive_wars_of = event_target:IW_defender
-			country_event = { id = IW_setup.12 }
+		hidden_effect = {
+			every_subject_country = {
+				limit = { is_IW_league_subject = yes }
+				# join_all_defensive_wars_of = event_target:IW_defender
+				country_event = { id = IW_setup.12 }
+			}
 		}
 
-		# custom_tooltip = IW_setup.10b.tt
+		custom_tooltip = IW_all_members_called_tt
 	}
 
 	option = { # free for all
@@ -1453,36 +1458,42 @@ country_event = {
 				who = event_target:IW_third_party
 				casus_belli = IW_cb_italian_war
 			}
-			event_target:IW_third_party = {
+		}
+
+		hidden_effect = {
+			if = {
+				limit = { has_saved_global_event_target = IW_third_party }
+				event_target:IW_third_party = {
+					every_subject_country = {
+						limit = { is_IW_league_subject = yes }
+						join_all_defensive_wars_of = PREV
+					}
+				}
+			}
+			event_target:IW_defender = {
 				every_subject_country = {
 					limit = { is_IW_league_subject = yes }
 					join_all_defensive_wars_of = PREV
 				}
 			}
-		}
-
-		event_target:IW_defender = {
+	
+			event_target:IW_attacker = {
+				every_subject_country = {
+					limit = { is_IW_league_subject = yes }
+					join_all_defensive_wars_of = PREV
+				}
+			}
+	
 			every_subject_country = {
 				limit = { is_IW_league_subject = yes }
-				join_all_defensive_wars_of = PREV
+				# join_all_offensive_wars_of = ROOT # should probably swap this out with event, so player always has choice
+				country_event = { id = IW_setup.11 }
 			}
+	
+			save_global_event_target_as = IW_third_party
 		}
 
-		event_target:IW_attacker = {
-			every_subject_country = {
-				limit = { is_IW_league_subject = yes }
-				join_all_defensive_wars_of = PREV
-			}
-		}
-
-		every_subject_country = {
-			limit = { is_IW_league_subject = yes }
-			# join_all_offensive_wars_of = ROOT # should probably swap this out with event, so player always has choice
-			country_event = { id = IW_setup.11 }
-		}
-
-		save_global_event_target_as = IW_third_party
-		# custom_tooltip = IW_setup.10c.tt
+		custom_tooltip = IW_all_members_called_tt
 	}
 
 	option = { # not interested
@@ -2005,4 +2016,32 @@ country_event = {
 		}
 		custom_tooltip = IW_abandon_league
 	}
+}
+
+country_event = {
+	id = IW_setup.19 # Corona Ferrea
+	title = IW_setup.19.t
+	desc = IW_setup.19.d
+	picture = SWEDEN_LEAGUE_WAR_eventPicture
+	
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = IW_setup.19.a
+		tooltip = {
+			118 = { add_province_triggered_modifier = IW_corona_ferrea_modifier }
+			custom_tooltip = IW_other_provinces_will_also_receive_this_modifier
+		}
+		hidden_effect = {
+			every_province = {
+				limit = { region = italy_region }
+			}
+			add_province_triggered_modifier = IW_corona_ferrea_modifier
+			set_country_flag = corona_ferrea_flag
+		}
+		custom_tooltip = IW_disband_other_leagues_tt
+	}
+
 }

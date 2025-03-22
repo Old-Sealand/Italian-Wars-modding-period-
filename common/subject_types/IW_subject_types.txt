@@ -115,12 +115,34 @@ IW_league_member = {
 		}
 	}
 	modifier_overlord = {
-		modifier = IW_drafting_overlord
+		modifier = IW_banking_overlord
 		trigger = {
 			overlord = {
 				check_variable = {
 					which = numLeagueMembers
 					value = 10
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = IW_banking_subject
+		trigger = {
+			overlord = {
+				check_variable = {
+					which = numLeagueMembers
+					value = 10
+				}
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = IW_drafting_overlord
+		trigger = {
+			overlord = {
+				check_variable = {
+					which = numLeagueMembers
+					value = 15
 				}
 				has_country_flag = IW_chose_drafting
 			}
@@ -132,7 +154,7 @@ IW_league_member = {
 			overlord = {
 				check_variable = {
 					which = numLeagueMembers
-					value = 10
+					value = 15
 				}
 				has_country_flag = IW_chose_drafting
 			}
@@ -144,7 +166,7 @@ IW_league_member = {
 			overlord = {
 				check_variable = {
 					which = numLeagueMembers
-					value = 10
+					value = 15
 				}
 				has_country_flag = IW_chose_condot
 			}
@@ -156,31 +178,9 @@ IW_league_member = {
 			overlord = {
 				check_variable = {
 					which = numLeagueMembers
-					value = 10
+					value = 15
 				}
 				has_country_flag = IW_chose_condot
-			}
-		}
-	}
-	modifier_overlord = {
-		modifier = IW_banking_overlord
-		trigger = {
-			overlord = {
-				check_variable = {
-					which = numLeagueMembers
-					value = 15
-				}
-			}
-		}
-	}
-	modifier_subject = {
-		modifier = IW_banking_subject
-		trigger = {
-			overlord = {
-				check_variable = {
-					which = numLeagueMembers
-					value = 15
-				}
 			}
 		}
 	}

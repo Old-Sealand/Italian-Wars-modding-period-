@@ -19,6 +19,10 @@
  IW_HRE_league_member: "Member of the [GetFrenchLeagueName] League"
  IW_HRE_league_member: "Member of the Iberian League"
  IW_HRE_league_member: "Member of the [GetHRELeagueName] League"
+ corona_ferrea_flag: "The Iron Crown"
+
+### VARIABLES ###
+ numLeagueMembers: "Number of League Members"
 
 ### SCRIPTED TRIGGERS ###
  is_IW_league_subject_tooltip: "Is a Member of Our League."
@@ -48,6 +52,21 @@
  IW_treaty_impressment_non_member: "Impressment of Foreign Sailors"
  IW_treaty_demil_member: "Forced Demilitarization"
  IW_treaty_demil_non_member: "Forced Demilitarization"
+
+ desc_IW_treaty_of_lodi_tm: "The Treaty of Lodi is in effect, ushering in a period of relative peace on the Italian peninsula under the protection of the Italic League."
+ desc_IW_treaty_exclusive_trade_member: "Our League has enforced the Treaty of Iura Mercaturae upon its enemies."
+ desc_IW_treaty_exclusive_trade_non_member: "The League of [IW_treaty_exclusive_trade_passed.GetName] has forced us to ratify the Treaty of Iura Mercaturae."
+ desc_IW_treaty_universities_member: "Our League has enforced the Treaty of Academiae Solae upon its enemies."
+ desc_IW_treaty_universities_non_member: "The League of [IW_treaty_universities_passed.GetName] has forced us to ratify the Treaty of Academiae Solae."
+ desc_IW_treaty_land_rights_member: "Our League has enforced the Treaty of Concessio Terrarum upon its enemies."
+ desc_IW_treaty_impressment_member: "Our League has enforced the Treaty of Pressio Nautarum upon its enemies."
+ desc_IW_treaty_impressment_non_member: "The League of [IW_treaty_impressment_passed.GetName] has forced us to ratify the Treaty of Pressio Nautarum."
+ desc_IW_treaty_demil_member: "Our League has enforced the Treaty of Restrictio Militaris upon its enemies."
+ desc_IW_treaty_demil_non_member: "The League of [IW_treaty_demil_passed.GetName] has forced us to ratify the Treaty of Restrictio Militaris."
+
+  ###PROVINCE###
+ IW_corona_ferrea_modifier: "The Iron Crown"
+ desc_IW_corona_ferrea_modifier: "The undisputed crowning of the [IW_treaty_exclusive_trade_passed.GetAdjective] as the Kings of Italy has ushered in an era of prosperity for the peninsula."
 
  IW_congress_effect: "Congress of Italy"
 
@@ -166,6 +185,7 @@
  IW_setup.10.b: "We should aid [IW_defender.GetName]!"
  IW_setup.10.c: "We'll use the chaos to press our own claims!"
  IW_setup.10.e: "Let's sit this one out..."
+ IW_all_members_called_tt: "\nAll §YLeague Members§! will be called to join"
 
  IW_setup.11.d: "All hell has broken loose in Italy. The rising tensions of factional politics have boiled over into an armed conflict that no one can stop. We must stand with our League in this conflict for the ages."
  IW_setup.11.a: "To arms!"
@@ -208,6 +228,12 @@
  IW_setup.18.e: "It's time to embrace our foreign overlords"
  IW_free_for_all_tt: "Our League will declare war on both the §Y[GetFrenchLeagueName]§! and §YIberian§! Leagues"
  IW_abandon_league: "\nWe will yield our leadership and leave the §YItalic League§!"
+
+ IW_setup.19.t: "Corona Ferrea"
+ IW_setup.19.d: "The Italian Wars, a century-long saga of ambition, betrayal, and bloodshed, have at last come to an end. Amidst the ruins of rival coalitions, the armies of [Root.GetName] stand triumphant, their banners waving proudly over the scarred yet unified Italian Peninsula. The victories of [Root.Monarch.GetName] have not only secured dominance but have fulfilled a destiny long sought by kings and princes alike—the unification of Italy under a single crown.\n\nIn a grand ceremony held within the ancient Basilica of Monza, the Corona Ferrea, the Iron Crown of Lombardy, is placed upon the monarch's head. The assembled nobility, clergy, and diplomats watch in awe as [Root.Monarch.GetName] is proclaimed Rex Italiae, King of all Italy. The Pope's blessing sanctifies the coronation, solidifying both divine and earthly authority over a land once fragmented by division.\n\nThis moment marks the birth of a new era, with the Italian Peninsula standing united under one ruler for the first time since the age of Rome. The people celebrate, but the task ahead is daunting—restoring order, securing alliances, and ensuring this new kingdom endures against both internal strife and envious foreign powers. The crown is heavy, but so too is the will of its bearer."
+ IW_setup.19.a: "My will be done"
+ IW_disband_other_leagues_tt: "\nAll other §YLeagues§! will be disbanded."
+ IW_other_provinces_will_also_receive_this_modifier: "All other provinces in the §YItaly§! region will also receive the §Ymodifier§!." 
 
  ###GUI###
  IW_treaties_button_1_loc: "Solidify the League's dominance over Italian trade, granting its members exclusive rights to all major markets and ports across the peninsula.\n--------------\n§YLeague Members§! gain:\nMerchants: §G+1§!\n\n§YNon-member States in Italy§! gain:\nGlobal Trade Power: §R-10.0%§!"

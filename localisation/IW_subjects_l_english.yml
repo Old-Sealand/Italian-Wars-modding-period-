@@ -8,6 +8,13 @@
  IW_league_member_title_plural: "League Members"
  is_IW_league_member: "League Member"
 
+ IW_league_member_permanent: "Permanent League Member"
+ IW_league_member_permanent_long_desc: "Following the example of the Most Holy League established after the 1454 Treaty of Lodi, various Leagues of mutual defence and coalition forces were established in an attempt to maintain or tip the balance of power in Italy."
+ IW_league_member_permanent_is_our: "$NAME|Y$ is a permanent member of our League."
+ IW_league_member_permanent_title: "Member in the League"
+ IW_league_member_permanent_title_plural: "Permanent League Members"
+ is_IW_league_member_permanent: "Permanent League Member"
+
 # Subject Modifiers
  IW_defense_spending_overlord: "Mandatory Defense Spending"
  IW_defense_spending_subject: "Mandatory Defense Spending"
