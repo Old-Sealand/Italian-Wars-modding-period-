@@ -164,12 +164,15 @@ set_IW_d_g_f = {
 	}
 }
 set_IW_on_dependency_gained = {
-	FROM = { # vassal
+	if = {
+		limit = { FROM = { is_IW_league_subject = no } }
+		FROM = { # vassal
 		clr_IW_map_all_influence_progress = yes
 		every_owned_province = {
 			limit = { region = italy_region }
 			set_province_flag = IW_create_vassal_flag
 		}
+	}
 	}
 	#ROOT = { # overlord
 		every_province = {

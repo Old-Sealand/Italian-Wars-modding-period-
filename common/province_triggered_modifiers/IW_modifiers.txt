@@ -1,0 +1,33 @@
+# Province Triggered modifiers are here.
+# These are added to provinces through the add_province_triggered_modifier effect
+#
+# Effects are fully scriptable here.
+
+
+IW_corona_ferrea_modifier = {
+	potential = {
+		any_country = { has_country_flag = corona_ferrea_flag }
+	}
+
+	trigger = {
+		owner = {
+			OR = {
+				has_country_flag = corona_ferrea_flag
+				overlord =  { has_country_flag = corona_ferrea_flag }
+			}
+		}
+	}
+
+	local_development_cost = -0.1
+	local_governing_cost = -0.1
+	
+	#Province scope
+	on_activation = {
+	
+	}
+	
+	on_deactivation = {
+	
+	}
+	
+}

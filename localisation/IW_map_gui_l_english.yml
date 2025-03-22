@@ -2,7 +2,7 @@
  
  IW_treaties_league_text: "Dominatio Italiae"
  IW_treaties_text: "Treaties"
- IW_league_text: "Italic League"
+ IW_league_text: "[GetFactionTabName] League"
 
  IW_province_info_left_text: "[province_info.GetName]"
  IW_province_info_left_banner: "[target_left_country.GetName]"

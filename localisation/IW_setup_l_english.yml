@@ -9,6 +9,8 @@
  string_in_french_league: "[GetFrenchLeagueName]"
  string_in_iberian_league: "Iberian"
  string_in_HRE_league: "[GetHRELeagueName]"
+ string_declare_italian_war: "Declare War"
+ string_usurp_league_leadership: "Usurp Leadership"
 
 ### FLAGS ###
  IW_HRE_league_leader: "Leader of the Italic League"
@@ -19,6 +21,14 @@
  IW_HRE_league_member: "Member of the [GetFrenchLeagueName] League"
  IW_HRE_league_member: "Member of the Iberian League"
  IW_HRE_league_member: "Member of the [GetHRELeagueName] League"
+ corona_ferrea_flag: "The Iron Crown"
+#  IW_beat_italians_flag: ""
+#  IW_beat_french_flag: ""
+#  IW_beat_iberians_flag: ""
+#  IW_beat_HRE_flag: ""
+
+### VARIABLES ###
+ numLeagueMembers: "Number of League Members"
 
 ### SCRIPTED TRIGGERS ###
  is_IW_league_subject_tooltip: "Is a Member of Our League."
@@ -48,6 +58,27 @@
  IW_treaty_impressment_non_member: "Impressment of Foreign Sailors"
  IW_treaty_demil_member: "Forced Demilitarization"
  IW_treaty_demil_non_member: "Forced Demilitarization"
+
+ desc_IW_treaty_of_lodi_tm: "The Treaty of Lodi is in effect, ushering in a period of relative peace on the Italian peninsula under the protection of the Italic League."
+ desc_IW_treaty_exclusive_trade_member: "Our League has enforced the Treaty of Iura Mercaturae upon its enemies."
+ desc_IW_treaty_exclusive_trade_non_member: "The League of [IW_treaty_exclusive_trade_passed.GetName] has forced us to ratify the Treaty of Iura Mercaturae."
+ desc_IW_treaty_universities_member: "Our League has enforced the Treaty of Academiae Solae upon its enemies."
+ desc_IW_treaty_universities_non_member: "The League of [IW_treaty_universities_passed.GetName] has forced us to ratify the Treaty of Academiae Solae."
+ desc_IW_treaty_land_rights_member: "Our League has enforced the Treaty of Concessio Terrarum upon its enemies."
+ desc_IW_treaty_impressment_member: "Our League has enforced the Treaty of Pressio Nautarum upon its enemies."
+ desc_IW_treaty_impressment_non_member: "The League of [IW_treaty_impressment_passed.GetName] has forced us to ratify the Treaty of Pressio Nautarum."
+ desc_IW_treaty_demil_member: "Our League has enforced the Treaty of Restrictio Militaris upon its enemies."
+ desc_IW_treaty_demil_non_member: "The League of [IW_treaty_demil_passed.GetName] has forced us to ratify the Treaty of Restrictio Militaris."
+
+ IW_treaty_exclusive_trade_passed_tt: "In the League which passed the Treaty of Iura Mercaturae"
+ IW_treaty_universities_passed_tt: "In the League which passed the Treaty of Academiae Solae"
+ IW_treaty_land_rights_passed_tt: "In the League which passed the Treaty of Concessio Terrarum"
+ IW_treaty_impressment_passed_tt: "In the League which passed the Treaty of Pressio Nautarum"
+ IW_treaty_demil_passed_tt: "In the League which passed the Treaty of Restrictio Militaris"
+
+  ###PROVINCE###
+ IW_corona_ferrea_modifier: "The Iron Crown"
+ desc_IW_corona_ferrea_modifier: "The undisputed crowning of the [IW_treaty_exclusive_trade_passed.GetAdjective] as the Kings of Italy has ushered in an era of prosperity for the peninsula."
 
  IW_congress_effect: "Congress of Italy"
 
@@ -105,6 +136,7 @@
 
 ### SETUP EVENTS ###
  IW_setup.1.t: "New Leadership in the League of [IW_former_leader.GetName]"
+ IW_setup.1.t2: "New Leadership in the League"
  IW_setup.1.d1: "Threatened by foreign interlopers on all sides, the brave remaining coalition states of the Italic League will require strong leadership to ensure their very survival. The [IW_former_leader.GetAdjective] [IW_former_leader.Monarch.GetTitle] has proven himself to be unworthy of the title, and the member council has called [Root.Monarch.GetName] to assume the role of defender of Italy." # usurping Italian leader
  IW_setup.1.d2: "The annexation of [IW_former_leader.GetName] has left a void at the heart of the Italic League. With its former leader absorbed into the fold of a greater power, the League's future now hangs in the balance. To prevent its collapse and safeguard Italian autonomy, its member states have turned their gaze to [Root.GetName], urging it to take up the mantle of leadership. As the new head of the League, [Root.GetName] would wield significant influence—but at a cost.\n\nIn the grand halls of [Root.Capital.GetCapitalName], the ruling council debates the proposal. Accepting leadership would mean shouldering the burden of coordinating disparate interests and defending the League from external threats, all while managing the tensions that have plagued Italian politics for centuries. Turning it down, however, could shatter the fragile alliance, opening the door for outside powers to dominate the peninsula.\n\nThe question is clear: will [Root.GetName] rise to the occasion and unify the League under its guidance, or prioritize its own stability and turn down this daunting responsibility? The future of Italy rests on this decision." # Italian leader died
  IW_setup.1.d3: "The [IW_former_leader.GetAdjective] have failed, against all odds, to reassert Frankish dominance in Italy. Perhaps the memory of Charles d'Anjou would be better served with us at the head of this coalition." # usurping French leader
@@ -166,6 +198,7 @@
  IW_setup.10.b: "We should aid [IW_defender.GetName]!"
  IW_setup.10.c: "We'll use the chaos to press our own claims!"
  IW_setup.10.e: "Let's sit this one out..."
+ IW_all_members_called_tt: "\nAll §YLeague Members§! will be called to join"
 
  IW_setup.11.d: "All hell has broken loose in Italy. The rising tensions of factional politics have boiled over into an armed conflict that no one can stop. We must stand with our League in this conflict for the ages."
  IW_setup.11.a: "To arms!"
@@ -209,6 +242,12 @@
  IW_free_for_all_tt: "Our League will declare war on both the §Y[GetFrenchLeagueName]§! and §YIberian§! Leagues"
  IW_abandon_league: "\nWe will yield our leadership and leave the §YItalic League§!"
 
+ IW_setup.19.t: "Corona Ferrea"
+ IW_setup.19.d: "The Italian Wars, a century-long saga of ambition, betrayal, and bloodshed, have at last come to an end. Amidst the ruins of rival coalitions, the armies of [Root.GetName] stand triumphant, their banners waving proudly over the scarred yet unified Italian Peninsula. The victories of [Root.Monarch.GetName] have not only secured dominance but have fulfilled a destiny long sought by kings and princes alike—the unification of Italy under a single crown.\n\nIn a grand ceremony held within the ancient Basilica of Monza, the Corona Ferrea, the Iron Crown of Lombardy, is placed upon the monarch's head. The assembled nobility, clergy, and diplomats watch in awe as [Root.Monarch.GetName] is proclaimed Rex Italiae, King of all Italy. The Pope's blessing sanctifies the coronation, solidifying both divine and earthly authority over a land once fragmented by division.\n\nThis moment marks the birth of a new era, with the Italian Peninsula standing united under one ruler for the first time since the age of Rome. The people celebrate, but the task ahead is daunting—restoring order, securing alliances, and ensuring this new kingdom endures against both internal strife and envious foreign powers. The crown is heavy, but so too is the will of its bearer."
+ IW_setup.19.a: "My will be done"
+ IW_disband_other_leagues_tt: "\nAll other §YLeagues§! will be disbanded."
+ IW_other_provinces_will_also_receive_this_modifier: "All other provinces in the §YItaly§! region will also receive the §Ymodifier§!." 
+
  ###GUI###
  IW_treaties_button_1_loc: "Solidify the League's dominance over Italian trade, granting its members exclusive rights to all major markets and ports across the peninsula.\n--------------\n§YLeague Members§! gain:\nMerchants: §G+1§!\n\n§YNon-member States in Italy§! gain:\nGlobal Trade Power: §R-10.0%§!"
  IW_treaties_button_2_loc: "Mandate the dissolution of universities in all non-member Italian states, consolidating higher education exclusively within the League.\n--------------\n§YLeague Members§! gain:\nTechnology Cost: §G-5.0%§!\n\n§YNon-member States in Italy§! gain:\nInstitution Spread: §R-20.0%§!"
@@ -216,3 +255,20 @@
  IW_treaties_button_4_loc: "Compel non-member Italian states to provide able-bodied men for impressment into the League's fleet.\n--------------\n§YLeague Members§! gain:\nNational Sailors Modifier: §G+20.0%§!\n\n§YNon-member States in Italy§! gain:\nSailor Recovery Speed: §R-10.0%§!"
  IW_treaties_button_5_loc: "Compel non-member Italian states to dismantle a fraction of their their armed forces and fortifications.\n--------------\n§YLeague Members§! gain:\nRegiment Drill Loss: §G-20.0%§!\n\n§YNon-member States in Italy§! gain:\nRegiment Costs: §R+5.0%§!"
  IW_passed_all_treaties_tt: "Has passed all 5 §YItalian Treaties§!"
+
+ IW_league_top_loc: "As long as the §Y[GetFactionTabName]§! League maintains at least §Y5§! members, §YLeague Members§! gain:\nFort Maintenance: §G+10.0%§!\n\nFor each Member state, the §YLeague Leader§! gains:\nFort Maintenance: §G+1.0%§!"
+ IW_league_mid_loc: "As long as the §Y[GetFactionTabName]§! League maintains at least §Y10§! members, §YLeague Members§! gain:\nDevelopment Cost: §G-10.0%§!\nInterest Per Annum: §G-1§!\n\nFor each Member state, the §YLeague Leader§! gains:\nYearly Tax Income: §G+1§!"
+ IW_league_mid_left_loc: "As long as the §Y[GetFactionTabName]§! League maintains at least §Y15§! members, §YLeague Members§! gain:\nMercenary Cost: §G-10.0%§!\n\nFor each Member state, the §YLeague Leader§! gains:\nMercenary Manpower: §G+1.0%§!\n\nAdditionally, both the §YLeader§! and §YMembers§! gain the following effects:\n£yes£Can split and merge Mercenary units\n£yes£Allow Mercenary units to Drill"
+ IW_league_mid_right_loc: "As long as the §Y[GetFactionTabName]§! League maintains at least §Y15§! members, §YLeague Members§! gain:\nYearly Army Tradition Decay: §G-1.0%§!\n\nFor each Member state, the §YLeague Leader§! gains:\nNational Manpower: §G+1.0%§!"
+ IW_league_bottom_loc: "As long as the §Y[GetFactionTabName]§! League maintains at least §Y15§! members, §YLeague Members§! gain:\nGlobal Monthly Devastation: §G-0.10§!\nGlobal Prosperity Growth: §G+0.10§!\n\nFor each Member state, the §YLeague Leader§! gains:\nAdvisor Costs: §G-1.0%§!\n\nAdditionally, the §YLeague Leader§! gains:\nMonarch Diplomatic Skill: §G+1§!"
+ IW_beat_italians_tt: "Defeated the leader of the §YItalic League§! in the past year"
+ IW_beat_french_tt: "Defeated the leader of the §Y[GetFrenchLeagueName] League§! in the past year"
+ IW_beat_iberians_tt: "Defeated the leader of the §YIberian League§! in the past year"
+ IW_beat_HRE_tt: "Defeated the leader of the §Y[GetHRELeagueName] League§! in the past year"
+ IW_imposed_treaty: "Imposed a treaty during an §YItalian War§!"
+ IW_already_enacted_treaty: "Treaty is NOT already enacted in favor of our League"
+ IW_unite_italy_button_loc: "End the Italian Wars and unify the peninsula under your rule. Claim the Iron Crown of Lombardy and crown yourself King of Italy, ushering in a new era of dominance and prestige for [Root.GetName]."
+ IW_league_overthrow_button_loc: "[GetOverthrowButtonName]"
+ IW_league_overthrow_button_name_loc: "[GetOverthrowButtonName]"
+ IW_must_be_league_member: "Must be a member of a League"
+ IW_m_p_t_l_open_close_loc: "Italian Wars"
