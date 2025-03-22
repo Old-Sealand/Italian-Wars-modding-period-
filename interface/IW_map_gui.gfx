@@ -715,4 +715,9 @@ spriteTypes = {
 		name = "GFX_great_project_rome_colosseum"	
 		texturefile = "gfx//interface//great_projects//great_project_rome_colosseum.dds"
 	}
+	# Event Pictures
+	spriteType = {
+		name = "IW_end_eventPicture"
+		texturefile = "gfx/event_pictures/IW_end_eventPicture.dds"
+	}
 }
