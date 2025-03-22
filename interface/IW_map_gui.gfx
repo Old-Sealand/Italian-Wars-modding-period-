@@ -1,8 +1,14 @@
 spriteTypes = {
-	##################ˇ
+	##################
+	# IW Map Province Treaties League:
 	spriteType = {
-		name = "GFX_IW_map_open_close_button"
-		texturefile = "gfx/interface/IW_map_gui/IW_map_open_close_button.dds"
+		name = "GFX_IW_m_p_t_l_open_close_button"
+		texturefile = "gfx/interface/IW_map_gui/IW_m_p_t_l_open_close_button.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_IW_m_p_t_l_background"
+		texturefile = "gfx/interface/IW_map_gui/IW_m_p_t_l_background.dds"
 		loadType = "INGAME"
 	}
 	# IW Map:
@@ -412,6 +418,205 @@ spriteTypes = {
 		transparencecheck = yes
 	}
 	##################
+	# IW Treaties:
+	spriteType = {
+		name = "GFX_IW_treaties_league_background"
+		texturefile = "gfx/interface/IW_map_gui/IW_treaties_league_background.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_IW_treaties_frame_1"
+		texturefile = "gfx/interface/IW_map_gui/IW_treaties_frame_1.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_IW_treaties_button"
+		texturefile = "gfx/interface/IW_map_gui/IW_treaties_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_IW_treaties_frame_2"
+		texturefile = "gfx/interface/IW_map_gui/IW_treaties_frame_2.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	##################
+	# IW League Tab:
+	spriteType = {
+		name = "GFX_IW_league_tab_1_button"
+		texturefile = "gfx/interface/IW_map_gui/IW_league_tab_1_button.dds"
+		loadType = "INGAME"
+		noOfFrames = 2
+		transparencecheck = yes
+	}
+	maskedShieldType = {
+		name = "GFX_IW_league_tab_1_shield"
+		textureFile1 = "gfx//interface//shield_medium_overlay.tga"
+		textureFile2 = "gfx//interface//shield_medium_mask.tga"
+		effectFile = "gfx/FX/maskedflag.lua"
+		transparencecheck = yes
+		textureFile3 = "gfx//interface//client_state_symbols_small.dds"
+		noOfFrames = 121
+		overlay_frames_per_row = 32
+		overlay_rows = 4
+	}
+	spriteType = {
+		name = "GFX_IW_league_tab_2_button"
+		texturefile = "gfx/interface/IW_map_gui/IW_league_tab_2_button.dds"
+		loadType = "INGAME"
+		noOfFrames = 2
+		transparencecheck = yes
+	}
+	maskedShieldType = {
+		name = "GFX_IW_league_tab_2_shield"
+		textureFile1 = "gfx//interface//shield_medium_overlay.tga"
+		textureFile2 = "gfx//interface//shield_medium_mask.tga"
+		effectFile = "gfx/FX/maskedflag.lua"
+		transparencecheck = yes
+		textureFile3 = "gfx//interface//client_state_symbols_small.dds"
+		noOfFrames = 121
+		overlay_frames_per_row = 32
+		overlay_rows = 4
+	}
+	spriteType = {
+		name = "GFX_IW_league_tab_3_button"
+		texturefile = "gfx/interface/IW_map_gui/IW_league_tab_3_button.dds"
+		loadType = "INGAME"
+		noOfFrames = 2
+		transparencecheck = yes
+	}
+	maskedShieldType = {
+		name = "GFX_IW_league_tab_3_shield"
+		textureFile1 = "gfx//interface//shield_medium_overlay.tga"
+		textureFile2 = "gfx//interface//shield_medium_mask.tga"
+		effectFile = "gfx/FX/maskedflag.lua"
+		transparencecheck = yes
+		textureFile3 = "gfx//interface//client_state_symbols_small.dds"
+		noOfFrames = 121
+		overlay_frames_per_row = 32
+		overlay_rows = 4
+	}
+	spriteType = {
+		name = "GFX_IW_league_tab_4_button"
+		texturefile = "gfx/interface/IW_map_gui/IW_league_tab_4_button.dds"
+		loadType = "INGAME"
+		noOfFrames = 2
+		transparencecheck = yes
+	}
+	maskedShieldType = {
+		name = "GFX_IW_league_tab_4_shield"
+		textureFile1 = "gfx//interface//shield_medium_overlay.tga"
+		textureFile2 = "gfx//interface//shield_medium_mask.tga"
+		effectFile = "gfx/FX/maskedflag.lua"
+		transparencecheck = yes
+		textureFile3 = "gfx//interface//client_state_symbols_small.dds"
+		noOfFrames = 121
+		overlay_frames_per_row = 32
+		overlay_rows = 4
+	}
+	# IW League:
+	spriteType = {
+		name = "GFX_IW_league_background"
+		texturefile = "gfx/interface/IW_map_gui/IW_league_background.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_IW_league_banner"
+		texturefile = "gfx/interface/IW_map_gui/IW_league_banner.dds"
+		loadType = "INGAME"
+	}
+	maskedShieldType = {
+		name = "GFX_IW_league_shield"
+		textureFile1 = "gfx//interface//shield_frame.tga"
+		textureFile2 = "gfx//interface//shield_mask.tga"
+		effectFile = "gfx/FX/maskedflag.lua"
+		transparencecheck = yes
+		textureFile3 = "gfx//interface//client_state_symbols_medium.dds"
+		noOfFrames = 119
+		overlay_frames_per_row = 32
+		overlay_rows = 4
+	}
+	spriteType = {
+		name = "GFX_IW_league_frame"
+		texturefile = "gfx/interface/IW_map_gui/IW_league_frame.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_IW_league_frame_italy"
+		texturefile = "gfx/interface/IW_map_gui/IW_league_frame_italy.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_IW_league_frame_iberia"
+		texturefile = "gfx/interface/IW_map_gui/IW_league_frame_iberia.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_IW_league_frame_french"
+		texturefile = "gfx/interface/IW_map_gui/IW_league_frame_french.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_IW_league_frame_hre"
+		texturefile = "gfx/interface/IW_map_gui/IW_league_frame_hre.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_IW_league_frame_pope"
+		texturefile = "gfx/interface/IW_map_gui/IW_league_frame_pope.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_IW_league_button"
+		texturefile = "gfx/interface/IW_map_gui/IW_league_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_IW_league_button_top"
+		texturefile = "gfx/interface/IW_map_gui/IW_league_button_top.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_IW_league_button_mid"
+		texturefile = "gfx/interface/IW_map_gui/IW_league_button_mid.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_IW_league_button_mid_left"
+		texturefile = "gfx/interface/IW_map_gui/IW_league_button_mid_left.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_IW_league_button_mid_right"
+		texturefile = "gfx/interface/IW_map_gui/IW_league_button_mid_right.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_IW_league_button_bottom"
+		texturefile = "gfx/interface/IW_map_gui/IW_league_button_bottom.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_IW_league_overthrow_button"
+		texturefile = "gfx/interface/IW_map_gui/IW_league_overthrow_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	##################
 	# IW Province:
 	spriteType = {
 		name = "GFX_IW_province_background"
@@ -482,6 +687,23 @@ spriteTypes = {
 		loadType = "INGAME"
 		noOfFrames = 2
 		transparencecheck = yes
+	}
+	##################
+	# IW Unite Italy:
+	spriteType = {
+		name = "GFX_IW_unite_italy_banner"
+		texturefile = "gfx/interface/IW_map_gui/IW_unite_italy_banner.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_IW_unite_italy_button"
+		texturefile = "gfx/interface/IW_map_gui/IW_unite_italy_button.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_IW_unite_italy_glow"
+		texturefile = "gfx/interface/IW_map_gui/IW_unite_italy_glow.dds"
+		loadType = "INGAME"
 	}
 	##################
 	### Monuments ###

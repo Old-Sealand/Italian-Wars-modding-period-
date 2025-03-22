@@ -1,5 +1,15 @@
 ﻿l_english:
  
+ IW_treaties_league_text: "Dominatio Italiae"
+ IW_treaties_text: "Treaties"
+ IW_league_text: "Iberian League"
+
+
+ IW_treaties_button_1: "§bIura Mercaturae§!"
+ IW_treaties_button_2: "§bAcademiae Solae§!"
+ IW_treaties_button_3: "§bConcessio Terrarum§!"
+ IW_treaties_button_4: "§bPressio Nautarum§!"
+ IW_treaties_button_5: "§bRestrictio Militaris§!"
 
 
  # Monuments:

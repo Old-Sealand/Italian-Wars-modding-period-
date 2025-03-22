@@ -1,22 +1,29 @@
-
+# IW Map Province Treaties League:
 custom_button = {
-    name = IW_map_open_close
+    name = IW_m_p_t_l_open_close
     effect = {
 		if = {
-			limit = { has_country_flag = IW_map_window }
-			clr_country_flag = IW_map_window
+			limit = { has_country_flag = IW_m_p_t_l_window }
+			clr_country_flag = IW_m_p_t_l_window
 		}
-		else = { set_country_flag = IW_map_window }
+		else = { set_country_flag = IW_m_p_t_l_window }
 	}
-    tooltip = IW_map_open_close_loc
+    tooltip = IW_m_p_t_l_open_close_loc
 }
 # IW Window:
+custom_window = {
+    name = IW_m_p_t_l_window
+    potential = { has_country_flag = IW_m_p_t_l_window }
+}
+custom_icon = {
+	name = IW_m_p_t_l_background
+}
 
 ######################
 # IW Map Window:
 custom_window = {
     name = IW_map_window
-    potential = { has_country_flag = IW_map_window }
+    potential = { has_country_flag = IW_m_p_t_l_window }
 }
 custom_icon = {
 	name = IW_map_background
@@ -709,7 +716,7 @@ custom_button = {
 # IW Province Window:
 custom_window = {
     name = IW_province_window
-    potential = { has_country_flag = IW_province_window has_country_flag = IW_map_window } # Temporary IW_map_window flag
+    potential = { has_country_flag = IW_province_window }
 }
 custom_icon = {
 	name = IW_province_frame
@@ -1032,9 +1039,291 @@ custom_icon = {
     tooltip = IW_province_arrow_loc
 }
 ######################
-# IW Reforms? Window:
+# IW Treaties Window:
+custom_window = {
+    name = IW_treaties_league_window
+    potential = { has_country_flag = IW_m_p_t_l_window }
+}
+custom_window = {
+    name = IW_treaties_league_background
+}
+custom_text_box = {
+    name = IW_treaties_league_text
+}
+custom_icon = {
+    name = IW_treaties_frame_1
+}
+custom_text_box = {
+    name = IW_treaties_text
+}
+custom_button = {
+    name = IW_treaties_button_1
+	trigger = { has_country_flag = IW_m_p_t_l_window
+	}
+    effect = {
+	}
+    tooltip = IW_treaties_button_1_loc
+}
+custom_button = {
+    name = IW_treaties_button_2
+	trigger = { has_country_flag = IW_m_p_t_l_window
+	}
+    effect = {
+	}
+    tooltip = IW_treaties_button_2_loc
+}
+custom_button = {
+    name = IW_treaties_button_3
+	trigger = { has_country_flag = IW_m_p_t_l_window
+	}
+    effect = {
+	}
+    tooltip = IW_treaties_button_3_loc
+}
+custom_button = {
+    name = IW_treaties_button_4
+	trigger = { has_country_flag = IW_m_p_t_l_window
+	}
+    effect = {
+	}
+    tooltip = IW_treaties_button_4_loc
+}
+custom_button = {
+    name = IW_treaties_button_5
+	trigger = { has_country_flag = IW_m_p_t_l_window
+	}
+    effect = {
+	}
+    tooltip = IW_treaties_button_5_loc
+}
+custom_icon = {
+    name = IW_treaties_frame_2
+}
 ######################
-# IW Diplo Window:
-
-######################
+# IW League Tab:
+custom_shield = {
+    name = IW_league_tab_1_shield
+    trigger = {
+		has_saved_global_event_target = IW_italian_league_leader
+	}
+    effect = {
+		set_IW_league_tab_flag = { number = 1 member = italian }
+	}
+    global_event_target = IW_italian_league_leader
+    open_country = no
+}
+custom_icon = {
+    name = IW_league_tab_1
+    frame = { number = 2 trigger = { has_country_flag = IW_league_tab_1_flag } }
+}
+custom_shield = {
+    name = IW_league_tab_2_shield
+    trigger = {
+		has_saved_global_event_target = IW_french_league_leader
+	}
+    effect = {
+		set_IW_league_tab_flag = { number = 2 member = french }
+	}
+    global_event_target = IW_french_league_leader
+    open_country = no
+}
+custom_icon = {
+    name = IW_league_tab_2
+    frame = { number = 2 trigger = { has_country_flag = IW_league_tab_2_flag } }
+}
+custom_shield = {
+    name = IW_league_tab_3_shield
+    trigger = {
+		has_saved_global_event_target = IW_iberian_league_leader
+	}
+    effect = {
+		set_IW_league_tab_flag = { number = 3 member = iberian }
+	}
+    global_event_target = IW_iberian_league_leader
+    open_country = no
+}
+custom_icon = {
+    name = IW_league_tab_3
+    frame = { number = 2 trigger = { has_country_flag = IW_league_tab_3_flag } }
+}
+custom_shield = {
+    name = IW_league_tab_4_shield
+    trigger = {
+		has_saved_global_event_target = IW_HRE_league_leader
+	}
+    effect = {
+		set_IW_league_tab_flag = { number = 4 member = HRE }
+	}
+    global_event_target = IW_HRE_league_leader
+    open_country = no
+}
+custom_icon = {
+    name = IW_league_tab_4
+    frame = { number = 2 trigger = { has_country_flag = IW_league_tab_4_flag } }
+}
 # IW League Window:
+custom_window = {
+    name = IW_league_window
+    potential = { OR = { has_country_flag = IW_league_tab_1_flag has_country_flag = IW_league_tab_2_flag has_country_flag = IW_league_tab_3_flag has_country_flag = IW_league_tab_4_flag } }
+}
+custom_icon = {
+	name = IW_league_background
+}
+custom_icon = {
+	name = IW_league_banner
+}
+custom_text_box = {
+    name = IW_league_text
+}
+custom_shield = {
+    name = IW_league_1_shield
+    potential = {
+		has_country_flag = IW_league_tab_1_flag
+	}
+    tooltip = IW_league_1_shield_loc
+    global_event_target = IW_italian_league_leader
+    open_country = yes
+}
+custom_shield = {
+    name = IW_league_2_shield
+    potential = {
+		has_country_flag = IW_league_tab_2_flag
+	}
+    tooltip = IW_league_2_shield_loc
+    global_event_target = IW_french_league_leader
+    open_country = yes
+}
+custom_shield = {
+    name = IW_league_3_shield
+    potential = {
+		has_country_flag = IW_league_tab_3_flag
+	}
+    tooltip = IW_league_3_shield_loc
+    global_event_target = IW_iberian_league_leader
+    open_country = yes
+}
+custom_shield = {
+    name = IW_league_4_shield
+    potential = {
+		has_country_flag = IW_league_tab_4_flag
+	}
+    tooltip = IW_league_4_shield_loc
+    global_event_target = IW_HRE_league_leader
+    open_country = yes
+}
+custom_icon = {
+	name = IW_league_frame
+	potential = {
+		NOT  = { has_country_flag = IW_league_frame_italy_flag }
+		NOT  = { has_country_flag = IW_league_frame_iberia_flag }
+		NOT  = { has_country_flag = IW_league_frame_french_flag }
+		NOT  = { has_country_flag = IW_league_frame_hre_flag }
+		NOT  = { has_country_flag = IW_league_frame_pope_flag }
+	}
+}
+custom_icon = {
+	name = IW_league_frame_italy
+	potential = {
+		has_country_flag = IW_league_frame_italy_flag
+		NOT  = { has_country_flag = IW_league_frame_iberia_flag }
+		NOT  = { has_country_flag = IW_league_frame_french_flag }
+	}
+}
+custom_icon = {
+	name = IW_league_frame_iberia
+	potential = {
+		has_country_flag = IW_league_frame_iberia_flag
+		NOT  = { has_country_flag = IW_league_frame_italy_flag }
+		NOT  = { has_country_flag = IW_league_frame_french_flag }
+	}
+}
+custom_icon = {
+	name = IW_league_frame_french
+	potential = {
+		has_country_flag = IW_league_frame_french_flag
+		NOT  = { has_country_flag = IW_league_frame_italy_flag }
+		NOT  = { has_country_flag = IW_league_frame_iberia_flag }
+	}
+}
+custom_icon = {
+	name = IW_league_frame_hre
+	potential = {
+		has_country_flag = IW_league_frame_hre_flag
+		NOT  = { has_country_flag = IW_league_frame_italy_flag }
+		NOT  = { has_country_flag = IW_league_frame_iberia_flag }
+		NOT  = { has_country_flag = IW_league_frame_french_flag }
+	}
+}
+custom_icon = {
+	name = IW_league_frame_pope
+	potential = {
+		has_country_flag = IW_league_frame_pope_flag
+		NOT  = { has_country_flag = IW_league_frame_italy_flag }
+		NOT  = { has_country_flag = IW_league_frame_iberia_flag }
+		NOT  = { has_country_flag = IW_league_frame_french_flag }
+	}
+}
+custom_button = {
+    name = IW_league_top
+	trigger = {
+	}
+    effect = {
+	}
+    tooltip = IW_league_top_loc
+}
+custom_button = {
+    name = IW_league_mid
+	trigger = {
+	}
+    effect = {
+	}
+    tooltip = IW_league_mid_loc
+}
+custom_button = {
+    name = IW_league_mid_left
+	trigger = {
+	}
+    effect = {
+	}
+    tooltip = IW_league_mid_left_loc
+}
+custom_button = {
+    name = IW_league_mid_right
+	trigger = {
+	}
+    effect = {
+	}
+    tooltip = IW_league_mid_right_loc
+}
+custom_button = {
+    name = IW_league_bottom
+	trigger = {
+	}
+    effect = {
+	}
+    tooltip = IW_league_bottom_loc
+}
+custom_button = {
+    name = IW_league_overthrow_button
+	trigger = {
+	}
+    effect = {
+	}
+    tooltip = IW_league_overthrow_button_loc
+}
+##################
+# IW Unite Italy:
+custom_icon = {
+	name = IW_unite_italy_banner
+}
+custom_button = {
+    name = IW_unite_italy_button
+	trigger = {
+	}
+    effect = {
+	}
+    tooltip = IW_unite_italy_button_loc
+}
+custom_icon = {
+	name = IW_unite_italy_glow
+}

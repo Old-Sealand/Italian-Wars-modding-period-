@@ -74,8 +74,9 @@
 
 
 
-
+Sound add to buttons.!!!!!!!
 Add text province info.
+Remove "# Temporary IW_map_window flag"
 
 When you choose Peace or War, then it changes province colour to blue/yellow and the arrow button also changes to blue/red.
 Fixe when transfer from finish with peace, it stays peace and 100%.
@@ -87,7 +88,7 @@ When revolt tag is intergrated, remove core.
 When someone switches revolter tag to your side, then prev revolter overlord still shows red on map (make it not show) and is on 100%, make it 0% and clr flags.
 When gaining province and someone has influence over 50%, then mark for them in red.
 When releasing vassal, then can't have province menu open at the same time.
-When selling province.ˇ
+When selling province.
 When vassalizing, it should set to 100% and war. But is 50% and peace.
 
 

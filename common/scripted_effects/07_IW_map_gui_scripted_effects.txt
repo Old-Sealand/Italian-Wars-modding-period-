@@ -164,26 +164,23 @@ set_IW_d_g_f = {
 	}
 }
 set_IW_on_dependency_gained = {
-	if = {
-		limit = { is_free_or_tributary_trigger = no } # so it doesn't trigger for league member subjects
-		FROM = { # vassal
-			clr_IW_map_all_influence_progress = yes
-			every_owned_province = {
-				limit = { region = italy_region }
-				set_province_flag = IW_create_vassal_flag
-			}
+	FROM = { # vassal
+		clr_IW_map_all_influence_progress = yes
+		every_owned_province = {
+			limit = { region = italy_region }
+			set_province_flag = IW_create_vassal_flag
 		}
-		#ROOT = { # overlord
-			every_province = {
-				limit = {
-					region = italy_region
-					has_province_flag = IW_create_vassal_flag
-				}
-				set_IW_dependency_gained_flag = yes
-				clr_province_flag = IW_create_vassal_flag
-			}
-		#}
 	}
+	#ROOT = { # overlord
+		every_province = {
+			limit = {
+				region = italy_region
+				has_province_flag = IW_create_vassal_flag
+			}
+			set_IW_dependency_gained_flag = yes
+			clr_province_flag = IW_create_vassal_flag
+		}
+	#}
 }
 set_IW_dependency_lost_flag = {
 	if = { limit = { province_id = 111 } set_IW_d_l_f = { number = 01 } } if = { limit = { province_id = 1774 } set_IW_d_l_f = { number = 02 } } if = { limit = { province_id = 112 } set_IW_d_l_f = { number = 03 } } if = { limit = { province_id = 4729 } set_IW_d_l_f = { number = 04 } } if = { limit = { province_id = 108 } set_IW_d_l_f = { number = 05 } } if = { limit = { province_id = 109 } set_IW_d_l_f = { number = 06 } } if = { limit = { province_id = 107 } set_IW_d_l_f = { number = 07 } } if = { limit = { province_id = 4739 } set_IW_d_l_f = { number = 08 } } if = { limit = { province_id = 1862 } set_IW_d_l_f = { number = 09 } } if = { limit = { province_id = 104 } set_IW_d_l_f = { number = 10 } } if = { limit = { province_id = 4740 } set_IW_d_l_f = { number = 11 } } if = { limit = { province_id = 2979 } set_IW_d_l_f = { number = 12 } } if = { limit = { province_id = 4728 } set_IW_d_l_f = { number = 13 } } if = { limit = { province_id = 2981 } set_IW_d_l_f = { number = 14 } } if = { limit = { province_id = 103 } set_IW_d_l_f = { number = 15 } } if = { limit = { province_id = 4727 } set_IW_d_l_f = { number = 16 } } if = { limit = { province_id = 1875 } set_IW_d_l_f = { number = 17 } } if = { limit = { province_id = 102 } set_IW_d_l_f = { number = 18 } } if = { limit = { province_id = 2992 } set_IW_d_l_f = { number = 19 } } if = { limit = { province_id = 101 } set_IW_d_l_f = { number = 20 } } if = { limit = { province_id = 105 } set_IW_d_l_f = { number = 21 } } if = { limit = { province_id = 106 } set_IW_d_l_f = { number = 22 } } if = { limit = { province_id = 4730 } set_IW_d_l_f = { number = 23 } } if = { limit = { province_id = 113 } set_IW_d_l_f = { number = 24 } } if = { limit = { province_id = 114 } set_IW_d_l_f = { number = 25 } } if = { limit = { province_id = 2978 } set_IW_d_l_f = { number = 26 } } if = { limit = { province_id = 116 } set_IW_d_l_f = { number = 27 } } if = { limit = { province_id = 2980 } set_IW_d_l_f = { number = 28 } } if = { limit = { province_id = 115 } set_IW_d_l_f = { number = 29 } } if = { limit = { province_id = 117 } set_IW_d_l_f = { number = 30 } } if = { limit = { province_id = 2977 } set_IW_d_l_f = { number = 31 } } if = { limit = { province_id = 119 } set_IW_d_l_f = { number = 32 } } if = { limit = { province_id = 120 } set_IW_d_l_f = { number = 33 } } if = { limit = { province_id = 4731 } set_IW_d_l_f = { number = 34 } } if = { limit = { province_id = 2976 } set_IW_d_l_f = { number = 35 } } if = { limit = { province_id = 118 } set_IW_d_l_f = { number = 36 } } if = { limit = { province_id = 4732 } set_IW_d_l_f = { number = 37 } } if = { limit = { province_id = 4733 } set_IW_d_l_f = { number = 38 } } if = { limit = { province_id = 2985 } set_IW_d_l_f = { number = 39 } } if = { limit = { province_id = 1933 } set_IW_d_l_f = { number = 40 } } if = { limit = { province_id = 122 } set_IW_d_l_f = { number = 41 } } if = { limit = { province_id = 4734 } set_IW_d_l_f = { number = 42 } } if = { limit = { province_id = 121 } set_IW_d_l_f = { number = 43 } } if = { limit = { province_id = 2983 } set_IW_d_l_f = { number = 44 } } if = { limit = { province_id = 1934 } set_IW_d_l_f = { number = 45 } } if = { limit = { province_id = 2984 } set_IW_d_l_f = { number = 46 } } if = { limit = { province_id = 123 } set_IW_d_l_f = { number = 47 } } if = { limit = { province_id = 124 } set_IW_d_l_f = { number = 48 } } if = { limit = { province_id = 2982 } set_IW_d_l_f = { number = 49 } } if = { limit = { province_id = 126 } set_IW_d_l_f = { number = 50 } } if = { limit = { province_id = 4737 } set_IW_d_l_f = { number = 51 } } if = { limit = { province_id = 125 } set_IW_d_l_f = { number = 52 } } if = { limit = { province_id = 4736 } set_IW_d_l_f = { number = 53 } } if = { limit = { province_id = 2986 } set_IW_d_l_f = { number = 54 } } if = { limit = { province_id = 4735 } set_IW_d_l_f = { number = 55 } } if = { limit = { province_id = 127 } set_IW_d_l_f = { number = 56 } } if = { limit = { province_id = 1247 } set_IW_d_l_f = { number = 57 } }
@@ -203,26 +200,23 @@ set_IW_d_l_f = {
 	}
 }
 set_IW_on_dependency_lost = {
-	if = {
-		limit = { was_IW_dependency = no } # so it doesn't trigger for league member subjects
-		FROM = { # vassal
-			every_owned_province = {
-				limit = { region = italy_region }
-				set_province_flag = IW_lose_vassal_flag
-				set_IW_dependency_lost_flag = yes
-			}
+	FROM = { # vassal
+		every_owned_province = {
+			limit = { region = italy_region }
+			set_province_flag = IW_lose_vassal_flag
+			set_IW_dependency_lost_flag = yes
 		}
-		#ROOT = { # overlord
-			every_province = {
-				limit = {
-					region = italy_region
-					has_province_flag = IW_lose_vassal_flag
-				}
-				clr_IW_map_lose_vassal_influence_progress = yes
-				clr_province_flag = IW_lose_vassal_flag
-			}
-		#}
 	}
+	#ROOT = { # overlord
+		every_province = {
+			limit = {
+				region = italy_region
+				has_province_flag = IW_lose_vassal_flag
+			}
+			clr_IW_map_lose_vassal_influence_progress = yes
+			clr_province_flag = IW_lose_vassal_flag
+		}
+	#}
 }
 clr_IW_map_lose_vassal_influence_progress = {
 	if = { limit = { province_id = 111 } clr_IW_map_l_v_i_p = { number = 01 } } if = { limit = { province_id = 1774 } clr_IW_map_l_v_i_p = { number = 02 } } if = { limit = { province_id = 112 } clr_IW_map_l_v_i_p = { number = 03 } } if = { limit = { province_id = 4729 } clr_IW_map_l_v_i_p = { number = 04 } } if = { limit = { province_id = 108 } clr_IW_map_l_v_i_p = { number = 05 } } if = { limit = { province_id = 109 } clr_IW_map_l_v_i_p = { number = 06 } } if = { limit = { province_id = 107 } clr_IW_map_l_v_i_p = { number = 07 } } if = { limit = { province_id = 4739 } clr_IW_map_l_v_i_p = { number = 08 } } if = { limit = { province_id = 1862 } clr_IW_map_l_v_i_p = { number = 09 } } if = { limit = { province_id = 104 } clr_IW_map_l_v_i_p = { number = 10 } } if = { limit = { province_id = 4740 } clr_IW_map_l_v_i_p = { number = 11 } } if = { limit = { province_id = 2979 } clr_IW_map_l_v_i_p = { number = 12 } } if = { limit = { province_id = 4728 } clr_IW_map_l_v_i_p = { number = 13 } } if = { limit = { province_id = 2981 } clr_IW_map_l_v_i_p = { number = 14 } } if = { limit = { province_id = 103 } clr_IW_map_l_v_i_p = { number = 15 } } if = { limit = { province_id = 4727 } clr_IW_map_l_v_i_p = { number = 16 } } if = { limit = { province_id = 1875 } clr_IW_map_l_v_i_p = { number = 17 } } if = { limit = { province_id = 102 } clr_IW_map_l_v_i_p = { number = 18 } } if = { limit = { province_id = 2992 } clr_IW_map_l_v_i_p = { number = 19 } } if = { limit = { province_id = 101 } clr_IW_map_l_v_i_p = { number = 20 } } if = { limit = { province_id = 105 } clr_IW_map_l_v_i_p = { number = 21 } } if = { limit = { province_id = 106 } clr_IW_map_l_v_i_p = { number = 22 } } if = { limit = { province_id = 4730 } clr_IW_map_l_v_i_p = { number = 23 } } if = { limit = { province_id = 113 } clr_IW_map_l_v_i_p = { number = 24 } } if = { limit = { province_id = 114 } clr_IW_map_l_v_i_p = { number = 25 } } if = { limit = { province_id = 2978 } clr_IW_map_l_v_i_p = { number = 26 } } if = { limit = { province_id = 116 } clr_IW_map_l_v_i_p = { number = 27 } } if = { limit = { province_id = 2980 } clr_IW_map_l_v_i_p = { number = 28 } } if = { limit = { province_id = 115 } clr_IW_map_l_v_i_p = { number = 29 } } if = { limit = { province_id = 117 } clr_IW_map_l_v_i_p = { number = 30 } } if = { limit = { province_id = 2977 } clr_IW_map_l_v_i_p = { number = 31 } } if = { limit = { province_id = 119 } clr_IW_map_l_v_i_p = { number = 32 } } if = { limit = { province_id = 120 } clr_IW_map_l_v_i_p = { number = 33 } } if = { limit = { province_id = 4731 } clr_IW_map_l_v_i_p = { number = 34 } } if = { limit = { province_id = 2976 } clr_IW_map_l_v_i_p = { number = 35 } } if = { limit = { province_id = 118 } clr_IW_map_l_v_i_p = { number = 36 } } if = { limit = { province_id = 4732 } clr_IW_map_l_v_i_p = { number = 37 } } if = { limit = { province_id = 4733 } clr_IW_map_l_v_i_p = { number = 38 } } if = { limit = { province_id = 2985 } clr_IW_map_l_v_i_p = { number = 39 } } if = { limit = { province_id = 1933 } clr_IW_map_l_v_i_p = { number = 40 } } if = { limit = { province_id = 122 } clr_IW_map_l_v_i_p = { number = 41 } } if = { limit = { province_id = 4734 } clr_IW_map_l_v_i_p = { number = 42 } } if = { limit = { province_id = 121 } clr_IW_map_l_v_i_p = { number = 43 } } if = { limit = { province_id = 2983 } clr_IW_map_l_v_i_p = { number = 44 } } if = { limit = { province_id = 1934 } clr_IW_map_l_v_i_p = { number = 45 } } if = { limit = { province_id = 2984 } clr_IW_map_l_v_i_p = { number = 46 } } if = { limit = { province_id = 123 } clr_IW_map_l_v_i_p = { number = 47 } } if = { limit = { province_id = 124 } clr_IW_map_l_v_i_p = { number = 48 } } if = { limit = { province_id = 2982 } clr_IW_map_l_v_i_p = { number = 49 } } if = { limit = { province_id = 126 } clr_IW_map_l_v_i_p = { number = 50 } } if = { limit = { province_id = 4737 } clr_IW_map_l_v_i_p = { number = 51 } } if = { limit = { province_id = 125 } clr_IW_map_l_v_i_p = { number = 52 } } if = { limit = { province_id = 4736 } clr_IW_map_l_v_i_p = { number = 53 } } if = { limit = { province_id = 2986 } clr_IW_map_l_v_i_p = { number = 54 } } if = { limit = { province_id = 4735 } clr_IW_map_l_v_i_p = { number = 55 } } if = { limit = { province_id = 127 } clr_IW_map_l_v_i_p = { number = 56 } } if = { limit = { province_id = 1247 } clr_IW_map_l_v_i_p = { number = 57 } }
@@ -618,11 +612,11 @@ set_IW_p_f = {
 
 		if = {
 			limit = {
-				capital = {
+				capital_scope = {
 					has_province_modifier = iw_disloyal_garrison
 				}
 			}
-			capital = {
+			capital_scope = {
 				add_base_manpower = 1
 				remove_province_modifier = iw_disloyal_garrison
 			}
@@ -766,3 +760,59 @@ IW_set_province_cooldown_flag = {
 	if = { limit = { has_country_flag = IW_map_prov_56_window } IW_set_specific_province_cooldown_flag = { number = 56 } } 
 	if = { limit = { has_country_flag = IW_map_prov_57_window } IW_set_specific_province_cooldown_flag = { number = 57 } }
 }
+###########################
+###########################
+# Treaties:
+###########################
+# League tab:
+set_IW_league_tab_flag = {
+	if = {
+		limit = {
+			has_country_flag = IW_league_tab_$number$_flag
+		}
+		if = { limit = { has_country_flag = IW_league_frame_italy_flag } clr_country_flag = IW_league_frame_italy_flag }
+		if = { limit = { has_country_flag = IW_league_frame_iberia_flag } clr_country_flag = IW_league_frame_iberia_flag }
+		if = { limit = { has_country_flag = IW_league_frame_french_flag } clr_country_flag = IW_league_frame_french_flag }
+		if = { limit = { has_country_flag = IW_league_frame_hre_flag } clr_country_flag = IW_league_frame_hre_flag }
+		if = { limit = { has_country_flag = IW_league_frame_pope_flag } clr_country_flag = IW_league_frame_pope_flag }
+		clr_country_flag = IW_league_tab_$number$_flag
+	}
+	else_if = {
+		limit = {
+			NOT = { has_country_flag = IW_league_tab_$number$_flag }
+		}
+		if = { limit = { has_country_flag = IW_league_tab_1_flag } clr_country_flag = IW_league_tab_1_flag }
+		if = { limit = { has_country_flag = IW_league_tab_2_flag } clr_country_flag = IW_league_tab_2_flag }
+		if = { limit = { has_country_flag = IW_league_tab_3_flag } clr_country_flag = IW_league_tab_3_flag }
+		if = { limit = { has_country_flag = IW_league_tab_4_flag } clr_country_flag = IW_league_tab_4_flag }
+		if = { limit = { has_country_flag = IW_league_frame_italy_flag } clr_country_flag = IW_league_frame_italy_flag }
+		if = { limit = { has_country_flag = IW_league_frame_iberia_flag } clr_country_flag = IW_league_frame_iberia_flag }
+		if = { limit = { has_country_flag = IW_league_frame_french_flag } clr_country_flag = IW_league_frame_french_flag }
+		if = { limit = { has_country_flag = IW_league_frame_hre_flag } clr_country_flag = IW_league_frame_hre_flag }
+		if = { limit = { has_country_flag = IW_league_frame_pope_flag } clr_country_flag = IW_league_frame_pope_flag }
+		if = {
+			limit = { event_target:IW_$member$_league_leader = { capital_scope = { region = italy_region } is_emperor = no is_papal_controller = no } }
+			set_country_flag = IW_league_frame_italy_flag
+		}
+		if = {
+			limit = { event_target:IW_$member$_league_leader = { capital_scope = { region = iberia_region } is_emperor = no is_papal_controller = no } }
+			set_country_flag = IW_league_frame_iberia_flag
+		}
+		if = {
+			limit = { event_target:IW_$member$_league_leader = { tag = FRA is_emperor = no is_papal_controller = no } }
+			set_country_flag = IW_league_frame_french_flag
+		}
+		if = {
+			limit = { event_target:IW_$member$_league_leader = { is_emperor = yes } }
+			set_country_flag = IW_league_frame_hre_flag
+		}
+		if = {
+			limit = { event_target:IW_$member$_league_leader = { is_papal_controller = yes } }
+			set_country_flag = IW_league_frame_pope_flag
+		}
+		set_country_flag = IW_league_tab_$number$_flag
+	}
+}
+###########################
+# League:
+###########################
