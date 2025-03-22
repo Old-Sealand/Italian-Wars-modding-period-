@@ -9,11 +9,38 @@
 
  #Custom Button interactions:
  IW_province_start_loc: "Spread Influence"
+ IW_province_peace_left_loc: "Exploit Estate Demands"
+ IW_province_peace_mid_loc: "Export Cultural Influence"
+ IW_province_peace_right_loc: "Send Artisan Aid"
+ IW_province_war_left_loc: "Coup Province Officials"
+ IW_province_war_mid_loc: "Pressure Claims"
+ IW_province_war_right_loc: "Sow Discord in Garrison"
+ iw_prestige_cost_depends_on_ruler_dip: "The §YPrestige§! will scale with our Ruler's §YDiplomatic Power§!."
+ iw_if_province_changes_side_whilst_modifier_active_gain_1_mil_power_tt: "If the province ownership changes ownership whilst the §YDisloyal Garrison§! modifier is active, the province will gain §G+1§! Manpower Development."
+ iw_gain_influence_over_estate_tt: "We will be able to influence one of the §YEstates§! of the province owner."
 
+ #Events:
  iw_interaction_events.1.t: "Expanding Our Sphere of Influence"
- iw_interaction_events.1.d: "With the orders of [ROOT.Country.Monarch.GetName], the court of [ROOT.Country.GetName] has been searching of new ways to spread its influence towards the province of [selected_province.GetName]. Some suggest that we simply buy land there, or even send capable men in order to influence the politics there. Our generals suggest that we send [target_country.GetName] some military aid, hoping to sway [target_country.Monarch.GetName] and gain the influence we want. There are some though that suggest other approaches. They would require us causing ruckus in the city, showing that their current overlords are not as capable as we, and then profiting as much as we can from the discord."
+ iw_interaction_events.1.d: "With the orders of [ROOT.Monarch.GetName], the court of [ROOT.GetName] has been searching of new ways to spread its influence towards the province of [selected_province.GetName]. Some suggest that we simply buy land there, or even send capable men in order to influence the politics there. Our generals suggest that we send [target_country.GetName] some military aid, hoping to sway [target_country.Monarch.GetName] and gain the influence we want. There are some though that suggest other approaches. They would require us causing ruckus in the city, showing that their current overlords are not as capable as we, and then profiting as much as we can from the discord."
  iw_interaction_events.1.a: "Let us simply buy land there."
  iw_interaction_events.1.b: "A few government officials can sway the politics of the city."
  iw_interaction_events.1.c: "Let us send [target_country.GetName] some military aid."
  iw_interaction_events.1.dd: "Infiltrate the city, then cause a ruckus."
  iw_interaction_events.1.e: "Let us use our favors to increase our influence there."
+
+ iw_interaction_events.2.t: "Exploiting Estate Demands"
+ iw_interaction_events.2.d: "Within [selected_province.Owner.GetName], there have been some disloyal estates that wish to gain influence in [selected_province.GetName]. Unfortunately for them, [selected_province.Owner.Monarch.GetName] has denied them these rights for far too long. Fortunately for us, we can use this discord of these estates to gain some influence in [selected_province.GetName] to further our goals in the Italian Wars."
+ iw_interaction_events.2.a: "Let us use the nobles."
+ iw_interaction_events.2.b: "Some disloyal burghers can sow discord."
+ iw_interaction_events.2.c: "Who are they to deny the divine rights of the clergy?"
+ iw_gain_prestige_per_nobles_disloyalty: "The §YPrestige§! will scale with the loyalty of their §YNobles§!."
+ iw_gain_mercantilism_per_burghers_disloyalty: "The §YMercantilism§! will scale with the loyalty of their §YBurghers§!."
+
+ #Modifiers:
+ iw_gave_autonomy_rights_in_province: "Gave Autonomy Rights"
+ iw_disloyal_nobility: "Disloyal Nobility"
+ iw_disloyal_burghers: "Disloyal Burghers"
+ iw_disloyal_clergy: "DIsloyal CLergy"
+ iw_sent_artisans: "Aided by Artisans"
+ iw_city_officials_couped: "New City Officials"
+ iw_disloyal_garrison: "Disloyal Garrison"

@@ -958,21 +958,18 @@ custom_button = {
 	trigger = {
 		has_IW_province_war_flag = yes
 		NOT = { check_variable = { which = IW_map_prov_inf value = 100 } }
-
-        owner = {
-            has_spy_network_from = {
-                who = ROOT
-                value = 25
-            }
-        }
 	}
     effect = {
 		set_IW_province_progress_bar = yes
 
-        owner = {
-            add_spy_network_from = {
-                who = ROOT
-                value = -25
+        set_IW_event_target = yes
+
+        event_target:selected_province = {
+            owner = {
+                add_spy_network_from = {
+                    who = ROOT
+                    value = -25
+                }
             }
         }
 
@@ -990,12 +987,11 @@ custom_button = {
 	trigger = {
 		has_IW_province_war_flag = yes
 		NOT = { check_variable = { which = IW_map_prov_inf value = 100 } }
-        any_neighbor_province = { 
-            owner = ROOT
-        }
 	}
     effect = {
 		set_IW_province_progress_bar = yes
+
+        set_IW_event_target = yes
 
         add_yearly_manpower = -0.5
 
@@ -1013,6 +1009,8 @@ custom_button = {
 	}
     effect = {
 		set_IW_province_progress_bar = yes
+
+        set_IW_event_target = yes
 
         event_target:selected_province = {
             add_province_modifier = {
