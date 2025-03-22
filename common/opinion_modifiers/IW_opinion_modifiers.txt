@@ -44,3 +44,13 @@ influenced_city = {
 	opinion = -25
 	yearly_decay = 2
 }
+
+IW_understood_our_plight = {
+	opinion = 25
+	yearly_decay = 2	
+}
+
+IW_unreasonable_authority = {
+	opinion = -25
+	yearly_decay = 1		
+}

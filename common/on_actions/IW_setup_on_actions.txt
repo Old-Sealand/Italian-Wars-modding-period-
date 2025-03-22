@@ -114,3 +114,10 @@ on_create_vassal = {
 	# IW map:
 	set_IW_on_create_vassal = yes
 }
+
+on_bi_yearly_pulse_2 = {
+	random_events = {
+		200 = IW_flavor.10
+		100 = IW_flavor.12
+	}
+}

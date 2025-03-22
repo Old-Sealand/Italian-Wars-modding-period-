@@ -48,3 +48,22 @@
 
   IW_flavor.9.d: " "
   IW_flavor.9.a: "We will avenge this wrong."
+
+  IW_flavor.10.t: "The Toll of War"
+  IW_flavor.10.d: " "
+  IW_flavor.10.a: "We must pursue a withdrawal."
+  IW_flavor.10.b: "Dishonour!"
+
+  IW_flavor.11.d: " "
+  IW_flavor.11.a: "We cannot expect their further contribution."
+  IW_FROM_leaves_wars: "§Y[From.GetName]§! will leave our current wars."
+  IW_understood_our_plight: "Understood our plight"
+  IW_flavor.11.b: "Traitors get what they deserve!"
+  IW_all_league_members_upset: "All League members will lose §R-25§! opinion of us."
+  IW_unreasonable_authority: "Unreasonable authority"
+
+  IW_flavor.12.t: "Forces Demand Payment"
+  IW_flavor.12.d: " "
+  IW_flavor.12.a: "We must maintain their loyalty!"
+  IW_flavor.12.b: "Let them complain!"
+  IW_mutiny_of_the_forces: "Mutiny of the Forces"

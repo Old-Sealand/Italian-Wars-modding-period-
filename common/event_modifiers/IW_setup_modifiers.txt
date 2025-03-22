@@ -3,3 +3,8 @@ IW_defender_of_the_peninsula = {
 	defensiveness = 0.20
 	war_exhaustion = -0.10
 }
+
+IW_mutiny_of_the_forces = {
+	land_morale = -0.1
+	manpower_recovery_speed = -0.1
+}

@@ -545,3 +545,453 @@ country_event = {
 		add_prestige = -10
 	}
 }
+
+country_event = {
+	id = IW_flavor.10 # The Toll of War
+	title = IW_flavor.10.t
+	desc = IW_flavor.10.d
+	picture = SIEGE_eventPicture
+	
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			has_country_flag = IW_italian_league_member
+			has_country_flag = IW_HRE_league_member
+			has_country_flag = IW_french_league_member
+			has_country_flag = IW_iberian_league_member
+		}
+		NOT = {
+			OR = {
+				tag = event_target:IW_french_league_leader
+				tag = event_target:IW_italian_league_leader
+				tag = event_target:IW_HRE_league_leader
+				tag = event_target:IW_iberian_league_leader
+			}
+		}
+		war_exhaustion = 15
+		is_in_war = { casus_belli = IW_cb_italian_war }
+		NOT = { has_country_flag = IW_has_cowarded_out_already }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 2
+			tag = VEN # Most likely to occur to the historical basis
+		}
+		modifier = {
+			factor = 2 # If they are contributing an unfair amount of the war effort, they will be more likely to get pressured
+			army_strength = {
+				who = overlord
+				value = 0.75
+			}
+		}
+		modifier = {
+			factor = 2 # Max War Exhaustion makes it worse
+			war_exhaustion = 20
+		}
+	}
+	
+	option = {
+		name = IW_flavor.10.a # We must pursue a withdrawal.
+		overlord = {
+			country_event = { id = IW_flavor.11 }
+		}
+		set_country_flag = IW_has_cowarded_out_already
+	}
+
+	option = {
+		name = IW_flavor.10.b # Dishonour!
+		add_stability = -1
+		random_owned_province = {
+			particularist_rebels = 2
+		}
+	}
+}
+
+country_event = {
+	id = IW_flavor.11 # The Toll of War
+	title = IW_flavor.10.t
+	desc = IW_flavor.11.d
+	picture = SIEGE_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	major_trigger = {
+		war_with = ROOT
+	}
+	
+	option = {
+		name = IW_flavor.11.a # We cannot expect their further contribution.
+		ai_chance = { factor = 9 }
+		custom_tooltip = IW_FROM_leaves_wars
+		hidden_effect = {
+			every_war_enemy_country = {
+				FROM = { white_peace = PREV }
+			}
+		}
+		reverse_add_opinion = {
+			who = FROM
+			modifier = IW_understood_our_plight
+		}
+		add_prestige = -10
+	}
+
+	option = {
+		name = IW_flavor.11.b # Traitors get what they deserve!
+		ai_chance = { factor = 1 }
+		custom_tooltip = IW_all_league_members_upset
+		hidden_effect = {
+			every_subject_country = {
+				limit = { is_subject_of_type = IW_league_member }
+				add_opinion = {
+					who = ROOT
+					modifier = IW_unreasonable_authority
+				}
+			}
+		}
+		hidden_effect = {
+			FROM = { grant_independence = yes }
+			every_war_enemy_country = {
+				FROM = { white_peace = PREV }
+			}
+		}
+		declare_war_with_cb = {
+			casus_belli = cb_vassalize_mission
+			who = FROM
+		}
+	}
+}
+
+country_event = {
+	id = IW_flavor.12 # Forces Demand Payment
+	title = IW_flavor.12.t
+	desc = IW_flavor.12.d
+	picture = MILITARY_CAMP_eventPicture
+	
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			has_country_flag = IW_italian_league_member
+			has_country_flag = IW_HRE_league_member
+			has_country_flag = IW_french_league_member
+			has_country_flag = IW_iberian_league_member
+		}
+		is_in_war = { casus_belli = IW_cb_italian_war }
+		NOT = { has_country_modifier = IW_mutiny_of_the_forces }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 2 # More loans = harder to pay troops
+			num_of_loans = 10
+		}		
+		modifier = {
+			factor = 1.5 # War Exhaustion makes it worse
+			war_exhaustion = 10
+		}
+		modifier = {
+			factor = 1.5 # War Exhaustion makes it worse
+			war_exhaustion = 15
+		}
+		modifier = {
+			factor = 2 # War Exhaustion makes it worse
+			war_exhaustion = 20
+		}
+	}
+	
+	option = {
+		name = IW_flavor.12.a # We must maintain their loyalty!
+		ai_chance = {
+			factor = 8
+		}
+		add_years_of_income = -1
+		add_mil_power = -50
+	}
+
+	option = {
+		name = IW_flavor.12.b # Let them complain!
+		ai_chance = {
+			factor = 2
+		}
+		add_country_modifier = {
+			name = IW_mutiny_of_the_forces
+			duration = 1825
+		}
+		random_owned_province = {
+			add_devastation = 25
+		}
+	}
+}
+
+# Vara events incorporated
+
+#Ottomans Sending Aid to France
+country_event = {
+	id = IW_flavor.13
+	title = IW_flavor.13.t
+	desc = IW_flavor.13.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+    major = yes
+    major_trigger = {
+        tag = event_target:IW_french_league_leader
+    }
+
+	trigger = {
+        tag = TUR
+        is_great_power = yes
+		has_saved_global_event_target = IW_french_league_leader
+	}
+
+    immediate = {
+        hidden_effect = {
+            export_to_variable = {
+                which = money_to_transfer
+                value = monthly_income
+                who = ROOT
+            }
+            multiply_variable = {
+                which = money_to_transfer
+                value = 3
+            }
+            set_variable = {
+                which = money_to_transfer_info
+                which = money_to_transfer
+            }
+        }
+    }
+
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	option = {
+		name = iw_events.1.a
+
+        event_target:IW_french_league_leader = {
+            set_country_flag = iw_unlocked_ottoman_volunteers_merc_company_flag
+        }
+
+        custom_tooltip = fra_unlocks_ottoman_volunteers_tt
+	}
+
+    option = {
+		name = iw_events.1.b
+
+        transfer_treasury = {
+			custom_tooltip = iw_events.2.b.tt
+			giver = ROOT
+			taker = FRA
+			variable = money_to_transfer
+		}
+	}
+
+    option = {
+		name = iw_events.1.c
+
+        add_prestige_or_monarch_power = { amount = 5 }
+	}
+}
+
+#French Pressure on Florence
+country_event = {
+	id = iw_events.1000
+	title = iw_events.1000.t
+	desc = iw_events.1000.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+    major = yes
+
+	trigger = {
+        has_global_flag = iw_started_flag
+        tag = FRA
+        OR = {
+            exists = TUS
+            exists = LAN
+        }
+        exists = FRA
+        #Trigger for France to be a leader of a league
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+    immediate = {
+        hidden_effect = {
+            if = {
+                limit = {
+                    exists = TUS
+                }
+                TUS = {
+                    save_event_target_as = florence_nation
+                }
+            }
+            else_if = {
+                limit = {
+                    exists = LAN
+                }
+                LAN = {
+                    save_event_target_as = florence_nation
+                }
+            }
+        }
+    }
+	
+	option = {
+		name = iw_events.1000.a
+        
+        custom_tooltip = iw_request_florence_to_join_our_league_tt
+        hidden_effect = {
+            country_event = { id = iw_events.1001 }
+        }
+	}
+
+    option = {
+		name = iw_events.1000.b
+        
+        add_casus_belli = {
+            target = event_target:florence_nation
+            type = cb_vassalize
+            months = 120
+        }
+	}
+}
+
+#French Pressure on Florence
+country_event = {
+	id = iw_events.1001
+	title = iw_events.1001.t
+	desc = iw_events.1001.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+    is_triggered_only = yes
+
+	mean_time_to_happen = {
+		months = 120
+	}
+	
+	option = {
+		name = iw_events.1001.a
+        
+        #Florence joins French league
+
+        add_opinion = {
+            who = from
+            modifier = joined_our_league
+        }
+        reverse_add_opinion = {
+            who = from
+            modifier = joined_our_league
+        }
+	}
+
+    option = {
+		name = iw_events.1001.b
+        
+        add_prestige_or_monarch_power = { amount = 5 }
+
+        add_opinion = {
+            who = from
+            modifier = rejected_joining_french_league
+        }
+        reverse_add_opinion = {
+            who = from
+            modifier = rejected_joining_french_league
+        }
+	}
+}
+
+#Crowning of Maximilian I
+country_event = {
+	id = iw_events.1100
+	title = iw_events.1100.t
+	desc = iw_events.1100.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+    major = yes
+
+	trigger = {
+        ruler_has_personality = last_knight_personality
+        is_emperor = yes
+	}
+
+	mean_time_to_happen = {
+		months = 100
+	}
+	
+	option = {
+		name = iw_events.1100.a
+
+        add_imperial_influence = 5
+        add_prestige_or_monarch_power = { amount = 10 }
+        add_legitimacy = 10
+	}
+
+    option = {
+		name = iw_events.1100.b
+
+        PAP = { country_event = { id = iw_events.1101 } }
+	}
+}
+
+country_event = {
+	id = iw_events.1101
+	title = iw_events.1101.t
+	desc = iw_events.1101.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+    is_triggered_only = yes
+    major = yes
+    major_trigger = {
+        is_emperor = yes
+    }
+	
+	option = {
+		name = iw_events.1101.a
+
+        from = {
+            add_imperial_influence = 10
+            add_prestige_or_monarch_power = { amount = 15 }
+            add_legitimacy = 15
+        }
+        
+        add_opinion = {
+            who = from
+            modifier = crowned_by_pope
+        }
+        reverse_add_opinion = {
+            who = from
+            modifier = crowned_by_pope
+        }
+	}
+
+    option = {
+		name = iw_events.1101.b
+
+        from = {
+            add_imperial_influence = -5
+            add_prestige_or_monarch_power = { amount = -5 }
+            add_legitimacy = -5
+        }
+
+        add_opinion = {
+            who = from
+            modifier = rejected_crowning
+        }
+        reverse_add_opinion = {
+            who = from
+            modifier = rejected_crowning
+        }
+	}
+}
