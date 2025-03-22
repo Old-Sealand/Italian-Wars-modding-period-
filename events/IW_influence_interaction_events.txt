@@ -244,7 +244,7 @@ country_event = { #Using estate influence
                         loyalty = 0
                     }
                 }
-                add_mercentilism = 3
+                add_mercantilism = 3
             }
             else_if = {
                 limit = {
@@ -253,7 +253,7 @@ country_event = { #Using estate influence
                         loyalty = 25
                     }
                 }
-                add_mercentilism = 2
+                add_mercantilism = 2
             }
             else_if = {
                 limit = {
@@ -262,7 +262,7 @@ country_event = { #Using estate influence
                         loyalty = 49
                     }
                 }
-                add_mercentilism = 1
+                add_mercantilism = 1
             }
         }
 	}
