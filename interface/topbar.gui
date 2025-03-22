@@ -740,6 +740,7 @@ guiTypes = {
 				position = { x =46 y =131 }
 				quadTextureSprite ="GFX_IW_m_p_t_l_open_close_button"
 				scripted = yes
+				clicksound = EU4NummerET
 				Orientation = "UPPER_LEFT"
 		}
 		windowType = {
@@ -1157,6 +1158,7 @@ guiTypes = {
 					quadTextureSprite ="GFX_IW_treaties_button"
 					buttonText = "IW_treaties_button_1"
 					buttonFont = "vic_18"
+					clicksound = EU4NummerTRE
 					scripted = yes
 				}
 				guiButtonType = {
@@ -1165,6 +1167,7 @@ guiTypes = {
 					quadTextureSprite ="GFX_IW_treaties_button"
 					buttonText = "IW_treaties_button_2"
 					buttonFont = "vic_18"
+					clicksound = EU4NummerTRE
 					scripted = yes
 				}
 				guiButtonType = {
@@ -1173,6 +1176,7 @@ guiTypes = {
 					quadTextureSprite ="GFX_IW_treaties_button"
 					buttonText = "IW_treaties_button_3"
 					buttonFont = "vic_18"
+					clicksound = EU4NummerTRE
 					scripted = yes
 				}
 				guiButtonType = {
@@ -1181,6 +1185,7 @@ guiTypes = {
 					quadTextureSprite ="GFX_IW_treaties_button"
 					buttonText = "IW_treaties_button_4"
 					buttonFont = "vic_18"
+					clicksound = EU4NummerTRE
 					scripted = yes
 				}
 				guiButtonType = {
@@ -1189,6 +1194,7 @@ guiTypes = {
 					quadTextureSprite ="GFX_IW_treaties_button"
 					buttonText = "IW_treaties_button_5"
 					buttonFont = "vic_18"
+					clicksound = EU4NummerTRE
 					scripted = yes
 				}
 				IconType = {
@@ -1305,30 +1311,35 @@ guiTypes = {
 						name = "IW_league_top"
 						position = { x=57 y = 200}
 						quadTextureSprite ="GFX_IW_league_button_top"
+						clicksound = EU4NummerFIRE
 						scripted = yes
 					}
 					guiButtonType = {
 						name = "IW_league_mid"
 						position = { x=57 y = 252}
 						quadTextureSprite ="GFX_IW_league_button_mid"
+						clicksound = EU4NummerFIRE
 						scripted = yes
 					}
 					guiButtonType = {
 						name = "IW_league_mid_left"
 						position = { x=25 y = 301}
 						quadTextureSprite ="GFX_IW_league_button_mid_left"
+						clicksound = EU4NummerFIRE
 						scripted = yes
 					}
 					guiButtonType = {
 						name = "IW_league_mid_right"
 						position = { x=89 y = 301}
 						quadTextureSprite ="GFX_IW_league_button_mid_right"
+						clicksound = EU4NummerFIRE
 						scripted = yes
 					}
 					guiButtonType = {
 						name = "IW_league_bottom"
 						position = { x=57 y = 350}
 						quadTextureSprite ="GFX_IW_league_button_bottom"
+						clicksound = EU4NummerFIRE
 						scripted = yes
 					}
 					guiButtonType = {
@@ -1389,12 +1400,43 @@ guiTypes = {
 					scripted = yes
 				}
 			}
+			##################
+			# IW Unite Italy:
+			IconType = {
+				name = "IW_unite_italy_banner"
+				position = { x=484 y = 86}
+				quadTextureSprite ="GFX_IW_unite_italy_banner"
+				scripted = yes
+			}
+			guiButtonType = {
+				name = "IW_unite_italy_button"
+				position = { x=523 y = 128}
+				quadTextureSprite ="GFX_IW_unite_italy_button"
+				clicksound = EU4NummerTO
+				scripted = yes
+			}
+			IconType = {
+				name = "IW_unite_italy_glow"
+				position = { x=511 y = 176}
+				quadTextureSprite ="GFX_IW_unite_italy_glow"
+				scripted = yes
+			}
+			instantTextBoxType = {
+				name = "IW_treaties_league_text"
+				position = { x = 509 y = 94 }
+				borderSize = {x = 0 y = 0}
+				font = "vic_29s"
+				maxWidth = 164
+				maxHeight = 32
+				format = center
+				scripted = yes
+			}
 			######################
 			# IW Province:
 			windowType = {
 				name = "IW_province_window"
 				backGround =""
-				position = { x=650 y=200 }
+				position = { x=479 y=84 }
 				size = { x=451 y=450 }
 				moveable = 0
 				dontRender = ""
@@ -1414,27 +1456,85 @@ guiTypes = {
 					quadTextureSprite ="GFX_IW_province_frame"
 					scripted = yes
 				}
+				IconType = {
+					name = "IW_province_info"
+					position = { x=32 y = 146}
+					quadTextureSprite ="GFX_IW_province_info"
+					scripted = yes
+				}
+				instantTextBoxType = {
+					name = "IW_province_info_left_banner"
+					position = { x = 109 y = 164 }
+					borderSize = {x = 0 y = 0}
+					font = "vic_18"
+					maxWidth = 110
+					maxHeight = 20
+					format = left
+					scripted = yes
+				}
+				instantTextBoxType = {
+					name = "IW_province_info_left_text"
+					position = { x = 110 y = 192 }
+					borderSize = {x = 0 y = 0}
+					font = "vic_18"
+					maxWidth = 110
+					maxHeight = 20
+					format = left
+					scripted = yes
+				}
+				instantTextBoxType = {
+					name = "IW_province_info_right_banner"
+					position = { x = 218 y = 164 }
+					borderSize = {x = 0 y = 0}
+					font = "vic_18"
+					maxWidth = 110
+					maxHeight = 20
+					format = right
+					scripted = yes
+				}
+				instantTextBoxType = {
+					name = "IW_province_info_right_text"
+					position = { x = 217 y = 192 }
+					borderSize = {x = 0 y = 0}
+					font = "vic_18"
+					maxWidth = 110
+					maxHeight = 20
+					format = right
+					scripted = yes
+				}
+				guiButtonType = {
+					name = "IW_province_info_left_shield"
+					position = { x=32 y = 156}
+					quadTextureSprite ="GFX_IW_league_tab_1_shield"
+					scripted = yes
+				}
+				guiButtonType = {
+					name = "IW_province_info_right_shield"
+					position = { x=340 y = 156}
+					quadTextureSprite ="GFX_IW_league_tab_1_shield"
+					scripted = yes
+				}
 				iconType = {
 					name ="IW_province_bar"
 					spriteType = "GFX_IW_province_bar"
-					position = { x= 63 y = 317 }
+					position = { x= 63 y = 330 }
 					scripted = yes
 				}
 				IconType = {
 					name = "IW_province_frame_bar"
-					position = { x=56 y = 316}
+					position = { x=56 y = 329}
 					quadTextureSprite ="GFX_IW_province_frame_bar"
 					scripted = yes
 				}
 				guiButtonType = {
 					name = "IW_province_start"
-					position = { x=24 y = 305}
+					position = { x=24 y = 318}
 					quadTextureSprite ="GFX_IW_province_button_start"
 					scripted = yes
 				}
 				guiButtonType = {
 					name = "IW_province_finish"
-					position = { x=375 y = 297}
+					position = { x=375 y = 310}
 					quadTextureSprite ="GFX_IW_province_button_finish"
 					scripted = yes
 				}
@@ -1442,25 +1542,25 @@ guiTypes = {
 				# Peace:
 				guiButtonType = {
 					name = "IW_province_peace_connect"
-					position = { x=194 y = 278}
+					position = { x=194 y = 291}
 					quadTextureSprite ="GFX_IW_province_button_arrow_peace"
 					scripted = yes
 				}
 				guiButtonType = {
 					name = "IW_province_peace_left"
-					position = { x=101 y = 256}
+					position = { x=101 y = 269}
 					quadTextureSprite ="GFX_IW_province_button_peace"
 					scripted = yes
 				}
 				guiButtonType = {
 					name = "IW_province_peace_mid"
-					position = { x=194 y = 223}
+					position = { x=194 y = 236}
 					quadTextureSprite ="GFX_IW_province_button_peace"
 					scripted = yes
 				}
 				guiButtonType = {
 					name = "IW_province_peace_right"
-					position = { x=287 y = 256}
+					position = { x=287 y = 269}
 					quadTextureSprite ="GFX_IW_province_button_peace"
 					scripted = yes
 				}
@@ -1468,65 +1568,35 @@ guiTypes = {
 				# War:
 				guiButtonType = {
 					name = "IW_province_war_connect"
-					position = { x=194 y = 332}
+					position = { x=194 y = 345}
 					quadTextureSprite ="GFX_IW_province_button_arrow_war"
 					scripted = yes
 				}
 				guiButtonType = {
 					name = "IW_province_war_left"
-					position = { x=101 y = 354}
+					position = { x=101 y = 367}
 					quadTextureSprite ="GFX_IW_province_button_war"
 					scripted = yes
 				}
 				guiButtonType = {
 					name = "IW_province_war_mid"
-					position = { x=194 y = 387}
+					position = { x=194 y = 400}
 					quadTextureSprite ="GFX_IW_province_button_war"
 					scripted = yes
 				}
 				guiButtonType = {
 					name = "IW_province_war_right"
-					position = { x=287 y = 354}
+					position = { x=287 y = 367}
 					quadTextureSprite ="GFX_IW_province_button_war"
 					scripted = yes
 				}
 				###########
 				IconType = {
 					name = "IW_province_arrow"
-					position = { x=194 y = 278}
+					position = { x=194 y = 291}
 					quadTextureSprite ="GFX_IW_province_arrow"
 					scripted = yes
 				}
-			}
-			##################
-			# IW Unite Italy:
-			IconType = {
-				name = "IW_unite_italy_banner"
-				position = { x=484 y = 86}
-				quadTextureSprite ="GFX_IW_unite_italy_banner"
-				scripted = yes
-			}
-			guiButtonType = {
-				name = "IW_unite_italy_button"
-				position = { x=523 y = 128}
-				quadTextureSprite ="GFX_IW_unite_italy_button"
-				scripted = yes
-			}
-			IconType = {
-				name = "IW_unite_italy_glow"
-				position = { x=511 y = 176}
-				quadTextureSprite ="GFX_IW_unite_italy_glow"
-				scripted = yes
-			}
-			instantTextBoxType = {
-				name = "IW_treaties_league_text"
-				position = { x = 509 y = 94 }
-				borderSize = {x = 0 y = 0}
-				font = "vic_29s"
-				maxWidth = 164
-				maxHeight = 32
-				format = center
-				scripted = yes
 			}
 		}
 		######################

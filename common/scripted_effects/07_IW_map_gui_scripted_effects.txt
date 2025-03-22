@@ -630,7 +630,7 @@ set_IW_event_target = { # Trigger this for events
 	if = { limit = { has_country_flag = IW_map_prov_02_window } IW_save_location_as_event_target = { province = 1774 } }
 	if = { limit = { has_country_flag = IW_map_prov_03_window } IW_save_location_as_event_target = { province = 112 } }
 	if = { limit = { has_country_flag = IW_map_prov_04_window } IW_save_location_as_event_target = { province = 4729 } }
-	if = { limit = { has_country_flag = IW_map_prov_05_window }	IW_save_location_as_event_target = { province = 108 } }
+	if = { limit = { has_country_flag = IW_map_prov_05_window } IW_save_location_as_event_target = { province = 108 } }
 	if = { limit = { has_country_flag = IW_map_prov_06_window } IW_save_location_as_event_target = { province = 109 } }
 	if = { limit = { has_country_flag = IW_map_prov_07_window } IW_save_location_as_event_target = { province = 107 } }
 	if = { limit = { has_country_flag = IW_map_prov_08_window } IW_save_location_as_event_target = { province = 4739 } }
@@ -816,3 +816,78 @@ set_IW_league_tab_flag = {
 ###########################
 # League:
 ###########################
+# Province Info:
+set_IW_province_info = {
+	if = { limit = { has_country_flag = IW_map_prov_01_window } set_IW_p_i = { province = 111 revolter = AQU } }
+	if = { limit = { has_country_flag = IW_map_prov_02_window } set_IW_p_i = { province = 1774 revolter = I01 } }
+	if = { limit = { has_country_flag = IW_map_prov_03_window } set_IW_p_i = { province = 112 revolter = VEN } }
+	if = { limit = { has_country_flag = IW_map_prov_04_window } set_IW_p_i = { province = 4729 revolter = PDV } }
+	if = { limit = { has_country_flag = IW_map_prov_05_window } set_IW_p_i = { province = 108 revolter = VRN } }
+	if = { limit = { has_country_flag = IW_map_prov_06_window } set_IW_p_i = { province = 109 revolter = MAN } }
+	if = { limit = { has_country_flag = IW_map_prov_07_window } set_IW_p_i = { province = 107 revolter = I07 } }
+	if = { limit = { has_country_flag = IW_map_prov_08_window } set_IW_p_i = { province = 4739 revolter = I06 } }
+	if = { limit = { has_country_flag = IW_map_prov_09_window } set_IW_p_i = { province = 1862 revolter = I02 } }
+	if = { limit = { has_country_flag = IW_map_prov_10_window } set_IW_p_i = { province = 104 revolter = MLO } }
+	if = { limit = { has_country_flag = IW_map_prov_11_window } set_IW_p_i = { province = 4740 revolter = I04 } }
+	if = { limit = { has_country_flag = IW_map_prov_12_window } set_IW_p_i = { province = 2979 revolter = I05 } }
+	if = { limit = { has_country_flag = IW_map_prov_13_window } set_IW_p_i = { province = 4728 revolter = I03 } }
+	if = { limit = { has_country_flag = IW_map_prov_14_window } set_IW_p_i = { province = 2981 revolter = MFA } }
+	if = { limit = { has_country_flag = IW_map_prov_15_window } set_IW_p_i = { province = 103 revolter = I08 } }
+	if = { limit = { has_country_flag = IW_map_prov_16_window } set_IW_p_i = { province = 4727 revolter = SZO } }
+	if = { limit = { has_country_flag = IW_map_prov_17_window } set_IW_p_i = { province = 1875 revolter = I09 } }
+	if = { limit = { has_country_flag = IW_map_prov_18_window } set_IW_p_i = { province = 102 revolter = I10 } }
+	if = { limit = { has_country_flag = IW_map_prov_19_window } set_IW_p_i = { province = 2992 revolter = I11 } }
+	if = { limit = { has_country_flag = IW_map_prov_20_window } set_IW_p_i = { province = 101 revolter = GEN } }
+	if = { limit = { has_country_flag = IW_map_prov_21_window } set_IW_p_i = { province = 105 revolter = PAR } }
+	if = { limit = { has_country_flag = IW_map_prov_22_window } set_IW_p_i = { province = 106 revolter = MOD } }
+	if = { limit = { has_country_flag = IW_map_prov_23_window } set_IW_p_i = { province = 4730 revolter = BLG } }
+	if = { limit = { has_country_flag = IW_map_prov_24_window } set_IW_p_i = { province = 113 revolter = FER } }
+	if = { limit = { has_country_flag = IW_map_prov_25_window } set_IW_p_i = { province = 114 revolter = I30 } }
+	if = { limit = { has_country_flag = IW_map_prov_26_window } set_IW_p_i = { province = 2978 revolter = ETR } }
+	if = { limit = { has_country_flag = IW_map_prov_27_window } set_IW_p_i = { province = 116 revolter = LAN } }
+	if = { limit = { has_country_flag = IW_map_prov_28_window } set_IW_p_i = { province = 2980 revolter = LUC } }
+	if = { limit = { has_country_flag = IW_map_prov_29_window } set_IW_p_i = { province = 115 revolter = PIS } }
+	if = { limit = { has_country_flag = IW_map_prov_30_window } set_IW_p_i = { province = 117 revolter = SIE } }
+	if = { limit = { has_country_flag = IW_map_prov_31_window } set_IW_p_i = { province = 2977 revolter = URB } }
+	if = { limit = { has_country_flag = IW_map_prov_32_window } set_IW_p_i = { province = 119 revolter = I31 } }
+	if = { limit = { has_country_flag = IW_map_prov_33_window } set_IW_p_i = { province = 120 revolter = I32 } }
+	if = { limit = { has_country_flag = IW_map_prov_34_window } set_IW_p_i = { province = 4731 revolter = SPL } }
+	if = { limit = { has_country_flag = IW_map_prov_35_window } set_IW_p_i = { province = 2976 revolter = PGA } }
+	if = { limit = { has_country_flag = IW_map_prov_36_window } set_IW_p_i = { province = 118 revolter = PAP } }
+	if = { limit = { has_country_flag = IW_map_prov_37_window } set_IW_p_i = { province = 4732 revolter = I22 } }
+	if = { limit = { has_country_flag = IW_map_prov_38_window } set_IW_p_i = { province = 4733 revolter = I29 } }
+	if = { limit = { has_country_flag = IW_map_prov_39_window } set_IW_p_i = { province = 2985 revolter = I28 } }
+	if = { limit = { has_country_flag = IW_map_prov_40_window } set_IW_p_i = { province = 1933 revolter = I27 } }
+	if = { limit = { has_country_flag = IW_map_prov_41_window } set_IW_p_i = { province = 122 revolter = I26 } }
+	if = { limit = { has_country_flag = IW_map_prov_42_window } set_IW_p_i = { province = 4734 revolter = I21 } }
+	if = { limit = { has_country_flag = IW_map_prov_43_window } set_IW_p_i = { province = 121 revolter = NAP } }
+	if = { limit = { has_country_flag = IW_map_prov_44_window } set_IW_p_i = { province = 2983 revolter = I20 } }
+	if = { limit = { has_country_flag = IW_map_prov_45_window } set_IW_p_i = { province = 1934 revolter = I24 } }
+	if = { limit = { has_country_flag = IW_map_prov_46_window } set_IW_p_i = { province = 2984 revolter = I25 } }
+	if = { limit = { has_country_flag = IW_map_prov_47_window } set_IW_p_i = { province = 123 revolter = I23 } }
+	if = { limit = { has_country_flag = IW_map_prov_48_window } set_IW_p_i = { province = 124 revolter = I15 } }
+	if = { limit = { has_country_flag = IW_map_prov_49_window } set_IW_p_i = { province = 2982 revolter = I16 } }
+	if = { limit = { has_country_flag = IW_map_prov_50_window } set_IW_p_i = { province = 126 revolter = JAI } }
+	if = { limit = { has_country_flag = IW_map_prov_51_window } set_IW_p_i = { province = 4737 revolter = I19 } }
+	if = { limit = { has_country_flag = IW_map_prov_52_window } set_IW_p_i = { province = 125 revolter = I17 } }
+	if = { limit = { has_country_flag = IW_map_prov_53_window } set_IW_p_i = { province = 4736 revolter = I18 } }
+	if = { limit = { has_country_flag = IW_map_prov_54_window } set_IW_p_i = { province = 2986 revolter = I13 } }
+	if = { limit = { has_country_flag = IW_map_prov_55_window } set_IW_p_i = { province = 4735 revolter = I14 } }
+	if = { limit = { has_country_flag = IW_map_prov_56_window } set_IW_p_i = { province = 127 revolter = I12 } }
+	if = { limit = { has_country_flag = IW_map_prov_57_window } set_IW_p_i = { province = 1247 revolter = COR } }
+}
+set_IW_p_i = {
+	$province$ = {
+		save_global_event_target_as = province_info
+	}
+	event_target:province_info = {
+		owner = {
+			save_global_event_target_as = target_left_country
+		}
+	}
+	event_target:province_info = {
+		$revolter$= {
+			save_global_event_target_as = target_right_country
+		}
+	}
+}

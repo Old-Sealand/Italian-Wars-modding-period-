@@ -1,0 +1,20 @@
+sound = {
+	name = EU4NummerET
+	file = "EU4NummerET.wav"
+}
+sound = {
+	name = EU4NummerFEM
+	file = "EU4NummerFEM.wav"
+}
+sound = {
+	name = EU4NummerFIRE
+	file = "EU4NummerFIRE.wav"
+}
+sound = {
+	name = EU4NummerTO
+	file = "EU4NummerTO.wav"
+}
+sound = {
+	name = EU4NummerTRE
+	file = "EU4NummerTRE.wav"
+}
