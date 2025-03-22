@@ -245,7 +245,7 @@
  IW_setup.19.t: "Corona Ferrea"
  IW_setup.19.d: "The Italian Wars, a century-long saga of ambition, betrayal, and bloodshed, have at last come to an end. Amidst the ruins of rival coalitions, the armies of [Root.GetName] stand triumphant, their banners waving proudly over the scarred yet unified Italian Peninsula. The victories of [Root.Monarch.GetName] have not only secured dominance but have fulfilled a destiny long sought by kings and princes alike—the unification of Italy under a single crown.\n\nIn a grand ceremony held within the ancient Basilica of Monza, the Corona Ferrea, the Iron Crown of Lombardy, is placed upon the monarch's head. The assembled nobility, clergy, and diplomats watch in awe as [Root.Monarch.GetName] is proclaimed Rex Italiae, King of all Italy. The Pope's blessing sanctifies the coronation, solidifying both divine and earthly authority over a land once fragmented by division.\n\nThis moment marks the birth of a new era, with the Italian Peninsula standing united under one ruler for the first time since the age of Rome. The people celebrate, but the task ahead is daunting—restoring order, securing alliances, and ensuring this new kingdom endures against both internal strife and envious foreign powers. The crown is heavy, but so too is the will of its bearer."
  IW_setup.19.a: "My will be done"
- IW_disband_other_leagues_tt: "\nAll other §YLeagues§! will be disbanded."
+ IW_disband_other_leagues_tt: "All other §YLeagues§! will be disbanded."
  IW_other_provinces_will_also_receive_this_modifier: "All other provinces in the §YItaly§! region will also receive the §Ymodifier§!." 
 
  ###GUI###
