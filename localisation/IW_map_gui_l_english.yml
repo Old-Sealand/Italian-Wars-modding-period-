@@ -2,7 +2,7 @@
  
  IW_treaties_league_text: "Dominatio Italiae"
  IW_treaties_text: "Treaties"
- IW_league_text: "Iberian League"
+ IW_league_text: "[GetFactionTabName] League"
 
 
  IW_treaties_button_1: "§bIura Mercaturae§!"

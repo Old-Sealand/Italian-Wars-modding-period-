@@ -57,15 +57,19 @@
 # 	grant_independence = yes
 # }
 
-# if = {
-# 	limit = {
-# 		# 118 = { owned_by_subject_of = LAN }
-# 		check_variable = { which = numLeagueMembers value = 8 }
-# 		# IW_league_member = 10
-# 		# has_country_flag = IW_italian_league_member
-# 	}
-# 	add_treasury = 1
-# }
+if = {
+	limit = {
+		# 118 = { owned_by_subject_of = LAN }
+		# check_variable = { which = numLeagueMembers value = 8 }
+		# IW_league_member = 10
+		# has_country_flag = IW_italian_league_member
+		had_country_flag = {
+			flag = picked_cawa_privilege
+			days = 1825
+		}
+	}
+	add_treasury = 1
+}
 
 # declare_war_with_cb = {
 # 	who = event_target:IW_italian_league_leader
@@ -92,14 +96,14 @@
 # white_peace = event_target:IW_italian_league_leader
 # LAN = { white_peace = HAB }
 
-emperor = {
-	declare_war_with_cb = {
-		who = ENG
-		casus_belli = cb_trade_war
-	}
-}
-declare_war_with_cb = {
-	who = event_target:IW_italian_league_leader
-	casus_belli = IW_cb_italian_war
-}
-emperor = { white_peace = ROOT }
+# emperor = {
+# 	declare_war_with_cb = {
+# 		who = ENG
+# 		casus_belli = cb_trade_war
+# 	}
+# }
+# declare_war_with_cb = {
+# 	who = event_target:IW_italian_league_leader
+# 	casus_belli = IW_cb_italian_war
+# }
+# emperor = { white_peace = ROOT }

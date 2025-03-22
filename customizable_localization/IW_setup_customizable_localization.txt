@@ -74,3 +74,55 @@ defined_text = {
         }
     }
 }
+
+### Map Faction Tabs Customizable Loc
+defined_text = {
+    name = GetFactionTabName
+
+    text = {
+        localisation_key = string_in_italic_league
+        trigger = { has_country_flag = IW_league_tab_1_flag }
+    }
+    text = {
+        localisation_key = string_in_french_league
+        trigger = { has_country_flag = IW_league_tab_2_flag }
+    }
+    text = {
+        localisation_key = string_in_iberian_league
+        trigger = { has_country_flag = IW_league_tab_3_flag }
+    }
+    text = {
+        localisation_key = string_in_HRE_league
+        trigger = { has_country_flag = IW_league_tab_4_flag }
+    }
+}
+
+### Map Declare War / Usurp Leadership Customizable Loc
+defined_text = {
+    name = GetOverthrowButtonName
+
+    text = {
+        localisation_key = string_declare_italian_war
+        trigger = {
+            OR = {
+                tag = event_target:IW_italian_league_leader
+                tag = event_target:IW_french_league_leader
+                tag = event_target:IW_iberian_league_leader
+                tag = event_target:IW_HRE_league_leader
+            }
+        }
+    }
+    text = {
+        localisation_key = string_usurp_league_leadership
+        trigger = {
+            NOT = {
+                OR = {
+                    tag = event_target:IW_italian_league_leader
+                    tag = event_target:IW_french_league_leader
+                    tag = event_target:IW_iberian_league_leader
+                    tag = event_target:IW_HRE_league_leader
+                }
+            }
+        }
+    }
+}

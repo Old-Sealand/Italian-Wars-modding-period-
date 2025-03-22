@@ -9,6 +9,8 @@
  string_in_french_league: "[GetFrenchLeagueName]"
  string_in_iberian_league: "Iberian"
  string_in_HRE_league: "[GetHRELeagueName]"
+ string_declare_italian_war: "Declare War"
+ string_usurp_league_leadership: "Usurp Leadership"
 
 ### FLAGS ###
  IW_HRE_league_leader: "Leader of the Italic League"
@@ -20,6 +22,10 @@
  IW_HRE_league_member: "Member of the Iberian League"
  IW_HRE_league_member: "Member of the [GetHRELeagueName] League"
  corona_ferrea_flag: "The Iron Crown"
+#  IW_beat_italians_flag: ""
+#  IW_beat_french_flag: ""
+#  IW_beat_iberians_flag: ""
+#  IW_beat_HRE_flag: ""
 
 ### VARIABLES ###
  numLeagueMembers: "Number of League Members"
@@ -124,6 +130,7 @@
 
 ### SETUP EVENTS ###
  IW_setup.1.t: "New Leadership in the League of [IW_former_leader.GetName]"
+ IW_setup.1.t2: "New Leadership in the League"
  IW_setup.1.d1: "Threatened by foreign interlopers on all sides, the brave remaining coalition states of the Italic League will require strong leadership to ensure their very survival. The [IW_former_leader.GetAdjective] [IW_former_leader.Monarch.GetTitle] has proven himself to be unworthy of the title, and the member council has called [Root.Monarch.GetName] to assume the role of defender of Italy." # usurping Italian leader
  IW_setup.1.d2: "The annexation of [IW_former_leader.GetName] has left a void at the heart of the Italic League. With its former leader absorbed into the fold of a greater power, the League's future now hangs in the balance. To prevent its collapse and safeguard Italian autonomy, its member states have turned their gaze to [Root.GetName], urging it to take up the mantle of leadership. As the new head of the League, [Root.GetName] would wield significant influence—but at a cost.\n\nIn the grand halls of [Root.Capital.GetCapitalName], the ruling council debates the proposal. Accepting leadership would mean shouldering the burden of coordinating disparate interests and defending the League from external threats, all while managing the tensions that have plagued Italian politics for centuries. Turning it down, however, could shatter the fragile alliance, opening the door for outside powers to dominate the peninsula.\n\nThe question is clear: will [Root.GetName] rise to the occasion and unify the League under its guidance, or prioritize its own stability and turn down this daunting responsibility? The future of Italy rests on this decision." # Italian leader died
  IW_setup.1.d3: "The [IW_former_leader.GetAdjective] have failed, against all odds, to reassert Frankish dominance in Italy. Perhaps the memory of Charles d'Anjou would be better served with us at the head of this coalition." # usurping French leader
@@ -242,3 +249,19 @@
  IW_treaties_button_4_loc: "Compel non-member Italian states to provide able-bodied men for impressment into the League's fleet.\n--------------\n§YLeague Members§! gain:\nNational Sailors Modifier: §G+20.0%§!\n\n§YNon-member States in Italy§! gain:\nSailor Recovery Speed: §R-10.0%§!"
  IW_treaties_button_5_loc: "Compel non-member Italian states to dismantle a fraction of their their armed forces and fortifications.\n--------------\n§YLeague Members§! gain:\nRegiment Drill Loss: §G-20.0%§!\n\n§YNon-member States in Italy§! gain:\nRegiment Costs: §R+5.0%§!"
  IW_passed_all_treaties_tt: "Has passed all 5 §YItalian Treaties§!"
+
+ IW_league_top_loc: "As long as the §Y[GetFactionTabName]§! League maintains at least §Y5§! members, §YLeague Members§! gain:\nFort Maintenance: §G+10.0%§!\n\nFor each Member state, the §YLeague Leader§! gains:\nFort Maintenance: §G+1.0%§!"
+ IW_league_mid_loc: "As long as the §Y[GetFactionTabName]§! League maintains at least §Y10§! members, §YLeague Members§! gain:\nDevelopment Cost: §G-10.0%§!\nInterest Per Annum: §G-1§!\n\nFor each Member state, the §YLeague Leader§! gains:\nYearly Tax Income: §G+1§!"
+ IW_league_mid_left_loc: "As long as the §Y[GetFactionTabName]§! League maintains at least §Y15§! members, §YLeague Members§! gain:\nMercenary Cost: §G-10.0%§!\n\nFor each Member state, the §YLeague Leader§! gains:\nMercenary Manpower: §G+1.0%§!\n\nAdditionally, both the §YLeader§! and §YMembers§! gain the following effects:\n£yes£Can split and merge Mercenary units\n£yes£Allow Mercenary units to Drill"
+ IW_league_mid_right_loc: "As long as the §Y[GetFactionTabName]§! League maintains at least §Y15§! members, §YLeague Members§! gain:\nYearly Army Tradition Decay: §G-1.0%§!\n\nFor each Member state, the §YLeague Leader§! gains:\nNational Manpower: §G+1.0%§!"
+ IW_league_bottom_loc: "As long as the §Y[GetFactionTabName]§! League maintains at least §Y15§! members, §YLeague Members§! gain:\nGlobal Monthly Devastation: §G-0.10§!\nGlobal Prosperity Growth: §G+0.10§!\n\nFor each Member state, the §YLeague Leader§! gains:\nAdvisor Costs: §G-1.0%§!\n\nAdditionally, the §YLeague Leader§! gains:\nMonarch Diplomatic Skill: §G+1§!"
+ IW_beat_italians_tt: "Defeated the leader of the §YItalic League§! in the past year"
+ IW_beat_french_tt: "Defeated the leader of the §Y[GetFrenchLeagueName] League§! in the past year"
+ IW_beat_iberians_tt: "Defeated the leader of the §YIberian League§! in the past year"
+ IW_beat_HRE_tt: "Defeated the leader of the §Y[GetHRELeagueName] League§! in the past year"
+ IW_imposed_treaty: "Imposed a treaty during an §YItalian War§!"
+ IW_already_enacted_treaty: "Treaty is NOT already enacted in favor of our League"
+ IW_unite_italy_button_loc: "Test Loc why not work"
+ IW_league_overthrow_button_loc: "[GetOverthrowButtonName]"
+ IW_must_be_league_member: "Must be a member of a League"
+ IW_m_p_t_l_open_close_loc: "Italian Wars"

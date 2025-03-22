@@ -2022,7 +2022,7 @@ country_event = {
 	id = IW_setup.19 # Corona Ferrea
 	title = IW_setup.19.t
 	desc = IW_setup.19.d
-	picture = SWEDEN_LEAGUE_WAR_eventPicture
+	picture = IW_end_eventPicture
 	
 	major = yes
 	fire_only_once = yes
@@ -2044,4 +2044,431 @@ country_event = {
 		custom_tooltip = IW_disband_other_leagues_tt
 	}
 
+}
+
+# New Leader of the XYZ League (Triggered Only Version)
+country_event = {
+	id = IW_setup.1000
+	title = IW_setup.1.t2
+	picture = COURT_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	desc = { # usurping Italian leader
+		trigger = {
+			overlord = { tag = event_target:IW_italian_league_leader }
+		}
+		desc = IW_setup.1.d1
+	}
+
+	desc = { # Italian leader died
+		trigger = { IW_italian_leader_died = yes }
+		desc = IW_setup.1.d2
+	}
+	
+	desc = { # usurping French leader
+		trigger = {
+			overlord = { tag = event_target:IW_french_league_leader }
+		}
+		desc = IW_setup.1.d3
+	}
+
+	desc = { # French leader died
+		trigger = { IW_french_leader_died = yes }
+		desc = IW_setup.1.d4
+	}
+	
+	desc = { # usurping Iberian leader
+		trigger = {
+			overlord = { tag = event_target:IW_iberian_league_leader }
+		}
+		desc = IW_setup.1.d5
+	}
+
+	desc = { # Iberian leader died
+		trigger = { IW_iberian_leader_died = yes }
+		desc = IW_setup.1.d6
+	}
+
+	desc = { # new HRE emperor
+		trigger = { is_emperor = yes }
+		desc = IW_setup.1.d7
+	}
+
+	desc = { # new leader of German league
+		trigger = { IW_german_leader_died = yes }
+		desc = IW_setup.1.d8
+	}
+	
+	# trigger = {}
+
+	immediate = { # save event target for localisation
+		if = {
+			limit = {
+				OR = {
+					overlord = { tag = event_target:IW_italian_league_leader }
+					IW_italian_leader_died = yes
+				}
+			}
+			event_target:IW_italian_league_leader = { save_event_target_as = IW_former_leader }
+		}
+		else_if = {
+			limit = {
+				OR = {
+					overlord = { tag = event_target:IW_french_league_leader }
+					IW_french_leader_died = yes
+				}
+			}
+			event_target:IW_french_league_leader = { save_event_target_as = IW_former_leader }
+		}
+		else_if = {
+			limit = {
+				OR = {
+					overlord = { tag = event_target:IW_iberian_league_leader }
+					IW_iberian_leader_died = yes
+				}
+			}
+			event_target:IW_iberian_league_leader = { save_event_target_as = IW_former_leader }
+		}
+		else_if = {
+			limit = {
+				OR = {
+					overlord = { tag = event_target:IW_HRE_league_leader }
+					is_emperor = yes
+					IW_german_leader_died = yes
+				}
+			}
+			event_target:IW_HRE_league_leader = { save_event_target_as = IW_former_leader }
+		}
+	}
+	
+	option = {
+		name = IW_setup.1.a
+		ai_chance = {
+			factor = 1
+		}
+		# Become new leader
+		if = { # Italian League
+			limit = {
+				OR = {
+					overlord = { tag = event_target:IW_italian_league_leader }
+					IW_italian_leader_died = yes
+				}
+			}
+			hidden_effect = {
+				if = { # Treaty transferrance
+					limit = {
+						event_target:IW_italian_league_leader = { tag = event_target:IW_treaty_exclusive_trade_passed }
+					}
+					save_global_event_target_as = IW_treaty_exclusive_trade_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_italian_league_leader = { tag = event_target:IW_treaty_universities_passed }
+					}
+					save_global_event_target_as = IW_treaty_universities_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_italian_league_leader = { tag = event_target:IW_treaty_land_rights_passed }
+					}
+					save_global_event_target_as = IW_treaty_land_rights_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_italian_league_leader = { tag = event_target:IW_treaty_impressment_passed }
+					}
+					save_global_event_target_as = IW_treaty_impressment_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_italian_league_leader = { tag = event_target:IW_treaty_demil_passed }
+					}
+					save_global_event_target_as = IW_treaty_demil_passed
+				}
+				# set_variable = { doubles it for some reason
+				# 	which = numLeagueMembers
+				# 	which = event_target:IW_italian_league_leader
+				# }
+				# export_to_variable = { works, but shouldn't need
+				# 	which = numLeagueMembers
+				# 	who = event_target:IW_italian_league_leader
+				# }
+				event_target:IW_italian_league_leader = { # in place of above - set former leader variable to 0
+					set_variable = {
+						which = numLeagueMembers
+						value = 0
+					}
+				}
+				grant_independence = yes
+				# event_target:IW_italian_league_leader = { save_event_target_as = IW_former_leader }
+				clear_global_event_target = IW_italian_league_leader
+				save_global_event_target_as = IW_italian_league_leader
+				#Vassalize all of the league members
+				every_country = {
+					limit = {
+						has_country_flag = IW_italian_league_member
+						NOT = { tag = event_target:IW_italian_league_leader }
+					}
+					event_target:IW_italian_league_leader = {
+						create_subject = {
+							subject_type = IW_league_member
+							subject = PREV
+						}
+					}
+				}
+				set_country_flag = IW_italian_league_member
+				clr_country_flag = IW_french_league_member
+				clr_country_flag = IW_iberian_league_member
+				clr_country_flag = IW_HRE_league_member
+				if = {
+					limit = {
+						has_global_flag = IW_new_leader_franco_iberian_war
+					}
+					clr_global_flag = IW_new_leader_franco_iberian_war
+					country_event = { id = IW_setup.18 }
+				}
+			}
+			custom_tooltip = IW_setup.1a.tt1
+		}
+		else_if = { # French League
+			limit = {
+				OR = {
+					overlord = { tag = event_target:IW_french_league_leader }
+					IW_french_leader_died = yes
+				}
+			}
+			hidden_effect = {
+				if = { # Treaty transferrance
+					limit = {
+						event_target:IW_french_league_leader = { tag = event_target:IW_treaty_exclusive_trade_passed }
+					}
+					save_global_event_target_as = IW_treaty_exclusive_trade_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_french_league_leader = { tag = event_target:IW_treaty_universities_passed }
+					}
+					save_global_event_target_as = IW_treaty_universities_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_french_league_leader = { tag = event_target:IW_treaty_land_rights_passed }
+					}
+					save_global_event_target_as = IW_treaty_land_rights_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_french_league_leader = { tag = event_target:IW_treaty_impressment_passed }
+					}
+					save_global_event_target_as = IW_treaty_impressment_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_french_league_leader = { tag = event_target:IW_treaty_demil_passed }
+					}
+					save_global_event_target_as = IW_treaty_demil_passed
+				}
+				# export_to_variable = {
+				# 	which = numLeagueMembers
+				# 	who = event_target:IW_french_league_leader
+				# }
+				event_target:IW_french_league_leader = { # in place of above - set former leader variable to 0
+					set_variable = {
+						which = numLeagueMembers
+						value = 0
+					}
+				}
+				grant_independence = yes
+				# event_target:IW_french_league_leader = { save_event_target_as = IW_former_leader }
+				clear_global_event_target = IW_french_league_leader
+				save_global_event_target_as = IW_french_league_leader
+				#Vassalize all of the league members
+				every_country = {
+					limit = {
+						has_country_flag = IW_french_league_member
+						NOT = { tag = event_target:IW_french_league_leader }
+					}
+					event_target:IW_french_league_leader = {
+						create_subject = {
+							subject_type = IW_league_member
+							subject = PREV
+						}
+					}
+				}
+				clr_country_flag = IW_italian_league_member
+				set_country_flag = IW_french_league_member
+				clr_country_flag = IW_iberian_league_member
+				clr_country_flag = IW_HRE_league_member
+			}
+			custom_tooltip = IW_setup.1a.tt2
+		}
+		else_if = { # Iberian League
+			limit = {
+				OR = {
+					overlord = { tag = event_target:IW_iberian_league_leader }
+					IW_iberian_leader_died = yes
+				}
+			}
+			hidden_effect = {
+				if = { # Treaty transferrance
+					limit = {
+						event_target:IW_iberian_league_leader = { tag = event_target:IW_treaty_exclusive_trade_passed }
+					}
+					save_global_event_target_as = IW_treaty_exclusive_trade_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_iberian_league_leader = { tag = event_target:IW_treaty_universities_passed }
+					}
+					save_global_event_target_as = IW_treaty_universities_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_iberian_league_leader = { tag = event_target:IW_treaty_land_rights_passed }
+					}
+					save_global_event_target_as = IW_treaty_land_rights_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_iberian_league_leader = { tag = event_target:IW_treaty_impressment_passed }
+					}
+					save_global_event_target_as = IW_treaty_impressment_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_iberian_league_leader = { tag = event_target:IW_treaty_demil_passed }
+					}
+					save_global_event_target_as = IW_treaty_demil_passed
+				}
+				# export_to_variable = {
+				# 	which = numLeagueMembers
+				# 	who = event_target:IW_iberian_league_leader
+				# }
+				event_target:IW_iberian_league_leader = { # in place of above - set former leader variable to 0
+					set_variable = {
+						which = numLeagueMembers
+						value = 0
+					}
+				}
+				grant_independence = yes
+				# event_target:IW_iberian_league_leader = { save_event_target_as = IW_former_leader }
+				clear_global_event_target = IW_iberian_league_leader
+				save_global_event_target_as = IW_iberian_league_leader
+				#Vassalize all of the league members
+				every_country = {
+					limit = {
+						has_country_flag = IW_iberian_league_member
+						NOT = { tag = event_target:IW_iberian_league_leader }
+					}
+					event_target:IW_iberian_league_leader = {
+						create_subject = {
+							subject_type = IW_league_member
+							subject = PREV
+						}
+					}
+				}
+				clr_country_flag = IW_italian_league_member
+				clr_country_flag = IW_french_league_member
+				set_country_flag = IW_iberian_league_member
+				clr_country_flag = IW_HRE_league_member
+			}
+			custom_tooltip = IW_setup.1a.tt3
+		}
+		else_if = { # HRE League
+			limit = {
+				OR = {
+					overlord = { tag = event_target:IW_HRE_league_leader }
+					is_emperor = yes
+					IW_german_leader_died = yes
+				}
+			}
+			hidden_effect = {
+				if = { # Treaty transferrance
+					limit = {
+						event_target:IW_HRE_league_leader = { tag = event_target:IW_treaty_exclusive_trade_passed }
+					}
+					save_global_event_target_as = IW_treaty_exclusive_trade_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_HRE_league_leader = { tag = event_target:IW_treaty_universities_passed }
+					}
+					save_global_event_target_as = IW_treaty_universities_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_HRE_league_leader = { tag = event_target:IW_treaty_land_rights_passed }
+					}
+					save_global_event_target_as = IW_treaty_land_rights_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_HRE_league_leader = { tag = event_target:IW_treaty_impressment_passed }
+					}
+					save_global_event_target_as = IW_treaty_impressment_passed
+				}
+				if = {
+					limit = {
+						event_target:IW_HRE_league_leader = { tag = event_target:IW_treaty_demil_passed }
+					}
+					save_global_event_target_as = IW_treaty_demil_passed
+				}
+				# export_to_variable = {
+				# 	which = numLeagueMembers
+				# 	who = event_target:IW_HRE_league_leader
+				# }
+				event_target:IW_HRE_league_leader = { # in place of above - set former leader variable to 0
+					set_variable = {
+						which = numLeagueMembers
+						value = 0
+					}
+				}
+				grant_independence = yes
+				# event_target:IW_HRE_league_leader = { save_event_target_as = IW_former_leader }
+				clear_global_event_target = IW_HRE_league_leader
+				save_global_event_target_as = IW_HRE_league_leader
+				#Vassalize all of the league members
+				every_country = {
+					limit = {
+						has_country_flag = IW_HRE_league_member
+						NOT = { tag = event_target:IW_HRE_league_leader }
+					}
+					event_target:IW_HRE_league_leader = {
+						create_subject = {
+							subject_type = IW_league_member
+							subject = PREV
+						}
+					}
+				}
+				clr_country_flag = IW_italian_league_member
+				clr_country_flag = IW_french_league_member
+				clr_country_flag = IW_iberian_league_member
+				set_country_flag = IW_HRE_league_member
+			}
+			custom_tooltip = IW_setup.1a.tt4
+		}
+		# overlord = {
+		# 	save_event_target_as = IW_former_leader
+		# }
+		# grant_independence = yes
+		# custom_tooltip = IW_setup.1a.tt # Become leader of X league
+	}
+	
+	option = {
+		name = IW_setup.1.b
+		trigger = {
+			OR = { # League leader ceased to exist
+				IW_italian_leader_died = yes
+				IW_french_leader_died = yes
+				IW_iberian_leader_died = yes
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+		# Reject role
+		set_country_flag = IW_declined_league_leadership
+	}
 }

@@ -1058,41 +1058,476 @@ custom_text_box = {
 }
 custom_button = {
     name = IW_treaties_button_1
-	trigger = { has_country_flag = IW_m_p_t_l_window
+	trigger = {
+        hidden_trigger = { has_country_flag = IW_m_p_t_l_window }
+        if = {
+            limit = { event_target:IW_treaty_exclusive_trade_passed = { tag = event_target:IW_italian_league_leader } }
+            custom_trigger_tooltip = {
+                tooltip = IW_beat_italians_tt
+                has_country_flag = IW_beat_italians_flag
+                NOT = {
+                    had_country_flag = {
+                        flag = IW_beat_italians_flag
+                        days = 365
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = { event_target:IW_treaty_exclusive_trade_passed = { tag = event_target:IW_french_league_leader } }
+            custom_trigger_tooltip = {
+                tooltip = IW_beat_french_tt
+                has_country_flag = IW_beat_french_flag
+                NOT = {
+                    had_country_flag = {
+                        flag = IW_beat_french_flag
+                        days = 365
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = { event_target:IW_treaty_exclusive_trade_passed = { tag = event_target:IW_iberian_league_leader } }
+            custom_trigger_tooltip = {
+                tooltip = IW_beat_iberians_tt
+                has_country_flag = IW_beat_iberians_flag
+                NOT = {
+                    had_country_flag = {
+                        flag = IW_beat_iberians_flag
+                        days = 365
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = { event_target:IW_treaty_exclusive_trade_passed = { tag = event_target:IW_HRE_league_leader } }
+            custom_trigger_tooltip = {
+                tooltip = IW_beat_HRE_tt
+                has_country_flag = IW_beat_HRE_flag
+                NOT = {
+                    had_country_flag = {
+                        flag = IW_beat_HRE_flag
+                        days = 365
+                    }
+                }
+            }
+        }
+        custom_trigger_tooltip = {
+            tooltip = IW_imposed_treaty
+            check_variable = {
+                which = treatyPoints
+                value = 1
+            }
+        }
+        custom_trigger_tooltip = {
+            tooltip = IW_already_enacted_treaty
+            NOT = { tag = event_target:IW_treaty_exclusive_trade_passed }
+        }
 	}
     effect = {
+        hidden_effect = {
+            if = {
+                limit = { event_target:IW_treaty_exclusive_trade_passed = { tag = event_target:IW_italian_league_leader } }
+                clr_country_flag = IW_beat_italians_flag
+            }
+            if = {
+                limit = { event_target:IW_treaty_exclusive_trade_passed = { tag = event_target:IW_french_league_leader } }
+                clr_country_flag = IW_beat_french_flag
+            }
+            if = {
+                limit = { event_target:IW_treaty_exclusive_trade_passed = { tag = event_target:IW_iberian_league_leader } }
+                clr_country_flag = IW_beat_iberians_flag
+            }
+            if = {
+                limit = { event_target:IW_treaty_exclusive_trade_passed = { tag = event_target:IW_HRE_league_leader } }
+                clr_country_flag = IW_beat_HRE_flag
+            }
+            save_global_event_target_as = IW_treaty_exclusive_trade_passed
+            subtract_variable = {            
+                which = treatyPoints
+                value = 1
+            }
+        }
 	}
     tooltip = IW_treaties_button_1_loc
 }
 custom_button = {
     name = IW_treaties_button_2
-	trigger = { has_country_flag = IW_m_p_t_l_window
+	trigger = {
+        hidden_trigger = { has_country_flag = IW_m_p_t_l_window }
+        if = {
+            limit = { event_target:IW_treaty_universities_passed = { tag = event_target:IW_italian_league_leader } }
+            custom_trigger_tooltip = {
+                tooltip = IW_beat_italians_tt
+                has_country_flag = IW_beat_italians_flag
+                NOT = {
+                    had_country_flag = {
+                        flag = IW_beat_italians_flag
+                        days = 365
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = { event_target:IW_treaty_universities_passed = { tag = event_target:IW_french_league_leader } }
+            custom_trigger_tooltip = {
+                tooltip = IW_beat_french_tt
+                has_country_flag = IW_beat_french_flag
+                NOT = {
+                    had_country_flag = {
+                        flag = IW_beat_french_flag
+                        days = 365
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = { event_target:IW_treaty_universities_passed = { tag = event_target:IW_iberian_league_leader } }
+            custom_trigger_tooltip = {
+                tooltip = IW_beat_iberians_tt
+                has_country_flag = IW_beat_iberians_flag
+                NOT = {
+                    had_country_flag = {
+                        flag = IW_beat_iberians_flag
+                        days = 365
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = { event_target:IW_treaty_universities_passed = { tag = event_target:IW_HRE_league_leader } }
+            custom_trigger_tooltip = {
+                tooltip = IW_beat_HRE_tt
+                has_country_flag = IW_beat_HRE_flag
+                NOT = {
+                    had_country_flag = {
+                        flag = IW_beat_HRE_flag
+                        days = 365
+                    }
+                }
+            }
+        }
+        custom_trigger_tooltip = {
+            tooltip = IW_imposed_treaty
+            check_variable = {
+                which = treatyPoints
+                value = 1
+            }
+        }
+        custom_trigger_tooltip = {
+            tooltip = IW_already_enacted_treaty
+            NOT = { tag = event_target:IW_treaty_universities_passed }
+        }
 	}
     effect = {
+        hidden_effect = {
+            if = {
+                limit = { event_target:IW_treaty_universities_passed = { tag = event_target:IW_italian_league_leader } }
+                clr_country_flag = IW_beat_italians_flag
+            }
+            if = {
+                limit = { event_target:IW_treaty_universities_passed = { tag = event_target:IW_french_league_leader } }
+                clr_country_flag = IW_beat_french_flag
+            }
+            if = {
+                limit = { event_target:IW_treaty_universities_passed = { tag = event_target:IW_iberian_league_leader } }
+                clr_country_flag = IW_beat_iberians_flag
+            }
+            if = {
+                limit = { event_target:IW_treaty_universities_passed = { tag = event_target:IW_HRE_league_leader } }
+                clr_country_flag = IW_beat_HRE_flag
+            }
+            save_global_event_target_as = IW_treaty_universities_passed
+            subtract_variable = {            
+                which = treatyPoints
+                value = 1
+            }
+        }
 	}
     tooltip = IW_treaties_button_2_loc
 }
 custom_button = {
     name = IW_treaties_button_3
-	trigger = { has_country_flag = IW_m_p_t_l_window
+	trigger = {
+        hidden_trigger = { has_country_flag = IW_m_p_t_l_window }
+        if = {
+            limit = { event_target:IW_treaty_land_rights_passed = { tag = event_target:IW_italian_league_leader } }
+            custom_trigger_tooltip = {
+                tooltip = IW_beat_italians_tt
+                has_country_flag = IW_beat_italians_flag
+                NOT = {
+                    had_country_flag = {
+                        flag = IW_beat_italians_flag
+                        days = 365
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = { event_target:IW_treaty_land_rights_passed = { tag = event_target:IW_french_league_leader } }
+            custom_trigger_tooltip = {
+                tooltip = IW_beat_french_tt
+                has_country_flag = IW_beat_french_flag
+                NOT = {
+                    had_country_flag = {
+                        flag = IW_beat_french_flag
+                        days = 365
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = { event_target:IW_treaty_land_rights_passed = { tag = event_target:IW_iberian_league_leader } }
+            custom_trigger_tooltip = {
+                tooltip = IW_beat_iberians_tt
+                has_country_flag = IW_beat_iberians_flag
+                NOT = {
+                    had_country_flag = {
+                        flag = IW_beat_iberians_flag
+                        days = 365
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = { event_target:IW_treaty_land_rights_passed = { tag = event_target:IW_HRE_league_leader } }
+            custom_trigger_tooltip = {
+                tooltip = IW_beat_HRE_tt
+                has_country_flag = IW_beat_HRE_flag
+                NOT = {
+                    had_country_flag = {
+                        flag = IW_beat_HRE_flag
+                        days = 365
+                    }
+                }
+            }
+        }
+        custom_trigger_tooltip = {
+            tooltip = IW_imposed_treaty
+            check_variable = {
+                which = treatyPoints
+                value = 1
+            }
+        }
+        custom_trigger_tooltip = {
+            tooltip = IW_already_enacted_treaty
+            NOT = { tag = event_target:IW_treaty_land_rights_passed }
+        }
 	}
     effect = {
+        hidden_effect = {
+            if = {
+                limit = { event_target:IW_treaty_land_rights_passed = { tag = event_target:IW_italian_league_leader } }
+                clr_country_flag = IW_beat_italians_flag
+            }
+            if = {
+                limit = { event_target:IW_treaty_land_rights_passed = { tag = event_target:IW_french_league_leader } }
+                clr_country_flag = IW_beat_french_flag
+            }
+            if = {
+                limit = { event_target:IW_treaty_land_rights_passed = { tag = event_target:IW_iberian_league_leader } }
+                clr_country_flag = IW_beat_iberians_flag
+            }
+            if = {
+                limit = { event_target:IW_treaty_land_rights_passed = { tag = event_target:IW_HRE_league_leader } }
+                clr_country_flag = IW_beat_HRE_flag
+            }
+            save_global_event_target_as = IW_treaty_land_rights_passed
+            subtract_variable = {            
+                which = treatyPoints
+                value = 1
+            }
+        }
 	}
     tooltip = IW_treaties_button_3_loc
 }
 custom_button = {
     name = IW_treaties_button_4
-	trigger = { has_country_flag = IW_m_p_t_l_window
+	trigger = {
+        hidden_trigger = { has_country_flag = IW_m_p_t_l_window }
+        if = {
+            limit = { event_target:IW_treaty_impressment_passed = { tag = event_target:IW_italian_league_leader } }
+            custom_trigger_tooltip = {
+                tooltip = IW_beat_italians_tt
+                has_country_flag = IW_beat_italians_flag
+                NOT = {
+                    had_country_flag = {
+                        flag = IW_beat_italians_flag
+                        days = 365
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = { event_target:IW_treaty_impressment_passed = { tag = event_target:IW_french_league_leader } }
+            custom_trigger_tooltip = {
+                tooltip = IW_beat_french_tt
+                has_country_flag = IW_beat_french_flag
+                NOT = {
+                    had_country_flag = {
+                        flag = IW_beat_french_flag
+                        days = 365
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = { event_target:IW_treaty_impressment_passed = { tag = event_target:IW_iberian_league_leader } }
+            custom_trigger_tooltip = {
+                tooltip = IW_beat_iberians_tt
+                has_country_flag = IW_beat_iberians_flag
+                NOT = {
+                    had_country_flag = {
+                        flag = IW_beat_iberians_flag
+                        days = 365
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = { event_target:IW_treaty_impressment_passed = { tag = event_target:IW_HRE_league_leader } }
+            custom_trigger_tooltip = {
+                tooltip = IW_beat_HRE_tt
+                has_country_flag = IW_beat_HRE_flag
+                NOT = {
+                    had_country_flag = {
+                        flag = IW_beat_HRE_flag
+                        days = 365
+                    }
+                }
+            }
+        }
+        custom_trigger_tooltip = {
+            tooltip = IW_imposed_treaty
+            check_variable = {
+                which = treatyPoints
+                value = 1
+            }
+        }
+        custom_trigger_tooltip = {
+            tooltip = IW_already_enacted_treaty
+            NOT = { tag = event_target:IW_treaty_impressment_passed }
+        }
 	}
     effect = {
+        hidden_effect = {
+            if = {
+                limit = { event_target:IW_treaty_impressment_passed = { tag = event_target:IW_italian_league_leader } }
+                clr_country_flag = IW_beat_italians_flag
+            }
+            if = {
+                limit = { event_target:IW_treaty_impressment_passed = { tag = event_target:IW_french_league_leader } }
+                clr_country_flag = IW_beat_french_flag
+            }
+            if = {
+                limit = { event_target:IW_treaty_impressment_passed = { tag = event_target:IW_iberian_league_leader } }
+                clr_country_flag = IW_beat_iberians_flag
+            }
+            if = {
+                limit = { event_target:IW_treaty_impressment_passed = { tag = event_target:IW_HRE_league_leader } }
+                clr_country_flag = IW_beat_HRE_flag
+            }
+            save_global_event_target_as = IW_treaty_impressment_passed
+            subtract_variable = {            
+                which = treatyPoints
+                value = 1
+            }
+        }
 	}
     tooltip = IW_treaties_button_4_loc
 }
 custom_button = {
     name = IW_treaties_button_5
-	trigger = { has_country_flag = IW_m_p_t_l_window
+	trigger = {
+        hidden_trigger = { has_country_flag = IW_m_p_t_l_window }
+        if = {
+            limit = { event_target:IW_treaty_demil_passed = { tag = event_target:IW_italian_league_leader } }
+            custom_trigger_tooltip = {
+                tooltip = IW_beat_italians_tt
+                has_country_flag = IW_beat_italians_flag
+                NOT = {
+                    had_country_flag = {
+                        flag = IW_beat_italians_flag
+                        days = 365
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = { event_target:IW_treaty_demil_passed = { tag = event_target:IW_french_league_leader } }
+            custom_trigger_tooltip = {
+                tooltip = IW_beat_french_tt
+                has_country_flag = IW_beat_french_flag
+                NOT = {
+                    had_country_flag = {
+                        flag = IW_beat_french_flag
+                        days = 365
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = { event_target:IW_treaty_demil_passed = { tag = event_target:IW_iberian_league_leader } }
+            custom_trigger_tooltip = {
+                tooltip = IW_beat_iberians_tt
+                has_country_flag = IW_beat_iberians_flag
+                NOT = {
+                    had_country_flag = {
+                        flag = IW_beat_iberians_flag
+                        days = 365
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = { event_target:IW_treaty_demil_passed = { tag = event_target:IW_HRE_league_leader } }
+            custom_trigger_tooltip = {
+                tooltip = IW_beat_HRE_tt
+                has_country_flag = IW_beat_HRE_flag
+                NOT = {
+                    had_country_flag = {
+                        flag = IW_beat_HRE_flag
+                        days = 365
+                    }
+                }
+            }
+        }
+        custom_trigger_tooltip = {
+            tooltip = IW_imposed_treaty
+            check_variable = {
+                which = treatyPoints
+                value = 1
+            }
+        }
+        custom_trigger_tooltip = {
+            tooltip = IW_already_enacted_treaty
+            NOT = { tag = event_target:IW_treaty_demil_passed }
+        }
 	}
     effect = {
+        hidden_effect = {
+            if = {
+                limit = { event_target:IW_treaty_demil_passed = { tag = event_target:IW_italian_league_leader } }
+                clr_country_flag = IW_beat_italians_flag
+            }
+            if = {
+                limit = { event_target:IW_treaty_demil_passed = { tag = event_target:IW_french_league_leader } }
+                clr_country_flag = IW_beat_french_flag
+            }
+            if = {
+                limit = { event_target:IW_treaty_demil_passed = { tag = event_target:IW_iberian_league_leader } }
+                clr_country_flag = IW_beat_iberians_flag
+            }
+            if = {
+                limit = { event_target:IW_treaty_demil_passed = { tag = event_target:IW_HRE_league_leader } }
+                clr_country_flag = IW_beat_HRE_flag
+            }
+            save_global_event_target_as = IW_treaty_demil_passed
+            subtract_variable = {            
+                which = treatyPoints
+                value = 1
+            }
+        }
 	}
     tooltip = IW_treaties_button_5_loc
 }
@@ -1266,6 +1701,42 @@ custom_icon = {
 custom_button = {
     name = IW_league_top
 	trigger = {
+        if = {
+            limit = { has_country_flag = IW_league_tab_1_flag }
+            event_target:IW_italian_league_leader = {
+                check_variable = {
+                    which = numLeagueMembers
+                    value = 5
+                }
+            }
+        }
+        else_if = {
+            limit = { has_country_flag = IW_league_tab_2_flag }
+            event_target:IW_french_league_leader = {
+                check_variable = {
+                    which = numLeagueMembers
+                    value = 5
+                }
+            }
+        }
+        else_if = {
+            limit = { has_country_flag = IW_league_tab_3_flag }
+            event_target:IW_iberian_league_leader = {
+                check_variable = {
+                    which = numLeagueMembers
+                    value = 5
+                }
+            }
+        }
+        else_if = {
+            limit = { has_country_flag = IW_league_tab_4_flag }
+            event_target:IW_HRE_league_leader = {
+                check_variable = {
+                    which = numLeagueMembers
+                    value = 5
+                }
+            }
+        }
 	}
     effect = {
 	}
@@ -1274,6 +1745,42 @@ custom_button = {
 custom_button = {
     name = IW_league_mid
 	trigger = {
+        if = {
+            limit = { has_country_flag = IW_league_tab_1_flag }
+            event_target:IW_italian_league_leader = {
+                check_variable = {
+                    which = numLeagueMembers
+                    value = 10
+                }
+            }
+        }
+        else_if = {
+            limit = { has_country_flag = IW_league_tab_2_flag }
+            event_target:IW_french_league_leader = {
+                check_variable = {
+                    which = numLeagueMembers
+                    value = 10
+                }
+            }
+        }
+        else_if = {
+            limit = { has_country_flag = IW_league_tab_3_flag }
+            event_target:IW_iberian_league_leader = {
+                check_variable = {
+                    which = numLeagueMembers
+                    value = 10
+                }
+            }
+        }
+        else_if = {
+            limit = { has_country_flag = IW_league_tab_4_flag }
+            event_target:IW_HRE_league_leader = {
+                check_variable = {
+                    which = numLeagueMembers
+                    value = 10
+                }
+            }
+        }
 	}
     effect = {
 	}
@@ -1282,22 +1789,184 @@ custom_button = {
 custom_button = {
     name = IW_league_mid_left
 	trigger = {
+        if = {
+            limit = { has_country_flag = IW_league_tab_1_flag }
+            event_target:IW_italian_league_leader = {
+                check_variable = {
+                    which = numLeagueMembers
+                    value = 15
+                }
+                NOT = { has_country_flag = IW_chose_drafting }
+            }
+        }
+        else_if = {
+            limit = { has_country_flag = IW_league_tab_2_flag }
+            event_target:IW_french_league_leader = {
+                check_variable = {
+                    which = numLeagueMembers
+                    value = 15
+                }
+                NOT = { has_country_flag = IW_chose_drafting }
+            }
+        }
+        else_if = {
+            limit = { has_country_flag = IW_league_tab_3_flag }
+            event_target:IW_iberian_league_leader = {
+                check_variable = {
+                    which = numLeagueMembers
+                    value = 15
+                }
+                NOT = { has_country_flag = IW_chose_drafting }
+            }
+        }
+        else_if = {
+            limit = { has_country_flag = IW_league_tab_4_flag }
+            event_target:IW_HRE_league_leader = {
+                check_variable = {
+                    which = numLeagueMembers
+                    value = 15
+                }
+                NOT = { has_country_flag = IW_chose_drafting }
+            }
+        }
 	}
     effect = {
+        if = {
+            limit = {
+                OR = {
+                    AND = {
+                        has_country_flag = IW_league_tab_1_flag
+                        tag = event_target:IW_italian_league_leader
+                    }
+                    AND = {
+                        has_country_flag = IW_league_tab_2_flag
+                        tag = event_target:IW_french_league_leader
+                    }
+                    AND = {
+                        has_country_flag = IW_league_tab_3_flag
+                        tag = event_target:IW_iberian_league_leader
+                    }
+                    AND = {
+                        has_country_flag = IW_league_tab_4_flag
+                        tag = event_target:IW_HRE_league_leader
+                    }
+                }
+            }
+            set_country_flag = IW_chose_condot
+        }
 	}
     tooltip = IW_league_mid_left_loc
 }
 custom_button = {
     name = IW_league_mid_right
 	trigger = {
+        if = {
+            limit = { has_country_flag = IW_league_tab_1_flag }
+            event_target:IW_italian_league_leader = {
+                check_variable = {
+                    which = numLeagueMembers
+                    value = 15
+                }
+                NOT = { has_country_flag = IW_chose_condot }
+            }
+        }
+        else_if = {
+            limit = { has_country_flag = IW_league_tab_2_flag }
+            event_target:IW_french_league_leader = {
+                check_variable = {
+                    which = numLeagueMembers
+                    value = 15
+                }
+                NOT = { has_country_flag = IW_chose_condot }
+            }
+        }
+        else_if = {
+            limit = { has_country_flag = IW_league_tab_3_flag }
+            event_target:IW_iberian_league_leader = {
+                check_variable = {
+                    which = numLeagueMembers
+                    value = 15
+                }
+                NOT = { has_country_flag = IW_chose_condot }
+            }
+        }
+        else_if = {
+            limit = { has_country_flag = IW_league_tab_4_flag }
+            event_target:IW_HRE_league_leader = {
+                check_variable = {
+                    which = numLeagueMembers
+                    value = 15
+                }
+                NOT = { has_country_flag = IW_chose_condot }
+            }
+        }
 	}
     effect = {
+        if = {
+            limit = {
+                OR = {
+                    AND = {
+                        has_country_flag = IW_league_tab_1_flag
+                        tag = event_target:IW_italian_league_leader
+                    }
+                    AND = {
+                        has_country_flag = IW_league_tab_2_flag
+                        tag = event_target:IW_french_league_leader
+                    }
+                    AND = {
+                        has_country_flag = IW_league_tab_3_flag
+                        tag = event_target:IW_iberian_league_leader
+                    }
+                    AND = {
+                        has_country_flag = IW_league_tab_4_flag
+                        tag = event_target:IW_HRE_league_leader
+                    }
+                }
+            }
+            set_country_flag = IW_chose_drafting
+        }
 	}
     tooltip = IW_league_mid_right_loc
 }
 custom_button = {
     name = IW_league_bottom
 	trigger = {
+        if = {
+            limit = { has_country_flag = IW_league_tab_1_flag }
+            event_target:IW_italian_league_leader = {
+                check_variable = {
+                    which = numLeagueMembers
+                    value = 20
+                }
+            }
+        }
+        else_if = {
+            limit = { has_country_flag = IW_league_tab_2_flag }
+            event_target:IW_french_league_leader = {
+                check_variable = {
+                    which = numLeagueMembers
+                    value = 20
+                }
+            }
+        }
+        else_if = {
+            limit = { has_country_flag = IW_league_tab_3_flag }
+            event_target:IW_iberian_league_leader = {
+                check_variable = {
+                    which = numLeagueMembers
+                    value = 20
+                }
+            }
+        }
+        else_if = {
+            limit = { has_country_flag = IW_league_tab_4_flag }
+            event_target:IW_HRE_league_leader = {
+                check_variable = {
+                    which = numLeagueMembers
+                    value = 20
+                }
+            }
+        }
 	}
     effect = {
 	}
@@ -1306,8 +1975,170 @@ custom_button = {
 custom_button = {
     name = IW_league_overthrow_button
 	trigger = {
+        if = {
+            limit = {
+                has_country_flag = IW_league_tab_1_flag
+                NOT = { tag = event_target:IW_italian_league_leader }
+            }
+            if = {
+                limit = {
+                    has_country_flag = IW_italian_league_member
+                }
+                # overthrow reqs Italian
+                total_development = event_target:IW_italian_league_leader
+            }
+            else_if = {
+                limit = {
+                    OR = {
+                        tag = event_target:IW_iberian_league_leader
+                        tag = event_target:IW_french_league_leader
+                        tag = event_target:IW_HRE_league_leader
+                    }
+                }
+                NOT = { any_country = { is_in_war = { casus_belli = IW_cb_italian_war } } } # declare war req
+            }
+            else = { hidden_trigger = { always = no } }
+        }
+        else_if = {
+            limit = {
+                has_country_flag = IW_league_tab_2_flag
+                NOT = { tag = event_target:IW_french_league_leader }
+            }
+            if = {
+                limit = {
+                    has_country_flag = IW_french_league_member
+                }
+                # overthrow reqs French
+                total_development = event_target:IW_french_league_leader
+            }
+            else_if = {
+                limit = {
+                    OR = {
+                        tag = event_target:IW_iberian_league_leader
+                        tag = event_target:IW_italian_league_leader
+                        tag = event_target:IW_HRE_league_leader
+                    }
+                }
+                NOT = { any_country = { is_in_war = { casus_belli = IW_cb_italian_war } } } # declare war req
+            }
+            else = { hidden_trigger = { always = no } }
+        }
+        else_if = {
+            limit = {
+                has_country_flag = IW_league_tab_3_flag
+                NOT = { tag = event_target:IW_iberian_league_leader }
+            }
+            if = {
+                limit = {
+                    has_country_flag = IW_iberian_league_member
+                }
+                # overthrow reqs Iberian
+                total_development = event_target:IW_iberian_league_leader
+            }
+            else_if = {
+                limit = {
+                    OR = {
+                        tag = event_target:IW_italian_league_leader
+                        tag = event_target:IW_french_league_leader
+                        tag = event_target:IW_HRE_league_leader
+                    }
+                }
+                NOT = { any_country = { is_in_war = { casus_belli = IW_cb_italian_war } } } # declare war req
+            }
+            else = { hidden_trigger = { always = no } }
+        }
+        else_if = {
+            limit = {
+                has_country_flag = IW_league_tab_4_flag
+                NOT = { tag = event_target:IW_HRE_league_leader }
+            }
+            if = {
+                limit = {
+                    has_country_flag = IW_HRE_league_member
+                    OR = {
+                        has_global_flag = IW_HRE_dismantled
+                        event_target:IW_HRE_league_leader = {
+                            OR = {
+                                tag = event_target:IW_italian_league_leader
+                                tag = event_target:IW_iberian_league_leader
+                                tag = event_target:IW_french_league_leader
+                            }
+                        }
+                    }
+                }
+                # overthrow reqs German
+                total_development = event_target:IW_HRE_league_leader
+            }
+            else_if = {
+                limit = {
+                    OR = {
+                        tag = event_target:IW_iberian_league_leader
+                        tag = event_target:IW_french_league_leader
+                        tag = event_target:IW_italian_league_leader
+                    }
+                }
+                NOT = { any_country = { is_in_war = { casus_belli = IW_cb_italian_war } } } # declare war req
+            }
+            else = { hidden_trigger = { always = no } }
+        }
+        else = { hidden_trigger = { always = no } }
+        # else = {
+        #     custom_trigger_tooltip = {
+        #         tooltip = IW_must_be_league_member
+        #         always = no
+        #     }
+        # }
 	}
     effect = {
+        if = {
+            limit = {
+                OR = {
+                    tag = event_target:IW_italian_league_leader
+                    tag = event_target:IW_french_league_leader
+                    tag = event_target:IW_iberian_league_leader
+                    tag = event_target:IW_HRE_league_leader
+                }
+            }
+            if = {
+                limit = {
+                    event_target:IW_italian_league_leader = {
+                        is_part_of_hre = yes
+                        is_emperor = no
+                    }
+                    is_emperor = no
+                    NOT = {
+                        emperor = {
+                            OR = {
+                                is_in_war = { attackers = ROOT }
+                                is_in_war = { defenders = ROOT }
+                            }
+                        }
+                    }
+                }
+                hidden_effect = {
+                    emperor = {
+                        declare_war_with_cb = {
+                            who = ROOT
+                            casus_belli = cb_trade_war
+                        }
+                    }
+                }
+                declare_war_with_cb = {
+                    who = event_target:IW_italian_league_leader
+                    casus_belli = IW_cb_italian_war
+                }
+                hidden_effect = { emperor = { white_peace = ROOT } }
+            }
+            else = {
+                declare_war_with_cb = {
+                    who = event_target:IW_italian_league_leader
+                    casus_belli = IW_cb_italian_war
+                }
+            }
+        }
+        else = {
+            country_event = { id = IW_setup.1000 }
+        }
 	}
     tooltip = IW_league_overthrow_button_loc
 }
@@ -1318,10 +2149,114 @@ custom_icon = {
 }
 custom_button = {
     name = IW_unite_italy_button
-	trigger = {
-	}
+    trigger = {
+        custom_trigger_tooltip = {
+            tooltip = IW_passed_all_treaties_tt
+            tag = event_target:IW_treaty_exclusive_trade_passed
+            tag = event_target:IW_treaty_universities_passed
+            tag = event_target:IW_treaty_land_rights_passed
+            tag = event_target:IW_treaty_impressment_passed
+            tag = event_target:IW_treaty_demil_passed
+        }
+        every_province = {
+            limit = { region = italy_region }
+            owns_or_subject_of = ROOT
+        }
+    }
     effect = {
-	}
+        hidden_effect = {
+            if = {
+                limit = { tag = event_target:IW_italian_league_leader }
+                every_country = {
+                    limit = {
+                        OR = {
+                            has_country_flag = IW_french_league_member
+                            has_country_flag = IW_iberian_league_member
+                            has_country_flag = IW_HRE_league_member
+                        }
+                    }
+                    clr_country_flag = IW_french_league_member
+                    clr_country_flag = IW_iberian_league_member
+                    clr_country_flag = IW_HRE_league_member
+                    grant_independence = yes
+                }
+                clear_global_event_target = IW_french_league_leader
+                clear_global_event_target = IW_iberian_league_leader
+                clear_global_event_target = IW_HRE_league_leader
+            }
+            else_if = {
+                limit = { tag = event_target:IW_french_league_leader }
+                every_country = {
+                    limit = {
+                        OR = {
+                            has_country_flag = IW_italian_league_member
+                            has_country_flag = IW_iberian_league_member
+                            has_country_flag = IW_HRE_league_member
+                        }
+                    }
+                    clr_country_flag = IW_italian_league_member
+                    clr_country_flag = IW_iberian_league_member
+                    clr_country_flag = IW_HRE_league_member
+                    grant_independence = yes
+                }
+                clear_global_event_target = IW_italian_league_leader
+                clear_global_event_target = IW_iberian_league_leader
+                clear_global_event_target = IW_HRE_league_leader
+            }
+            else_if = {
+                limit = { tag = event_target:IW_iberian_league_leader }
+                every_country = {
+                    limit = {
+                        OR = {
+                            has_country_flag = IW_italian_league_member
+                            has_country_flag = IW_french_league_member
+                            has_country_flag = IW_HRE_league_member
+                        }
+                    }
+                    clr_country_flag = IW_italian_league_member
+                    clr_country_flag = IW_french_league_member
+                    clr_country_flag = IW_HRE_league_member
+                    grant_independence = yes
+                }
+                clear_global_event_target = IW_italian_league_leader
+                clear_global_event_target = IW_french_league_leader
+                clear_global_event_target = IW_HRE_league_leader
+            }
+            else_if = {
+                limit = { tag = event_target:IW_HRE_league_leader }
+                every_country = {
+                    limit = {
+                        OR = {
+                            has_country_flag = IW_italian_league_member
+                            has_country_flag = IW_french_league_member
+                            has_country_flag = IW_iberian_league_member
+                        }
+                    }
+                    clr_country_flag = IW_italian_league_member
+                    clr_country_flag = IW_french_league_member
+                    clr_country_flag = IW_iberian_league_member
+                    grant_independence = yes
+                }
+                clear_global_event_target = IW_italian_league_leader
+                clear_global_event_target = IW_french_league_leader
+                clear_global_event_target = IW_iberian_league_leader
+            }
+        }
+        # country_event_with_effect_insight = {
+        #     id = IW_setup.19
+        #     effect = "
+        #         tooltip = {
+        #             118 = { add_province_triggered_modifier = IW_corona_ferrea_modifier }
+        #             custom_tooltip = IW_other_provinces_will_also_receive_this_modifier
+        #         }
+                
+        #         custom_tooltip = \" \"
+                
+        #         custom_tooltip = IW_disband_other_leagues_tt
+        #     "
+        # }
+        country_event = { id = IW_setup.19 }
+    }
     tooltip = IW_unite_italy_button_loc
 }
 custom_icon = {
