@@ -38,7 +38,7 @@
 ## DIPLOACTIONS ##
  invite_into_italian_league: "Invite into League"
  invite_into_italian_league_title: "Invite into League"
- invite_into_italian_league_tooltip: "We will invite them into our League, making them a volunteer subject state."
+ invite_into_italian_league_tooltip: "We will invite them into our League, making them a voluntary subject state."
  invite_into_italian_league_desc: "Do you wish to invite §Y[From.GetName]§! to join your §YLeague§!, turning them into a subject country?\nAs their Overlord you will receive a Call to Arms should they be attacked by foreign powers. They will be able to have independent diplomatic relations with other countries.\n\nIf an §YItalian War§! is started, they will be expected to fight alongside us."
  invite_into_italian_league_alert_tooltip: "An §Yinvitation§! to join their League"
  invite_into_italian_league_dialog: "[This.GetName] wants to invite us into their League, promising to protect us from foreign threats in exchange for a monthly fee."
@@ -64,12 +64,18 @@
 #  ROME_BORDER_DISTANCE_TT: "Distance from Italy"
  WE_ARE_IN_ITALIAN_WAR_TT: "§R- We cannot remove §Y[From.GetName]§! from our League while they are fighting alongside us in an §YItalian War§!!§!"
  FROM_IS_IN_ITALIAN_WAR_TT: "§R- We cannot leave the League of §Y[From.GetName]§! while we are fighting alongside them in an §YItalian War§!!§!"
+ FROM_IS_IN_ITALIAN_WAR_INVITE_TT: "§R- We cannot invite §Y[From.GetName]§! to our League while they are fighting in an §YItalian War§!!§!"
+ IS_IN_ITALIAN_WAR_INVITE_TT: "§R- We cannot invite nations to our League while we are fighting in an §YItalian War§!!§!"
+ FROM_IS_IN_ITALIAN_WAR_JOIN_TT: "§R- We cannot join §Y[From.GetName]§!'s League while they are fighting in an §YItalian War§!!§!"
+ IS_IN_ITALIAN_WAR_JOIN_TT: "§R- We cannot join a League while we are fighting in an §YItalian War§!!§!"
  THEY_ARE_GREAT_POWER_TT: "Is a Great Power"
  THEY_ALREADY_IN_LEAGUE_TT: "Already in another League"
  THEY_IN_LEAGUE_WAR_TT: "Currently fighting in an Italian War"
  NUM_LEAGUE_MEMBERS_10_TT: "Has at least 10 League Members (excluding permanent members)"
  NUM_LEAGUE_MEMBERS_15_TT: "Has at least 15 League Members (excluding permanent members)"
  NUM_LEAGUE_MEMBERS_20_TT: "Has at least 20 League Members (excluding permanent members)"
+ IW_LEAGUE_LEADER_NO_ALLIANCE: "§R- §YLeague§! leaders cannot ally one another.§!"
+ FROM_IS_EMPEROR_TT: "§R- The Holy Roman Emperor would not subject himself to our pathetic coalition.§!"
 
  ###OPINION MODIFIERS###
  IW_left_our_league: "Left our League"
@@ -79,23 +85,24 @@
 
  ###EVENT MODIFIERS###
  IW_defender_of_the_peninsula: "Defender of the Peninsula"
- desc_IW_defender_of_the_peninsula: "In aiding Naples, we have demonstrated our dedication to the cause of the Italic League: Italy shall remian free from foreign influence."
+ desc_IW_defender_of_the_peninsula: "In aiding Naples, we have demonstrated our dedication to the cause of the Italic League: Italy shall remain free from foreign influence."
 
 ### SETUP EVENTS ###
- IW_setup.1.t: "The [IW_former_leader.GetAdjective] League is No More"
+ IW_setup.1.t: "New Leadership in the League of [IW_former_leader.GetName]"
  IW_setup.1.d1: "Threatened by foreign interlopers on all sides, the brave remaining coalition states of the Italic League will require strong leadership to ensure their very survival. The [IW_former_leader.GetAdjective] [IW_former_leader.Monarch.GetTitle] has proven himself to be unworthy of the title, and the member council has called [Root.Monarch.GetName] to assume the role of defender of Italy." # usurping Italian leader
- IW_setup.1.d2: "" # Italian leader died
+ IW_setup.1.d2: "The annexation of [IW_former_leader.GetName] has left a void at the heart of the Italic League. With its former leader absorbed into the fold of a greater power, the League's future now hangs in the balance. To prevent its collapse and safeguard Italian autonomy, its member states have turned their gaze to [Root.GetName], urging it to take up the mantle of leadership. As the new head of the League, [Root.GetName] would wield significant influence—but at a cost.\n\nIn the grand halls of [Root.Capital.GetCapitalName], the ruling council debates the proposal. Accepting leadership would mean shouldering the burden of coordinating disparate interests and defending the League from external threats, all while managing the tensions that have plagued Italian politics for centuries. Turning it down, however, could shatter the fragile alliance, opening the door for outside powers to dominate the peninsula.\n\nThe question is clear: will [Root.GetName] rise to the occasion and unify the League under its guidance, or prioritize its own stability and turn down this daunting responsibility? The future of Italy rests on this decision." # Italian leader died
  IW_setup.1.d3: "The [IW_former_leader.GetAdjective] have failed, against all odds, to reassert Frankish dominance in Italy. Perhaps the memory of Charles d'Anjou would be better served with us at the head of this coalition." # usurping French leader
- IW_setup.1.d4: "The [IW_former_leader.Monarch.GetTitle]s of [IW_former_leader.GetName] [event_target:IW_former_leader.GetName] thought to rally his allies in reclaiming the legacy of Charles d'Anjou, but their hubris was their downfall. Will we be the ones to take up the mantle and continue the fight for Italy?" # French leader died
- IW_setup.1.d5: "" # usurping Iberian leader
- IW_setup.1.d6: "" # Iberian leader died
- IW_setup.1.d7: "" # new HRE emperor
+ IW_setup.1.d4: "The once-mighty Kingdom of [IW_former_leader.GetName], long the leader and symbol of the [GetFrenchLeagueName] League, has fallen into subjugation. The League, formed to protect [GetFrenchLeagueName] interests in the volatile Italian Peninsula, now finds itself adrift, its purpose threatened by the loss of its guiding power. Desperate to maintain its influence and cohesion, the remaining members turn to [Root.GetName], asking it to take up the mantle of leadership.\n\nWithin the courts of [Root.GetName], the gravity of this proposal sparks intense debate. To lead the [GetFrenchLeagueName] League is to inherit its noble mission of safeguarding [GetFrenchLeagueName] interests, but it is also to assume the burdens of diplomacy, military commitment, and the League's fractious politics. Accepting could elevate [Root.GetName] to a position of great prestige, but refusal might doom the League to fragmentation, leaving [GetFrenchLeagueName] ambitions in Italy at the mercy of rival powers.\n\nThe decision now rests in [Root.GetName]'s hands. Will it rise to lead the [GetFrenchLeagueName] League in these uncertain times, or prioritize its own stability and decline the role? The legacy of France and the future of the League depend on this choice." # French leader died The [IW_former_leader.Monarch.GetTitle] of [IW_former_leader.GetName] thought to rally his allies in reclaiming the legacy of Charles d'Anjou, but their hubris was their downfall. Will we be the ones to take up the mantle and continue the fight for Italy?
+ IW_setup.1.d5: "Despite the many riches of Iberia at their disposal, [IW_former_leader.GetName] failed to secure the dynastic legacy of the Iberian houses in Italy. Perhaps we would do better..." # usurping Iberian leader
+ IW_setup.1.d6: "The unexpected annexation of [IW_former_leader.GetName] has sent shockwaves across Iberia. Once the proud leader of the Iberian League—a coalition forged to protect Iberian interests in Italy—[IW_former_leader.GetName]'s downfall has left the League rudderless. With the specter of [IW_french_league_leader.GetAdjective] influence rising in the Mediterranean and the Italic League growing bolder, the remaining members turn to [Root.GetName], urging it to take up the mantle of leadership.\n\nIn the capital of [Root.Capital.GetCapitalName], advisors debate the immense responsibility this position would bring. To accept would mean guiding the League's strategic direction and ensuring the safety of Iberian holdings in Italy. It offers unparalleled prestige and influence, but also significant risk—military entanglements, diplomatic complexities, and the burden of holding together a fractious coalition. Refusal, however, could weaken Iberia's position and leave the League vulnerable to collapse.\n\nAs the deliberations reach their climax, the weight of history presses heavily. Will [Root.GetName] rise to lead and strengthen Iberia's hand in Italy, or step aside, preserving its own stability at the cost of wider influence? The decision will shape not only the League's future but Iberia's destiny." # Iberian leader died
+ IW_setup.1.d7: "The grand halls of the Imperial Diet resound with the echoes of debate and ceremony. The newly-crowned Emperor [Root.Monarch.GetName], vested with the authority of the electors, now faces a pivotal moment. As the gathered princes and dignitaries confirm the Emperor's coronation, a matter of critical importance takes center stage—the confirmation of Imperial leadership over the Imperial League.\n\nFounded to safeguard the Empire's interests in the tumultuous lands of Italy, the League has grown into a vital instrument of Imperial policy. With Italy rife with ambition and foreign powers encroaching ever closer, the League's guidance is more crucial than ever. The assembled Diet looks to the Emperor, their expectations clear: to lead the League as a strong and unifying force, ensuring the Empire's influence over Italy remains undiminished.\n\nAs the Emperor accepts the mantle of leadership, a solemn oath is taken to preserve the unity of the Empire and to uphold its interests in Italy. The Diet applauds, and the Imperial banners are raised high above the chamber. The future of the Holy Roman Empire and its role in Italy now rests in the hands of its newly confirmed leader. Will the Emperor's guidance bring glory, or will the League falter under the weight of its ambitions?" # new HRE emperor
+ IW_setup.1.d8: "The halls of [Root.Capital.GetCapitalName] echo with the urgent deliberations of diplomats and rulers. Formerly known as the Imperial League, the princes determined to pass leadership of what is now known as the 'German' League to one of their own, after the Holy Roman Empire fell under the control of a foreign power. Its mission—to safeguard German interests in Italy—remains vital, even as its leadership falters in the wake of the annexation of its former leader. Now, the League turns to [Root.GetName], urging it to step forward as their new guiding force.\n\nTo take up the mantle of leadership is a heavy responsibility. It offers [Root.GetName] the chance to cement its influence across the Italian Peninsula and wield significant diplomatic and military power. Yet, it also carries risks: the possibility of entanglement in costly wars, the challenge of maintaining unity among the fractious German states, and the weight of standing against foreign powers encroaching on Italian soil.\n\nThe decision is clear but not easy. Will [Root.GetName] rise to lead the German League, ensuring the preservation of German ambitions in Italy, or turn down the role, safeguarding its own stability at the expense of wider influence? The eyes of the League, and the future of German unity, are fixed on this moment."
  IW_setup.1.a: "The [IW_former_leader.GetAdjective] were not worthy of the position"
  IW_setup.1.b: "The trifling matters of the Italians do not concern us"
- IW_setup.1a.tt1: "Take control of Italic League"
- IW_setup.1a.tt2: "Take control of [GetFrenchLeagueName] League"
- IW_setup.1a.tt3: "Take control of Iberian League"
- IW_setup.1a.tt4: "Take control of [GetHRELeagueName] League"
+ IW_setup.1a.tt1: "Take leadership of the §YItalic League§!"
+ IW_setup.1a.tt2: "Take leadership of the §Y[GetFrenchLeagueName] League§!"
+ IW_setup.1a.tt3: "Take leadership of the §YIberian League§!"
+ IW_setup.1a.tt4: "Take leadership of the §Y[GetHRELeagueName] League§!"
 
  IW_setup.2.t: "The [GetFrenchLeagueName] League"
  IW_setup.2.d1: "The court of [Root.GetName] hums with purpose as [Root.Monarch.GetTitle] [Root.Monarch.GetName] prepares to stake his rightful claim to the lands of Italy. For centuries, the legacy of Charles d'Anjou, the House of Valois' ancestor, has been tied to the Kingdom of [NAP.GetName]—a legacy unjustly wrested away and long overdue for restoration. Now, the time has come to fulfill this historic promise, to reclaim the lands that are the rightful inheritance of the French crown.\n\nRecognizing the scope of the campaign, [Root.GetName]'s most skilled diplomats are dispatched across Europe to form a coalition worthy of this grand endeavor. Letters sealed with the royal fleur-de-lis call upon neighboring states and mercenary leaders to join the Valois cause. Allies are promised their share of Italy's immense riches, while the glory of victory is offered as a beacon to rally the ambitious.\n\nThe vision is grand, and the resolve is unwavering. [Root.GetName] shall not be content to merely defend her borders; she will lead a charge that reshapes the destiny of Italy itself. As preparations mount, [Root.Monarch.GetName]'s words echo in the halls of court: "By the grace of God and the rights of our House, we shall see the banners of Valois soar once more over the Italian hills.""
@@ -120,7 +127,7 @@
  IW_setup.5.b: "[IW_iberian_league_leader.GetName]'s claims of grandeur mean little to us"
 
  IW_setup.6.t: "The [GetHRELeagueName] League"
- IW_setup.6.d: "Something something Imperial Lands!"
+ IW_setup.6.d: "The Italian Peninsula is ablaze with war. Foreign forces have descended upon the region, their armies clashing with ambitions to carve out their claims and dominate the fertile lands of Italy. Imperial holdings are under siege, their fortresses threatened by the tide of foreign aggression. The cries for aid echo across the Holy Roman Empire, demanding swift and decisive action.\n\nIn response, the Emperor himself has convened an emergency council, declaring that the Empire cannot stand idle while its lands and allies are consumed by chaos. Diplomats are dispatched to every corner of the Empire, carrying a call to arms and a vision of unity—the creation of an Imperial League. This coalition will rally the Empire's resources to protect its southern territories and confront the invaders with unyielding strength.\n\nThe mission is clear: safeguard the Empire's legacy in Italy and repel the foreign aggressors. But the task is daunting, requiring the cooperation of rival princes, the mobilization of armies, and the will of a divided Empire. The banners of the League must be raised without hesitation, for the survival of the Empire's influence in Italy hangs by a thread. The Emperor's resolve is unshakable—failure is not an option."
  IW_setup.6.a: "The situation in Italy is getting out of hand... time to step in"
  IW_setup.6a.tt: "Form the §Y[GetHRELeagueName] League§! with [Root.GetName] at its head. Nations across Europe will be called to join the cause."
 
@@ -181,6 +188,7 @@
  IW_setup.18.a: "Italy should remain Italian!"
  IW_setup.18.b: "Iberian hegemony in Italy cannot be accepted!"
  IW_setup.18.c: "French hegemony in Italy cannot be accepted!"
+ IW_join_with_iberia: "Our League will intervene in support of the §YIberian League§!"
  IW_setup.18.e: "It's time to embrace our foreign overlords"
  IW_free_for_all_tt: "Our League will declare war on both the §Y[GetFrenchLeagueName]§! and §YIberian§! Leagues"
  IW_abandon_league: "\nWe will yield our leadership and leave the §YItalic League§!"

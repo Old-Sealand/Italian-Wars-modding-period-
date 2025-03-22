@@ -14,7 +14,7 @@ country_event = {
 			event_target:IW_italian_league_leader = {
 				is_in_war = {
 					attacker_leader = event_target:IW_french_league_leader
-					defender_leader = THIS
+					defenders = THIS
 				}
 				NOT = {
 					war_score_against = {
@@ -26,7 +26,7 @@ country_event = {
 			# Italian League is losing in 1st Franco-Iberian war against the Iberian League Leader
 			event_target:IW_italian_league_leader = {
 				is_in_war = {
-					attacker_leader = THIS
+					attackers = THIS
 					defender_leader = event_target:IW_iberian_league_leader
 				}
 				NOT = {
@@ -39,7 +39,7 @@ country_event = {
 			# Italian League is losing in 1st Franco-Iberian war against the French League Leader
 			event_target:IW_italian_league_leader = {
 				is_in_war = {
-					attacker_leader = THIS
+					attackers = THIS
 					defender_leader = event_target:IW_french_league_leader
 				}
 				NOT = {
@@ -61,30 +61,45 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					# Italian League is losing against the French League Leader
-					event_target:IW_italian_league_leader = {
-						is_in_war = {
-							attacker_leader = event_target:IW_french_league_leader
-							defender_leader = THIS
+					OR = {
+						# Italian League is losing against the French League Leader
+						event_target:IW_italian_league_leader = {
+							is_in_war = {
+								attacker_leader = event_target:IW_french_league_leader
+								defenders = THIS
+							}
+							NOT = {
+								war_score_against = {
+									who = event_target:IW_french_league_leader
+									value = -20
+								}
+							}
 						}
-						NOT = {
-							war_score_against = {
-								who = event_target:IW_french_league_leader
-								value = -20
+						# Italian League is losing against the Iberian League Leader
+						event_target:IW_italian_league_leader = {
+							is_in_war = {
+								attacker_leader = event_target:IW_french_league_leader
+								defenders = THIS
+							}
+							NOT = {
+								war_score_against = {
+									who = event_target:IW_french_league_leader
+									value = -20
+								}
 							}
 						}
 					}
 				}
 				join_all_defensive_wars_of = event_target:IW_italian_league_leader
 				every_subject_country = {
-					limit = { is_subject_of_type = IW_league_member }
+					limit = { is_IW_league_subject = yes }
 					country_event = { id = IW_setup.12 }
 				}
 			}
 			else = {
 				join_all_offensive_wars_of = event_target:IW_italian_league_leader
 				every_subject_country = {
-					limit = { is_subject_of_type = IW_league_member }
+					limit = { is_IW_league_subject = yes }
 					country_event = { id = IW_setup.11 }
 				}
 			}
@@ -100,7 +115,7 @@ country_event = {
 		hidden_effect = {
 			join_all_offensive_wars_of = event_target:IW_french_league_leader
 			every_subject_country = {
-				limit = { is_subject_of_type = IW_league_member }
+				limit = { is_IW_league_subject = yes }
 				join_all_offensive_wars_of = event_target:IW_french_league_leader
 			}			
 		}
@@ -487,14 +502,14 @@ country_event = {
 			event_target:IW_french_league_leader = {
 				save_event_target_as = IW_defender
 				every_subject_country = {
-					limit = { is_subject_of_type = IW_league_member }
+					limit = { is_IW_league_subject = yes }
 					country_event = { id = IW_setup.12 }
 					# join_all_defensive_wars_of = FROM
 				}
 			}
 			save_event_target_as = IW_attacker
 			every_subject_country = {
-				limit = { is_subject_of_type = IW_league_member }
+				limit = { is_IW_league_subject = yes }
 				country_event = { id = IW_setup.11 }
 				# join_all_offensive_wars_of = ROOT
 			}

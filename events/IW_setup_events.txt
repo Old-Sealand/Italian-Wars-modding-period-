@@ -50,10 +50,13 @@ country_event = {
 	}
 
 	desc = { # new HRE emperor
-		trigger = {
-			is_emperor = yes
-		}
+		trigger = { is_emperor = yes }
 		desc = IW_setup.1.d7
+	}
+
+	desc = { # new leader of German league
+		trigger = { IW_german_leader_died = yes }
+		desc = IW_setup.1.d8
 	}
 	
 	trigger = {
@@ -65,13 +68,57 @@ country_event = {
 				is_emperor = yes
 				has_saved_global_event_target = IW_HRE_league_leader
 				event_target:IW_HRE_league_leader = { is_emperor = no }
+				NOT = { tag = event_target:IW_italian_league_leader }
+				NOT = { tag = event_target:IW_french_league_leader }
+				NOT = { tag = event_target:IW_iberian_league_leader }
 			}
+			IW_german_leader_died = yes
 		}
 		# OR = { # When league leader ceases to exist, selects new league leader as highest dev nation in region which is not a member of another league
 		# 	FROM = { tag = event_target:IW_italian_league_leader }
 		# 	FROM = { tag = event_target:IW_french_league_leader }
 		# 	FROM = { tag = event_target:IW_iberian_league_leader }
 		# }
+	}
+
+	immediate = { # save event target for localisation
+		if = {
+			limit = {
+				OR = {
+					overlord = { tag = event_target:IW_italian_league_leader }
+					IW_italian_leader_died = yes
+				}
+			}
+			event_target:IW_italian_league_leader = { save_event_target_as = IW_former_leader }
+		}
+		else_if = {
+			limit = {
+				OR = {
+					overlord = { tag = event_target:IW_french_league_leader }
+					IW_french_leader_died = yes
+				}
+			}
+			event_target:IW_french_league_leader = { save_event_target_as = IW_former_leader }
+		}
+		else_if = {
+			limit = {
+				OR = {
+					overlord = { tag = event_target:IW_iberian_league_leader }
+					IW_iberian_leader_died = yes
+				}
+			}
+			event_target:IW_iberian_league_leader = { save_event_target_as = IW_former_leader }
+		}
+		else_if = {
+			limit = {
+				OR = {
+					overlord = { tag = event_target:IW_HRE_league_leader }
+					is_emperor = yes
+					IW_german_leader_died = yes
+				}
+			}
+			event_target:IW_HRE_league_leader = { save_event_target_as = IW_former_leader }
+		}
 	}
 	
 	option = {
@@ -103,7 +150,7 @@ country_event = {
 					}
 				}
 				grant_independence = yes
-				event_target:IW_italian_league_leader = { save_event_target_as = IW_former_leader }
+				# event_target:IW_italian_league_leader = { save_event_target_as = IW_former_leader }
 				clear_global_event_target = IW_italian_league_leader
 				save_global_event_target_as = IW_italian_league_leader
 				#Vassalize all of the league members
@@ -152,7 +199,7 @@ country_event = {
 					}
 				}
 				grant_independence = yes
-				event_target:IW_french_league_leader = { save_event_target_as = IW_former_leader }
+				# event_target:IW_french_league_leader = { save_event_target_as = IW_former_leader }
 				clear_global_event_target = IW_french_league_leader
 				save_global_event_target_as = IW_french_league_leader
 				#Vassalize all of the league members
@@ -194,7 +241,7 @@ country_event = {
 					}
 				}
 				grant_independence = yes
-				event_target:IW_iberian_league_leader = { save_event_target_as = IW_former_leader }
+				# event_target:IW_iberian_league_leader = { save_event_target_as = IW_former_leader }
 				clear_global_event_target = IW_iberian_league_leader
 				save_global_event_target_as = IW_iberian_league_leader
 				#Vassalize all of the league members
@@ -222,6 +269,7 @@ country_event = {
 				OR = {
 					overlord = { tag = event_target:IW_HRE_league_leader }
 					is_emperor = yes
+					IW_german_leader_died = yes
 				}
 			}
 			hidden_effect = {
@@ -236,7 +284,7 @@ country_event = {
 					}
 				}
 				grant_independence = yes
-				event_target:IW_HRE_league_leader = { save_event_target_as = IW_former_leader }
+				# event_target:IW_HRE_league_leader = { save_event_target_as = IW_former_leader }
 				clear_global_event_target = IW_HRE_league_leader
 				save_global_event_target_as = IW_HRE_league_leader
 				#Vassalize all of the league members
@@ -302,7 +350,13 @@ country_event = {
 
 	desc = { # Angevins
 		trigger = {
-			has_country_flag = eng_took_ave_branch
+			OR = {
+				has_country_flag = eng_took_ave_branch
+				AND = {
+					NOT = { has_dlc = "Domination" }
+					tag = ENG
+				}
+			}
 		}
 		desc = IW_setup.2.d2
 	}
@@ -322,8 +376,15 @@ country_event = {
 			days = 365
 		}
 		OR = {
-			is_year = 1460
+			is_year = 1470 # contingency
 			ARA = { has_country_flag = alfonso_died_yes_really }
+			NAP = { # in case Iberian wedding happens before succession
+				is_subject_of_type_with_overlord = {
+					who = CAS
+					type = personal_union
+				}
+			}
+			NAP = { is_subject = no }
 		}
 		is_at_war = no
 		# if = {
@@ -347,7 +408,13 @@ country_event = {
 				# }
 			}
 			AND = {
-				has_country_flag = eng_took_ave_branch
+				OR = {
+					has_country_flag = eng_took_ave_branch
+					AND = {
+						NOT = { has_dlc = "Domination" }
+						tag = ENG
+					}
+				}
 				# FRA = {
 				# 	is_subject_of_type_with_overlord = {
 				# 		who = ROOT
@@ -364,13 +431,13 @@ country_event = {
 				FRA = { NOT = { is_free_or_tributary_trigger = yes } }
 				NOT = {
 					any_country = {
-						has_country_flag = eng_took_ave_branch
-						# FRA = {
-						# 	is_subject_of_type_with_overlord = {
-						# 		who = ROOT
-						# 		type = personal_union
-						# 	}
-						# }
+						OR = {
+							has_country_flag = eng_took_ave_branch
+							AND = {
+								NOT = { has_dlc = "Domination" }
+								tag = ENG
+							}
+						}
 						183 = {
 							country_or_non_sovereign_subject_holds = PREV
 						}
@@ -448,6 +515,10 @@ country_event = {
 					OR = {
 						is_subject_of_type_with_overlord = {
 							who = ARA
+							type = personal_union
+						}
+						is_subject_of_type_with_overlord = {
+							who = CAS
 							type = personal_union
 						}
 						is_subject_of_type_with_overlord = {
@@ -606,9 +677,15 @@ country_event = {
 		OR = {
 			ARA = { has_country_flag = alfonso_died_yes_really }
 			NAP = { is_free_or_tributary_trigger = yes }
+			NAP = { # in case Iberian wedding happens before succession
+				is_subject_of_type_with_overlord = {
+					who = CAS
+					type = personal_union
+				}
+			}
 		}
 		has_saved_global_event_target = IW_french_league_leader
-		is_at_war = no
+		# is_at_war = no this trigger can mess up timing with the 1st league war
 		# if = {
 		# 	limit = { FRA = { is_free_or_tributary_trigger = yes } }
 		# 	tag = FRA
@@ -815,18 +892,46 @@ country_event = {
 			has_saved_global_event_target = IW_french_league_leader
 			has_saved_global_event_target = IW_iberian_league_leader
 		}
-		is_at_war = no
+		# is_at_war = no
 		is_emperor = yes
-		# Italian League is losing against the French League Leader
-		event_target:IW_italian_league_leader = {
-			is_in_war = {
-				attacker_leader = event_target:IW_french_league_leader
-				defender_leader = THIS
+		OR = {
+			# Italian League is losing against the French League Leader
+			event_target:IW_italian_league_leader = {
+				is_in_war = {
+					attacker_leader = event_target:IW_french_league_leader
+					defender_leader = THIS
+				}
+				NOT = {
+					war_score_against = {
+						who = event_target:IW_french_league_leader
+						value = -50
+					}
+				}
 			}
-			NOT = {
-				war_score_against = {
-					who = event_target:IW_french_league_leader
-					value = -50
+			# Italian League is losing against the French League Leader (offensive)
+			event_target:IW_italian_league_leader = {
+				is_in_war = {
+					attacker_leader = THIS
+					defender_leader = event_target:IW_french_league_leader
+				}
+				NOT = {
+					war_score_against = {
+						who = event_target:IW_french_league_leader
+						value = -50
+					}
+				}
+			}
+			# Italian League is losing against the Iberian League Leader (offensive)
+			event_target:IW_italian_league_leader = {
+				is_in_war = {
+					attacker_leader = THIS
+					defender_leader = event_target:IW_iberian_league_leader
+				}
+				NOT = {
+					war_score_against = {
+						who = event_target:IW_iberian_league_leader
+						value = -50
+					}
 				}
 			}
 		}
@@ -1717,7 +1822,7 @@ country_event = {
 		ai_chance = {
 			factor = 1
 		}
-		custom_tooltip = IW_join_against_france
+		custom_tooltip = IW_join_with_iberia
 		hidden_effect = {
 			join_all_defensive_wars_of = event_target:IW_iberian_league_leader
 			every_subject_country = {

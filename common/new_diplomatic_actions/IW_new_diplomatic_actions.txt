@@ -56,13 +56,40 @@ invite_into_italian_league = {
 		# 		FROM = { is_at_war = no }
 		# 	}
 		# }
-		if = { # Added back. Remove if figure out how to allow turncoat
+		# if = { # Added back. Remove if figure out how to allow turncoat // removed in favor of Italian War trigger
+		# 	limit = {
+		# 		is_at_war = yes
+		# 	}
+		# 	custom_trigger_tooltip = {
+		# 		tooltip = ROOT_IS_AT_WAR_TT
+		# 		is_at_war = no
+		# 	}
+		# }
+		if = {
 			limit = {
-				is_at_war = yes
+				FROM = { is_in_war = { casus_belli = IW_cb_italian_war } }
 			}
 			custom_trigger_tooltip = {
-				tooltip = ROOT_IS_AT_WAR_TT
-				is_at_war = no
+				tooltip = FROM_IS_IN_ITALIAN_WAR_INVITE_TT
+				FROM = { NOT = { is_in_war = { casus_belli = IW_cb_italian_war } } }
+			}
+		}
+		if = {
+			limit = {
+				is_in_war = { casus_belli = IW_cb_italian_war }
+			}
+			custom_trigger_tooltip = {
+				tooltip = IS_IN_ITALIAN_WAR_INVITE_TT
+				NOT = { is_in_war = { casus_belli = IW_cb_italian_war } }
+			}
+		}
+		if = {
+			limit = {
+				FROM = { is_emperor = yes }
+			}
+			custom_trigger_tooltip = {
+				tooltip = FROM_IS_EMPEROR_TT
+				FROM = { NOT = { is_emperor = yes } }
 			}
 		}
 		# if = {
@@ -693,6 +720,7 @@ join_italian_league = {
 				tag = event_target:IW_french_league_leader
 				tag = event_target:IW_iberian_league_leader
 				tag = event_target:IW_HRE_league_leader
+				is_emperor = yes
 			}
 		}
 		# is_subject = no
@@ -729,13 +757,31 @@ join_italian_league = {
 		# 		FROM = { is_at_war = no }
 		# 	}
 		# }
-		if = { # Added back. Remove if figure out how to allow turncoat
+		# if = { # Added back. Remove if figure out how to allow turncoat
+		# 	limit = {
+		# 		is_at_war = yes
+		# 	}
+		# 	custom_trigger_tooltip = {
+		# 		tooltip = ROOT_IS_AT_WAR_TT
+		# 		is_at_war = no
+		# 	}
+		# }
+		if = {
 			limit = {
-				is_at_war = yes
+				FROM = { is_in_war = { casus_belli = IW_cb_italian_war } }
 			}
 			custom_trigger_tooltip = {
-				tooltip = ROOT_IS_AT_WAR_TT
-				is_at_war = no
+				tooltip = FROM_IS_IN_ITALIAN_WAR_JOIN_TT
+				FROM = { NOT = { is_in_war = { casus_belli = IW_cb_italian_war } } }
+			}
+		}
+		if = {
+			limit = {
+				is_in_war = { casus_belli = IW_cb_italian_war }
+			}
+			custom_trigger_tooltip = {
+				tooltip = IS_IN_ITALIAN_WAR_JOIN_TT
+				NOT = { is_in_war = { casus_belli = IW_cb_italian_war } }
 			}
 		}
 		# if = {

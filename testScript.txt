@@ -72,4 +72,6 @@
 # 	casus_belli = IW_cb_italian_war
 # }
 
-FRA = { country_event = { id = IW_setup.2 } }
+# FRA = { country_event = { id = IW_setup.2 } }
+
+clr_country_flag = IW_province_35_cooldown_flag

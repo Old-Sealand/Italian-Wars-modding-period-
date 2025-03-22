@@ -174,3 +174,66 @@ IW_iberian_leader_died = {
 		}
 	}
 }
+
+IW_german_leader_died = {
+	AND = { # for German league
+		has_saved_global_event_target = IW_HRE_league_leader
+		OR = {
+			has_global_flag = IW_HRE_dismantled
+			emperor = {
+				OR = {
+					tag = event_target:IW_italian_league_leader
+					tag = event_target:IW_french_league_leader
+					tag = event_target:IW_iberian_league_leader
+				}
+			}
+		}
+		OR = {
+			NOT = { event_target:IW_HRE_league_leader = { num_of_cities = 1 } }
+			NOT = { event_target:IW_HRE_league_leader = { is_free_or_tributary_trigger = yes } }
+		}
+		capital_scope = {
+			OR = {
+				region = north_german_region
+				region = south_german_region
+			}
+		}
+		is_free_or_tributary_trigger = yes
+		OR = {
+			NOT = { has_country_flag = IW_declined_league_leadership }
+			had_country_flag = {
+				flag = IW_declined_league_leadership
+				days = 30
+			}
+		}
+		NOT = {
+			any_country = {
+				capital_scope = {
+					OR = {
+						region = north_german_region
+						region = south_german_region
+					}
+				}
+				total_development = ROOT
+				is_free_or_tributary_trigger = yes
+				NOT = {
+					OR = {
+						has_country_flag = IW_italian_league_member
+						has_country_flag = IW_french_league_member
+						has_country_flag = IW_iberian_league_member
+					}
+				}
+
+
+				OR = {
+					NOT = { has_country_flag = IW_declined_league_leadership }
+					had_country_flag = {
+						flag = IW_declined_league_leadership
+						days = 30
+					}
+				}
+				NOT = { tag = ROOT }
+			}
+		}
+	}
+}
