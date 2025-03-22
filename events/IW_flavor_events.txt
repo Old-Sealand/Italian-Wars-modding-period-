@@ -770,7 +770,7 @@ country_event = {
 	}
 	
 	option = {
-		name = iw_events.1.a
+		name = IW_flavor.13.a
 
         event_target:IW_french_league_leader = {
             set_country_flag = iw_unlocked_ottoman_volunteers_merc_company_flag
@@ -780,10 +780,10 @@ country_event = {
 	}
 
     option = {
-		name = iw_events.1.b
+		name = IW_flavor.13.b
 
         transfer_treasury = {
-			custom_tooltip = iw_events.2.b.tt
+			custom_tooltip = IW_flavor.13.b.tt
 			giver = ROOT
 			taker = FRA
 			variable = money_to_transfer
@@ -791,7 +791,7 @@ country_event = {
 	}
 
     option = {
-		name = iw_events.1.c
+		name = IW_flavor.13.c
 
         add_prestige_or_monarch_power = { amount = 5 }
 	}
@@ -799,9 +799,9 @@ country_event = {
 
 #French Pressure on Florence
 country_event = {
-	id = iw_events.1000
-	title = iw_events.1000.t
-	desc = iw_events.1000.d
+	id = IW_flavor.14
+	title = IW_flavor.14.t
+	desc = IW_flavor.14.d
 	picture = BORDER_TENSION_eventPicture
 
 	fire_only_once = yes
@@ -809,14 +809,15 @@ country_event = {
     major = yes
 
 	trigger = {
-        has_global_flag = iw_started_flag
-        tag = FRA
+        tag = event_target:IW_french_league_leader
         OR = {
             exists = TUS
             exists = LAN
         }
-        exists = FRA
-        #Trigger for France to be a leader of a league
+		NOT = { war_with = TUS }
+		NOT = { war_with = LAN }
+		NOT = { TUS = { has_country_flag = IW_french_league_member } }
+		NOT = { LAN = { has_country_flag = IW_french_league_member } }
 	}
 
 	mean_time_to_happen = {
@@ -845,20 +846,20 @@ country_event = {
     }
 	
 	option = {
-		name = iw_events.1000.a
+		name = IW_flavor.14.a
         
         custom_tooltip = iw_request_florence_to_join_our_league_tt
         hidden_effect = {
-            country_event = { id = iw_events.1001 }
+            country_event = { id = IW_flavor.15 }
         }
 	}
 
     option = {
-		name = iw_events.1000.b
+		name = IW_flavor.14.b
         
         add_casus_belli = {
             target = event_target:florence_nation
-            type = cb_vassalize
+            type = cb_vassalize_mission
             months = 120
         }
 	}
@@ -866,22 +867,29 @@ country_event = {
 
 #French Pressure on Florence
 country_event = {
-	id = iw_events.1001
-	title = iw_events.1001.t
-	desc = iw_events.1001.d
+	id = IW_flavor.15
+	title = IW_flavor.15.t
+	desc = IW_flavor.15.d
 	picture = BORDER_TENSION_eventPicture
 
 	fire_only_once = yes
     is_triggered_only = yes
-
-	mean_time_to_happen = {
-		months = 120
-	}
 	
 	option = {
-		name = iw_events.1001.a
-        
-        #Florence joins French league
+		name = IW_flavor.15.a
+        custom_tooltip = iw_join_french_league
+        hidden_effect = {
+			set_country_flag = IW_french_league_member
+			clr_country_flag = IW_italian_league_member
+			clr_country_flag = IW_iberian_league_member
+			clr_country_flag = IW_HRE_league_member
+			event_target:IW_italian_league_leader = {
+				create_subject = {
+					subject_type = IW_league_member
+					subject = ROOT
+				}
+			}
+		}
 
         add_opinion = {
             who = from
@@ -894,7 +902,7 @@ country_event = {
 	}
 
     option = {
-		name = iw_events.1001.b
+		name = IW_flavor.15.b
         
         add_prestige_or_monarch_power = { amount = 5 }
 
@@ -911,10 +919,10 @@ country_event = {
 
 #Crowning of Maximilian I
 country_event = {
-	id = iw_events.1100
-	title = iw_events.1100.t
-	desc = iw_events.1100.d
-	picture = BORDER_TENSION_eventPicture
+	id = IW_flavor.16
+	title = IW_flavor.16.t
+	desc = IW_flavor.16.d
+	picture = HRE_eventPicture
 
 	fire_only_once = yes
 
@@ -930,7 +938,7 @@ country_event = {
 	}
 	
 	option = {
-		name = iw_events.1100.a
+		name = IW_flavor.16.a
 
         add_imperial_influence = 5
         add_prestige_or_monarch_power = { amount = 10 }
@@ -938,17 +946,17 @@ country_event = {
 	}
 
     option = {
-		name = iw_events.1100.b
+		name = IW_flavor.16.b
 
-        PAP = { country_event = { id = iw_events.1101 } }
+        PAP = { country_event = { id = IW_flavor.17 } }
 	}
 }
 
 country_event = {
-	id = iw_events.1101
-	title = iw_events.1101.t
-	desc = iw_events.1101.d
-	picture = BORDER_TENSION_eventPicture
+	id = IW_flavor.17
+	title = IW_flavor.17.t
+	desc = IW_flavor.17.d
+	picture = HRE_eventPicture
 
 	fire_only_once = yes
     is_triggered_only = yes
@@ -958,7 +966,7 @@ country_event = {
     }
 	
 	option = {
-		name = iw_events.1101.a
+		name = IW_flavor.17.a
 
         from = {
             add_imperial_influence = 10
@@ -977,7 +985,7 @@ country_event = {
 	}
 
     option = {
-		name = iw_events.1101.b
+		name = IW_flavor.17.b
 
         from = {
             add_imperial_influence = -5

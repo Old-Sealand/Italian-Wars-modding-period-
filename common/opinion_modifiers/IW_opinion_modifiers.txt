@@ -54,3 +54,23 @@ IW_unreasonable_authority = {
 	opinion = -25
 	yearly_decay = 1		
 }
+
+joined_our_league = {
+	opinion = 25
+	yearly_decay = 2		
+}
+
+rejected_joining_french_league = {
+	opinion = -50
+	yearly_decay = 1		
+}
+
+crowned_by_pope = {
+	opinion = 50
+	yearly_decay = 2		
+}
+
+rejected_crowning = {
+	opinion = -50
+	yearly_decay = 2
+}

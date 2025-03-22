@@ -1,0 +1,15 @@
+merc_ottoman_volunteers = {
+    regiments_per_development = 0.1
+	cavalry_weight = 0.4
+	mercenary_desc_key = FREE_OF_FORCELIMIT_COST
+	cost_modifier = 0.5
+	counts_towards_force_limit = no
+    trigger = {
+		is_allowed_to_recruit_mercenaries = yes
+		has_country_flag = iw_unlocked_ottoman_volunteers_merc_company_flag
+	}
+	modifier = { 
+		infantry_fire = 1
+        infantry_power = 0.15
+	}
+}
