@@ -208,3 +208,11 @@
  IW_setup.18.e: "It's time to embrace our foreign overlords"
  IW_free_for_all_tt: "Our League will declare war on both the §Y[GetFrenchLeagueName]§! and §YIberian§! Leagues"
  IW_abandon_league: "\nWe will yield our leadership and leave the §YItalic League§!"
+
+ ###GUI###
+ IW_treaties_button_1_loc: "Solidify the League's dominance over Italian trade, granting its members exclusive rights to all major markets and ports across the peninsula.\n--------------\n§YLeague Members§! gain:\nMerchants: §G+1§!\n\n§YNon-member States in Italy§! gain:\nGlobal Trade Power: §R-10.0%§!"
+ IW_treaties_button_2_loc: "Mandate the dissolution of universities in all non-member Italian states, consolidating higher education exclusively within the League.\n--------------\n§YLeague Members§! gain:\nTechnology Cost: §G-5.0%§!\n\n§YNon-member States in Italy§! gain:\nInstitution Spread: §R-20.0%§!"
+ IW_treaties_button_3_loc: "Force the nobility of non-member Italian states to renounce their titles and surrender claims to the holdings of League members.\n--------------\n§YLeague Members§! gain:\nCore-Creation Cost: §G-10.0%§!\nHostile Core-Creation Cost: §G+10.0%§!"
+ IW_treaties_button_4_loc: "Compel non-member Italian states to provide able-bodied men for impressment into the League's fleet.\n--------------\n§YLeague Members§! gain:\nNational Sailors Modifier: §G+20.0%§!\n\n§YNon-member States in Italy§! gain:\nSailor Recovery Speed: §R-10.0%§!"
+ IW_treaties_button_5_loc: "Compel non-member Italian states to dismantle a fraction of their their armed forces and fortifications.\n--------------\n§YLeague Members§! gain:\nRegiment Drill Loss: §G-20.0%§!\n\n§YNon-member States in Italy§! gain:\nRegiment Costs: §R+5.0%§!"
+ IW_passed_all_treaties_tt: "Has passed all 5 §YItalian Treaties§!"

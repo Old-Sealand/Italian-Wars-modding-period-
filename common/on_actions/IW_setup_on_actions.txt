@@ -100,7 +100,12 @@ on_dependency_gained = {
 	# IW map:
 	set_IW_on_dependency_gained = yes
 	if = {
-		limit = { FROM = { is_IW_league_subject = yes } }
+		limit = {
+			FROM = {
+				is_IW_league_subject = yes
+				NOT = { has_country_flag = IW_dont_increase_variable }
+			}
+	}
 		change_variable = {
 			which = numLeagueMembers
 			value = 1

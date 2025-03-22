@@ -60,7 +60,7 @@
 # if = {
 # 	limit = {
 # 		# 118 = { owned_by_subject_of = LAN }
-# 		check_variable = { which = numLeagueMembers value = 5 }
+# 		check_variable = { which = numLeagueMembers value = 8 }
 # 		# IW_league_member = 10
 # 		# has_country_flag = IW_italian_league_member
 # 	}
@@ -77,3 +77,29 @@
 # clr_country_flag = IW_province_35_cooldown_flag
 
 # set_country_flag = IW_chose_drafting
+
+# ENG = {
+# 	declare_war_with_cb = {
+# 		who = event_target:IW_italian_league_leader
+# 		casus_belli = IW_cb_italian_war
+# 	}
+# }
+
+# declare_war_with_cb = {
+# 	who = event_target:IW_italian_league_leader
+# 	casus_belli = IW_cb_italian_war
+# }
+# white_peace = event_target:IW_italian_league_leader
+# LAN = { white_peace = HAB }
+
+emperor = {
+	declare_war_with_cb = {
+		who = ENG
+		casus_belli = cb_trade_war
+	}
+}
+declare_war_with_cb = {
+	who = event_target:IW_italian_league_leader
+	casus_belli = IW_cb_italian_war
+}
+emperor = { white_peace = ROOT }
