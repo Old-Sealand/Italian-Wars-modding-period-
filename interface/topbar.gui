@@ -1346,6 +1346,8 @@ guiTypes = {
 						name = "IW_league_overthrow_button"
 						position = { x=12 y = 404}
 						quadTextureSprite ="GFX_IW_league_overthrow_button"
+						buttonText = "IW_league_overthrow_button"
+						buttonFont = "vic_18"
 						scripted = yes
 					}
 				}
