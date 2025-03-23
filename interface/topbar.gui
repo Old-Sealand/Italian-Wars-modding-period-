@@ -741,6 +741,8 @@ guiTypes = {
 				quadTextureSprite ="GFX_IW_m_p_t_l_open_close_button"
 				scripted = yes
 				clicksound = EU4NummerET
+				shortcut = "ESCAPE"
+				clicksound = close_window
 				Orientation = "UPPER_LEFT"
 		}
 		windowType = {
@@ -752,7 +754,6 @@ guiTypes = {
 			dontRender = ""
 			horizontalBorder = ""
 			Orientation = "CENTER"
-			upsound = hre
 			downsound = ""
 			scripted = yes
 			
