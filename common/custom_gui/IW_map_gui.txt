@@ -1629,10 +1629,10 @@ custom_icon = {
 custom_shield = {
     name = IW_league_tab_1_shield
     trigger = {
-		has_saved_global_event_target = IW_italian_league_leader
+        hidden_trigger = { has_saved_global_event_target = IW_italian_league_leader }
 	}
     effect = {
-		set_IW_league_tab_flag = { number = 1 member = italian }
+        set_IW_league_tab_flag = { number = 1 member = italian }
 	}
     global_event_target = IW_italian_league_leader
     open_country = no
@@ -1644,7 +1644,7 @@ custom_icon = {
 custom_shield = {
     name = IW_league_tab_2_shield
     trigger = {
-		has_saved_global_event_target = IW_french_league_leader
+        hidden_trigger = { has_saved_global_event_target = IW_french_league_leader }
 	}
     effect = {
 		set_IW_league_tab_flag = { number = 2 member = french }
@@ -1659,7 +1659,7 @@ custom_icon = {
 custom_shield = {
     name = IW_league_tab_3_shield
     trigger = {
-		has_saved_global_event_target = IW_iberian_league_leader
+        hidden_trigger = { has_saved_global_event_target = IW_iberian_league_leader }
 	}
     effect = {
 		set_IW_league_tab_flag = { number = 3 member = iberian }
@@ -1674,7 +1674,7 @@ custom_icon = {
 custom_shield = {
     name = IW_league_tab_4_shield
     trigger = {
-		has_saved_global_event_target = IW_HRE_league_leader
+        hidden_trigger = { has_saved_global_event_target = IW_HRE_league_leader }
 	}
     effect = {
 		set_IW_league_tab_flag = { number = 4 member = HRE }
@@ -1705,7 +1705,7 @@ custom_shield = {
     potential = {
 		has_country_flag = IW_league_tab_1_flag
 	}
-    tooltip = IW_league_1_shield_loc
+    # tooltip = IW_league_1_shield_loc
     global_event_target = IW_italian_league_leader
     open_country = yes
 }
@@ -1714,7 +1714,7 @@ custom_shield = {
     potential = {
 		has_country_flag = IW_league_tab_2_flag
 	}
-    tooltip = IW_league_2_shield_loc
+    # tooltip = IW_league_2_shield_loc
     global_event_target = IW_french_league_leader
     open_country = yes
 }
@@ -1723,7 +1723,7 @@ custom_shield = {
     potential = {
 		has_country_flag = IW_league_tab_3_flag
 	}
-    tooltip = IW_league_3_shield_loc
+    # tooltip = IW_league_3_shield_loc
     global_event_target = IW_iberian_league_leader
     open_country = yes
 }
@@ -1732,7 +1732,7 @@ custom_shield = {
     potential = {
 		has_country_flag = IW_league_tab_4_flag
 	}
-    tooltip = IW_league_4_shield_loc
+    # tooltip = IW_league_4_shield_loc
     global_event_target = IW_HRE_league_leader
     open_country = yes
 }

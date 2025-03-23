@@ -114,7 +114,7 @@ save_global_event_target_as = IW_treaty_land_rights_passed
 save_global_event_target_as = IW_treaty_impressment_passed
 save_global_event_target_as = IW_treaty_demil_passed
 
-        every_province = {
-            limit = { region = italy_region }
-			cede_province = ROOT
-        }
+        # every_province = {
+        #     limit = { region = italy_region }
+		# 	cede_province = ROOT
+        # }
