@@ -1700,6 +1700,7 @@ country_event = {
 			factor = 1
 		}
 
+		set_global_flag = IW_league_wars_have_begun_flag
 		if = {
 			limit = {
 				has_saved_global_event_target = IW_iberian_league_leader

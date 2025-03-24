@@ -820,6 +820,8 @@ country_event = {
 		NOT = { war_with = LAN }
 		NOT = { TUS = { has_country_flag = IW_french_league_member } }
 		NOT = { LAN = { has_country_flag = IW_french_league_member } }
+		NOT = { TUS = { tag = event_target:IW_italian_league_leader } }
+		NOT = { LAN = { tag = event_target:IW_italian_league_leader } }
 	}
 
 	mean_time_to_happen = {

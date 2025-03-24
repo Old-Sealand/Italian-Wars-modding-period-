@@ -37,7 +37,7 @@
  IW_cb_italian_war: "Italian War"
  IW_cb_italian_war_desc: "Let us assert our hegemony over the peninsula.\n§RALL §YLeague Members§! on BOTH sides will be called into the war!§!"
  ITALIAN_WAR_WAR_NAME: "$ORDER$Italian War"
- IW_cb_italian_war_peace_tooltip: "§RParticipants in an Italian War cannot sign a separate peace.§!"
+ IW_cb_italian_war_peace_tooltip: "§RLeague Members in an Italian War cannot sign a separate peace.§!"
  IW_peace_of_lodi_tooltip: "§RMembers of the Italic League cannot attack each other, as long as the Treaty of Lodi is in place.§!"
  superiority_italian_war_desc: "War goal is to show them superiority by winning battles."
 
@@ -270,9 +270,13 @@
  IW_unite_italy_button_loc: "End the Italian Wars and unify the peninsula under your rule. Claim the Iron Crown of Lombardy and crown yourself King of Italy, ushering in a new era of dominance and prestige for [Root.GetName]."
  IW_league_overthrow_button_loc: "[GetOverthrowButtonName]"
  IW_league_overthrow_button_name_loc: "[GetOverthrowButtonName]"
+ IW_league_overthrow_button_warning_tt: "§RALL §YLeague Members§! on BOTH sides will be called in!§!"
+ IW_league_wars_have_begun_tt: "The §YItalian Wars§! have begun"
  IW_must_be_league_member: "Must be a member of a League"
  IW_m_p_t_l_open_close_loc: "Italian Wars"
  IW_province_arrow_loc: "Choose Path"
+ IW_hasnt_chosen_drafting_tt: "Hasn't chosen §YMember Drafting§! for their League"
+ IW_hasnt_chosen_condot_tt: "Hasn't chosen §YIncorporated Condottieri§! for their League"
 
 #  IW_league_1_shield_loc: "§YLeader§! of the §YItalic League§!"
 #  IW_league_2_shield_loc: "§YLeader§! of the §Y[GetFrenchLeagueName] League§!"

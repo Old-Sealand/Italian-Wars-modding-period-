@@ -79,6 +79,9 @@
 # FRA = { country_event = { id = IW_setup.2 } }
 
 # clr_country_flag = IW_province_35_cooldown_flag
+# clr_country_flag = IW_province_36_cooldown_flag
+# clr_country_flag = IW_province_30_cooldown_flag
+# clr_country_flag = IW_province_37_cooldown_flag
 
 # set_country_flag = IW_chose_drafting
 
@@ -108,13 +111,52 @@
 # }
 # emperor = { white_peace = ROOT }
 
+# LAN = { save_global_event_target_as = IW_italian_league_leader }
+
 save_global_event_target_as = IW_treaty_exclusive_trade_passed
 save_global_event_target_as = IW_treaty_universities_passed
 save_global_event_target_as = IW_treaty_land_rights_passed
 save_global_event_target_as = IW_treaty_impressment_passed
 save_global_event_target_as = IW_treaty_demil_passed
 
-        # every_province = {
-        #     limit = { region = italy_region }
-		# 	cede_province = ROOT
-        # }
+# every_country = {
+#     limit = {
+#         capital_scope = {
+#             OR = {
+#                 region = france_region
+#                 region = iberia_region
+#                 region = italy_region
+#                 region = south_german_region
+#             }
+#         }
+#         is_free_or_tributary_trigger = yes
+#         NOT = {
+#             OR = {
+#                 tag = ROOT
+#                 tag = event_target:IW_italian_league_leader
+#                 is_emperor = yes
+#                 tag = ARA
+#                 tag = CAS
+#                 tag = SPA
+#                 tag = NAP
+#             }
+#         }
+#     }
+#     country_event = { id = IW_setup.9 }
+# }
+
+        every_province = {
+            limit = { region = italy_region }
+			cede_province = ROOT
+        }
+
+		# change_variable = {            
+		# 	which = treatyPoints
+		# 	value = 1
+		# }
+
+# clear_global_event_target = IW_treaty_exclusive_trade_passed
+# clear_global_event_target = IW_treaty_universities_passed
+# clear_global_event_target = IW_treaty_land_rights_passed
+# clear_global_event_target = IW_treaty_impressment_passed
+# clear_global_event_target = IW_treaty_demil_passed

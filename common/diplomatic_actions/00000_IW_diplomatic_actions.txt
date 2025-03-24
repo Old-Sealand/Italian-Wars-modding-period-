@@ -222,8 +222,16 @@ declarewar = {
 
 requestpeace = {
 	condition = {
-		tooltip = IW_cb_italian_war_peace_tooltip 
+		tooltip = IW_cb_italian_war_peace_tooltip
 		potential = {
+			FROM = {
+				OR = {
+					has_country_flag = IW_italian_league_member
+					has_country_flag = IW_french_league_member
+					has_country_flag = IW_iberian_league_member
+					has_country_flag = IW_HRE_league_member
+				}
+			}
 			OR = {
 				AND = {
 					is_in_war = {
