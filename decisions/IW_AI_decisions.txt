@@ -343,6 +343,12 @@ country_decisions = {
 		}
 		effect = {
 			hidden_effect = {
+				event_target:IW_treaty_exclusive_trade_passed = {
+					subtract_variable = {            
+						which = numTreatiesPassed
+						value = 1
+					}
+				}
 				if = {
 					limit = { event_target:IW_treaty_exclusive_trade_passed = { tag = event_target:IW_italian_league_leader } }
 					clr_country_flag = IW_beat_italians_flag
@@ -362,6 +368,10 @@ country_decisions = {
 				save_global_event_target_as = IW_treaty_exclusive_trade_passed
 				subtract_variable = {            
 					which = treatyPoints
+					value = 1
+				}
+				change_variable = {            
+					which = numTreatiesPassed
 					value = 1
 				}
 			}
@@ -456,6 +466,12 @@ country_decisions = {
 		}
 		effect = {
 			hidden_effect = {
+				event_target:IW_treaty_universities_passed = {
+					subtract_variable = {            
+						which = numTreatiesPassed
+						value = 1
+					}
+				}
 				if = {
 					limit = { event_target:IW_treaty_universities_passed = { tag = event_target:IW_italian_league_leader } }
 					clr_country_flag = IW_beat_italians_flag
@@ -475,6 +491,10 @@ country_decisions = {
 				save_global_event_target_as = IW_treaty_universities_passed
 				subtract_variable = {            
 					which = treatyPoints
+					value = 1
+				}
+				change_variable = {            
+					which = numTreatiesPassed
 					value = 1
 				}
 			}
@@ -569,6 +589,12 @@ country_decisions = {
 		}
 		effect = {
 			hidden_effect = {
+				event_target:IW_treaty_land_rights_passed = {
+					subtract_variable = {            
+						which = numTreatiesPassed
+						value = 1
+					}
+				}
 				if = {
 					limit = { event_target:IW_treaty_land_rights_passed = { tag = event_target:IW_italian_league_leader } }
 					clr_country_flag = IW_beat_italians_flag
@@ -588,6 +614,10 @@ country_decisions = {
 				save_global_event_target_as = IW_treaty_land_rights_passed
 				subtract_variable = {            
 					which = treatyPoints
+					value = 1
+				}
+				change_variable = {            
+					which = numTreatiesPassed
 					value = 1
 				}
 			}
@@ -682,6 +712,12 @@ country_decisions = {
 		}
 		effect = {
 			hidden_effect = {
+				event_target:IW_treaty_impressment_passed = {
+					subtract_variable = {            
+						which = numTreatiesPassed
+						value = 1
+					}
+				}
 				if = {
 					limit = { event_target:IW_treaty_impressment_passed = { tag = event_target:IW_italian_league_leader } }
 					clr_country_flag = IW_beat_italians_flag
@@ -701,6 +737,10 @@ country_decisions = {
 				save_global_event_target_as = IW_treaty_impressment_passed
 				subtract_variable = {            
 					which = treatyPoints
+					value = 1
+				}
+				change_variable = {            
+					which = numTreatiesPassed
 					value = 1
 				}
 			}
@@ -795,6 +835,12 @@ country_decisions = {
 		}
 		effect = {
 			hidden_effect = {
+				event_target:IW_treaty_demil_passed = {
+					subtract_variable = {            
+						which = numTreatiesPassed
+						value = 1
+					}
+				}
 				if = {
 					limit = { event_target:IW_treaty_demil_passed = { tag = event_target:IW_italian_league_leader } }
 					clr_country_flag = IW_beat_italians_flag
@@ -814,6 +860,10 @@ country_decisions = {
 				save_global_event_target_as = IW_treaty_demil_passed
 				subtract_variable = {            
 					which = treatyPoints
+					value = 1
+				}
+				change_variable = {            
+					which = numTreatiesPassed
 					value = 1
 				}
 			}

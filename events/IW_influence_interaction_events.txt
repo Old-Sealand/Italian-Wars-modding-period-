@@ -298,3 +298,48 @@ country_event = { #Using estate influence
         }
 	}
 }
+
+country_event = { #Revolter tag war
+	id = iw_interaction_events.3
+	title = iw_interaction_events.3.t
+	desc = iw_interaction_events.3.d
+	picture = REVOLT_HUNGARIAN_eventPicture
+	
+	is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            event_target:selected_province = {
+                owner = {
+                    save_event_target_as = target_country
+                }
+            }
+        }
+    }
+	
+	option = { #Declare war
+		name = iw_interaction_events.3.a
+
+        ai_chance = {
+			factor = 1
+		}
+
+		declare_war_with_cb = {
+			who = event_target:target_country
+			casus_belli = IW_cb_revolter_tag
+            war_goal_province = event_target:selected_province
+		}
+
+	}
+
+    option = { #Don't contest
+		name = iw_interaction_events.3.b
+
+        ai_chance = {
+			factor = 0
+		}
+
+        add_prestige = -10
+	}
+
+}

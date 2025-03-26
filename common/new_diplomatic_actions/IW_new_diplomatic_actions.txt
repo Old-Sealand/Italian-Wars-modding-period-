@@ -1,7 +1,7 @@
 # Triggers and effects will be given the Actor's scope, with the Recipient's as FROM
 # Icons are used from the messageicons.dds
 
-# Sphere of Cultural Influence
+# Italian Leagues
 invite_into_italian_league = {
 	category = influence
 	require_acceptance = yes
@@ -515,6 +515,85 @@ invite_into_italian_league = {
 		# 		value = -0.25
 		# 	}
 		# }
+		add_entry = { # IW addition
+			name = NUM_TREATIES_PASSED_TT
+			limit = {
+				check_variable = {
+					which = numTreatiesPassed
+					value = 1
+				}
+				NOT = {
+					check_variable = {
+						which = numTreatiesPassed
+						value = 2
+					}
+				}
+			}
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = 1 }
+		}
+		add_entry = { # IW addition
+			name = NUM_TREATIES_PASSED_TT
+			limit = {
+				check_variable = {
+					which = numTreatiesPassed
+					value = 2
+				}
+				NOT = {
+					check_variable = {
+						which = numTreatiesPassed
+						value = 3
+					}
+				}
+			}
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = 2 }
+		}
+		add_entry = { # IW addition
+			name = NUM_TREATIES_PASSED_TT
+			limit = {
+				check_variable = {
+					which = numTreatiesPassed
+					value = 3
+				}
+				NOT = {
+					check_variable = {
+						which = numTreatiesPassed
+						value = 4
+					}
+				}
+			}
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = 3 }
+		}
+		add_entry = { # IW addition
+			name = NUM_TREATIES_PASSED_TT
+			limit = {
+				check_variable = {
+					which = numTreatiesPassed
+					value = 4
+				}
+				NOT = {
+					check_variable = {
+						which = numTreatiesPassed
+						value = 5
+					}
+				}
+			}
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = 4 }
+		}
+		add_entry = { # IW addition
+			name = NUM_TREATIES_PASSED_TT
+			limit = {
+				check_variable = {
+					which = numTreatiesPassed
+					value = 5
+				}
+			}
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = 5 }
+		}
 	}
 }
 

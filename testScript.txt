@@ -57,19 +57,19 @@
 # 	grant_independence = yes
 # }
 
-# if = {
-# 	limit = {
-# 		# 118 = { owned_by_subject_of = LAN }
-# 		# check_variable = { which = numLeagueMembers value = 8 }
-# 		# IW_league_member = 10
-# 		# has_country_flag = IW_italian_league_member
-# 		had_country_flag = {
-# 			flag = picked_cawa_privilege
-# 			days = 1825
-# 		}
-# 	}
-# 	add_treasury = 1
-# }
+if = {
+	limit = {
+		# 118 = { owned_by_subject_of = LAN }
+		check_variable = { which = numTreatiesPassed value = 1 }
+		# IW_league_member = 10
+		# has_country_flag = IW_italian_league_member
+		# had_country_flag = {
+		# 	flag = picked_cawa_privilege
+		# 	days = 1825
+		# }
+	}
+	add_treasury = 1
+}
 
 # declare_war_with_cb = {
 # 	who = event_target:IW_italian_league_leader
@@ -80,7 +80,7 @@
 
 # clr_country_flag = IW_province_35_cooldown_flag
 # clr_country_flag = IW_province_36_cooldown_flag
-# clr_country_flag = IW_province_30_cooldown_flag
+# clr_country_flag = IW_province_34_cooldown_flag
 # clr_country_flag = IW_province_37_cooldown_flag
 
 # set_country_flag = IW_chose_drafting
@@ -113,11 +113,22 @@
 
 # LAN = { save_global_event_target_as = IW_italian_league_leader }
 
-save_global_event_target_as = IW_treaty_exclusive_trade_passed
-save_global_event_target_as = IW_treaty_universities_passed
-save_global_event_target_as = IW_treaty_land_rights_passed
-save_global_event_target_as = IW_treaty_impressment_passed
-save_global_event_target_as = IW_treaty_demil_passed
+# save_global_event_target_as = IW_treaty_exclusive_trade_passed
+# save_global_event_target_as = IW_treaty_universities_passed
+# save_global_event_target_as = IW_treaty_land_rights_passed
+# save_global_event_target_as = IW_treaty_impressment_passed
+# save_global_event_target_as = IW_treaty_demil_passed
+
+# clear_global_event_target = IW_treaty_exclusive_trade_passed
+# clear_global_event_target = IW_treaty_universities_passed
+# clear_global_event_target = IW_treaty_land_rights_passed
+# clear_global_event_target = IW_treaty_impressment_passed
+# clear_global_event_target = IW_treaty_demil_passed
+
+# set_variable = {
+#     which = numTreatiesPassed
+#     value = 0
+# }
 
 # every_country = {
 #     limit = {
@@ -145,10 +156,10 @@ save_global_event_target_as = IW_treaty_demil_passed
 #     country_event = { id = IW_setup.9 }
 # }
 
-        every_province = {
-            limit = { region = italy_region }
-			cede_province = ROOT
-        }
+        # every_province = {
+        #     limit = { region = italy_region }
+		# 	cede_province = ROOT
+        # }
 
 		# change_variable = {            
 		# 	which = treatyPoints
@@ -160,3 +171,24 @@ save_global_event_target_as = IW_treaty_demil_passed
 # clear_global_event_target = IW_treaty_land_rights_passed
 # clear_global_event_target = IW_treaty_impressment_passed
 # clear_global_event_target = IW_treaty_demil_passed
+
+# LAN = { set_IW_province_finish = yes }
+
+# declare_war_with_cb = {
+# 	who = event_target:target_country
+# 	casus_belli = IW_cb_revolter_tag
+# 	war_goal_province = event_target:selected_province
+# }
+
+declare_war_with_cb = {
+	who = SPL
+	casus_belli = IW_cb_revolter_tag
+	# war_goal_province = event_target:selected_province
+	war_goal_province = 4731
+}
+
+# declare_war_with_cb = {
+# 	who = LUC
+# 	casus_belli = IW_cb_revolter_tag
+# 	war_goal_province = 2980
+# }

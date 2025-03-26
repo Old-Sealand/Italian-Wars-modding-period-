@@ -577,6 +577,7 @@ set_IW_p_f = {
 	if = {
 		limit = { has_country_flag = IW_province_$number$_war_flag }
 		$province$ = {
+			owner = { save_event_target_as = prev_owner }
 			add_core = $revolter$
 			cede_province = $revolter$
 		}
@@ -624,6 +625,8 @@ set_IW_p_f = {
 				remove_province_modifier = iw_disloyal_garrison
 			}
 		}
+
+		event_target:prev_owner = { country_event = { id = iw_interaction_events.3 } }
 	}
 }
 
@@ -1022,4 +1025,71 @@ IW_clr_province_cooldown_flag = {
 IW_lower_province_inf = {
 	subtract_variable = { which = IW_map_prov_$number$_inf value = 10 }
 	subtract_variable = { which = IW_map_prov_inf value = 10 }
+}
+
+set_IW_revolter_target = { # Triggered by revolter tag war event ONLY, for correct choice of league member subject in peace option (not yet implemented)
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 111 } } set_perm_member = { number = 01 province = 111 revolter = AQU } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 1774 } } set_perm_member = { number = 02 province = 1774 revolter = I01 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 112 } } set_perm_member = { number = 03 province = 112 revolter = VEN } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4729 } } set_perm_member = { number = 04 province = 4729 revolter = PDV } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 108 } } set_perm_member = { number = 05 province = 108 revolter = VRN } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 109 } } set_perm_member = { number = 06 province = 109 revolter = MAN } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 107 } } set_perm_member = { number = 07 province = 107 revolter = I07 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4739 } } set_perm_member = { number = 08 province = 4739 revolter = I06 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 1862 } } set_perm_member = { number = 09 province = 1862 revolter = I02 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 104 } } set_perm_member = { number = 10 province = 104 revolter = MLO } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4740 } } set_perm_member = { number = 11 province = 4740 revolter = I04 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2979 } } set_perm_member = { number = 12 province = 2979 revolter = I05 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4728 } } set_perm_member = { number = 13 province = 4728 revolter = I03 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2981 } } set_perm_member = { number = 14 province = 2981 revolter = MFA } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 103 } } set_perm_member = { number = 15 province = 103 revolter = I08 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4727 } } set_perm_member = { number = 16 province = 4727 revolter = SZO } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 1875 } } set_perm_member = { number = 17 province = 1875 revolter = I09 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 102 } } set_perm_member = { number = 18 province = 102 revolter = I10 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2992 } } set_perm_member = { number = 19 province = 2992 revolter = I11 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 101 } } set_perm_member = { number = 20 province = 101 revolter = GEN } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 105 } } set_perm_member = { number = 21 province = 105 revolter = PAR } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 106 } } set_perm_member = { number = 22 province = 106 revolter = MOD } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4730 } } set_perm_member = { number = 23 province = 4730 revolter = BLG } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 113 } } set_perm_member = { number = 24 province = 113 revolter = FER } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 114 } } set_perm_member = { number = 25 province = 114 revolter = I30 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2978 } } set_perm_member = { number = 26 province = 2978 revolter = ETR } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 116 } } set_perm_member = { number = 27 province = 116 revolter = LAN } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2980 } } set_perm_member = { number = 28 province = 2980 revolter = LUC } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 115 } } set_perm_member = { number = 29 province = 115 revolter = PIS } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 117 } } set_perm_member = { number = 30 province = 117 revolter = SIE } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2977 } } set_perm_member = { number = 31 province = 2977 revolter = URB } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 119 } } set_perm_member = { number = 32 province = 119 revolter = I31 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 120 } } set_perm_member = { number = 33 province = 120 revolter = I32 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4731 } } set_perm_member = { number = 34 province = 4731 revolter = SPL } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2976 } } set_perm_member = { number = 35 province = 2976 revolter = PGA } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 118 } } set_perm_member = { number = 36 province = 118 revolter = PAP } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4732 } } set_perm_member = { number = 37 province = 4732 revolter = I22 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4733 } } set_perm_member = { number = 38 province = 4733 revolter = I29 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2985 } } set_perm_member = { number = 39 province = 2985 revolter = I28 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 1933 } } set_perm_member = { number = 40 province = 1933 revolter = I27 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 122 } } set_perm_member = { number = 41 province = 122 revolter = I26 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4734 } } set_perm_member = { number = 42 province = 4734 revolter = I21 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 121 } } set_perm_member = { number = 43 province = 121 revolter = NAP } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2983 } } set_perm_member = { number = 44 province = 2983 revolter = I20 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 1934 } } set_perm_member = { number = 45 province = 1934 revolter = I24 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2984 } } set_perm_member = { number = 46 province = 2984 revolter = I25 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 123 } } set_perm_member = { number = 47 province = 123 revolter = I23 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 124 } } set_perm_member = { number = 48 province = 124 revolter = I15 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2982 } } set_perm_member = { number = 49 province = 2982 revolter = I16 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 126 } } set_perm_member = { number = 50 province = 126 revolter = JAI } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4737 } } set_perm_member = { number = 51 province = 4737 revolter = I19 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 125 } } set_perm_member = { number = 52 province = 125 revolter = I17 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4736 } } set_perm_member = { number = 53 province = 4736 revolter = I18 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2986 } } set_perm_member = { number = 54 province = 2986 revolter = I13 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4735 } } set_perm_member = { number = 55 province = 4735 revolter = I14 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 127 } } set_perm_member = { number = 56 province = 127 revolter = I12 } }
+	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 1247 } } set_perm_member = { number = 57 province = 1247 revolter = COR } }
+}
+# (not yet implemented)
+set_perm_member = {
+	create_subject = {
+		subject_type = IW_league_member_permanent
+		subject = $revolter$
+	}
 }

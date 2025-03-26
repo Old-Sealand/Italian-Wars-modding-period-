@@ -87,3 +87,42 @@ superiority_italian_war = {
 	
 	war_name = ITALIAN_WAR_WAR_NAME
 }
+
+IW_revolter_war = {
+	type = take_province
+	
+	attacker = {
+		badboy_factor = 1.0
+		prestige_factor = 1.0
+		peace_cost_factor = 1.0
+
+		allowed_provinces = {
+			# owns_or_non_sovereign_subject_of = FROM
+			always = yes
+		}
+
+		# allowed_provinces_are_eligible = yes
+	
+		peace_options = {
+			po_demand_provinces
+			po_revoke_cores
+			po_gold
+			po_annul_treaties
+		}
+	}
+	
+	defender = {
+		badboy_factor = 0.0
+		prestige_factor = 1.0
+		peace_cost_factor = 1.0
+	
+		peace_options = {
+			# po_IW_perm_league_member
+			po_revoke_cores
+			po_gold
+			po_annul_treaties
+		}
+	}
+	
+	war_name = REVOLTER_TAG_WAR_NAME
+}

@@ -41,10 +41,20 @@
  IW_peace_of_lodi_tooltip: "§RMembers of the Italic League cannot attack each other, as long as the Treaty of Lodi is in place.§!"
  superiority_italian_war_desc: "War goal is to show them superiority by winning battles."
 
+ IW_cb_revolter_tag: "War of Italian Autonomy"
+ IW_cb_revolter_tag_desc: "One of our cities has declared independence with the aid of a foreign power. This cannot be accepted!"
+ REVOLTER_TAG_WAR_NAME: "$ORDER$ War of $SECOND$ Autonomy"
+ IW_revolter_war_desc: "War goal is to show them superiority by winning battles."
+
  po_pass_IW_treaty: "§OImpose Treaty§!"
  PEACE_po_pass_IW_treaty: "§OImpose Treaty§!"
  CB_ALLOWED_po_pass_IW_treaty: "§OImpose Treaty§!"
  po_pass_IW_treaty_desc: "[Root.GetName] gains the ability to pass a special treaty pertaining to their increasing hegemony over Italy."
+
+ po_IW_perm_league_member: "Make §OPermanent League Member§!"
+ PEACE_po_IW_perm_league_member: "Make §OPermanent League Member§!"
+ CB_ALLOWED_po_IW_perm_league_member: "Make §OPermanent League Member§!"
+ po_IW_perm_league_member_desc: "We will make $revolter$ a permanent member of our League."
 
 ## TRIGGERED MODIFIERS ##
  IW_treaty_of_lodi_tm: "Peace of Lodi"
@@ -123,6 +133,7 @@
  NUM_LEAGUE_MEMBERS_20_TT: "Has at least 20 League Members (excluding permanent members)"
  IW_LEAGUE_LEADER_NO_ALLIANCE: "§R- §YLeague§! leaders cannot ally one another.§!"
  FROM_IS_EMPEROR_TT: "§R- The Holy Roman Emperor would not subject himself to our pathetic coalition.§!"
+ NUM_TREATIES_PASSED_TT: "Treaties Passed"
 
  ###OPINION MODIFIERS###
  IW_left_our_league: "Left our League"
@@ -247,6 +258,11 @@
  IW_setup.19.a: "My will be done"
  IW_disband_other_leagues_tt: "All other §YLeagues§! will be disbanded."
  IW_other_provinces_will_also_receive_this_modifier: "All other provinces in the §YItaly§! region will also receive the §Ymodifier§!." 
+
+ iw_interaction_events.3.t: "Rebellion in [selected_province.GetName]"
+ iw_interaction_events.3.d: "Foreign powers have been riling up separatist tensions in the city of [selected_province.GetName] for some time, but we have ignored the rabble. Now the local governor has audaciously declared himself [selected_province.Owner.Monarch.GetTitle] of the newfound [selected_province.Owner.GovernmentName] of [selected_province.Owner.GetName], free from [Root.GetAdjective] rule!"
+ iw_interaction_events.3.a: "Preposterous! [selected_province.GetName] belongs to [Root.GetUsableName]!"
+ iw_interaction_events.3.b: "Well, what can you do..."
 
  ###GUI###
  IW_treaties_button_1_loc: "Solidify the League's dominance over Italian trade, granting its members exclusive rights to all major markets and ports across the peninsula.\n--------------\n§YLeague Members§! gain:\nMerchants: §G+1§!\n\n§YNon-member States in Italy§! gain:\nGlobal Trade Power: §R-10.0%§!"

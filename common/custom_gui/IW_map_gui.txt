@@ -1151,7 +1151,7 @@ custom_button = {
 	trigger = {
         hidden_trigger = { has_country_flag = IW_m_p_t_l_window }
         if = {
-            limit = { event_target:IW_treaty_exclusive_trade_passed = { tag = event_target:IW_italian_league_leader } }
+            limit = { has_saved_global_event_target = IW_treaty_exclusive_trade_passed event_target:IW_treaty_exclusive_trade_passed = { tag = event_target:IW_italian_league_leader } }
             custom_trigger_tooltip = {
                 tooltip = IW_beat_italians_tt
                 has_country_flag = IW_beat_italians_flag
@@ -1164,7 +1164,7 @@ custom_button = {
             }
         }
         else_if = {
-            limit = { event_target:IW_treaty_exclusive_trade_passed = { tag = event_target:IW_french_league_leader } }
+            limit = { has_saved_global_event_target = IW_treaty_exclusive_trade_passed event_target:IW_treaty_exclusive_trade_passed = { tag = event_target:IW_french_league_leader } }
             custom_trigger_tooltip = {
                 tooltip = IW_beat_french_tt
                 has_country_flag = IW_beat_french_flag
@@ -1177,7 +1177,7 @@ custom_button = {
             }
         }
         else_if = {
-            limit = { event_target:IW_treaty_exclusive_trade_passed = { tag = event_target:IW_iberian_league_leader } }
+            limit = { has_saved_global_event_target = IW_treaty_exclusive_trade_passed event_target:IW_treaty_exclusive_trade_passed = { tag = event_target:IW_iberian_league_leader } }
             custom_trigger_tooltip = {
                 tooltip = IW_beat_iberians_tt
                 has_country_flag = IW_beat_iberians_flag
@@ -1190,7 +1190,7 @@ custom_button = {
             }
         }
         else_if = {
-            limit = { event_target:IW_treaty_exclusive_trade_passed = { tag = event_target:IW_HRE_league_leader } }
+            limit = { has_saved_global_event_target = IW_treaty_exclusive_trade_passed event_target:IW_treaty_exclusive_trade_passed = { tag = event_target:IW_HRE_league_leader } }
             custom_trigger_tooltip = {
                 tooltip = IW_beat_HRE_tt
                 has_country_flag = IW_beat_HRE_flag
@@ -1216,6 +1216,12 @@ custom_button = {
 	}
     effect = {
         hidden_effect = {
+            event_target:IW_treaty_exclusive_trade_passed = {
+                subtract_variable = {            
+                    which = numTreatiesPassed
+                    value = 1
+                }
+            }
             if = {
                 limit = { event_target:IW_treaty_exclusive_trade_passed = { tag = event_target:IW_italian_league_leader } }
                 clr_country_flag = IW_beat_italians_flag
@@ -1237,6 +1243,10 @@ custom_button = {
                 which = treatyPoints
                 value = 1
             }
+            change_variable = {            
+                which = numTreatiesPassed
+                value = 1
+            }
         }
 	}
     tooltip = IW_treaties_button_1_loc
@@ -1246,7 +1256,7 @@ custom_button = {
 	trigger = {
         hidden_trigger = { has_country_flag = IW_m_p_t_l_window }
         if = {
-            limit = { event_target:IW_treaty_universities_passed = { tag = event_target:IW_italian_league_leader } }
+            limit = { has_saved_global_event_target = IW_treaty_universities_passed event_target:IW_treaty_universities_passed = { tag = event_target:IW_italian_league_leader } }
             custom_trigger_tooltip = {
                 tooltip = IW_beat_italians_tt
                 has_country_flag = IW_beat_italians_flag
@@ -1259,7 +1269,7 @@ custom_button = {
             }
         }
         else_if = {
-            limit = { event_target:IW_treaty_universities_passed = { tag = event_target:IW_french_league_leader } }
+            limit = { has_saved_global_event_target = IW_treaty_universities_passed event_target:IW_treaty_universities_passed = { tag = event_target:IW_french_league_leader } }
             custom_trigger_tooltip = {
                 tooltip = IW_beat_french_tt
                 has_country_flag = IW_beat_french_flag
@@ -1272,7 +1282,7 @@ custom_button = {
             }
         }
         else_if = {
-            limit = { event_target:IW_treaty_universities_passed = { tag = event_target:IW_iberian_league_leader } }
+            limit = { has_saved_global_event_target = IW_treaty_universities_passed event_target:IW_treaty_universities_passed = { tag = event_target:IW_iberian_league_leader } }
             custom_trigger_tooltip = {
                 tooltip = IW_beat_iberians_tt
                 has_country_flag = IW_beat_iberians_flag
@@ -1285,7 +1295,7 @@ custom_button = {
             }
         }
         else_if = {
-            limit = { event_target:IW_treaty_universities_passed = { tag = event_target:IW_HRE_league_leader } }
+            limit = { has_saved_global_event_target = IW_treaty_universities_passed event_target:IW_treaty_universities_passed = { tag = event_target:IW_HRE_league_leader } }
             custom_trigger_tooltip = {
                 tooltip = IW_beat_HRE_tt
                 has_country_flag = IW_beat_HRE_flag
@@ -1341,7 +1351,7 @@ custom_button = {
 	trigger = {
         hidden_trigger = { has_country_flag = IW_m_p_t_l_window }
         if = {
-            limit = { event_target:IW_treaty_land_rights_passed = { tag = event_target:IW_italian_league_leader } }
+            limit = { has_saved_global_event_target = IW_treaty_land_rights_passed event_target:IW_treaty_land_rights_passed = { tag = event_target:IW_italian_league_leader } }
             custom_trigger_tooltip = {
                 tooltip = IW_beat_italians_tt
                 has_country_flag = IW_beat_italians_flag
@@ -1354,7 +1364,7 @@ custom_button = {
             }
         }
         else_if = {
-            limit = { event_target:IW_treaty_land_rights_passed = { tag = event_target:IW_french_league_leader } }
+            limit = { has_saved_global_event_target = IW_treaty_land_rights_passed event_target:IW_treaty_land_rights_passed = { tag = event_target:IW_french_league_leader } }
             custom_trigger_tooltip = {
                 tooltip = IW_beat_french_tt
                 has_country_flag = IW_beat_french_flag
@@ -1367,7 +1377,7 @@ custom_button = {
             }
         }
         else_if = {
-            limit = { event_target:IW_treaty_land_rights_passed = { tag = event_target:IW_iberian_league_leader } }
+            limit = { has_saved_global_event_target = IW_treaty_land_rights_passed event_target:IW_treaty_land_rights_passed = { tag = event_target:IW_iberian_league_leader } }
             custom_trigger_tooltip = {
                 tooltip = IW_beat_iberians_tt
                 has_country_flag = IW_beat_iberians_flag
@@ -1380,7 +1390,7 @@ custom_button = {
             }
         }
         else_if = {
-            limit = { event_target:IW_treaty_land_rights_passed = { tag = event_target:IW_HRE_league_leader } }
+            limit = { has_saved_global_event_target = IW_treaty_land_rights_passed event_target:IW_treaty_land_rights_passed = { tag = event_target:IW_HRE_league_leader } }
             custom_trigger_tooltip = {
                 tooltip = IW_beat_HRE_tt
                 has_country_flag = IW_beat_HRE_flag
@@ -1436,7 +1446,7 @@ custom_button = {
 	trigger = {
         hidden_trigger = { has_country_flag = IW_m_p_t_l_window }
         if = {
-            limit = { event_target:IW_treaty_impressment_passed = { tag = event_target:IW_italian_league_leader } }
+            limit = { has_saved_global_event_target = IW_treaty_impressment_passed event_target:IW_treaty_impressment_passed = { tag = event_target:IW_italian_league_leader } }
             custom_trigger_tooltip = {
                 tooltip = IW_beat_italians_tt
                 has_country_flag = IW_beat_italians_flag
@@ -1449,7 +1459,7 @@ custom_button = {
             }
         }
         else_if = {
-            limit = { event_target:IW_treaty_impressment_passed = { tag = event_target:IW_french_league_leader } }
+            limit = { has_saved_global_event_target = IW_treaty_impressment_passed event_target:IW_treaty_impressment_passed = { tag = event_target:IW_french_league_leader } }
             custom_trigger_tooltip = {
                 tooltip = IW_beat_french_tt
                 has_country_flag = IW_beat_french_flag
@@ -1462,7 +1472,7 @@ custom_button = {
             }
         }
         else_if = {
-            limit = { event_target:IW_treaty_impressment_passed = { tag = event_target:IW_iberian_league_leader } }
+            limit = { has_saved_global_event_target = IW_treaty_impressment_passed event_target:IW_treaty_impressment_passed = { tag = event_target:IW_iberian_league_leader } }
             custom_trigger_tooltip = {
                 tooltip = IW_beat_iberians_tt
                 has_country_flag = IW_beat_iberians_flag
@@ -1475,7 +1485,7 @@ custom_button = {
             }
         }
         else_if = {
-            limit = { event_target:IW_treaty_impressment_passed = { tag = event_target:IW_HRE_league_leader } }
+            limit = { has_saved_global_event_target = IW_treaty_impressment_passed event_target:IW_treaty_impressment_passed = { tag = event_target:IW_HRE_league_leader } }
             custom_trigger_tooltip = {
                 tooltip = IW_beat_HRE_tt
                 has_country_flag = IW_beat_HRE_flag
@@ -1531,7 +1541,7 @@ custom_button = {
 	trigger = {
         hidden_trigger = { has_country_flag = IW_m_p_t_l_window }
         if = {
-            limit = { event_target:IW_treaty_demil_passed = { tag = event_target:IW_italian_league_leader } }
+            limit = { has_saved_global_event_target = IW_treaty_demil_passed event_target:IW_treaty_demil_passed = { tag = event_target:IW_italian_league_leader } }
             custom_trigger_tooltip = {
                 tooltip = IW_beat_italians_tt
                 has_country_flag = IW_beat_italians_flag
@@ -1544,7 +1554,7 @@ custom_button = {
             }
         }
         else_if = {
-            limit = { event_target:IW_treaty_demil_passed = { tag = event_target:IW_french_league_leader } }
+            limit = { has_saved_global_event_target = IW_treaty_demil_passed event_target:IW_treaty_demil_passed = { tag = event_target:IW_french_league_leader } }
             custom_trigger_tooltip = {
                 tooltip = IW_beat_french_tt
                 has_country_flag = IW_beat_french_flag
@@ -1557,7 +1567,7 @@ custom_button = {
             }
         }
         else_if = {
-            limit = { event_target:IW_treaty_demil_passed = { tag = event_target:IW_iberian_league_leader } }
+            limit = { has_saved_global_event_target = IW_treaty_demil_passed event_target:IW_treaty_demil_passed = { tag = event_target:IW_iberian_league_leader } }
             custom_trigger_tooltip = {
                 tooltip = IW_beat_iberians_tt
                 has_country_flag = IW_beat_iberians_flag
@@ -1570,7 +1580,7 @@ custom_button = {
             }
         }
         else_if = {
-            limit = { event_target:IW_treaty_demil_passed = { tag = event_target:IW_HRE_league_leader } }
+            limit = { has_saved_global_event_target = IW_treaty_demil_passed event_target:IW_treaty_demil_passed = { tag = event_target:IW_HRE_league_leader } }
             custom_trigger_tooltip = {
                 tooltip = IW_beat_HRE_tt
                 has_country_flag = IW_beat_HRE_flag
@@ -2295,6 +2305,11 @@ custom_button = {
     trigger = {
         custom_trigger_tooltip = {
             tooltip = IW_passed_all_treaties_tt
+            has_saved_global_event_target = IW_treaty_exclusive_trade_passed
+            has_saved_global_event_target = IW_treaty_universities_passed
+            has_saved_global_event_target = IW_treaty_land_rights_passed
+            has_saved_global_event_target = IW_treaty_impressment_passed
+            has_saved_global_event_target = IW_treaty_demil_passed
             tag = event_target:IW_treaty_exclusive_trade_passed
             tag = event_target:IW_treaty_universities_passed
             tag = event_target:IW_treaty_land_rights_passed

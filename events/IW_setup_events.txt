@@ -173,9 +173,17 @@ country_event = {
 				# 	which = numLeagueMembers
 				# 	who = event_target:IW_italian_league_leader
 				# }
+				export_to_variable = {
+					which = numTreatiesPassed
+					who = event_target:IW_italian_league_leader
+				}
 				event_target:IW_italian_league_leader = { # in place of above - set former leader variable to 0
 					set_variable = {
 						which = numLeagueMembers
+						value = 0
+					}
+					set_variable = {
+						which = numTreatiesPassed
 						value = 0
 					}
 				}
@@ -252,9 +260,17 @@ country_event = {
 				# 	which = numLeagueMembers
 				# 	who = event_target:IW_french_league_leader
 				# }
+				export_to_variable = {
+					which = numTreatiesPassed
+					who = event_target:IW_french_league_leader
+				}
 				event_target:IW_french_league_leader = { # in place of above - set former leader variable to 0
 					set_variable = {
 						which = numLeagueMembers
+						value = 0
+					}
+					set_variable = {
+						which = numTreatiesPassed
 						value = 0
 					}
 				}
@@ -324,9 +340,17 @@ country_event = {
 				# 	which = numLeagueMembers
 				# 	who = event_target:IW_iberian_league_leader
 				# }
+				export_to_variable = {
+					which = numTreatiesPassed
+					who = event_target:IW_iberian_league_leader
+				}
 				event_target:IW_iberian_league_leader = { # in place of above - set former leader variable to 0
 					set_variable = {
 						which = numLeagueMembers
+						value = 0
+					}
+					set_variable = {
+						which = numTreatiesPassed
 						value = 0
 					}
 				}
@@ -397,9 +421,17 @@ country_event = {
 				# 	which = numLeagueMembers
 				# 	who = event_target:IW_HRE_league_leader
 				# }
+				export_to_variable = {
+					which = numTreatiesPassed
+					who = event_target:IW_HRE_league_leader
+				}
 				event_target:IW_HRE_league_leader = { # in place of above - set former leader variable to 0
 					set_variable = {
 						which = numLeagueMembers
+						value = 0
+					}
+					set_variable = {
+						which = numTreatiesPassed
 						value = 0
 					}
 				}
@@ -574,6 +606,10 @@ country_event = {
 				set_country_flag = IW_french_league_member
 				set_variable = {
 					which = numLeagueMembers
+					value = 0
+				}
+				set_variable = {
+					which = numTreatiesPassed
 					value = 0
 				}
 			}
@@ -866,6 +902,10 @@ country_event = {
 					which = numLeagueMembers
 					value = 0
 				}
+				set_variable = {
+					which = numTreatiesPassed
+					value = 0
+				}
 			}
 			clr_global_flag = IW_peace_of_lodi_flag
 		}
@@ -1066,6 +1106,10 @@ country_event = {
 					which = numLeagueMembers
 					value = 0
 				}
+				set_variable = {
+					which = numTreatiesPassed
+					value = 0
+				}
 			}
 			clr_global_flag = IW_peace_of_lodi_flag
 		}
@@ -1231,6 +1275,10 @@ country_event = {
 				set_country_flag = IW_italian_league_member
 				set_variable = {
 					which = numLeagueMembers
+					value = 0
+				}
+				set_variable = {
+					which = numTreatiesPassed
 					value = 0
 				}
 			}
@@ -1513,8 +1561,8 @@ country_event = {
 	desc = IW_setup.11.d
 	picture = SWEDEN_LEAGUE_WAR_eventPicture
 	
-	major = yes
-	major_trigger = { tag = overlord }
+	# major = yes
+	# major_trigger = { tag = overlord }
 	is_triggered_only = yes
 	
 	# trigger = { }
@@ -1575,8 +1623,8 @@ country_event = {
 	desc = IW_setup.11.d
 	picture = SWEDEN_LEAGUE_WAR_eventPicture
 	
-	major = yes
-	major_trigger = { tag = overlord }
+	# major = yes
+	# major_trigger = { tag = overlord }
 	is_triggered_only = yes
 	
 	# trigger = { }
@@ -2196,9 +2244,17 @@ country_event = {
 				# 	which = numLeagueMembers
 				# 	who = event_target:IW_italian_league_leader
 				# }
+				export_to_variable = {
+					which = numTreatiesPassed
+					who = event_target:IW_italian_league_leader
+				}
 				event_target:IW_italian_league_leader = { # in place of above - set former leader variable to 0
 					set_variable = {
 						which = numLeagueMembers
+						value = 0
+					}
+					set_variable = {
+						which = numTreatiesPassed
 						value = 0
 					}
 				}
@@ -2275,9 +2331,17 @@ country_event = {
 				# 	which = numLeagueMembers
 				# 	who = event_target:IW_french_league_leader
 				# }
+				export_to_variable = {
+					which = numTreatiesPassed
+					who = event_target:IW_french_league_leader
+				}
 				event_target:IW_french_league_leader = { # in place of above - set former leader variable to 0
 					set_variable = {
 						which = numLeagueMembers
+						value = 0
+					}
+					set_variable = {
+						which = numTreatiesPassed
 						value = 0
 					}
 				}
@@ -2347,9 +2411,17 @@ country_event = {
 				# 	which = numLeagueMembers
 				# 	who = event_target:IW_iberian_league_leader
 				# }
+				export_to_variable = {
+					which = numTreatiesPassed
+					who = event_target:IW_iberian_league_leader
+				}
 				event_target:IW_iberian_league_leader = { # in place of above - set former leader variable to 0
 					set_variable = {
 						which = numLeagueMembers
+						value = 0
+					}
+					set_variable = {
+						which = numTreatiesPassed
 						value = 0
 					}
 				}
@@ -2420,9 +2492,17 @@ country_event = {
 				# 	which = numLeagueMembers
 				# 	who = event_target:IW_HRE_league_leader
 				# }
+				export_to_variable = {
+					which = numTreatiesPassed
+					who = event_target:IW_HRE_league_leader
+				}
 				event_target:IW_HRE_league_leader = { # in place of above - set former leader variable to 0
 					set_variable = {
 						which = numLeagueMembers
+						value = 0
+					}
+					set_variable = {
+						which = numTreatiesPassed
 						value = 0
 					}
 				}
