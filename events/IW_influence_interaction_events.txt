@@ -327,7 +327,7 @@ country_event = { #Revolter tag war
 		declare_war_with_cb = {
 			who = event_target:target_country
 			casus_belli = IW_cb_revolter_tag
-            war_goal_province = event_target:selected_province
+            # war_goal_province = event_target:selected_province
 		}
 
 	}

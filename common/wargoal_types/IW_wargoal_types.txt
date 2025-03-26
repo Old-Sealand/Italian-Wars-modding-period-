@@ -89,17 +89,18 @@ superiority_italian_war = {
 }
 
 IW_revolter_war = {
-	type = take_province
+	# type = take_province
+	type = superiority
 	
 	attacker = {
 		badboy_factor = 1.0
 		prestige_factor = 1.0
 		peace_cost_factor = 1.0
 
-		allowed_provinces = {
-			# owns_or_non_sovereign_subject_of = FROM
-			always = yes
-		}
+		# allowed_provinces = {
+		# 	# owns_or_non_sovereign_subject_of = FROM
+		# 	always = yes
+		# }
 
 		# allowed_provinces_are_eligible = yes
 	
