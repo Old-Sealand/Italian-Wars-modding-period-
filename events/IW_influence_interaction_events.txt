@@ -23,6 +23,7 @@ country_event = { #Event for choosing to increase influence
 		name = iw_interaction_events.1.a
 
         add_years_of_income = -3
+        IW_clr_province_pending_flag = yes
 	}
 
     option = { #Generic peaceful option, being able to use favors for influence
@@ -31,6 +32,7 @@ country_event = { #Event for choosing to increase influence
         add_dip_power = -50
         add_mil_power = -50
         add_adm_power = -50
+        IW_clr_province_pending_flag = yes
 	}
 
     option = { #Generic peaceful option, sending the owner some AT (military aid). Not allowed if you're rivals to them or at war with them
@@ -48,6 +50,7 @@ country_event = { #Event for choosing to increase influence
         event_target:target_country = {
             add_army_tradition = 10
         }
+        IW_clr_province_pending_flag = yes
 	}
 
     option = { #Sabotage local officials of the province and offer them protection instead, requires espionage ideas
@@ -70,6 +73,7 @@ country_event = { #Event for choosing to increase influence
         event_target:selected_province = {
             add_unrest = 5
         }
+        IW_clr_province_pending_flag = yes
 	}
 
     option = { #Use favors with owner to gain some land there
@@ -89,6 +93,16 @@ country_event = { #Event for choosing to increase influence
             who = event_target:target_country
             amount = -10
         }
+        IW_clr_province_pending_flag = yes
+	}
+
+    option = { #Nevermind
+
+		name = iw_interaction_events.1.f
+
+        hidden_effect = { IW_clr_province_cooldown_flag = yes } # clears cooldown as well as gained influence
+        IW_clr_province_pending_flag = yes
+
 	}
 }
 

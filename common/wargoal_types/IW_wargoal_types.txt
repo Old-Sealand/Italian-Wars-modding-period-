@@ -52,11 +52,12 @@ superiority_italian_war = {
 	type = superiority
 	
 	attacker = {
-		badboy_factor = 0.5
-		prestige_factor = 1.5
-		peace_cost_factor = 0.5	
+		badboy_factor = 0.9
+		prestige_factor = 1.25
+		peace_cost_factor = 0.8
 	
 		peace_options = {
+			po_pass_IW_treaty
 			po_become_vassal
 			po_demand_provinces
 			po_revoke_cores
@@ -64,16 +65,16 @@ superiority_italian_war = {
 			po_release_annexed
 			po_gold
 			po_annul_treaties
-			po_pass_IW_treaty
 		}
 	}
 	
 	defender = {
-		badboy_factor = 0.5
-		prestige_factor = 1.5
-		peace_cost_factor = 0.5		
+		badboy_factor = 0.9
+		prestige_factor = 1.25
+		peace_cost_factor = 0.8
 	
 		peace_options = {
+			po_pass_IW_treaty
 			po_become_vassal
 			po_demand_provinces
 			po_revoke_cores
@@ -81,7 +82,6 @@ superiority_italian_war = {
 			po_release_annexed
 			po_gold
 			po_annul_treaties
-			po_pass_IW_treaty
 		}
 	}
 	

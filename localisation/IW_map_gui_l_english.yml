@@ -42,6 +42,7 @@
  iw_interaction_events.1.c: "Let us send [target_country.GetName] some military aid."
  iw_interaction_events.1.dd: "Infiltrate the city, then cause a ruckus."
  iw_interaction_events.1.e: "Let us use our favors to increase our influence there."
+ iw_interaction_events.1.f: "Never mind."
 
  iw_interaction_events.2.t: "Exploiting Estate Demands"
  iw_interaction_events.2.d: "Within [selected_province.Owner.GetName], there have been some disloyal estates that wish to gain influence in [selected_province.GetName]. Unfortunately for them, [selected_province.Owner.Monarch.GetName] has denied them these rights for far too long. Fortunately for us, we can use this discord of these estates to gain some influence in [selected_province.GetName] to further our goals in the Italian Wars."

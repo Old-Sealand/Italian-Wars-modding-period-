@@ -622,7 +622,7 @@ country_event = {
 				limit = {
 					capital_scope = { continent = europe }
 					NOT = { tag = ROOT }
-			}
+				}
 				country_event = {
 					id = IW_setup.14
 					days = 10

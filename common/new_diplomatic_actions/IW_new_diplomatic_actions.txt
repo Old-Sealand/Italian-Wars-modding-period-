@@ -311,7 +311,7 @@ invite_into_italian_league = {
 		}
 		has_opinion = {
 			who = FROM
-			value = 50
+			value = 25
 		}
 		# NOT = {
 		# 	FROM = {

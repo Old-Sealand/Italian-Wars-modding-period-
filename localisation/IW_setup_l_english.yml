@@ -41,9 +41,9 @@
  IW_peace_of_lodi_tooltip: "§RMembers of the Italic League cannot attack each other, as long as the Treaty of Lodi is in place.§!"
  superiority_italian_war_desc: "War goal is to show them superiority by winning battles."
 
- po_pass_IW_treaty: "Impose Treaty"
- PEACE_po_pass_IW_treaty: "Impose Treaty"
- CB_ALLOWED_po_pass_IW_treaty: "Impose Treaty"
+ po_pass_IW_treaty: "§OImpose Treaty§!"
+ PEACE_po_pass_IW_treaty: "§OImpose Treaty§!"
+ CB_ALLOWED_po_pass_IW_treaty: "§OImpose Treaty§!"
  po_pass_IW_treaty_desc: "[Root.GetName] gains the ability to pass a special treaty pertaining to their increasing hegemony over Italy."
 
 ## TRIGGERED MODIFIERS ##
@@ -211,8 +211,8 @@
  IW_setup.14.t: "Impending War"
  IW_setup.14.d: "Whispers of war echo through the courts of Italy. Rumors swirl of an ominous [IW_french_league_leader.GetAdjective] mobilization, their banners raised high as soldiers gather in numbers not seen in decades. [IW_french_league_leader.Monarch.GetName], young and ambitious, casts his gaze southward upon the riches and glories of the Italian peninsula, dreaming of conquest and domination. Diplomatic envoys bring grim tidings: the [IW_french_league_leader.GetAdjective] [IW_french_league_leader.Monarch.GetTitle] has begun mustering a mighty army with the intent of pressing his claim on [NAP.GetName], sparking fears across the region.\n\nMerchants in [MLO.GetName] whisper of heavily laden [IW_french_league_leader.GetAdjective] supply trains crossing the Alps. Spies in southern Germany report the presence of heavily armored knights and war-hardened Swiss mercenaries rallying to [IW_french_league_leader.Monarch.GetName]'s cause. Tensions rise, alliances are questioned, and the fragile peace teeters on the edge of destruction. The rulers of Italy must prepare, for within months, the thunder of war may resound across their lands."
  IW_setup.14.a: "Apocalypse is nigh..."
- IW_impending_war_tt: "In §Y12§! months, §Y[IW_french_league_leader.GetName]§! may make a move against the §YItalic League§!..."
- IW_impending_war2_tt: "In §Y12§! months, §Y[IW_french_league_leader.GetName]§! may make a move against the §YIberians§!..."
+ IW_impending_war_tt: "In §Y12§! months, §Y[IW_french_league_leader.GetName]§! may make a move against the §YItalic League§!...\n\nThe effects of the §YTreaty of Lodi§! have ended, and the §YItalic League§! can now recruit members outside of Italy."
+ IW_impending_war2_tt: "In §Y12§! months, §Y[IW_french_league_leader.GetName]§! may make a move against the §YIberians§!...\n\nThe effects of the §YTreaty of Lodi§! have ended, and the §YItalic League§! can now recruit members outside of Italy."
 
  IW_setup.15.t: "The Drums of War Thunder"
  IW_setup.15.d: "The armies of [IW_french_league_leader.GetName] stand ready, their ranks gleaming with steel and bristling with resolve. Months of preparation have come to fruition, and [IW_french_league_leader.Monarch.GetName] now watches as his forces assemble in the shadow of the Alps. The dream of reclaiming [NAP.GetName] and extending [IW_french_league_leader.GetAdjective] dominance into Italy is no longer a distant vision—it is within reach.\n\nKnights clad in shining armor mount their steeds, their banners fluttering with the royal fleur-de-lis. Swiss mercenaries, battle-hardened and hungry for glory, stand shoulder to shoulder with [IW_french_league_leader.GetAdjective] pikemen. The roads southward are cleared, supplies are gathered, and the finest tacticians prepare to guide the campaign.\n\n[IW_french_league_leader.Monarch.GetName], confident in his destiny, addresses his court. "The riches of Italy await us, and the world shall witness the might of [IW_french_league_leader.GetName]!" With these words, the drums of war echo, and the march on Italy begins. The [IW_french_league_leader.GetAdjective] army is determined to carve a path to greatness, and nothing will stand in its way."
@@ -270,7 +270,7 @@
  IW_unite_italy_button_loc: "End the Italian Wars and unify the peninsula under your rule. Claim the Iron Crown of Lombardy and crown yourself King of Italy, ushering in a new era of dominance and prestige for [Root.GetName]."
  IW_league_overthrow_button_loc: "[GetOverthrowButtonName]"
  IW_league_overthrow_button_name_loc: "[GetOverthrowButtonName]"
- IW_league_overthrow_button_warning_tt: "§RALL §YLeague Members§! on BOTH sides will be called in!§!"
+ IW_league_overthrow_button_warning_tt: "\n§G90%§! Aggressive Expansion, §G125%§! Prestige, and §G80%§! Cost.\nThe special §OImpose Treaty§! peace option will be enabled.\n§RALL §YLeague Members§! on BOTH sides will be called in!§!"
  IW_league_wars_have_begun_tt: "The §YItalian Wars§! have begun"
  IW_must_be_league_member: "Must be a member of a League"
  IW_m_p_t_l_open_close_loc: "Italian Wars"

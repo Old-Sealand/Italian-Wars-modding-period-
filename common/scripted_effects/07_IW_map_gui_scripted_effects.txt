@@ -702,6 +702,7 @@ IW_set_specific_province_cooldown_flag = {
 		clr_country_flag = IW_province_$number$_cooldown_flag
 	}
 	set_country_flag = IW_province_$number$_cooldown_flag
+	set_country_flag = IW_province_$number$_pending_flag # for 'nevermind' option
 }
 
 IW_set_province_cooldown_flag = {
@@ -893,4 +894,132 @@ set_IW_p_i = {
 			save_global_event_target_as = target_right_country
 		}
 	}
+}
+
+#### Added for 'Nevermind' option on iw_interaction_events.1 ####
+IW_clr_province_pending_flag = {
+	clr_country_flag = IW_province_01_pending_flag
+	clr_country_flag = IW_province_02_pending_flag
+	clr_country_flag = IW_province_03_pending_flag
+	clr_country_flag = IW_province_04_pending_flag
+	clr_country_flag = IW_province_05_pending_flag
+	clr_country_flag = IW_province_06_pending_flag
+	clr_country_flag = IW_province_07_pending_flag
+	clr_country_flag = IW_province_08_pending_flag
+	clr_country_flag = IW_province_09_pending_flag
+	clr_country_flag = IW_province_10_pending_flag
+	clr_country_flag = IW_province_11_pending_flag
+	clr_country_flag = IW_province_12_pending_flag
+	clr_country_flag = IW_province_13_pending_flag
+	clr_country_flag = IW_province_14_pending_flag
+	clr_country_flag = IW_province_15_pending_flag
+	clr_country_flag = IW_province_16_pending_flag
+	clr_country_flag = IW_province_17_pending_flag
+	clr_country_flag = IW_province_18_pending_flag
+	clr_country_flag = IW_province_19_pending_flag
+	clr_country_flag = IW_province_20_pending_flag
+	clr_country_flag = IW_province_21_pending_flag
+	clr_country_flag = IW_province_22_pending_flag
+	clr_country_flag = IW_province_23_pending_flag
+	clr_country_flag = IW_province_24_pending_flag
+	clr_country_flag = IW_province_25_pending_flag
+	clr_country_flag = IW_province_26_pending_flag
+	clr_country_flag = IW_province_27_pending_flag
+	clr_country_flag = IW_province_28_pending_flag
+	clr_country_flag = IW_province_29_pending_flag
+	clr_country_flag = IW_province_30_pending_flag
+	clr_country_flag = IW_province_31_pending_flag
+	clr_country_flag = IW_province_32_pending_flag
+	clr_country_flag = IW_province_33_pending_flag
+	clr_country_flag = IW_province_34_pending_flag
+	clr_country_flag = IW_province_35_pending_flag
+	clr_country_flag = IW_province_36_pending_flag
+	clr_country_flag = IW_province_37_pending_flag
+	clr_country_flag = IW_province_38_pending_flag
+	clr_country_flag = IW_province_39_pending_flag
+	clr_country_flag = IW_province_40_pending_flag
+	clr_country_flag = IW_province_41_pending_flag
+	clr_country_flag = IW_province_42_pending_flag
+	clr_country_flag = IW_province_43_pending_flag
+	clr_country_flag = IW_province_44_pending_flag
+	clr_country_flag = IW_province_45_pending_flag
+	clr_country_flag = IW_province_46_pending_flag
+	clr_country_flag = IW_province_47_pending_flag
+	clr_country_flag = IW_province_48_pending_flag
+	clr_country_flag = IW_province_49_pending_flag
+	clr_country_flag = IW_province_50_pending_flag
+	clr_country_flag = IW_province_51_pending_flag
+	clr_country_flag = IW_province_52_pending_flag
+	clr_country_flag = IW_province_53_pending_flag
+	clr_country_flag = IW_province_54_pending_flag
+	clr_country_flag = IW_province_55_pending_flag
+	clr_country_flag = IW_province_56_pending_flag
+	clr_country_flag = IW_province_57_pending_flag
+}
+
+#### Added for 'Nevermind' option on iw_interaction_events.1 ####
+IW_clr_province_cooldown_flag = {
+	if = { limit = { has_country_flag = IW_province_01_pending_flag } clr_country_flag = IW_province_01_cooldown_flag IW_lower_province_inf = { number = 01 } }
+	if = { limit = { has_country_flag = IW_province_02_pending_flag } clr_country_flag = IW_province_02_cooldown_flag IW_lower_province_inf = { number = 02 } }
+	if = { limit = { has_country_flag = IW_province_03_pending_flag } clr_country_flag = IW_province_03_cooldown_flag IW_lower_province_inf = { number = 03 } }
+	if = { limit = { has_country_flag = IW_province_04_pending_flag } clr_country_flag = IW_province_04_cooldown_flag IW_lower_province_inf = { number = 04 } }
+	if = { limit = { has_country_flag = IW_province_05_pending_flag } clr_country_flag = IW_province_05_cooldown_flag IW_lower_province_inf = { number = 05 } }
+	if = { limit = { has_country_flag = IW_province_06_pending_flag } clr_country_flag = IW_province_06_cooldown_flag IW_lower_province_inf = { number = 06 } }
+	if = { limit = { has_country_flag = IW_province_07_pending_flag } clr_country_flag = IW_province_07_cooldown_flag IW_lower_province_inf = { number = 07 } }
+	if = { limit = { has_country_flag = IW_province_08_pending_flag } clr_country_flag = IW_province_08_cooldown_flag IW_lower_province_inf = { number = 08 } }
+	if = { limit = { has_country_flag = IW_province_09_pending_flag } clr_country_flag = IW_province_09_cooldown_flag IW_lower_province_inf = { number = 09 } }
+	if = { limit = { has_country_flag = IW_province_10_pending_flag } clr_country_flag = IW_province_10_cooldown_flag IW_lower_province_inf = { number = 10 } }
+	if = { limit = { has_country_flag = IW_province_11_pending_flag } clr_country_flag = IW_province_11_cooldown_flag IW_lower_province_inf = { number = 11 } }
+	if = { limit = { has_country_flag = IW_province_12_pending_flag } clr_country_flag = IW_province_12_cooldown_flag IW_lower_province_inf = { number = 12 } }
+	if = { limit = { has_country_flag = IW_province_13_pending_flag } clr_country_flag = IW_province_13_cooldown_flag IW_lower_province_inf = { number = 13 } }
+	if = { limit = { has_country_flag = IW_province_14_pending_flag } clr_country_flag = IW_province_14_cooldown_flag IW_lower_province_inf = { number = 14 } }
+	if = { limit = { has_country_flag = IW_province_15_pending_flag } clr_country_flag = IW_province_15_cooldown_flag IW_lower_province_inf = { number = 15 } }
+	if = { limit = { has_country_flag = IW_province_16_pending_flag } clr_country_flag = IW_province_16_cooldown_flag IW_lower_province_inf = { number = 16 } }
+	if = { limit = { has_country_flag = IW_province_17_pending_flag } clr_country_flag = IW_province_17_cooldown_flag IW_lower_province_inf = { number = 17 } }
+	if = { limit = { has_country_flag = IW_province_18_pending_flag } clr_country_flag = IW_province_18_cooldown_flag IW_lower_province_inf = { number = 18 } }
+	if = { limit = { has_country_flag = IW_province_19_pending_flag } clr_country_flag = IW_province_19_cooldown_flag IW_lower_province_inf = { number = 19 } }
+	if = { limit = { has_country_flag = IW_province_20_pending_flag } clr_country_flag = IW_province_20_cooldown_flag IW_lower_province_inf = { number = 20 } }
+	if = { limit = { has_country_flag = IW_province_21_pending_flag } clr_country_flag = IW_province_21_cooldown_flag IW_lower_province_inf = { number = 21 } }
+	if = { limit = { has_country_flag = IW_province_22_pending_flag } clr_country_flag = IW_province_22_cooldown_flag IW_lower_province_inf = { number = 22 } }
+	if = { limit = { has_country_flag = IW_province_23_pending_flag } clr_country_flag = IW_province_23_cooldown_flag IW_lower_province_inf = { number = 23 } }
+	if = { limit = { has_country_flag = IW_province_24_pending_flag } clr_country_flag = IW_province_24_cooldown_flag IW_lower_province_inf = { number = 24 } }
+	if = { limit = { has_country_flag = IW_province_25_pending_flag } clr_country_flag = IW_province_25_cooldown_flag IW_lower_province_inf = { number = 25 } }
+	if = { limit = { has_country_flag = IW_province_26_pending_flag } clr_country_flag = IW_province_26_cooldown_flag IW_lower_province_inf = { number = 26 } }
+	if = { limit = { has_country_flag = IW_province_27_pending_flag } clr_country_flag = IW_province_27_cooldown_flag IW_lower_province_inf = { number = 27 } }
+	if = { limit = { has_country_flag = IW_province_28_pending_flag } clr_country_flag = IW_province_28_cooldown_flag IW_lower_province_inf = { number = 28 } }
+	if = { limit = { has_country_flag = IW_province_29_pending_flag } clr_country_flag = IW_province_29_cooldown_flag IW_lower_province_inf = { number = 29 } }
+	if = { limit = { has_country_flag = IW_province_30_pending_flag } clr_country_flag = IW_province_30_cooldown_flag IW_lower_province_inf = { number = 30 } }
+	if = { limit = { has_country_flag = IW_province_31_pending_flag } clr_country_flag = IW_province_31_cooldown_flag IW_lower_province_inf = { number = 31 } }
+	if = { limit = { has_country_flag = IW_province_32_pending_flag } clr_country_flag = IW_province_32_cooldown_flag IW_lower_province_inf = { number = 32 } }
+	if = { limit = { has_country_flag = IW_province_33_pending_flag } clr_country_flag = IW_province_33_cooldown_flag IW_lower_province_inf = { number = 33 } }
+	if = { limit = { has_country_flag = IW_province_34_pending_flag } clr_country_flag = IW_province_34_cooldown_flag IW_lower_province_inf = { number = 34 } }
+	if = { limit = { has_country_flag = IW_province_35_pending_flag } clr_country_flag = IW_province_35_cooldown_flag IW_lower_province_inf = { number = 35 } }
+	if = { limit = { has_country_flag = IW_province_36_pending_flag } clr_country_flag = IW_province_36_cooldown_flag IW_lower_province_inf = { number = 36 } }
+	if = { limit = { has_country_flag = IW_province_37_pending_flag } clr_country_flag = IW_province_37_cooldown_flag IW_lower_province_inf = { number = 37 } }
+	if = { limit = { has_country_flag = IW_province_38_pending_flag } clr_country_flag = IW_province_38_cooldown_flag IW_lower_province_inf = { number = 38 } }
+	if = { limit = { has_country_flag = IW_province_39_pending_flag } clr_country_flag = IW_province_39_cooldown_flag IW_lower_province_inf = { number = 39 } }
+	if = { limit = { has_country_flag = IW_province_40_pending_flag } clr_country_flag = IW_province_40_cooldown_flag IW_lower_province_inf = { number = 40 } }
+	if = { limit = { has_country_flag = IW_province_41_pending_flag } clr_country_flag = IW_province_41_cooldown_flag IW_lower_province_inf = { number = 41 } }
+	if = { limit = { has_country_flag = IW_province_42_pending_flag } clr_country_flag = IW_province_42_cooldown_flag IW_lower_province_inf = { number = 42 } }
+	if = { limit = { has_country_flag = IW_province_43_pending_flag } clr_country_flag = IW_province_43_cooldown_flag IW_lower_province_inf = { number = 43 } }
+	if = { limit = { has_country_flag = IW_province_44_pending_flag } clr_country_flag = IW_province_44_cooldown_flag IW_lower_province_inf = { number = 44 } }
+	if = { limit = { has_country_flag = IW_province_45_pending_flag } clr_country_flag = IW_province_45_cooldown_flag IW_lower_province_inf = { number = 45 } }
+	if = { limit = { has_country_flag = IW_province_46_pending_flag } clr_country_flag = IW_province_46_cooldown_flag IW_lower_province_inf = { number = 46 } }
+	if = { limit = { has_country_flag = IW_province_47_pending_flag } clr_country_flag = IW_province_47_cooldown_flag IW_lower_province_inf = { number = 47 } }
+	if = { limit = { has_country_flag = IW_province_48_pending_flag } clr_country_flag = IW_province_48_cooldown_flag IW_lower_province_inf = { number = 48 } }
+	if = { limit = { has_country_flag = IW_province_49_pending_flag } clr_country_flag = IW_province_49_cooldown_flag IW_lower_province_inf = { number = 49 } }
+	if = { limit = { has_country_flag = IW_province_50_pending_flag } clr_country_flag = IW_province_50_cooldown_flag IW_lower_province_inf = { number = 50 } }
+	if = { limit = { has_country_flag = IW_province_51_pending_flag } clr_country_flag = IW_province_51_cooldown_flag IW_lower_province_inf = { number = 51 } }
+	if = { limit = { has_country_flag = IW_province_52_pending_flag } clr_country_flag = IW_province_52_cooldown_flag IW_lower_province_inf = { number = 52 } }
+	if = { limit = { has_country_flag = IW_province_53_pending_flag } clr_country_flag = IW_province_53_cooldown_flag IW_lower_province_inf = { number = 53 } }
+	if = { limit = { has_country_flag = IW_province_54_pending_flag } clr_country_flag = IW_province_54_cooldown_flag IW_lower_province_inf = { number = 54 } }
+	if = { limit = { has_country_flag = IW_province_55_pending_flag } clr_country_flag = IW_province_55_cooldown_flag IW_lower_province_inf = { number = 55 } }
+	if = { limit = { has_country_flag = IW_province_56_pending_flag } clr_country_flag = IW_province_56_cooldown_flag IW_lower_province_inf = { number = 56 } }
+	if = { limit = { has_country_flag = IW_province_57_pending_flag } clr_country_flag = IW_province_57_cooldown_flag IW_lower_province_inf = { number = 57 } }
+}
+
+#### Added for 'Nevermind' option on iw_interaction_events.1 ####
+IW_lower_province_inf = {
+	subtract_variable = { which = IW_map_prov_$number$_inf value = 10 }
+	subtract_variable = { which = IW_map_prov_inf value = 10 }
 }
