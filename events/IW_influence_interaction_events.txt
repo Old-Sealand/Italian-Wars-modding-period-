@@ -99,8 +99,8 @@ country_event = { #Event for choosing to increase influence
     option = { #Nevermind
 
 		name = iw_interaction_events.1.f
-
-        hidden_effect = { IW_clr_province_cooldown_flag = yes } # clears cooldown as well as gained influence
+	custom_tooltip = IW_reduce_influence_5
+        IW_clr_province_cooldown_flag = yes # clears cooldown as well as gained influence
         IW_clr_province_pending_flag = yes
 
 	}

@@ -736,12 +736,21 @@ guiTypes = {
 		# IW Map Province Treaties League:
 		## IW open/close:
 		guiButtonType = {
-				name = "IW_m_p_t_l_open_close"
+				name = "IW_m_p_t_l_open"
 				position = { x =46 y =131 }
 				quadTextureSprite ="GFX_IW_m_p_t_l_open_close_button"
 				scripted = yes
 				clicksound = EU4NummerET
 				Orientation = "UPPER_LEFT"
+		}
+		guiButtonType = {
+				name = "IW_m_p_t_l_close"
+				position = { x =46 y =131 }
+				quadTextureSprite ="GFX_IW_m_p_t_l_open_close_button"
+				scripted = yes
+				Orientation = "UPPER_LEFT"
+				clicksound = close_window
+				shortcut = "ESCAPE"
 		}
 		windowType = {
 			name = "IW_m_p_t_l_window"
@@ -1453,7 +1462,7 @@ guiTypes = {
 				}
 				IconType = {
 					name = "IW_province_frame"
-					position = { x=29 y = 225}
+					position = { x=29 y = 238}
 					quadTextureSprite ="GFX_IW_province_frame"
 					scripted = yes
 				}

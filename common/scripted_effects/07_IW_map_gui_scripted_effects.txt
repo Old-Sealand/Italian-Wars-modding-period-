@@ -8,7 +8,8 @@ set_IW_influence = {
 set_IW_inf = {
 	every_country = {
 		limit = { is_subject = no is_core = PREV }
-		set_variable = { which = IW_map_prov_$number$_inf value = 50 }
+		custom_tooltip = IW_set_influence_50
+		hidden_effect = { set_variable = { which = IW_map_prov_$number$_inf value = 50 } }
 	}
 	owner = {
 		if = {
@@ -16,13 +17,17 @@ set_IW_inf = {
 			overlord = {
 				set_country_flag = IW_province_$number$_arrow_flag
 				set_country_flag = IW_province_$number$_war_flag
-				set_variable = { which = IW_map_prov_$number$_inf value = 100 }
+				set_country_flag = IW_province_$number$_full_infl_flag
+				custom_tooltip = IW_set_influence_100
+				hidden_effect = { set_variable = { which = IW_map_prov_$number$_inf value = 100 } }
 			}
 		}
 		else = {
 			set_country_flag = IW_province_$number$_arrow_flag
 			set_country_flag = IW_province_$number$_peace_flag
-			set_variable = { which = IW_map_prov_$number$_inf value = 100 }
+			set_country_flag = IW_province_$number$_full_infl_flag
+			custom_tooltip = IW_set_influence_100
+			hidden_effect = { set_variable = { which = IW_map_prov_$number$_inf value = 100 } }
 		}
 	}
 }
@@ -42,13 +47,17 @@ set_IW_o_p_o_c = {
 			is_core = FROM
 		}
 		owner = {
-			if = {
-				limit = { has_country_flag = IW_province_$number$_war_flag }
-				clr_country_flag = IW_province_$number$_war_flag
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = IW_province_$number$_war_flag }
+					clr_country_flag = IW_province_$number$_war_flag
+				}
+				set_country_flag = IW_province_$number$_arrow_flag
+				set_country_flag = IW_province_$number$_peace_flag
+				set_country_flag = IW_province_$number$_full_infl_flag
 			}
-			set_country_flag = IW_province_$number$_arrow_flag
-			set_country_flag = IW_province_$number$_peace_flag
-			set_variable = { which = IW_map_prov_$number$_inf value = 100 }
+			custom_tooltip = IW_set_influence_100
+			hidden_effect = { set_variable = { which = IW_map_prov_$number$_inf value = 100 } }
 		}
 	}
 	else_if = {
@@ -57,13 +66,20 @@ set_IW_o_p_o_c = {
 			NOT = { is_core = FROM }
 		}
 		owner = {
-			if = {
-				limit = { has_country_flag = IW_province_$number$_war_flag }
-				clr_country_flag = IW_province_$number$_war_flag
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = IW_province_$number$_war_flag }
+					clr_country_flag = IW_province_$number$_war_flag
+				}
+				if = {
+					limit = { has_country_flag = IW_province_$number$_full_infl_flag }
+					clr_country_flag = IW_province_$number$_full_infl_flag
+				}
+				set_country_flag = IW_province_$number$_arrow_flag
+				set_country_flag = IW_province_$number$_peace_flag
 			}
-			set_country_flag = IW_province_$number$_arrow_flag
-			set_country_flag = IW_province_$number$_peace_flag
-			set_variable = { which = IW_map_prov_$number$_inf value = 50 }
+			custom_tooltip = IW_set_influence_50
+			hidden_effect = { set_variable = { which = IW_map_prov_$number$_inf value = 50 } }
 		}
 	}
 	else = {
@@ -71,68 +87,100 @@ set_IW_o_p_o_c = {
 			if = {
 				limit = { is_subject = yes NOT = { is_core = PREV } }
 				overlord = {
-					if = {
-						limit = { has_country_flag = IW_province_$number$_war_flag }
-						clr_country_flag = IW_province_$number$_war_flag
+					hidden_effect = {
+						if = {
+							limit = { has_country_flag = IW_province_$number$_war_flag }
+							clr_country_flag = IW_province_$number$_war_flag
+						}
+						if = {
+							limit = { has_country_flag = IW_province_$number$_full_infl_flag }
+							clr_country_flag = IW_province_$number$_full_infl_flag
+						}
+						set_country_flag = IW_province_$number$_arrow_flag
+						set_country_flag = IW_province_$number$_peace_flag
 					}
-					set_country_flag = IW_province_$number$_arrow_flag
-					set_country_flag = IW_province_$number$_peace_flag
-					set_variable = { which = IW_map_prov_$number$_inf value = 50 }
+					custom_tooltip = IW_set_influence_50
+					hidden_effect = { set_variable = { which = IW_map_prov_$number$_inf value = 50 } }
 				}
 			}
 			else_if = {
 				limit = { is_subject = yes is_core = PREV }
 				overlord = {
-					if = {
-						limit = { has_country_flag = IW_province_$number$_peace_flag }
-						clr_country_flag = IW_province_$number$_peace_flag
+					hidden_effect = {
+						if = {
+							limit = { has_country_flag = IW_province_$number$_peace_flag }
+							clr_country_flag = IW_province_$number$_peace_flag
+						}
+						set_country_flag = IW_province_$number$_arrow_flag
+						set_country_flag = IW_province_$number$_war_flag
+						set_country_flag = IW_province_$number$_full_infl_flag
 					}
-					set_country_flag = IW_province_$number$_arrow_flag
-					set_country_flag = IW_province_$number$_war_flag
-					set_variable = { which = IW_map_prov_$number$_inf value = 100 }
+					custom_tooltip = IW_set_influence_100
+					hidden_effect = { set_variable = { which = IW_map_prov_$number$_inf value = 100 } }
 				}
 			}
 			else = {
-				if = {
-					limit = { has_country_flag = IW_province_$number$_war_flag }
-					clr_country_flag = IW_province_$number$_war_flag
+				hidden_effect = {
+					if = {
+						limit = { has_country_flag = IW_province_$number$_war_flag }
+						clr_country_flag = IW_province_$number$_war_flag
+					}
+					if = {
+						limit = { has_country_flag = IW_province_$number$_full_infl_flag }
+						clr_country_flag = IW_province_$number$_full_infl_flag
+					}
+					set_country_flag = IW_province_$number$_arrow_flag
+					set_country_flag = IW_province_$number$_peace_flag
 				}
-				set_country_flag = IW_province_$number$_arrow_flag
-				set_country_flag = IW_province_$number$_peace_flag
-				set_variable = { which = IW_map_prov_$number$_inf value = 50 }
+				custom_tooltip = IW_set_influence_50
+				hidden_effect = { set_variable = { which = IW_map_prov_$number$_inf value = 50 } }
 			}
 		}
 	}
 	if = {
 		limit = { owner = { is_subject_of = FROM } }
 		FROM = {
-			if = {
-				limit = { has_country_flag = IW_province_$number$_war_flag }
-				clr_country_flag = IW_province_$number$_war_flag
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = IW_province_$number$_war_flag }
+					clr_country_flag = IW_province_$number$_war_flag
+				}
+				if = {
+					limit = { has_country_flag = IW_province_$number$_full_infl_flag }
+					clr_country_flag = IW_province_$number$_full_infl_flag
+				}
+				set_country_flag = IW_province_$number$_arrow_flag
+				set_country_flag = IW_province_$number$_peace_flag
 			}
-			set_country_flag = IW_province_$number$_arrow_flag
-			set_country_flag = IW_province_$number$_peace_flag
-			set_variable = { which = IW_map_prov_$number$_inf value = 50 }
+			custom_tooltip = IW_set_influence_50
+			hidden_effect = { set_variable = { which = IW_map_prov_$number$_inf value = 50 } }
 		}
 	}
 	else = {
 		FROM = {
-			set_variable = { which = IW_map_prov_$number$_inf value = 0 }
-			if = {
-				limit = { has_country_flag = IW_province_$number$_arrow_flag }
-				clr_country_flag = IW_province_$number$_arrow_flag
-			}
-			if = {
-				limit = { has_country_flag = IW_province_$number$_peace_flag }
-				clr_country_flag = IW_province_$number$_peace_flag
-			}
-			if = {
-				limit = { has_country_flag = IW_province_$number$_war_flag }
-				clr_country_flag = IW_province_$number$_war_flag
-			}
-			if = {
-				limit = { has_country_flag = IW_province_$number$_intervention_flag }
-				clr_country_flag = IW_province_$number$_intervention_flag
+			custom_tooltip = IW_set_influence_0
+			hidden_effect = {
+				set_variable = { which = IW_map_prov_$number$_inf value = 0 }
+				if = {
+					limit = { has_country_flag = IW_province_$number$_arrow_flag }
+					clr_country_flag = IW_province_$number$_arrow_flag
+				}
+				if = {
+					limit = { has_country_flag = IW_province_$number$_peace_flag }
+					clr_country_flag = IW_province_$number$_peace_flag
+				}
+				if = {
+					limit = { has_country_flag = IW_province_$number$_war_flag }
+					clr_country_flag = IW_province_$number$_war_flag
+				}
+				if = {
+					limit = { has_country_flag = IW_province_$number$_full_infl_flag }
+					clr_country_flag = IW_province_$number$_full_infl_flag
+				}
+				if = {
+					limit = { has_country_flag = IW_province_$number$_intervention_flag }
+					clr_country_flag = IW_province_$number$_intervention_flag
+				}
 			}
 		}
 	}
@@ -143,23 +191,39 @@ set_IW_dependency_gained_flag = {
 set_IW_d_g_f = {
 	ROOT = {
 		if = {
-			limit = { NOT = { check_variable = { which = IW_map_prov_$number$_inf value = 50 } } }
-			if = {
-				limit = { has_country_flag = IW_province_$number$_war_flag }
-				clr_country_flag = IW_province_$number$_war_flag
+			limit = {
+				custom_trigger_tooltip = {
+					tooltip = IW_not_has_influence_50
+					NOT = { check_variable = { which = IW_map_prov_$number$_inf value = 50 } }
+				}
 			}
-			set_country_flag = IW_province_$number$_arrow_flag
-			set_country_flag = IW_province_$number$_peace_flag
-			set_variable = { which = IW_map_prov_$number$_inf value = 50 }
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = IW_province_$number$_war_flag }
+					clr_country_flag = IW_province_$number$_war_flag
+				}
+				if = {
+					limit = { has_country_flag = IW_province_$number$_full_infl_flag }
+					clr_country_flag = IW_province_$number$_full_infl_flag
+				}
+				set_country_flag = IW_province_$number$_arrow_flag
+				set_country_flag = IW_province_$number$_peace_flag
+			}
+			custom_tooltip = IW_set_influence_50
+			hidden_effect = { set_variable = { which = IW_map_prov_$number$_inf value = 50 } }
 		}
 		else = {
-			if = {
-				limit = { has_country_flag = IW_province_$number$_peace_flag }
-				clr_country_flag = IW_province_$number$_peace_flag
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = IW_province_$number$_peace_flag }
+					clr_country_flag = IW_province_$number$_peace_flag
+				}
+				set_country_flag = IW_province_$number$_arrow_flag
+				set_country_flag = IW_province_$number$_war_flag
+				set_country_flag = IW_province_$number$_full_infl_flag
 			}
-			set_country_flag = IW_province_$number$_arrow_flag
-			set_country_flag = IW_province_$number$_war_flag
-			set_variable = { which = IW_map_prov_$number$_inf value = 100 }
+			custom_tooltip = IW_set_influence_100
+			hidden_effect = { set_variable = { which = IW_map_prov_$number$_inf value = 100 } }
 		}
 	}
 }
@@ -190,15 +254,30 @@ set_IW_dependency_lost_flag = {
 }
 set_IW_d_l_f = {
 	FROM = {
-		if = {
-			limit = { has_country_flag = IW_province_$number$_war_flag }
-			clr_country_flag = IW_province_$number$_war_flag
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = IW_province_$number$_war_flag }
+				clr_country_flag = IW_province_$number$_war_flag
+			}
+			if = {
+				limit = { has_country_flag = IW_province_$number$_full_infl_flag }
+				clr_country_flag = IW_province_$number$_full_infl_flag
+			}
+			set_country_flag = IW_province_$number$_arrow_flag
+			set_country_flag = IW_province_$number$_peace_flag
 		}
-		set_country_flag = IW_province_$number$_arrow_flag
-		set_country_flag = IW_province_$number$_peace_flag
 		if = {
-			limit = { NOT = { check_variable = { which = IW_map_prov_$number$_inf value = 100 } } }
-			set_variable = { which = IW_map_prov_$number$_inf value = 100 }
+			limit = {
+				custom_trigger_tooltip = {
+					tooltip = IW_not_has_influence_100
+					NOT = { check_variable = { which = IW_map_prov_$number$_inf value = 100 } }
+				}
+			}
+			custom_tooltip = IW_set_influence_100
+			hidden_effect = {
+				set_country_flag = IW_province_$number$_full_infl_flag
+				set_variable = { which = IW_map_prov_$number$_inf value = 100 }
+			}
 		}
 	}
 }
@@ -226,22 +305,29 @@ clr_IW_map_lose_vassal_influence_progress = {
 }
 clr_IW_map_l_v_i_p = {
 	ROOT = {
-		set_variable = { which = IW_map_prov_$number$_inf value = 0 }
-		if = {
-			limit = { has_country_flag = IW_province_$number$_arrow_flag }
-			clr_country_flag = IW_province_$number$_arrow_flag
-		}
-		if = {
-			limit = { has_country_flag = IW_province_$number$_peace_flag }
-			clr_country_flag = IW_province_$number$_peace_flag
-		}
-		if = {
-			limit = { has_country_flag = IW_province_$number$_war_flag }
-			clr_country_flag = IW_province_$number$_war_flag
-		}
-		if = {
-			limit = { has_country_flag = IW_province_$number$_intervention_flag }
-			clr_country_flag = IW_province_$number$_intervention_flag
+		custom_tooltip = IW_set_influence_0
+		hidden_effect = {
+			set_variable = { which = IW_map_prov_$number$_inf value = 0 }
+			if = {
+				limit = { has_country_flag = IW_province_$number$_arrow_flag }
+				clr_country_flag = IW_province_$number$_arrow_flag
+			}
+			if = {
+				limit = { has_country_flag = IW_province_$number$_peace_flag }
+				clr_country_flag = IW_province_$number$_peace_flag
+			}
+			if = {
+				limit = { has_country_flag = IW_province_$number$_war_flag }
+				clr_country_flag = IW_province_$number$_war_flag
+			}
+			if = {
+				limit = { has_country_flag = IW_province_$number$_full_infl_flag }
+				clr_country_flag = IW_province_$number$_full_infl_flag
+			}
+			if = {
+				limit = { has_country_flag = IW_province_$number$_intervention_flag }
+				clr_country_flag = IW_province_$number$_intervention_flag
+			}
 		}
 	}
 }
@@ -252,23 +338,39 @@ set_IW_create_vassal_flag = {
 set_IW_c_v_f = {
 	FROM = {
 		if = {
-			limit = { NOT = { check_variable = { which = IW_map_prov_$number$_inf value = 50 } } }
-			if = {
-				limit = { has_country_flag = IW_province_$number$_war_flag }
-				clr_country_flag = IW_province_$number$_war_flag
+			limit = {
+				custom_trigger_tooltip = {
+					tooltip = IW_not_has_influence_50
+					NOT = { check_variable = { which = IW_map_prov_$number$_inf value = 50 } }
+				}
 			}
-			set_country_flag = IW_province_$number$_arrow_flag
-			set_country_flag = IW_province_$number$_peace_flag
-			set_variable = { which = IW_map_prov_$number$_inf value = 50 }
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = IW_province_$number$_war_flag }
+					clr_country_flag = IW_province_$number$_war_flag
+				}
+				if = {
+					limit = { has_country_flag = IW_province_$number$_full_infl_flag }
+					clr_country_flag = IW_province_$number$_full_infl_flag
+				}
+				set_country_flag = IW_province_$number$_arrow_flag
+				set_country_flag = IW_province_$number$_peace_flag
+			}
+			custom_tooltip = IW_set_influence_50
+			hidden_effect = { set_variable = { which = IW_map_prov_$number$_inf value = 50 } }
 		}
 		else = {
-			if = {
-				limit = { has_country_flag = IW_province_$number$_peace_flag }
-				clr_country_flag = IW_province_$number$_peace_flag
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = IW_province_$number$_peace_flag }
+					clr_country_flag = IW_province_$number$_peace_flag
+				}
+				set_country_flag = IW_province_$number$_arrow_flag
+				set_country_flag = IW_province_$number$_war_flag
+				set_country_flag = IW_province_$number$_full_infl_flag
 			}
-			set_country_flag = IW_province_$number$_arrow_flag
-			set_country_flag = IW_province_$number$_war_flag
-			set_variable = { which = IW_map_prov_$number$_inf value = 100 }
+			custom_tooltip = IW_set_influence_100
+			hidden_effect = { set_variable = { which = IW_map_prov_$number$_inf value = 100 } }
 		}
 	}
 }
@@ -303,22 +405,29 @@ clr_IW_map_all_influence_progress = {
 	clr_IW_m_a_i_p = { number = 01 } clr_IW_m_a_i_p = { number = 02 } clr_IW_m_a_i_p = { number = 03 } clr_IW_m_a_i_p = { number = 04 } clr_IW_m_a_i_p = { number = 05 } clr_IW_m_a_i_p = { number = 06 } clr_IW_m_a_i_p = { number = 07 } clr_IW_m_a_i_p = { number = 08 } clr_IW_m_a_i_p = { number = 09 } clr_IW_m_a_i_p = { number = 10 } clr_IW_m_a_i_p = { number = 11 } clr_IW_m_a_i_p = { number = 12 } clr_IW_m_a_i_p = { number = 13 } clr_IW_m_a_i_p = { number = 14 } clr_IW_m_a_i_p = { number = 15 } clr_IW_m_a_i_p = { number = 16 } clr_IW_m_a_i_p = { number = 17 } clr_IW_m_a_i_p = { number = 18 } clr_IW_m_a_i_p = { number = 19 } clr_IW_m_a_i_p = { number = 20 } clr_IW_m_a_i_p = { number = 21 } clr_IW_m_a_i_p = { number = 22 } clr_IW_m_a_i_p = { number = 23 } clr_IW_m_a_i_p = { number = 24 } clr_IW_m_a_i_p = { number = 25 } clr_IW_m_a_i_p = { number = 26 } clr_IW_m_a_i_p = { number = 27 } clr_IW_m_a_i_p = { number = 28 } clr_IW_m_a_i_p = { number = 29 } clr_IW_m_a_i_p = { number = 30 } clr_IW_m_a_i_p = { number = 31 } clr_IW_m_a_i_p = { number = 32 } clr_IW_m_a_i_p = { number = 33 } clr_IW_m_a_i_p = { number = 34 } clr_IW_m_a_i_p = { number = 35 } clr_IW_m_a_i_p = { number = 36 } clr_IW_m_a_i_p = { number = 37 } clr_IW_m_a_i_p = { number = 38 } clr_IW_m_a_i_p = { number = 39 } clr_IW_m_a_i_p = { number = 40 } clr_IW_m_a_i_p = { number = 41 } clr_IW_m_a_i_p = { number = 42 } clr_IW_m_a_i_p = { number = 43 } clr_IW_m_a_i_p = { number = 44 } clr_IW_m_a_i_p = { number = 45 } clr_IW_m_a_i_p = { number = 46 } clr_IW_m_a_i_p = { number = 47 } clr_IW_m_a_i_p = { number = 48 } clr_IW_m_a_i_p = { number = 49 } clr_IW_m_a_i_p = { number = 50 } clr_IW_m_a_i_p = { number = 51 } clr_IW_m_a_i_p = { number = 52 } clr_IW_m_a_i_p = { number = 53 } clr_IW_m_a_i_p = { number = 54 } clr_IW_m_a_i_p = { number = 55 } clr_IW_m_a_i_p = { number = 56 } clr_IW_m_a_i_p = { number = 57 }
 }
 clr_IW_m_a_i_p = {
-	set_variable = { which = IW_map_prov_$number$_inf value = 0 }
-	if = {
-		limit = { has_country_flag = IW_province_$number$_arrow_flag }
-		clr_country_flag = IW_province_$number$_arrow_flag
-	}
-	if = {
-		limit = { has_country_flag = IW_province_$number$_peace_flag }
-		clr_country_flag = IW_province_$number$_peace_flag
-	}
-	if = {
-		limit = { has_country_flag = IW_province_$number$_war_flag }
-		clr_country_flag = IW_province_$number$_war_flag
-	}
-	if = {
-		limit = { has_country_flag = IW_province_$number$_intervention_flag }
-		clr_country_flag = IW_province_$number$_intervention_flag
+	custom_tooltip = IW_set_influence_0
+	hidden_effect = {
+		set_variable = { which = IW_map_prov_$number$_inf value = 0 }
+		if = {
+			limit = { has_country_flag = IW_province_$number$_arrow_flag }
+			clr_country_flag = IW_province_$number$_arrow_flag
+		}
+		if = {
+			limit = { has_country_flag = IW_province_$number$_peace_flag }
+			clr_country_flag = IW_province_$number$_peace_flag
+		}
+		if = {
+			limit = { has_country_flag = IW_province_$number$_war_flag }
+			clr_country_flag = IW_province_$number$_war_flag
+		}
+		if = {
+			limit = { has_country_flag = IW_province_$number$_full_infl_flag }
+			clr_country_flag = IW_province_$number$_full_infl_flag
+		}
+		if = {
+			limit = { has_country_flag = IW_province_$number$_intervention_flag }
+			clr_country_flag = IW_province_$number$_intervention_flag
+		}
 	}
 }
 set_IW_map_intervention_flag = {
@@ -384,9 +493,15 @@ set_IW_m_i_f = {
 	owner = {
 		if = {
 			limit = { is_subject = yes }
-			overlord = { set_country_flag = IW_province_$number$_intervention_flag }
+			overlord = {
+				custom_tooltip = IW_province_intervention
+				set_country_flag = IW_province_$number$_intervention_flag
+			}
 		}
-		else = { set_country_flag = IW_province_$number$_intervention_flag }
+		else = {
+			custom_tooltip = IW_province_intervention
+			set_country_flag = IW_province_$number$_intervention_flag
+		}
 	}
 }
 set_IW_map_prov_window_flag = {
@@ -395,19 +510,23 @@ set_IW_map_prov_window_flag = {
 			has_country_flag = IW_map_prov_$number$_window
 			has_country_flag = IW_province_window
 		}
-		clr_country_flag = IW_map_prov_$number$_window
-		clr_country_flag = IW_province_window
+		hidden_effect = {
+			clr_country_flag = IW_map_prov_$number$_window
+			clr_country_flag = IW_province_window
+		}
 	}
 	else_if = {
 		limit = {
 			NOT = { has_country_flag = IW_map_prov_$number$_window }
 			NOT = { has_country_flag = IW_province_window }
 		}
-		set_country_flag = IW_map_prov_$number$_window
-		set_country_flag = IW_province_window
-		set_variable = {
-			which = IW_map_prov_inf
-			which = IW_map_prov_$number$_inf
+		hidden_effect = {
+			set_country_flag = IW_map_prov_$number$_window
+			set_country_flag = IW_province_window
+			set_variable = {
+				which = IW_map_prov_inf
+				which = IW_map_prov_$number$_inf
+			}
 		}
 	}
 	else = {
@@ -468,10 +587,12 @@ set_IW_map_prov_window_flag = {
 		if = { limit = { has_country_flag = IW_map_prov_55_window } clr_country_flag = IW_map_prov_55_window }
 		if = { limit = { has_country_flag = IW_map_prov_56_window } clr_country_flag = IW_map_prov_56_window }
 		if = { limit = { has_country_flag = IW_map_prov_57_window } clr_country_flag = IW_map_prov_57_window }
-		set_country_flag = IW_map_prov_$number$_window
-		set_variable = {
-			which = IW_map_prov_inf
-			which = IW_map_prov_$number$_inf
+		hidden_effect = {
+			set_country_flag = IW_map_prov_$number$_window
+			set_variable = {
+				which = IW_map_prov_inf
+				which = IW_map_prov_$number$_inf
+			}
 		}
 	}
 }
@@ -481,8 +602,11 @@ set_IW_province_progress_bar = {
 	if = { limit = { has_country_flag = IW_map_prov_01_window } set_IW_p_p_b = { number = 01 } } if = { limit = { has_country_flag = IW_map_prov_02_window } set_IW_p_p_b = { number = 02 } } if = { limit = { has_country_flag = IW_map_prov_03_window } set_IW_p_p_b = { number = 03 } } if = { limit = { has_country_flag = IW_map_prov_04_window } set_IW_p_p_b = { number = 04 } } if = { limit = { has_country_flag = IW_map_prov_05_window } set_IW_p_p_b = { number = 05 } } if = { limit = { has_country_flag = IW_map_prov_06_window } set_IW_p_p_b = { number = 06 } } if = { limit = { has_country_flag = IW_map_prov_07_window } set_IW_p_p_b = { number = 07 } } if = { limit = { has_country_flag = IW_map_prov_08_window } set_IW_p_p_b = { number = 08 } } if = { limit = { has_country_flag = IW_map_prov_09_window } set_IW_p_p_b = { number = 09 } } if = { limit = { has_country_flag = IW_map_prov_10_window } set_IW_p_p_b = { number = 10 } } if = { limit = { has_country_flag = IW_map_prov_11_window } set_IW_p_p_b = { number = 11 } } if = { limit = { has_country_flag = IW_map_prov_12_window } set_IW_p_p_b = { number = 12 } } if = { limit = { has_country_flag = IW_map_prov_13_window } set_IW_p_p_b = { number = 13 } } if = { limit = { has_country_flag = IW_map_prov_14_window } set_IW_p_p_b = { number = 14 } } if = { limit = { has_country_flag = IW_map_prov_15_window } set_IW_p_p_b = { number = 15 } } if = { limit = { has_country_flag = IW_map_prov_16_window } set_IW_p_p_b = { number = 16 } } if = { limit = { has_country_flag = IW_map_prov_17_window } set_IW_p_p_b = { number = 17 } } if = { limit = { has_country_flag = IW_map_prov_18_window } set_IW_p_p_b = { number = 18 } } if = { limit = { has_country_flag = IW_map_prov_19_window } set_IW_p_p_b = { number = 19 } } if = { limit = { has_country_flag = IW_map_prov_20_window } set_IW_p_p_b = { number = 20 } } if = { limit = { has_country_flag = IW_map_prov_21_window } set_IW_p_p_b = { number = 21 } } if = { limit = { has_country_flag = IW_map_prov_22_window } set_IW_p_p_b = { number = 22 } } if = { limit = { has_country_flag = IW_map_prov_23_window } set_IW_p_p_b = { number = 23 } } if = { limit = { has_country_flag = IW_map_prov_24_window } set_IW_p_p_b = { number = 24 } } if = { limit = { has_country_flag = IW_map_prov_25_window } set_IW_p_p_b = { number = 25 } } if = { limit = { has_country_flag = IW_map_prov_26_window } set_IW_p_p_b = { number = 26 } } if = { limit = { has_country_flag = IW_map_prov_27_window } set_IW_p_p_b = { number = 27 } } if = { limit = { has_country_flag = IW_map_prov_28_window } set_IW_p_p_b = { number = 28 } } if = { limit = { has_country_flag = IW_map_prov_29_window } set_IW_p_p_b = { number = 29 } } if = { limit = { has_country_flag = IW_map_prov_30_window } set_IW_p_p_b = { number = 30 } } if = { limit = { has_country_flag = IW_map_prov_31_window } set_IW_p_p_b = { number = 31 } } if = { limit = { has_country_flag = IW_map_prov_32_window } set_IW_p_p_b = { number = 32 } } if = { limit = { has_country_flag = IW_map_prov_33_window } set_IW_p_p_b = { number = 33 } } if = { limit = { has_country_flag = IW_map_prov_34_window } set_IW_p_p_b = { number = 34 } } if = { limit = { has_country_flag = IW_map_prov_35_window } set_IW_p_p_b = { number = 35 } } if = { limit = { has_country_flag = IW_map_prov_36_window } set_IW_p_p_b = { number = 36 } } if = { limit = { has_country_flag = IW_map_prov_37_window } set_IW_p_p_b = { number = 37 } } if = { limit = { has_country_flag = IW_map_prov_38_window } set_IW_p_p_b = { number = 38 } } if = { limit = { has_country_flag = IW_map_prov_39_window } set_IW_p_p_b = { number = 39 } } if = { limit = { has_country_flag = IW_map_prov_40_window } set_IW_p_p_b = { number = 40 } } if = { limit = { has_country_flag = IW_map_prov_41_window } set_IW_p_p_b = { number = 41 } } if = { limit = { has_country_flag = IW_map_prov_42_window } set_IW_p_p_b = { number = 42 } } if = { limit = { has_country_flag = IW_map_prov_43_window } set_IW_p_p_b = { number = 43 } } if = { limit = { has_country_flag = IW_map_prov_44_window } set_IW_p_p_b = { number = 44 } } if = { limit = { has_country_flag = IW_map_prov_45_window } set_IW_p_p_b = { number = 45 } } if = { limit = { has_country_flag = IW_map_prov_46_window } set_IW_p_p_b = { number = 46 } } if = { limit = { has_country_flag = IW_map_prov_47_window } set_IW_p_p_b = { number = 47 } } if = { limit = { has_country_flag = IW_map_prov_48_window } set_IW_p_p_b = { number = 48 } } if = { limit = { has_country_flag = IW_map_prov_49_window } set_IW_p_p_b = { number = 49 } } if = { limit = { has_country_flag = IW_map_prov_50_window } set_IW_p_p_b = { number = 50 } } if = { limit = { has_country_flag = IW_map_prov_51_window } set_IW_p_p_b = { number = 51 } } if = { limit = { has_country_flag = IW_map_prov_52_window } set_IW_p_p_b = { number = 52 } } if = { limit = { has_country_flag = IW_map_prov_53_window } set_IW_p_p_b = { number = 53 } } if = { limit = { has_country_flag = IW_map_prov_54_window } set_IW_p_p_b = { number = 54 } } if = { limit = { has_country_flag = IW_map_prov_55_window } set_IW_p_p_b = { number = 55 } } if = { limit = { has_country_flag = IW_map_prov_56_window } set_IW_p_p_b = { number = 56 } } if = { limit = { has_country_flag = IW_map_prov_57_window } set_IW_p_p_b = { number = 57 } }
 }
 set_IW_p_p_b = {
-	change_variable = { which = IW_map_prov_inf value = 10 }
-	change_variable = { which = IW_map_prov_$number$_inf value = 10 }
+	custom_tooltip = IW_add_influence_5
+	hidden_effect = { 
+		change_variable = { which = IW_map_prov_inf value = 5 }
+		change_variable = { which = IW_map_prov_$number$_inf value = 5 }
+	}
 }
 # Peace:
 set_IW_province_peace_flag = {
@@ -573,47 +697,131 @@ set_IW_p_f = {
 			add_core = ROOT
 			cede_province = ROOT
 		}
+		hidden_effect = {
+			set_country_flag = IW_province_$number$_full_infl_flag
+			set_variable = { which = IW_map_prov_$number$_inf value = 100 }
+		}
 	}
 	if = {
 		limit = { has_country_flag = IW_province_$number$_war_flag }
 		$province$ = {
-			owner = { save_event_target_as = prev_owner }
+			hidden_effect = { save_global_event_target_as = cb_IW_uprising_war_$number$ }
+			owner = {
+				if = {
+					limit = { is_subject = yes }
+					overlord = {
+						custom_tooltip = IW_set_influence_0
+						hidden_effect = {
+							set_variable = { which = IW_map_prov_$number$_inf value = 0 }
+							if = {
+								limit = { has_country_flag = IW_province_$number$_arrow_flag }
+								clr_country_flag = IW_province_$number$_arrow_flag
+							}
+							if = {
+								limit = { has_country_flag = IW_province_$number$_peace_flag }
+								clr_country_flag = IW_province_$number$_peace_flag
+							}
+							if = {
+								limit = { has_country_flag = IW_province_$number$_war_flag }
+								clr_country_flag = IW_province_$number$_war_flag
+							}
+							if = {
+								limit = { has_country_flag = IW_province_$number$_full_infl_flag }
+								clr_country_flag = IW_province_$number$_full_infl_flag
+							}
+							if = {
+								limit = { has_country_flag = IW_province_$number$_intervention_flag }
+								clr_country_flag = IW_province_$number$_intervention_flag
+							}
+							save_event_target_as = IW_uprising_war_target
+						}
+					}
+				}
+				else = {
+					custom_tooltip = IW_set_influence_0
+					hidden_effect = {
+						set_variable = { which = IW_map_prov_$number$_inf value = 0 }
+						if = {
+							limit = { has_country_flag = IW_province_$number$_arrow_flag }
+							clr_country_flag = IW_province_$number$_arrow_flag
+						}
+						if = {
+							limit = { has_country_flag = IW_province_$number$_peace_flag }
+							clr_country_flag = IW_province_$number$_peace_flag
+						}
+						if = {
+							limit = { has_country_flag = IW_province_$number$_war_flag }
+							clr_country_flag = IW_province_$number$_war_flag
+						}
+						if = {
+							limit = { has_country_flag = IW_province_$number$_full_infl_flag }
+							clr_country_flag = IW_province_$number$_full_infl_flag
+						}
+						if = {
+							limit = { has_country_flag = IW_province_$number$_intervention_flag }
+							clr_country_flag = IW_province_$number$_intervention_flag
+						}
+						save_event_target_as = IW_uprising_war_target
+					}
+				}
+			}
 			add_core = $revolter$
 			cede_province = $revolter$
 		}
 		vassalize = $revolter$
 		ROOT = {
-			if = {
-				limit = { has_country_flag = IW_province_$number$_peace_flag }
-				clr_country_flag = IW_province_$number$_peace_flag
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = IW_province_$number$_peace_flag }
+					clr_country_flag = IW_province_$number$_peace_flag
+				}
+				set_country_flag = IW_province_$number$_arrow_flag
+				set_country_flag = IW_province_$number$_war_flag
 			}
-			set_country_flag = IW_province_$number$_arrow_flag
-			set_country_flag = IW_province_$number$_war_flag
 			if = {
-				limit = { NOT = { check_variable = { which = IW_map_prov_$number$_inf value = 100 } } }
-				set_variable = { which = IW_map_prov_$number$_inf value = 100 }
+				limit = {
+					custom_trigger_tooltip = {
+						tooltip = IW_not_has_influence_100
+						NOT = { check_variable = { which = IW_map_prov_$number$_inf value = 100 } }
+					}
+				}
+				custom_tooltip = IW_set_influence_100
+				hidden_effect = {
+					set_country_flag = IW_province_$number$_full_infl_flag
+					set_variable = { which = IW_map_prov_$number$_inf value = 100 }
+				}
+			}
+			declare_war_with_cb = {
+				who = event_target:IW_uprising_war_target
+				casus_belli = cb_IW_uprising_war
 			}
 		}
 		$revolter$ = {
-			set_variable = { which = IW_map_prov_$number$_inf value = 0 }
-			if = {
-				limit = { has_country_flag = IW_province_$number$_arrow_flag }
-				clr_country_flag = IW_province_$number$_arrow_flag
-			}
-			if = {
-				limit = { has_country_flag = IW_province_$number$_peace_flag }
-				clr_country_flag = IW_province_$number$_peace_flag
-			}
-			if = {
-				limit = { has_country_flag = IW_province_$number$_war_flag }
-				clr_country_flag = IW_province_$number$_war_flag
-			}
-			if = {
-				limit = { has_country_flag = IW_province_$number$_intervention_flag }
-				clr_country_flag = IW_province_$number$_intervention_flag
+			custom_tooltip = IW_set_influence_0
+			hidden_effect = {
+				set_variable = { which = IW_map_prov_$number$_inf value = 0 }
+				if = {
+					limit = { has_country_flag = IW_province_$number$_arrow_flag }
+					clr_country_flag = IW_province_$number$_arrow_flag
+				}
+				if = {
+					limit = { has_country_flag = IW_province_$number$_peace_flag }
+					clr_country_flag = IW_province_$number$_peace_flag
+				}
+				if = {
+					limit = { has_country_flag = IW_province_$number$_war_flag }
+					clr_country_flag = IW_province_$number$_war_flag
+				}
+				if = {
+					limit = { has_country_flag = IW_province_$number$_full_infl_flag }
+					clr_country_flag = IW_province_$number$_full_infl_flag
+				}
+				if = {
+					limit = { has_country_flag = IW_province_$number$_intervention_flag }
+					clr_country_flag = IW_province_$number$_intervention_flag
+				}
 			}
 		}
-
 		if = {
 			limit = {
 				capital_scope = {
@@ -627,6 +835,82 @@ set_IW_p_f = {
 		}
 
 		event_target:prev_owner = { country_event = { id = iw_interaction_events.3 } }
+	}
+}
+set_cb_IW_uprising_war = {
+	if = { limit = { event_target:cb_IW_uprising_war_01 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 01 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_02 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 02 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_03 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 03 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_04 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 04 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_05 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 05 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_06 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 06 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_07 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 07 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_08 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 08 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_09 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 09 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_10 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 10 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_11 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 11 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_12 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 12 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_13 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 13 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_14 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 14 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_15 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 15 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_16 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 16 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_17 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 17 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_18 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 18 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_19 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 19 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_20 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 20 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_21 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 21 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_22 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 22 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_23 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 23 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_24 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 24 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_25 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 25 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_26 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 26 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_27 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 27 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_28 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 28 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_29 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 29 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_30 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 30 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_31 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 31 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_32 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 32 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_33 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 33 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_34 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 34 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_35 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 35 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_36 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 36 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_37 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 37 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_38 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 38 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_39 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 39 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_40 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 40 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_41 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 41 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_42 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 42 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_43 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 43 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_44 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 44 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_45 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 45 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_46 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 46 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_47 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 47 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_48 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 48 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_49 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 49 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_50 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 50 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_51 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 51 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_52 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 52 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_53 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 53 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_54 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 54 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_55 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 55 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_56 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 56 } } 
+	if = { limit = { event_target:cb_IW_uprising_war_57 = { owned_by_subject_of = FROM } } set_cb_IW_u_w = { number = 57 } }
+}
+set_cb_IW_u_w = {
+	if = {
+		limit = {
+			has_saved_global_event_target = po_IW_uprising_province_att_ROOT
+		}
+		clear_global_event_target = po_IW_uprising_province_att_ROOT
+		clear_global_event_target = cb_IW_uprising_war_$number$
+	}
+	if = {
+		limit = {
+			has_saved_global_event_target = po_IW_uprising_province_def_ROOT
+		}
+		event_target:cb_IW_uprising_war_$number$ = { cede_province = ROOT }
+		clear_global_event_target = po_IW_uprising_province_def_ROOT
+		clear_global_event_target = cb_IW_uprising_war_$number$
 	}
 }
 
@@ -698,14 +982,14 @@ IW_save_location_as_event_target = {
 }
 
 IW_set_specific_province_cooldown_flag = {
-	if = {
-		limit = {
-			has_country_flag = IW_province_$number$_cooldown_flag
+	hidden_effect = {
+		if = {
+			limit = { has_country_flag = IW_province_$number$_cooldown_flag }
+			clr_country_flag = IW_province_$number$_cooldown_flag
 		}
-		clr_country_flag = IW_province_$number$_cooldown_flag
+		set_country_flag = IW_province_$number$_cooldown_flag
+		set_country_flag = IW_province_$number$_pending_flag # for 'nevermind' option
 	}
-	set_country_flag = IW_province_$number$_cooldown_flag
-	set_country_flag = IW_province_$number$_pending_flag # for 'nevermind' option
 }
 
 IW_set_province_cooldown_flag = {
@@ -884,23 +1168,26 @@ set_IW_province_info = {
 	if = { limit = { has_country_flag = IW_map_prov_57_window } set_IW_p_i = { province = 1247 revolter = COR } }
 }
 set_IW_p_i = {
-	$province$ = {
-		save_global_event_target_as = province_info
-	}
-	event_target:province_info = {
-		owner = {
-			save_global_event_target_as = target_left_country
+	hidden_effect = {
+		$province$ = {
+			save_global_event_target_as = province_info
 		}
-	}
-	event_target:province_info = {
-		$revolter$= {
-			save_global_event_target_as = target_right_country
+		event_target:province_info = {
+			owner = {
+				save_global_event_target_as = target_left_country
+			}
+		}
+		event_target:province_info = {
+			$revolter$= {
+				save_global_event_target_as = target_right_country
+			}
 		}
 	}
 }
 
 #### Added for 'Nevermind' option on iw_interaction_events.1 ####
 IW_clr_province_pending_flag = {
+	hidden_effect = {
 	clr_country_flag = IW_province_01_pending_flag
 	clr_country_flag = IW_province_02_pending_flag
 	clr_country_flag = IW_province_03_pending_flag
@@ -958,10 +1245,12 @@ IW_clr_province_pending_flag = {
 	clr_country_flag = IW_province_55_pending_flag
 	clr_country_flag = IW_province_56_pending_flag
 	clr_country_flag = IW_province_57_pending_flag
+	}
 }
 
 #### Added for 'Nevermind' option on iw_interaction_events.1 ####
 IW_clr_province_cooldown_flag = {
+	hidden_effect = {
 	if = { limit = { has_country_flag = IW_province_01_pending_flag } clr_country_flag = IW_province_01_cooldown_flag IW_lower_province_inf = { number = 01 } }
 	if = { limit = { has_country_flag = IW_province_02_pending_flag } clr_country_flag = IW_province_02_cooldown_flag IW_lower_province_inf = { number = 02 } }
 	if = { limit = { has_country_flag = IW_province_03_pending_flag } clr_country_flag = IW_province_03_cooldown_flag IW_lower_province_inf = { number = 03 } }
@@ -1019,77 +1308,11 @@ IW_clr_province_cooldown_flag = {
 	if = { limit = { has_country_flag = IW_province_55_pending_flag } clr_country_flag = IW_province_55_cooldown_flag IW_lower_province_inf = { number = 55 } }
 	if = { limit = { has_country_flag = IW_province_56_pending_flag } clr_country_flag = IW_province_56_cooldown_flag IW_lower_province_inf = { number = 56 } }
 	if = { limit = { has_country_flag = IW_province_57_pending_flag } clr_country_flag = IW_province_57_cooldown_flag IW_lower_province_inf = { number = 57 } }
+	}
 }
 
 #### Added for 'Nevermind' option on iw_interaction_events.1 ####
 IW_lower_province_inf = {
-	subtract_variable = { which = IW_map_prov_$number$_inf value = 10 }
-	subtract_variable = { which = IW_map_prov_inf value = 10 }
-}
-
-set_IW_revolter_target = { # Triggered by revolter tag war event ONLY, for correct choice of league member subject in peace option (not yet implemented)
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 111 } } set_perm_member = { number = 01 province = 111 revolter = AQU } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 1774 } } set_perm_member = { number = 02 province = 1774 revolter = I01 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 112 } } set_perm_member = { number = 03 province = 112 revolter = VEN } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4729 } } set_perm_member = { number = 04 province = 4729 revolter = PDV } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 108 } } set_perm_member = { number = 05 province = 108 revolter = VRN } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 109 } } set_perm_member = { number = 06 province = 109 revolter = MAN } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 107 } } set_perm_member = { number = 07 province = 107 revolter = I07 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4739 } } set_perm_member = { number = 08 province = 4739 revolter = I06 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 1862 } } set_perm_member = { number = 09 province = 1862 revolter = I02 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 104 } } set_perm_member = { number = 10 province = 104 revolter = MLO } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4740 } } set_perm_member = { number = 11 province = 4740 revolter = I04 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2979 } } set_perm_member = { number = 12 province = 2979 revolter = I05 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4728 } } set_perm_member = { number = 13 province = 4728 revolter = I03 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2981 } } set_perm_member = { number = 14 province = 2981 revolter = MFA } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 103 } } set_perm_member = { number = 15 province = 103 revolter = I08 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4727 } } set_perm_member = { number = 16 province = 4727 revolter = SZO } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 1875 } } set_perm_member = { number = 17 province = 1875 revolter = I09 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 102 } } set_perm_member = { number = 18 province = 102 revolter = I10 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2992 } } set_perm_member = { number = 19 province = 2992 revolter = I11 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 101 } } set_perm_member = { number = 20 province = 101 revolter = GEN } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 105 } } set_perm_member = { number = 21 province = 105 revolter = PAR } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 106 } } set_perm_member = { number = 22 province = 106 revolter = MOD } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4730 } } set_perm_member = { number = 23 province = 4730 revolter = BLG } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 113 } } set_perm_member = { number = 24 province = 113 revolter = FER } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 114 } } set_perm_member = { number = 25 province = 114 revolter = I30 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2978 } } set_perm_member = { number = 26 province = 2978 revolter = ETR } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 116 } } set_perm_member = { number = 27 province = 116 revolter = LAN } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2980 } } set_perm_member = { number = 28 province = 2980 revolter = LUC } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 115 } } set_perm_member = { number = 29 province = 115 revolter = PIS } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 117 } } set_perm_member = { number = 30 province = 117 revolter = SIE } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2977 } } set_perm_member = { number = 31 province = 2977 revolter = URB } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 119 } } set_perm_member = { number = 32 province = 119 revolter = I31 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 120 } } set_perm_member = { number = 33 province = 120 revolter = I32 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4731 } } set_perm_member = { number = 34 province = 4731 revolter = SPL } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2976 } } set_perm_member = { number = 35 province = 2976 revolter = PGA } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 118 } } set_perm_member = { number = 36 province = 118 revolter = PAP } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4732 } } set_perm_member = { number = 37 province = 4732 revolter = I22 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4733 } } set_perm_member = { number = 38 province = 4733 revolter = I29 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2985 } } set_perm_member = { number = 39 province = 2985 revolter = I28 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 1933 } } set_perm_member = { number = 40 province = 1933 revolter = I27 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 122 } } set_perm_member = { number = 41 province = 122 revolter = I26 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4734 } } set_perm_member = { number = 42 province = 4734 revolter = I21 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 121 } } set_perm_member = { number = 43 province = 121 revolter = NAP } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2983 } } set_perm_member = { number = 44 province = 2983 revolter = I20 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 1934 } } set_perm_member = { number = 45 province = 1934 revolter = I24 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2984 } } set_perm_member = { number = 46 province = 2984 revolter = I25 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 123 } } set_perm_member = { number = 47 province = 123 revolter = I23 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 124 } } set_perm_member = { number = 48 province = 124 revolter = I15 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2982 } } set_perm_member = { number = 49 province = 2982 revolter = I16 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 126 } } set_perm_member = { number = 50 province = 126 revolter = JAI } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4737 } } set_perm_member = { number = 51 province = 4737 revolter = I19 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 125 } } set_perm_member = { number = 52 province = 125 revolter = I17 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4736 } } set_perm_member = { number = 53 province = 4736 revolter = I18 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 2986 } } set_perm_member = { number = 54 province = 2986 revolter = I13 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 4735 } } set_perm_member = { number = 55 province = 4735 revolter = I14 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 127 } } set_perm_member = { number = 56 province = 127 revolter = I12 } }
-	if = { limit = { is_in_war = { attacker_leader = FROM casus_belli = IW_cb_revolter_tag war_goal_province = 1247 } } set_perm_member = { number = 57 province = 1247 revolter = COR } }
-}
-# (not yet implemented)
-set_perm_member = {
-	create_subject = {
-		subject_type = IW_league_member_permanent
-		subject = $revolter$
-	}
+	subtract_variable = { which = IW_map_prov_$number$_inf value = 5 }
+	subtract_variable = { which = IW_map_prov_inf value = 5 }
 }

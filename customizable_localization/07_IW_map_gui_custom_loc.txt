@@ -1,2 +1,515 @@
 
-# IT Map:
+# IW Map:
+defined_text = {
+	name = GetProvince01InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_01_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_01_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_01_inf value = 51 } } NOT = { has_country_flag = IW_province_01_peace_flag } NOT = { has_country_flag = IW_province_01_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_01_full_infl_flag } has_country_flag = IW_province_01_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_01_full_infl_flag } has_country_flag = IW_province_01_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_01_inf value = 100 } has_country_flag = IW_province_01_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince02InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_02_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_02_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_02_inf value = 51 } } NOT = { has_country_flag = IW_province_02_peace_flag } NOT = { has_country_flag = IW_province_02_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_02_full_infl_flag } has_country_flag = IW_province_02_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_02_full_infl_flag } has_country_flag = IW_province_02_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_02_inf value = 100 } has_country_flag = IW_province_02_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince03InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_03_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_03_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_03_inf value = 51 } } NOT = { has_country_flag = IW_province_03_peace_flag } NOT = { has_country_flag = IW_province_03_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_03_full_infl_flag } has_country_flag = IW_province_03_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_03_full_infl_flag } has_country_flag = IW_province_03_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_03_inf value = 100 } has_country_flag = IW_province_03_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince04InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_04_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_04_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_04_inf value = 51 } } NOT = { has_country_flag = IW_province_04_peace_flag } NOT = { has_country_flag = IW_province_04_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_04_full_infl_flag } has_country_flag = IW_province_04_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_04_full_infl_flag } has_country_flag = IW_province_04_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_04_inf value = 100 } has_country_flag = IW_province_04_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince05InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_05_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_05_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_05_inf value = 51 } } NOT = { has_country_flag = IW_province_05_peace_flag } NOT = { has_country_flag = IW_province_05_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_05_full_infl_flag } has_country_flag = IW_province_05_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_05_full_infl_flag } has_country_flag = IW_province_05_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_05_inf value = 100 } has_country_flag = IW_province_05_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince06InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_06_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_06_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_06_inf value = 51 } } NOT = { has_country_flag = IW_province_06_peace_flag } NOT = { has_country_flag = IW_province_06_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_06_full_infl_flag } has_country_flag = IW_province_06_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_06_full_infl_flag } has_country_flag = IW_province_06_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_06_inf value = 100 } has_country_flag = IW_province_06_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince07InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_07_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_07_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_07_inf value = 51 } } NOT = { has_country_flag = IW_province_07_peace_flag } NOT = { has_country_flag = IW_province_07_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_07_full_infl_flag } has_country_flag = IW_province_07_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_07_full_infl_flag } has_country_flag = IW_province_07_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_07_inf value = 100 } has_country_flag = IW_province_07_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince08InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_08_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_08_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_08_inf value = 51 } } NOT = { has_country_flag = IW_province_08_peace_flag } NOT = { has_country_flag = IW_province_08_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_08_full_infl_flag } has_country_flag = IW_province_08_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_08_full_infl_flag } has_country_flag = IW_province_08_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_08_inf value = 100 } has_country_flag = IW_province_08_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince09InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_09_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_09_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_09_inf value = 51 } } NOT = { has_country_flag = IW_province_09_peace_flag } NOT = { has_country_flag = IW_province_09_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_09_full_infl_flag } has_country_flag = IW_province_09_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_09_full_infl_flag } has_country_flag = IW_province_09_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_09_inf value = 100 } has_country_flag = IW_province_09_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince10InfluenceInfo
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_10_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_10_inf value = 51 } } NOT = { has_country_flag = IW_province_1_peace_flag } NOT = { has_country_flag = IW_province_10_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_10_full_infl_flag } has_country_flag = IW_province_10_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_10_full_infl_flag } has_country_flag = IW_province_10_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_10_inf value = 100 } has_country_flag = IW_province_10_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_10_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince11InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_11_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_11_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_11_inf value = 51 } } NOT = { has_country_flag = IW_province_11_peace_flag } NOT = { has_country_flag = IW_province_11_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_11_full_infl_flag } has_country_flag = IW_province_11_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_11_full_infl_flag } has_country_flag = IW_province_11_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_11_inf value = 100 } has_country_flag = IW_province_11_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince12InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_12_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_12_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_12_inf value = 51 } } NOT = { has_country_flag = IW_province_12_peace_flag } NOT = { has_country_flag = IW_province_12_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_12_full_infl_flag } has_country_flag = IW_province_12_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_12_full_infl_flag } has_country_flag = IW_province_12_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_12_inf value = 100 } has_country_flag = IW_province_12_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince13InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_13_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_13_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_13_inf value = 51 } } NOT = { has_country_flag = IW_province_13_peace_flag } NOT = { has_country_flag = IW_province_13_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_13_full_infl_flag } has_country_flag = IW_province_13_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_13_full_infl_flag } has_country_flag = IW_province_13_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_13_inf value = 100 } has_country_flag = IW_province_13_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince14InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_14_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_14_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_14_inf value = 51 } } NOT = { has_country_flag = IW_province_14_peace_flag } NOT = { has_country_flag = IW_province_14_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_14_full_infl_flag } has_country_flag = IW_province_14_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_14_full_infl_flag } has_country_flag = IW_province_14_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_14_inf value = 100 } has_country_flag = IW_province_14_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince15InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_15_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_15_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_15_inf value = 51 } } NOT = { has_country_flag = IW_province_15_peace_flag } NOT = { has_country_flag = IW_province_15_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_15_full_infl_flag } has_country_flag = IW_province_15_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_15_full_infl_flag } has_country_flag = IW_province_15_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_15_inf value = 100 } has_country_flag = IW_province_15_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince16InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_16_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_16_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_16_inf value = 51 } } NOT = { has_country_flag = IW_province_16_peace_flag } NOT = { has_country_flag = IW_province_16_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_16_full_infl_flag } has_country_flag = IW_province_16_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_16_full_infl_flag } has_country_flag = IW_province_16_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_16_inf value = 100 } has_country_flag = IW_province_16_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince17InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_17_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_17_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_17_inf value = 51 } } NOT = { has_country_flag = IW_province_17_peace_flag } NOT = { has_country_flag = IW_province_17_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_17_full_infl_flag } has_country_flag = IW_province_17_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_17_full_infl_flag } has_country_flag = IW_province_17_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_17_inf value = 100 } has_country_flag = IW_province_17_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince18InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_18_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_18_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_18_inf value = 51 } } NOT = { has_country_flag = IW_province_18_peace_flag } NOT = { has_country_flag = IW_province_18_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_18_full_infl_flag } has_country_flag = IW_province_18_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_18_full_infl_flag } has_country_flag = IW_province_18_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_18_inf value = 100 } has_country_flag = IW_province_18_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince19InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_19_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_19_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_19_inf value = 51 } } NOT = { has_country_flag = IW_province_19_peace_flag } NOT = { has_country_flag = IW_province_19_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_19_full_infl_flag } has_country_flag = IW_province_19_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_19_full_infl_flag } has_country_flag = IW_province_19_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_19_inf value = 100 } has_country_flag = IW_province_19_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince20InfluenceInfo
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_20_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_20_inf value = 51 } } NOT = { has_country_flag = IW_province_2_peace_flag } NOT = { has_country_flag = IW_province_20_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_20_full_infl_flag } has_country_flag = IW_province_20_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_20_full_infl_flag } has_country_flag = IW_province_20_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_20_inf value = 100 } has_country_flag = IW_province_20_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_20_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince21InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_21_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_21_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_21_inf value = 51 } } NOT = { has_country_flag = IW_province_21_peace_flag } NOT = { has_country_flag = IW_province_21_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_21_full_infl_flag } has_country_flag = IW_province_21_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_21_full_infl_flag } has_country_flag = IW_province_21_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_21_inf value = 100 } has_country_flag = IW_province_21_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince22InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_22_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_22_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_22_inf value = 51 } } NOT = { has_country_flag = IW_province_22_peace_flag } NOT = { has_country_flag = IW_province_22_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_22_full_infl_flag } has_country_flag = IW_province_22_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_22_full_infl_flag } has_country_flag = IW_province_22_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_22_inf value = 100 } has_country_flag = IW_province_22_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince23InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_23_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_23_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_23_inf value = 51 } } NOT = { has_country_flag = IW_province_23_peace_flag } NOT = { has_country_flag = IW_province_23_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_23_full_infl_flag } has_country_flag = IW_province_23_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_23_full_infl_flag } has_country_flag = IW_province_23_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_23_inf value = 100 } has_country_flag = IW_province_23_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince24InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_24_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_24_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_24_inf value = 51 } } NOT = { has_country_flag = IW_province_24_peace_flag } NOT = { has_country_flag = IW_province_24_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_24_full_infl_flag } has_country_flag = IW_province_24_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_24_full_infl_flag } has_country_flag = IW_province_24_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_24_inf value = 100 } has_country_flag = IW_province_24_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince25InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_25_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_25_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_25_inf value = 51 } } NOT = { has_country_flag = IW_province_25_peace_flag } NOT = { has_country_flag = IW_province_25_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_25_full_infl_flag } has_country_flag = IW_province_25_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_25_full_infl_flag } has_country_flag = IW_province_25_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_25_inf value = 100 } has_country_flag = IW_province_25_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince26InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_26_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_26_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_26_inf value = 51 } } NOT = { has_country_flag = IW_province_26_peace_flag } NOT = { has_country_flag = IW_province_26_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_26_full_infl_flag } has_country_flag = IW_province_26_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_26_full_infl_flag } has_country_flag = IW_province_26_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_26_inf value = 100 } has_country_flag = IW_province_26_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince27InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_27_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_27_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_27_inf value = 51 } } NOT = { has_country_flag = IW_province_27_peace_flag } NOT = { has_country_flag = IW_province_27_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_27_full_infl_flag } has_country_flag = IW_province_27_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_27_full_infl_flag } has_country_flag = IW_province_27_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_27_inf value = 100 } has_country_flag = IW_province_27_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince28InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_28_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_28_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_28_inf value = 51 } } NOT = { has_country_flag = IW_province_28_peace_flag } NOT = { has_country_flag = IW_province_28_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_28_full_infl_flag } has_country_flag = IW_province_28_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_28_full_infl_flag } has_country_flag = IW_province_28_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_28_inf value = 100 } has_country_flag = IW_province_28_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince29InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_29_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_29_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_29_inf value = 51 } } NOT = { has_country_flag = IW_province_29_peace_flag } NOT = { has_country_flag = IW_province_29_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_29_full_infl_flag } has_country_flag = IW_province_29_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_29_full_infl_flag } has_country_flag = IW_province_29_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_29_inf value = 100 } has_country_flag = IW_province_29_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince30InfluenceInfo
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_30_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_30_inf value = 51 } } NOT = { has_country_flag = IW_province_3_peace_flag } NOT = { has_country_flag = IW_province_30_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_30_full_infl_flag } has_country_flag = IW_province_30_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_30_full_infl_flag } has_country_flag = IW_province_30_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_30_inf value = 100 } has_country_flag = IW_province_30_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_30_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince31InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_31_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_31_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_31_inf value = 51 } } NOT = { has_country_flag = IW_province_31_peace_flag } NOT = { has_country_flag = IW_province_31_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_31_full_infl_flag } has_country_flag = IW_province_31_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_31_full_infl_flag } has_country_flag = IW_province_31_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_31_inf value = 100 } has_country_flag = IW_province_31_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince32InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_32_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_32_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_32_inf value = 51 } } NOT = { has_country_flag = IW_province_32_peace_flag } NOT = { has_country_flag = IW_province_32_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_32_full_infl_flag } has_country_flag = IW_province_32_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_32_full_infl_flag } has_country_flag = IW_province_32_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_32_inf value = 100 } has_country_flag = IW_province_32_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince33InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_33_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_33_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_33_inf value = 51 } } NOT = { has_country_flag = IW_province_33_peace_flag } NOT = { has_country_flag = IW_province_33_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_33_full_infl_flag } has_country_flag = IW_province_33_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_33_full_infl_flag } has_country_flag = IW_province_33_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_33_inf value = 100 } has_country_flag = IW_province_33_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince34InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_34_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_34_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_34_inf value = 51 } } NOT = { has_country_flag = IW_province_34_peace_flag } NOT = { has_country_flag = IW_province_34_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_34_full_infl_flag } has_country_flag = IW_province_34_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_34_full_infl_flag } has_country_flag = IW_province_34_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_34_inf value = 100 } has_country_flag = IW_province_34_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince35InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_35_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_35_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_35_inf value = 51 } } NOT = { has_country_flag = IW_province_35_peace_flag } NOT = { has_country_flag = IW_province_35_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_35_full_infl_flag } has_country_flag = IW_province_35_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_35_full_infl_flag } has_country_flag = IW_province_35_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_35_inf value = 100 } has_country_flag = IW_province_35_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince36InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_36_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_36_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_36_inf value = 51 } } NOT = { has_country_flag = IW_province_36_peace_flag } NOT = { has_country_flag = IW_province_36_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_36_full_infl_flag } has_country_flag = IW_province_36_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_36_full_infl_flag } has_country_flag = IW_province_36_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_36_inf value = 100 } has_country_flag = IW_province_36_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince37InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_37_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_37_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_37_inf value = 51 } } NOT = { has_country_flag = IW_province_37_peace_flag } NOT = { has_country_flag = IW_province_37_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_37_full_infl_flag } has_country_flag = IW_province_37_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_37_full_infl_flag } has_country_flag = IW_province_37_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_37_inf value = 100 } has_country_flag = IW_province_37_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince38InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_38_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_38_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_38_inf value = 51 } } NOT = { has_country_flag = IW_province_38_peace_flag } NOT = { has_country_flag = IW_province_38_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_38_full_infl_flag } has_country_flag = IW_province_38_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_38_full_infl_flag } has_country_flag = IW_province_38_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_38_inf value = 100 } has_country_flag = IW_province_38_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince39InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_39_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_39_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_39_inf value = 51 } } NOT = { has_country_flag = IW_province_39_peace_flag } NOT = { has_country_flag = IW_province_39_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_39_full_infl_flag } has_country_flag = IW_province_39_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_39_full_infl_flag } has_country_flag = IW_province_39_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_39_inf value = 100 } has_country_flag = IW_province_39_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince40InfluenceInfo
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_40_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_40_inf value = 51 } } NOT = { has_country_flag = IW_province_4_peace_flag } NOT = { has_country_flag = IW_province_40_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_40_full_infl_flag } has_country_flag = IW_province_40_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_40_full_infl_flag } has_country_flag = IW_province_40_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_40_inf value = 100 } has_country_flag = IW_province_40_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_40_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince41InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_41_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_41_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_41_inf value = 51 } } NOT = { has_country_flag = IW_province_41_peace_flag } NOT = { has_country_flag = IW_province_41_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_41_full_infl_flag } has_country_flag = IW_province_41_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_41_full_infl_flag } has_country_flag = IW_province_41_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_41_inf value = 100 } has_country_flag = IW_province_41_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince42InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_42_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_42_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_42_inf value = 51 } } NOT = { has_country_flag = IW_province_42_peace_flag } NOT = { has_country_flag = IW_province_42_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_42_full_infl_flag } has_country_flag = IW_province_42_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_42_full_infl_flag } has_country_flag = IW_province_42_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_42_inf value = 100 } has_country_flag = IW_province_42_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince43InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_43_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_43_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_43_inf value = 51 } } NOT = { has_country_flag = IW_province_43_peace_flag } NOT = { has_country_flag = IW_province_43_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_43_full_infl_flag } has_country_flag = IW_province_43_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_43_full_infl_flag } has_country_flag = IW_province_43_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_43_inf value = 100 } has_country_flag = IW_province_43_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince44InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_44_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_44_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_44_inf value = 51 } } NOT = { has_country_flag = IW_province_44_peace_flag } NOT = { has_country_flag = IW_province_44_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_44_full_infl_flag } has_country_flag = IW_province_44_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_44_full_infl_flag } has_country_flag = IW_province_44_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_44_inf value = 100 } has_country_flag = IW_province_44_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince45InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_45_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_45_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_45_inf value = 51 } } NOT = { has_country_flag = IW_province_45_peace_flag } NOT = { has_country_flag = IW_province_45_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_45_full_infl_flag } has_country_flag = IW_province_45_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_45_full_infl_flag } has_country_flag = IW_province_45_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_45_inf value = 100 } has_country_flag = IW_province_45_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince46InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_46_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_46_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_46_inf value = 51 } } NOT = { has_country_flag = IW_province_46_peace_flag } NOT = { has_country_flag = IW_province_46_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_46_full_infl_flag } has_country_flag = IW_province_46_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_46_full_infl_flag } has_country_flag = IW_province_46_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_46_inf value = 100 } has_country_flag = IW_province_46_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince47InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_47_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_47_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_47_inf value = 51 } } NOT = { has_country_flag = IW_province_47_peace_flag } NOT = { has_country_flag = IW_province_47_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_47_full_infl_flag } has_country_flag = IW_province_47_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_47_full_infl_flag } has_country_flag = IW_province_47_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_47_inf value = 100 } has_country_flag = IW_province_47_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince48InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_48_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_48_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_48_inf value = 51 } } NOT = { has_country_flag = IW_province_48_peace_flag } NOT = { has_country_flag = IW_province_48_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_48_full_infl_flag } has_country_flag = IW_province_48_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_48_full_infl_flag } has_country_flag = IW_province_48_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_48_inf value = 100 } has_country_flag = IW_province_48_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince49InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_49_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_49_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_49_inf value = 51 } } NOT = { has_country_flag = IW_province_49_peace_flag } NOT = { has_country_flag = IW_province_49_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_49_full_infl_flag } has_country_flag = IW_province_49_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_49_full_infl_flag } has_country_flag = IW_province_49_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_49_inf value = 100 } has_country_flag = IW_province_49_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince50InfluenceInfo
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_50_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_50_inf value = 51 } } NOT = { has_country_flag = IW_province_5_peace_flag } NOT = { has_country_flag = IW_province_50_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_50_full_infl_flag } has_country_flag = IW_province_50_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_50_full_infl_flag } has_country_flag = IW_province_50_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_50_inf value = 100 } has_country_flag = IW_province_50_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_50_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince51InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_51_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_51_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_51_inf value = 51 } } NOT = { has_country_flag = IW_province_51_peace_flag } NOT = { has_country_flag = IW_province_51_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_51_full_infl_flag } has_country_flag = IW_province_51_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_51_full_infl_flag } has_country_flag = IW_province_51_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_51_inf value = 100 } has_country_flag = IW_province_51_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince52InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_52_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_52_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_52_inf value = 51 } } NOT = { has_country_flag = IW_province_52_peace_flag } NOT = { has_country_flag = IW_province_52_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_52_full_infl_flag } has_country_flag = IW_province_52_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_52_full_infl_flag } has_country_flag = IW_province_52_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_52_inf value = 100 } has_country_flag = IW_province_52_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince53InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_53_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_53_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_53_inf value = 51 } } NOT = { has_country_flag = IW_province_53_peace_flag } NOT = { has_country_flag = IW_province_53_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_53_full_infl_flag } has_country_flag = IW_province_53_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_53_full_infl_flag } has_country_flag = IW_province_53_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_53_inf value = 100 } has_country_flag = IW_province_53_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince54InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_54_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_54_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_54_inf value = 51 } } NOT = { has_country_flag = IW_province_54_peace_flag } NOT = { has_country_flag = IW_province_54_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_54_full_infl_flag } has_country_flag = IW_province_54_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_54_full_infl_flag } has_country_flag = IW_province_54_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_54_inf value = 100 } has_country_flag = IW_province_54_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince55InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_55_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_55_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_55_inf value = 51 } } NOT = { has_country_flag = IW_province_55_peace_flag } NOT = { has_country_flag = IW_province_55_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_55_full_infl_flag } has_country_flag = IW_province_55_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_55_full_infl_flag } has_country_flag = IW_province_55_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_55_inf value = 100 } has_country_flag = IW_province_55_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince56InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_56_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_56_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_56_inf value = 51 } } NOT = { has_country_flag = IW_province_56_peace_flag } NOT = { has_country_flag = IW_province_56_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_56_full_infl_flag } has_country_flag = IW_province_56_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_56_full_infl_flag } has_country_flag = IW_province_56_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_56_inf value = 100 } has_country_flag = IW_province_56_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}
+defined_text = {
+	name = GetProvince57InfluenceInfo
+	text = { localisation_key = IW_prov_influence_interv trigger = { has_country_flag = IW_province_57_intervention_flag } }
+	text = { localisation_key = IW_prov_influence_yes trigger = { check_variable = { which = IW_map_prov_57_inf value = 1 } NOT = { check_variable = { which = IW_map_prov_57_inf value = 51 } } NOT = { has_country_flag = IW_province_57_peace_flag } NOT = { has_country_flag = IW_province_57_war_flag } } }
+	text = { localisation_key = IW_prov_influence_peace trigger = { NOT = { has_country_flag = IW_province_57_full_infl_flag } has_country_flag = IW_province_57_peace_flag } }
+	text = { localisation_key = IW_prov_influence_war trigger = { NOT = { has_country_flag = IW_province_57_full_infl_flag } has_country_flag = IW_province_57_war_flag } }
+	text = { localisation_key = IW_prov_influence_max trigger = { check_variable = { which = IW_map_prov_57_inf value = 100 } has_country_flag = IW_province_57_full_infl_flag } }
+	text = { localisation_key = IW_prov_influence_no }
+}

@@ -72,11 +72,12 @@
 1247 = { add_core = COR cede_province = COR }	# Corsica
 
 
+#When someone has interenvtion and you release vassal on province, intervention flag is gone.
 #Fixe when transfer from finish with peace, it stays peace and 100%.
 #Integration works?
 #When somone vassalizes your vassal.
-#When someone releases tags and vassals.
-#breaking vassal on own.
+	#When someone releases tags and vassals.
+	#breaking vassal on own.
 #When revolt tag is intergrated, remove core.
 #When someone switches revolter tag to your side, then prev revolter overlord still shows red on map (make it not show) and is on 100%, make it 0% and clr flags.
 #When gaining province and someone has influence over 50%, then mark for them in red.

@@ -97,12 +97,14 @@ has_IW_province_finish = {
 
 # Cooldown:
 has_IW_cooldown_flag = {
-	OR = {
-		had_country_flag = { flag = IW_province_$number$_cooldown_flag days = 1095 }
-		NOT = {
-			has_country_flag = IW_province_$number$_cooldown_flag
+	if = {
+		limit = { has_country_flag = IW_province_$number$_cooldown_flag }
+		custom_trigger_tooltip = {
+			tooltip = iw_influence_cooldown
+			had_country_flag = { flag = IW_province_$number$_cooldown_flag days = 1095 }
 		}
 	}
+	else = { hidden_trigger = { NOT = { has_country_flag = IW_province_$number$_cooldown_flag } } }
 }
 
 iw_province_cooldown_flag_check = {
