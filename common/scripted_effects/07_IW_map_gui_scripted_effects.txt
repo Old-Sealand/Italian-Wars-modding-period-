@@ -833,8 +833,6 @@ set_IW_p_f = {
 				remove_province_modifier = iw_disloyal_garrison
 			}
 		}
-
-		event_target:prev_owner = { country_event = { id = iw_interaction_events.3 } }
 	}
 }
 set_cb_IW_uprising_war = {
