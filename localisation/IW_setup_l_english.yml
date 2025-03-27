@@ -145,6 +145,10 @@
  IW_defender_of_the_peninsula: "Defender of the Peninsula"
  desc_IW_defender_of_the_peninsula: "In aiding Naples, we have demonstrated our dedication to the cause of the Italic League: Italy shall remain free from foreign influence."
 
+ ###BOOKMARKS###
+ IW_BOOKMARK: "§GThe Italian Wars§!"
+ IW_BOOKMARK_DESC: "The Italian Wars, spanning the late 15th and early 16th centuries, erupted amidst the shifting power dynamics and rivalries of Renaissance Europe. Italy, fragmented into city-states, became a battleground for ambitious monarchs. The Treaty of Lodi had briefly united northern Italian states in a fragile peace, but this stability was shattered as France and Spain clashed over claims to the Kingdom of Naples and the Duchy of Milan. Amid intricate alliances, betrayals, and dramatic campaigns, the Italian Wars reshaped the continent, signaling the end of medieval chivalry and ushering in the brutal realities of modern warfare...\nIn the §YItalian Wars§! mod, there are 4 factions which vie for hegemony over Italy: the §YItalic League§!, the §YFrench§! (or §YAngevin§!) §YLeague§!, the §YIberian League§!, and the §YImperial§! (or §YGerman§!) §YLeague§!. While other nations may later come to lead one of the four Leagues, these recommended nations are the most likely to spawn the factions when the Italian Wars begin."
+
 ### SETUP EVENTS ###
  IW_setup.1.t: "New Leadership in the League of [IW_former_leader.GetName]"
  IW_setup.1.t2: "New Leadership in the League"

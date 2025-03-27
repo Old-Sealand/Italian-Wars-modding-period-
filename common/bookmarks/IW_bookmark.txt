@@ -1,0 +1,18 @@
+bookmark =
+{
+	name = "IW_BOOKMARK"
+	desc = "IW_BOOKMARK_DESC"
+	date = 1444.11.11
+	
+	center = 1301
+	
+	country = LAN
+	country = FRA
+	country = ARA
+	country = HAB
+	country = ENG
+	
+	easy_country = FRA
+	easy_country = ARA
+	easy_country = HAB
+}

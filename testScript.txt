@@ -80,7 +80,7 @@ if = {
 
 # clr_country_flag = IW_province_35_cooldown_flag
 # clr_country_flag = IW_province_36_cooldown_flag
-# clr_country_flag = IW_province_34_cooldown_flag
+clr_country_flag = IW_province_26_cooldown_flag
 # clr_country_flag = IW_province_37_cooldown_flag
 
 # set_country_flag = IW_chose_drafting
@@ -180,12 +180,12 @@ if = {
 # 	war_goal_province = event_target:selected_province
 # }
 
-declare_war_with_cb = {
-	who = SPL
-	casus_belli = IW_cb_revolter_tag
-	# war_goal_province = event_target:selected_province
-	war_goal_province = 4731
-}
+# declare_war_with_cb = {
+# 	who = SPL
+# 	casus_belli = IW_cb_revolter_tag
+# 	# war_goal_province = event_target:selected_province
+# 	war_goal_province = 4731
+# }
 
 # declare_war_with_cb = {
 # 	who = LUC
