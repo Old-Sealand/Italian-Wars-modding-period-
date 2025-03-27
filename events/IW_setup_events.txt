@@ -459,6 +459,34 @@ country_event = {
 			}
 			custom_tooltip = IW_setup.1a.tt4
 		}
+		if = {
+			limit = {
+				has_saved_global_event_target = IW_italian_league_leader
+				alliance_with = event_target:IW_italian_league_leader
+			}
+			remove_alliance = event_target:IW_italian_league_leader
+		}
+		if = {
+			limit = {
+				has_saved_global_event_target = IW_french_league_leader
+				alliance_with = event_target:IW_french_league_leader
+			}
+			remove_alliance = event_target:IW_french_league_leader
+		}
+		if = {
+			limit = {
+				has_saved_global_event_target = IW_iberian_league_leader
+				alliance_with = event_target:IW_iberian_league_leader
+			}
+			remove_alliance = event_target:IW_iberian_league_leader
+		}
+		if = {
+			limit = {
+				has_saved_global_event_target = IW_HRE_league_leader
+				alliance_with = event_target:IW_HRE_league_leader
+			}
+			remove_alliance = event_target:IW_HRE_league_leader
+		}
 		# overlord = {
 		# 	save_event_target_as = IW_former_leader
 		# }
@@ -687,6 +715,13 @@ country_event = {
 			custom_tooltip = IW_setup.2a.tt2
 		}
 		else = { custom_tooltip = IW_setup.2a.tt }
+		if = {
+			limit = {
+				has_saved_global_event_target = IW_italian_league_leader
+				alliance_with = event_target:IW_italian_league_leader
+			}
+			remove_alliance = event_target:IW_italian_league_leader
+		}
 	}
 }
 
@@ -947,6 +982,27 @@ country_event = {
 			} 
 		}
 		custom_tooltip = IW_setup.4a.tt # Form the French League, with [ROOT.CountryName] at its head. _ will be called to join the cause.
+		if = {
+			limit = {
+				has_saved_global_event_target = IW_italian_league_leader
+				alliance_with = event_target:IW_italian_league_leader
+			}
+			remove_alliance = event_target:IW_italian_league_leader
+		}
+		if = {
+			limit = {
+				has_saved_global_event_target = IW_french_league_leader
+				alliance_with = event_target:IW_french_league_leader
+			}
+			remove_alliance = event_target:IW_french_league_leader
+		}
+		if = {
+			limit = {
+				has_saved_global_event_target = IW_HRE_league_leader
+				alliance_with = event_target:IW_HRE_league_leader
+			}
+			remove_alliance = event_target:IW_HRE_league_leader
+		}
 	}
 }
 
@@ -1154,6 +1210,27 @@ country_event = {
 			}
 		}
 		custom_tooltip = IW_setup.6a.tt
+		if = {
+			limit = {
+				has_saved_global_event_target = IW_italian_league_leader
+				alliance_with = event_target:IW_italian_league_leader
+			}
+			remove_alliance = event_target:IW_italian_league_leader
+		}
+		if = {
+			limit = {
+				has_saved_global_event_target = IW_french_league_leader
+				alliance_with = event_target:IW_french_league_leader
+			}
+			remove_alliance = event_target:IW_french_league_leader
+		}
+		if = {
+			limit = {
+				has_saved_global_event_target = IW_iberian_league_leader
+				alliance_with = event_target:IW_iberian_league_leader
+			}
+			remove_alliance = event_target:IW_iberian_league_leader
+		}
 	}
 }
 
@@ -2529,6 +2606,34 @@ country_event = {
 				set_country_flag = IW_HRE_league_member
 			}
 			custom_tooltip = IW_setup.1a.tt4
+		}
+		if = {
+			limit = {
+				has_saved_global_event_target = IW_italian_league_leader
+				alliance_with = event_target:IW_italian_league_leader
+			}
+			remove_alliance = event_target:IW_italian_league_leader
+		}
+		if = {
+			limit = {
+				has_saved_global_event_target = IW_french_league_leader
+				alliance_with = event_target:IW_french_league_leader
+			}
+			remove_alliance = event_target:IW_french_league_leader
+		}
+		if = {
+			limit = {
+				has_saved_global_event_target = IW_iberian_league_leader
+				alliance_with = event_target:IW_iberian_league_leader
+			}
+			remove_alliance = event_target:IW_iberian_league_leader
+		}
+		if = {
+			limit = {
+				has_saved_global_event_target = IW_HRE_league_leader
+				alliance_with = event_target:IW_HRE_league_leader
+			}
+			remove_alliance = event_target:IW_HRE_league_leader
 		}
 		# overlord = {
 		# 	save_event_target_as = IW_former_leader
