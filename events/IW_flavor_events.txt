@@ -9,6 +9,7 @@ country_event = {
 	major = yes
 	is_triggered_only = yes
 	trigger = {
+		has_saved_global_event_target = IW_italian_league_leader
 		OR = {
 			# Italian League is losing against the French League Leader
 			event_target:IW_italian_league_leader = {
@@ -208,6 +209,7 @@ country_event = {
 	
 	fire_only_once = yes
 	trigger = {
+		has_saved_global_event_target = IW_french_league_leader
 		tag = event_target:IW_french_league_leader
 		NOT = { is_in_war = { casus_belli = IW_cb_italian_war } }
 		exists = NAP
@@ -314,6 +316,7 @@ country_event = {
 	trigger = {
 		tag = NAP
 		is_in_war = { casus_belli = IW_cb_italian_war }
+		has_saved_global_event_target = IW_iberian_league_leader
 		event_target:IW_iberian_league_leader = { has_country_flag = iw_took_deal_nap }
 		capital_scope = {
 			controller = {
@@ -811,6 +814,7 @@ country_event = {
     major = yes
 
 	trigger = {
+		has_saved_global_event_target = IW_french_league_leader
         tag = event_target:IW_french_league_leader
         OR = {
             exists = TUS

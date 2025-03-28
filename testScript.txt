@@ -80,7 +80,7 @@ if = {
 
 # clr_country_flag = IW_province_35_cooldown_flag
 # clr_country_flag = IW_province_36_cooldown_flag
-clr_country_flag = IW_province_26_cooldown_flag
+# clr_country_flag = IW_province_26_cooldown_flag
 # clr_country_flag = IW_province_37_cooldown_flag
 
 # set_country_flag = IW_chose_drafting
@@ -113,11 +113,11 @@ clr_country_flag = IW_province_26_cooldown_flag
 
 # LAN = { save_global_event_target_as = IW_italian_league_leader }
 
-# save_global_event_target_as = IW_treaty_exclusive_trade_passed
-# save_global_event_target_as = IW_treaty_universities_passed
-# save_global_event_target_as = IW_treaty_land_rights_passed
-# save_global_event_target_as = IW_treaty_impressment_passed
-# save_global_event_target_as = IW_treaty_demil_passed
+save_global_event_target_as = IW_treaty_exclusive_trade_passed
+save_global_event_target_as = IW_treaty_universities_passed
+save_global_event_target_as = IW_treaty_land_rights_passed
+save_global_event_target_as = IW_treaty_impressment_passed
+save_global_event_target_as = IW_treaty_demil_passed
 
 # clear_global_event_target = IW_treaty_exclusive_trade_passed
 # clear_global_event_target = IW_treaty_universities_passed

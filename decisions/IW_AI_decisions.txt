@@ -6,9 +6,18 @@ country_decisions = {
 		potential = {
 			ai = yes
 			OR = {
-				tag = event_target:IW_french_league_leader
-				tag = event_target:IW_iberian_league_leader
-				tag = event_target:IW_HRE_league_leader
+				AND = {
+					has_saved_global_event_target = IW_french_league_leader
+					tag = event_target:IW_french_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_iberian_league_leader
+					tag = event_target:IW_iberian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_HRE_league_leader
+					tag = event_target:IW_HRE_league_leader
+				}
 			}
 		}
 		allow = {
@@ -96,9 +105,18 @@ country_decisions = {
 		potential = {
 			ai = yes
 			OR = {
-				tag = event_target:IW_italian_league_leader
-				tag = event_target:IW_iberian_league_leader
-				tag = event_target:IW_HRE_league_leader
+				AND = {
+					has_saved_global_event_target = IW_italian_league_leader
+					tag = event_target:IW_italian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_iberian_league_leader
+					tag = event_target:IW_iberian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_HRE_league_leader
+					tag = event_target:IW_HRE_league_leader
+				}
 			}
 		}
 		allow = {
@@ -154,9 +172,18 @@ country_decisions = {
 		potential = {
 			ai = yes
 			OR = {
-				tag = event_target:IW_italian_league_leader
-				tag = event_target:IW_french_league_leader
-				tag = event_target:IW_HRE_league_leader
+				AND = {
+					has_saved_global_event_target = IW_italian_league_leader
+					tag = event_target:IW_italian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_french_league_leader
+					tag = event_target:IW_french_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_HRE_league_leader
+					tag = event_target:IW_HRE_league_leader
+				}
 			}
 		}
 		allow = {
@@ -212,9 +239,18 @@ country_decisions = {
 		potential = {
 			ai = yes
 			OR = {
-				tag = event_target:IW_italian_league_leader
-				tag = event_target:IW_french_league_leader
-				tag = event_target:IW_iberian_league_leader
+				AND = {
+					has_saved_global_event_target = IW_italian_league_leader
+					tag = event_target:IW_italian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_french_league_leader
+					tag = event_target:IW_french_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_iberian_league_leader
+					tag = event_target:IW_iberian_league_leader
+				}
 			}
 		}
 		allow = {
@@ -270,10 +306,22 @@ country_decisions = {
 		potential = {
 			ai = yes
 			OR = {
-				tag = event_target:IW_italian_league_leader
-				tag = event_target:IW_french_league_leader
-				tag = event_target:IW_iberian_league_leader
-				tag = event_target:IW_HRE_league_leader
+				AND = {
+					has_saved_global_event_target = IW_italian_league_leader
+					tag = event_target:IW_italian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_french_league_leader
+					tag = event_target:IW_french_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_iberian_league_leader
+					tag = event_target:IW_iberian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_HRE_league_leader
+					tag = event_target:IW_HRE_league_leader
+				}
 			}
 		}
 		allow = {
@@ -393,10 +441,22 @@ country_decisions = {
 		potential = {
 			ai = yes
 			OR = {
-				tag = event_target:IW_italian_league_leader
-				tag = event_target:IW_french_league_leader
-				tag = event_target:IW_iberian_league_leader
-				tag = event_target:IW_HRE_league_leader
+				AND = {
+					has_saved_global_event_target = IW_italian_league_leader
+					tag = event_target:IW_italian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_french_league_leader
+					tag = event_target:IW_french_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_iberian_league_leader
+					tag = event_target:IW_iberian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_HRE_league_leader
+					tag = event_target:IW_HRE_league_leader
+				}
 			}
 		}
 		allow = {
@@ -516,10 +576,22 @@ country_decisions = {
 		potential = {
 			ai = yes
 			OR = {
-				tag = event_target:IW_italian_league_leader
-				tag = event_target:IW_french_league_leader
-				tag = event_target:IW_iberian_league_leader
-				tag = event_target:IW_HRE_league_leader
+				AND = {
+					has_saved_global_event_target = IW_italian_league_leader
+					tag = event_target:IW_italian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_french_league_leader
+					tag = event_target:IW_french_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_iberian_league_leader
+					tag = event_target:IW_iberian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_HRE_league_leader
+					tag = event_target:IW_HRE_league_leader
+				}
 			}
 		}
 		allow = {
@@ -639,10 +711,22 @@ country_decisions = {
 		potential = {
 			ai = yes
 			OR = {
-				tag = event_target:IW_italian_league_leader
-				tag = event_target:IW_french_league_leader
-				tag = event_target:IW_iberian_league_leader
-				tag = event_target:IW_HRE_league_leader
+				AND = {
+					has_saved_global_event_target = IW_italian_league_leader
+					tag = event_target:IW_italian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_french_league_leader
+					tag = event_target:IW_french_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_iberian_league_leader
+					tag = event_target:IW_iberian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_HRE_league_leader
+					tag = event_target:IW_HRE_league_leader
+				}
 			}
 		}
 		allow = {
@@ -762,10 +846,22 @@ country_decisions = {
 		potential = {
 			ai = yes
 			OR = {
-				tag = event_target:IW_italian_league_leader
-				tag = event_target:IW_french_league_leader
-				tag = event_target:IW_iberian_league_leader
-				tag = event_target:IW_HRE_league_leader
+				AND = {
+					has_saved_global_event_target = IW_italian_league_leader
+					tag = event_target:IW_italian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_french_league_leader
+					tag = event_target:IW_french_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_iberian_league_leader
+					tag = event_target:IW_iberian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_HRE_league_leader
+					tag = event_target:IW_HRE_league_leader
+				}
 			}
 		}
 		allow = {
@@ -885,10 +981,22 @@ country_decisions = {
 		potential = {
 			ai = yes
 			OR = {
-				tag = event_target:IW_italian_league_leader
-				tag = event_target:IW_french_league_leader
-				tag = event_target:IW_iberian_league_leader
-				tag = event_target:IW_HRE_league_leader
+				AND = {
+					has_saved_global_event_target = IW_italian_league_leader
+					tag = event_target:IW_italian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_french_league_leader
+					tag = event_target:IW_french_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_iberian_league_leader
+					tag = event_target:IW_iberian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_HRE_league_leader
+					tag = event_target:IW_HRE_league_leader
+				}
 			}
 		}
 		allow = {
@@ -919,10 +1027,22 @@ country_decisions = {
 		potential = {
 			ai = yes
 			OR = {
-				tag = event_target:IW_italian_league_leader
-				tag = event_target:IW_french_league_leader
-				tag = event_target:IW_iberian_league_leader
-				tag = event_target:IW_HRE_league_leader
+				AND = {
+					has_saved_global_event_target = IW_italian_league_leader
+					tag = event_target:IW_italian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_french_league_leader
+					tag = event_target:IW_french_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_iberian_league_leader
+					tag = event_target:IW_iberian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_HRE_league_leader
+					tag = event_target:IW_HRE_league_leader
+				}
 			}
 		}
 		allow = {

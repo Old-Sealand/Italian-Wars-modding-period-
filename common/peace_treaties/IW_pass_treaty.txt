@@ -25,17 +25,41 @@ po_pass_IW_treaty = {
 	}
 	is_allowed = { # Defaults to equivalent of "always = yes"
 		OR = {
-			tag = event_target:IW_italian_league_leader
-			tag = event_target:IW_french_league_leader
-			tag = event_target:IW_iberian_league_leader
-			tag = event_target:IW_HRE_league_leader
+			AND = {
+				has_saved_global_event_target = IW_italian_league_leader
+				tag = event_target:IW_italian_league_leader
+			}
+			AND = {
+				has_saved_global_event_target = IW_french_league_leader
+				tag = event_target:IW_french_league_leader
+			}
+			AND = {
+				has_saved_global_event_target = IW_iberian_league_leader
+				tag = event_target:IW_iberian_league_leader
+			}
+			AND = {
+				has_saved_global_event_target = IW_HRE_league_leader
+				tag = event_target:IW_HRE_league_leader
+			}
 		}
 		FROM = {
 			OR = {
-				tag = event_target:IW_italian_league_leader
-				tag = event_target:IW_french_league_leader
-				tag = event_target:IW_iberian_league_leader
-				tag = event_target:IW_HRE_league_leader
+				AND = {
+					has_saved_global_event_target = IW_italian_league_leader
+					tag = event_target:IW_italian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_french_league_leader
+					tag = event_target:IW_french_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_iberian_league_leader
+					tag = event_target:IW_iberian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_HRE_league_leader
+					tag = event_target:IW_HRE_league_leader
+				}
 			}
 		}
 	}

@@ -10,6 +10,7 @@ IW_treaty_of_lodi_tm = {
 	potential = {
 		has_global_flag = IW_peace_of_lodi_flag
 		capital_scope = { region = italy_region }
+		has_saved_global_event_target = IW_italian_league_leader
 	}
 
 	trigger = {
@@ -18,9 +19,9 @@ IW_treaty_of_lodi_tm = {
 			has_global_flag = IW_peace_of_lodi_flag
 		}
 		OR = {
-			TAG = event_target:IW_italian_league_leader
+			tag = event_target:IW_italian_league_leader
 			overlord = {
-				TAG = event_target:IW_italian_league_leader
+				tag = event_target:IW_italian_league_leader
 			}
 		}
 	}
@@ -45,8 +46,8 @@ IW_treaty_exclusive_trade_member = {
 		custom_trigger_tooltip = {
 			tooltip = IW_treaty_exclusive_trade_passed_tt
 			OR = {
-				TAG = event_target:IW_treaty_exclusive_trade_passed
-				overlord = { TAG = event_target:IW_treaty_exclusive_trade_passed }
+				tag = event_target:IW_treaty_exclusive_trade_passed
+				overlord = { tag = event_target:IW_treaty_exclusive_trade_passed }
 			}
 		}
 	}
@@ -57,14 +58,14 @@ IW_treaty_exclusive_trade_member = {
 IW_treaty_exclusive_trade_non_member = {
 	potential = {
 		has_saved_global_event_target = IW_treaty_exclusive_trade_passed
-		NOT = { overlord = { TAG = event_target:IW_treaty_exclusive_trade_passed } }
+		NOT = { overlord = { tag = event_target:IW_treaty_exclusive_trade_passed } }
 		capital_scope = { region = italy_region }
 	}
 
 	trigger = {
 		custom_trigger_tooltip = {
 			tooltip = IW_treaty_exclusive_trade_passed_tt
-			NOT = { overlord = { TAG = event_target:IW_treaty_exclusive_trade_passed } }
+			NOT = { overlord = { tag = event_target:IW_treaty_exclusive_trade_passed } }
 		}
 		capital_scope = { region = italy_region }
 	}
@@ -87,8 +88,8 @@ IW_treaty_universities_member = {
 		custom_trigger_tooltip = {
 			tooltip = IW_treaty_universities_passed_tt
 			OR = {
-				TAG = event_target:IW_treaty_universities_passed
-				overlord = { TAG = event_target:IW_treaty_universities_passed }
+				tag = event_target:IW_treaty_universities_passed
+				overlord = { tag = event_target:IW_treaty_universities_passed }
 			}
 		}
 	}
@@ -99,14 +100,14 @@ IW_treaty_universities_member = {
 IW_treaty_universities_non_member = {
 	potential = {
 		has_saved_global_event_target = IW_treaty_universities_passed
-		NOT = { overlord = { TAG = event_target:IW_treaty_universities_passed } }
+		NOT = { overlord = { tag = event_target:IW_treaty_universities_passed } }
 		capital_scope = { region = italy_region }
 	}
 
 	trigger = {
 		custom_trigger_tooltip = {
 			tooltip = IW_treaty_universities_passed_tt
-			NOT = { overlord = { TAG = event_target:IW_treaty_universities_passed } }
+			NOT = { overlord = { tag = event_target:IW_treaty_universities_passed } }
 		}
 		capital_scope = { region = italy_region }
 	}
@@ -129,8 +130,8 @@ IW_treaty_land_rights_member = {
 		custom_trigger_tooltip = {
 			tooltip = IW_treaty_land_rights_passed_tt
 			OR = {
-				TAG = event_target:IW_treaty_land_rights_passed
-				overlord = { TAG = event_target:IW_treaty_land_rights_passed }
+				tag = event_target:IW_treaty_land_rights_passed
+				overlord = { tag = event_target:IW_treaty_land_rights_passed }
 			}
 		}
 	}
@@ -142,14 +143,14 @@ IW_treaty_land_rights_member = {
 # IW_treaty_land_rights_non_member = {
 # 	potential = {
 # 		has_saved_global_event_target = IW_treaty_land_rights_passed
-# 		NOT = { overlord = { TAG = event_target:IW_treaty_land_rights_passed } }
+# 		NOT = { overlord = { tag = event_target:IW_treaty_land_rights_passed } }
 # 		capital_scope = { region = italy_region }
 # 	}
 
 # 	trigger = {
 # 		custom_trigger_tooltip = {
 # 			tooltip = IW_treaty_land_rights_passed_tt
-# 			NOT = { overlord = { TAG = event_target:IW_treaty_land_rights_passed } }
+# 			NOT = { overlord = { tag = event_target:IW_treaty_land_rights_passed } }
 # 			capital_scope = { region = italy_region }
 # 		}
 # 	}
@@ -171,8 +172,8 @@ IW_treaty_impressment_member = {
 		custom_trigger_tooltip = {
 			tooltip = IW_treaty_impressment_passed_tt
 			OR = {
-				TAG = event_target:IW_treaty_impressment_passed
-				overlord = { TAG = event_target:IW_treaty_impressment_passed }
+				tag = event_target:IW_treaty_impressment_passed
+				overlord = { tag = event_target:IW_treaty_impressment_passed }
 			}
 		}
 	}
@@ -183,14 +184,14 @@ IW_treaty_impressment_member = {
 IW_treaty_impressment_non_member = {
 	potential = {
 		has_saved_global_event_target = IW_treaty_impressment_passed
-		NOT = { overlord = { TAG = event_target:IW_treaty_impressment_passed } }
+		NOT = { overlord = { tag = event_target:IW_treaty_impressment_passed } }
 		capital_scope = { region = italy_region }
 	}
 
 	trigger = {
 		custom_trigger_tooltip = {
 			tooltip = IW_treaty_impressment_passed_tt
-			NOT = { overlord = { TAG = event_target:IW_treaty_impressment_passed } }
+			NOT = { overlord = { tag = event_target:IW_treaty_impressment_passed } }
 		}
 		capital_scope = { region = italy_region }
 	}
@@ -213,8 +214,8 @@ IW_treaty_demil_member = {
 		custom_trigger_tooltip = {
 			tooltip = IW_treaty_demil_passed_tt
 			OR = {
-				TAG = event_target:IW_treaty_demil_passed
-				overlord = { TAG = event_target:IW_treaty_demil_passed }
+				tag = event_target:IW_treaty_demil_passed
+				overlord = { tag = event_target:IW_treaty_demil_passed }
 			}
 		}
 	}
@@ -225,14 +226,14 @@ IW_treaty_demil_member = {
 IW_treaty_demil_non_member = {
 	potential = {
 		has_saved_global_event_target = IW_treaty_demil_passed
-		NOT = { overlord = { TAG = event_target:IW_treaty_demil_passed } }
+		NOT = { overlord = { tag = event_target:IW_treaty_demil_passed } }
 		capital_scope = { region = italy_region }
 	}
 
 	trigger = {
 		custom_trigger_tooltip = {
 			tooltip = IW_treaty_demil_passed_tt
-			NOT = { overlord = { TAG = event_target:IW_treaty_demil_passed } }
+			NOT = { overlord = { tag = event_target:IW_treaty_demil_passed } }
 		}
 		capital_scope = { region = italy_region }
 	}

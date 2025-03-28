@@ -11,10 +11,22 @@ invite_into_italian_league = {
 
 	is_visible = {
 		OR = {
-			tag = event_target:IW_italian_league_leader
-			tag = event_target:IW_french_league_leader
-			tag = event_target:IW_iberian_league_leader
-			tag = event_target:IW_HRE_league_leader
+			AND = {
+				has_saved_global_event_target = IW_italian_league_leader
+				tag = event_target:IW_italian_league_leader
+			}
+			AND = {
+				has_saved_global_event_target = IW_french_league_leader
+				tag = event_target:IW_french_league_leader
+			}
+			AND = {
+				has_saved_global_event_target = IW_iberian_league_leader
+				tag = event_target:IW_iberian_league_leader
+			}
+			AND = {
+				has_saved_global_event_target = IW_HRE_league_leader
+				tag = event_target:IW_HRE_league_leader
+			}
 		}
 		is_subject = no
 		if = {
@@ -785,20 +797,42 @@ join_italian_league = {
 	alert_tooltip = join_italian_league_alert_tooltip
 
 	is_visible = {
-		FROM = {
-			OR = {
-				tag = event_target:IW_italian_league_leader
-				tag = event_target:IW_french_league_leader
-				tag = event_target:IW_iberian_league_leader
-				tag = event_target:IW_HRE_league_leader
+		OR = {
+			AND = {
+				has_saved_global_event_target = IW_italian_league_leader
+				FROM = { tag = event_target:IW_italian_league_leader }
+			}
+			AND = {
+				has_saved_global_event_target = IW_french_league_leader
+				FROM = { tag = event_target:IW_french_league_leader }
+			}
+			AND = {
+				has_saved_global_event_target = IW_iberian_league_leader
+				FROM = { tag = event_target:IW_iberian_league_leader }
+			}
+			AND = {
+				has_saved_global_event_target = IW_HRE_league_leader
+				FROM = { tag = event_target:IW_HRE_league_leader }
 			}
 		}
 		NOT = {
 			OR = {
-				tag = event_target:IW_italian_league_leader
-				tag = event_target:IW_french_league_leader
-				tag = event_target:IW_iberian_league_leader
-				tag = event_target:IW_HRE_league_leader
+				AND = {
+					has_saved_global_event_target = IW_italian_league_leader
+					tag = event_target:IW_italian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_french_league_leader
+					tag = event_target:IW_french_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_iberian_league_leader
+					tag = event_target:IW_iberian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_HRE_league_leader
+					tag = event_target:IW_HRE_league_leader
+				}
 				is_emperor = yes
 			}
 		}
@@ -995,10 +1029,22 @@ join_italian_league = {
 			}
 			any_country = { # added
 				OR = {
-					tag = event_target:IW_italian_league_leader
-					tag = event_target:IW_french_league_leader
-					tag = event_target:IW_iberian_league_leader
-					tag = event_target:IW_HRE_league_leader
+					AND = {
+						has_saved_global_event_target = IW_italian_league_leader
+						tag = event_target:IW_italian_league_leader
+					}
+					AND = {
+						has_saved_global_event_target = IW_french_league_leader
+						tag = event_target:IW_french_league_leader
+					}
+					AND = {
+						has_saved_global_event_target = IW_iberian_league_leader
+						tag = event_target:IW_iberian_league_leader
+					}
+					AND = {
+						has_saved_global_event_target = IW_HRE_league_leader
+						tag = event_target:IW_HRE_league_leader
+					}
 				}
 				NOT = { tag = FROM }
 				OR = {
