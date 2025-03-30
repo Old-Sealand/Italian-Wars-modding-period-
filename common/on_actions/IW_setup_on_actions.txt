@@ -44,7 +44,8 @@ on_war_won = {
 		clear_global_event_target = IW_third_party
 	}
 	if = {
-		limit = { 
+		limit = {
+			has_saved_global_event_target = IW_french_league_leader
 			OR = {
 				ROOT = { has_country_flag = iw_took_deal_nap }
 				FROM = { has_country_flag = iw_took_deal_nap }
@@ -62,9 +63,13 @@ on_war_won = {
 on_siege_won_country = {
 	if = {
 		limit = {
+			has_saved_global_event_target = IW_HRE_league_leader
 			OR = {
 				tag = event_target:IW_HRE_league_leader
-				overlord = { tag = event_target:IW_HRE_league_leader }
+				AND = {
+					is_subject = yes
+					overlord = { tag = event_target:IW_HRE_league_leader }
+				}
 			}
 			FROM = {
 				owner = {

@@ -741,6 +741,7 @@ country_event = {
 
     major = yes
     major_trigger = {
+		has_saved_global_event_target = IW_french_league_leader
         tag = event_target:IW_french_league_leader
     }
 

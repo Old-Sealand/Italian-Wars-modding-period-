@@ -2,6 +2,7 @@ IW_league_member_lost_effect = {
 	if = {
 		limit = {
 			AND = {
+				has_saved_global_event_target = IW_italian_league_leader
 				tag = event_target:IW_italian_league_leader
 				FROM = { has_country_flag = IW_italian_league_member }
 			}
@@ -15,6 +16,7 @@ IW_league_member_lost_effect = {
 	else_if = {
 		limit = {
 			AND = {
+				has_saved_global_event_target = IW_french_league_leader
 				tag = event_target:IW_french_league_leader
 				FROM = { has_country_flag = IW_french_league_member }
 			}
@@ -28,6 +30,7 @@ IW_league_member_lost_effect = {
 	else_if = {
 		limit = {
 			AND = {
+				has_saved_global_event_target = IW_iberian_league_leader
 				tag = event_target:IW_iberian_league_leader
 				FROM = { has_country_flag = IW_iberian_league_member }
 			}
@@ -41,6 +44,7 @@ IW_league_member_lost_effect = {
 	else_if = {
 		limit = {
 			AND = {
+				has_saved_global_event_target = IW_HRE_league_leader
 				tag = event_target:IW_HRE_league_leader
 				FROM = { has_country_flag = IW_HRE_league_member }
 			}

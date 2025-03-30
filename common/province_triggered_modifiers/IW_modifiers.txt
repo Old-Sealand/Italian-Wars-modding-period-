@@ -13,7 +13,10 @@ IW_corona_ferrea_modifier = {
 		owner = {
 			OR = {
 				has_country_flag = corona_ferrea_flag
-				overlord =  { has_country_flag = corona_ferrea_flag }
+				AND = {
+					is_subject = yes
+					overlord =  { has_country_flag = corona_ferrea_flag }
+				}
 			}
 		}
 	}

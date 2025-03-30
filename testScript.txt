@@ -60,7 +60,10 @@
 if = {
 	limit = {
 		# 118 = { owned_by_subject_of = LAN }
-		check_variable = { which = numTreatiesPassed value = 1 }
+		always = yes
+		# check_variable = { which = numTreatiesPassed value = 1 }
+		# has_saved_global_event_target = IW_italian_league_leader
+		# tag = event_target:IW_italian_league_leader
 		# IW_league_member = 10
 		# has_country_flag = IW_italian_league_member
 		# had_country_flag = {
@@ -68,6 +71,9 @@ if = {
 		# 	days = 1825
 		# }
 	}
+	# event_target:IW_italian_league_leader = {
+	# 	add_treasury = 1
+	# }
 	add_treasury = 1
 }
 
@@ -112,12 +118,15 @@ if = {
 # emperor = { white_peace = ROOT }
 
 # LAN = { save_global_event_target_as = IW_italian_league_leader }
+# FRA = { save_global_event_target_as = IW_french_league_leader }
+# ARA = { save_global_event_target_as = IW_iberian_league_leader }
+# HAB = { save_global_event_target_as = IW_HRE_league_leader }
 
-save_global_event_target_as = IW_treaty_exclusive_trade_passed
-save_global_event_target_as = IW_treaty_universities_passed
-save_global_event_target_as = IW_treaty_land_rights_passed
-save_global_event_target_as = IW_treaty_impressment_passed
-save_global_event_target_as = IW_treaty_demil_passed
+# save_global_event_target_as = IW_treaty_exclusive_trade_passed
+# save_global_event_target_as = IW_treaty_universities_passed
+# save_global_event_target_as = IW_treaty_land_rights_passed
+# save_global_event_target_as = IW_treaty_impressment_passed
+# save_global_event_target_as = IW_treaty_demil_passed
 
 # clear_global_event_target = IW_treaty_exclusive_trade_passed
 # clear_global_event_target = IW_treaty_universities_passed

@@ -840,6 +840,7 @@ country_event = {
 	desc = {
 		trigger = {
 			has_saved_global_event_target = IW_italian_league_leader
+			has_saved_global_event_target = IW_french_league_leader
 			event_target:IW_italian_league_leader = { # Italian League is losing against the French League Leader
 				is_in_war = {
 					attacker_leader = event_target:IW_french_league_leader
@@ -859,6 +860,7 @@ country_event = {
 	desc = {
 		trigger = {
 			has_saved_global_event_target = IW_italian_league_leader
+			has_saved_global_event_target = IW_french_league_leader
 			event_target:IW_italian_league_leader = { # if Italic League never got low war score, create after 1st league war ends
 				has_won_war_against = {
 					who = event_target:IW_french_league_leader
@@ -1816,6 +1818,7 @@ country_event = {
 			flag = IW_first_war_looming
 			days = 365
 		}
+		has_saved_global_event_target = IW_french_league_leader
 		tag = event_target:IW_french_league_leader
 		is_at_war = no
 	}
@@ -2006,11 +2009,12 @@ country_event = {
 	# is_triggered_only = yes
 	trigger = {
 		has_saved_global_event_target = IW_italian_league_leader
+		has_saved_global_event_target = IW_french_league_leader
+		has_saved_global_event_target = IW_iberian_league_leader
 		tag = event_target:IW_italian_league_leader
 		# NOT = { is_in_war = { casus_belli = IW_cb_italian_war } }
 		OR = {
 			AND = {
-				has_saved_global_event_target = IW_french_league_leader
 				event_target:IW_french_league_leader = { # French League is losing against the Iberian League Leader
 					is_in_war = {
 						attacker_leader = THIS
@@ -2025,7 +2029,6 @@ country_event = {
 				}
 			}
 			AND = {
-				has_saved_global_event_target = IW_iberian_league_leader
 				event_target:IW_iberian_league_leader = { # Iberian League is losing against the French League Leader
 					is_in_war = {
 						attacker_leader = event_target:IW_french_league_leader
@@ -2210,6 +2213,7 @@ country_event = {
 	
 	desc = { # usurping French leader
 		trigger = {
+			has_saved_global_event_target = IW_french_league_leader
 			overlord = { tag = event_target:IW_french_league_leader }
 		}
 		desc = IW_setup.1.d3
@@ -2222,6 +2226,7 @@ country_event = {
 	
 	desc = { # usurping Iberian leader
 		trigger = {
+			has_saved_global_event_target = IW_iberian_league_leader
 			overlord = { tag = event_target:IW_iberian_league_leader }
 		}
 		desc = IW_setup.1.d5

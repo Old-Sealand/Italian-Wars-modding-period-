@@ -134,6 +134,7 @@
  IW_LEAGUE_LEADER_NO_ALLIANCE: "§R- §YLeague§! leaders cannot ally one another.§!"
  FROM_IS_EMPEROR_TT: "§R- The Holy Roman Emperor would not subject himself to our pathetic coalition.§!"
  NUM_TREATIES_PASSED_TT: "Treaties Passed"
+ FROM_IS_LEAGUE_LEADER_INVITE_TT: "§R- §Y[From.GetName]§! is already leading their own League!§!"
 
  ###OPINION MODIFIERS###
  IW_left_our_league: "Left our League"
