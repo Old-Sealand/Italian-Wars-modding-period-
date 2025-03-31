@@ -2012,6 +2012,7 @@ country_event = {
 		has_saved_global_event_target = IW_french_league_leader
 		has_saved_global_event_target = IW_iberian_league_leader
 		tag = event_target:IW_italian_league_leader
+		has_global_flag = IW_franco_iberian_war
 		# NOT = { is_in_war = { casus_belli = IW_cb_italian_war } }
 		OR = {
 			AND = {
@@ -2043,6 +2044,10 @@ country_event = {
 				}
 			}
 		}
+	}
+
+	mean_time_to_happen = {
+		days = 10
 	}
 	
 	option = {
