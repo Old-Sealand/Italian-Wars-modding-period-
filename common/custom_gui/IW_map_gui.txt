@@ -2186,6 +2186,7 @@ custom_button = {
                 }
                 custom_trigger_tooltip = { tooltip = IW_league_wars_have_begun_tt has_global_flag = IW_league_wars_have_begun_flag }
                 NOT = { any_country = { is_in_war = { casus_belli = IW_cb_italian_war } } } # declare war req
+                NOT = { has_won_war_against = { who = event_target:IW_italian_league_leader max_years_since = 1 } }
             }
             else = { hidden_trigger = { always = no } }
         }
@@ -2220,6 +2221,7 @@ custom_button = {
                 }
                 custom_trigger_tooltip = { tooltip = IW_league_wars_have_begun_tt has_global_flag = IW_league_wars_have_begun_flag }
                 NOT = { any_country = { is_in_war = { casus_belli = IW_cb_italian_war } } } # declare war req
+                NOT = { has_won_war_against = { who = event_target:IW_french_league_leader max_years_since = 1 } }
             }
             else = { hidden_trigger = { always = no } }
         }
@@ -2254,6 +2256,7 @@ custom_button = {
                 }
                 custom_trigger_tooltip = { tooltip = IW_league_wars_have_begun_tt has_global_flag = IW_league_wars_have_begun_flag }
                 NOT = { any_country = { is_in_war = { casus_belli = IW_cb_italian_war } } } # declare war req
+                NOT = { has_won_war_against = { who = event_target:IW_iberian_league_leader max_years_since = 1 } }
             }
             else = { hidden_trigger = { always = no } }
         }
@@ -2305,6 +2308,7 @@ custom_button = {
                 }
                 custom_trigger_tooltip = { tooltip = IW_league_wars_have_begun_tt has_global_flag = IW_league_wars_have_begun_flag }
                 NOT = { any_country = { is_in_war = { casus_belli = IW_cb_italian_war } } } # declare war req
+                NOT = { has_won_war_against = { who = event_target:IW_HRE_league_leader max_years_since = 1 } }
             }
             else = { hidden_trigger = { always = no } }
         }
@@ -2417,7 +2421,7 @@ custom_button = {
         }
         italy_region = {
             type = all
-            country_or_non_sovereign_subject_holds = ROOT
+            country_or_subject_holds = ROOT
         }
     }
     effect = {

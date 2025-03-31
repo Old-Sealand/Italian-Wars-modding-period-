@@ -587,7 +587,7 @@ invite_into_italian_league = {
 				}
 			}
 			export_to_variable = { variable_name = ai_value value = 1 }
-			multiply_variable = { which = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = 2 }
 		}
 		add_entry = { # IW addition
 			name = NUM_TREATIES_PASSED_TT
@@ -604,7 +604,7 @@ invite_into_italian_league = {
 				}
 			}
 			export_to_variable = { variable_name = ai_value value = 1 }
-			multiply_variable = { which = ai_value value = 2 }
+			multiply_variable = { which = ai_value value = 4 }
 		}
 		add_entry = { # IW addition
 			name = NUM_TREATIES_PASSED_TT
@@ -621,7 +621,7 @@ invite_into_italian_league = {
 				}
 			}
 			export_to_variable = { variable_name = ai_value value = 1 }
-			multiply_variable = { which = ai_value value = 3 }
+			multiply_variable = { which = ai_value value = 6 }
 		}
 		add_entry = { # IW addition
 			name = NUM_TREATIES_PASSED_TT
@@ -638,7 +638,7 @@ invite_into_italian_league = {
 				}
 			}
 			export_to_variable = { variable_name = ai_value value = 1 }
-			multiply_variable = { which = ai_value value = 4 }
+			multiply_variable = { which = ai_value value = 8 }
 		}
 		add_entry = { # IW addition
 			name = NUM_TREATIES_PASSED_TT
@@ -649,7 +649,7 @@ invite_into_italian_league = {
 				}
 			}
 			export_to_variable = { variable_name = ai_value value = 1 }
-			multiply_variable = { which = ai_value value = 5 }
+			multiply_variable = { which = ai_value value = 10 }
 		}
 	}
 }

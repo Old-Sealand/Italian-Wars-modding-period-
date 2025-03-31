@@ -2180,8 +2180,8 @@ country_event = {
 		hidden_effect = {
 			every_province = {
 				limit = { region = italy_region }
+				add_province_triggered_modifier = IW_corona_ferrea_modifier
 			}
-			add_province_triggered_modifier = IW_corona_ferrea_modifier
 			set_country_flag = corona_ferrea_flag
 		}
 		custom_tooltip = IW_disband_other_leagues_tt
