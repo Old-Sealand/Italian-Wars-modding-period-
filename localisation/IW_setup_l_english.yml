@@ -33,6 +33,9 @@
 ### SCRIPTED TRIGGERS ###
  is_IW_league_subject_tooltip: "Is a Member of Our League."
 
+### SCRIPTED EFFECTS ###
+ IW_REMOVE_PRESTIGE_OR_MONARCHPOWER: "Any excess Prestige will be taken from each type of §YMonarch Power§!."
+
 ## CB / WAR TYPE ##
  IW_cb_italian_war: "Italian War"
  IW_cb_italian_war_desc: "Let us assert our hegemony over the peninsula.\n§RALL §YLeague Members§! on BOTH sides will be called into the war!§!"
@@ -98,7 +101,7 @@
  invite_into_italian_league_tooltip: "We will invite them into our League, making them a voluntary subject state."
  invite_into_italian_league_desc: "Do you wish to invite §Y[From.GetName]§! to join your §YLeague§!, turning them into a subject country?\nAs their Overlord you will receive a Call to Arms should they be attacked by foreign powers. They will be able to have independent diplomatic relations with other countries.\n\nIf an §YItalian War§! is started, they will be expected to fight alongside us."
  invite_into_italian_league_alert_tooltip: "An §Yinvitation§! to join their League"
- invite_into_italian_league_dialog: "[This.GetName] wants to invite us into their League, promising to protect us from foreign threats in exchange for a monthly fee."
+ invite_into_italian_league_dialog: "[This.GetName] wants to invite us into their League, promising to protect us from foreign threats in exchange for our assistance in the Italian Wars."
  remove_them_from_italian_league: "Remove from League"
  remove_them_from_italian_league_title: "Remove from League"
  remove_them_from_italian_league_tooltip: "Remove them from our League"
@@ -117,6 +120,14 @@
  join_italian_league_desc: "Do you wish to join the §YLeague§! of §Y[From.GetName]§! in the struggle for dominance over Italy?\nIf they accept they will protect us from foreign powers and we will receive §Gvarious bonuses§!.\nWe will be able to have independent diplomatic relations with other countries.\nIf an §YItalian War§! is started, we will be expected to fight alongside §Y[From.GetName]§!."
  join_italian_league_alert_tooltip: "A §Yrequest§! to join our League"
  join_italian_league_dialog: "[This.GetName] wants to join our League, becoming a subject state to our state."
+
+ convert_to_perm_league_member: "Make Permanent Member"
+ convert_to_perm_league_member_title: "Make Permanent Member"
+ convert_to_perm_league_member_tooltip: "We will convert our vassal into a permanent Member of our League."
+ convert_to_perm_league_member_desc: "Do you wish to designate your vassal §Y[From.GetName]§! as a §YPermanent Member§! of your §YLeague§!?\n\nSimilar to normal §YLeague Members§!, you will receive a Call to Arms should they be attacked by foreign powers, and they will be able to have independent diplomatic relations with other countries.\n\nHowever, they will be unable to leave the §YLeague§! voluntarily, and will be required to §Gpay tribute§!.\n\n§RThis decision is NOT reversible.§!"
+ convert_to_perm_league_member_alert_tooltip: "An §Yinvitation§! to become a Permanent Member in their League"
+ convert_to_perm_league_member_dialog: "[This.GetName] wants to designate us a Permanent Member in their League, promising to protect us from foreign threats in exchange for our assistance in the Italian Wars, as well as an annual tribute."
+
  PEACE_OF_LODI_OUTSIDE_ITALY_TT: "§R- Only countries with their capital in the §YItaly§! region can join the Italic League while the §YTreaty of Lodi§! is active.§!"
 #  ROME_BORDER_DISTANCE_TT: "Distance from Italy"
  WE_ARE_IN_ITALIAN_WAR_TT: "§R- We cannot remove §Y[From.GetName]§! from our League while they are fighting alongside us in an §YItalian War§!!§!"
@@ -135,6 +146,7 @@
  FROM_IS_EMPEROR_TT: "§R- The Holy Roman Emperor would not subject himself to our pathetic coalition.§!"
  NUM_TREATIES_PASSED_TT: "Treaties Passed"
  FROM_IS_LEAGUE_LEADER_INVITE_TT: "§R- §Y[From.GetName]§! is already leading their own League!§!"
+ FROM_IS_PERMANENT_MEMBER_TT: "§R- §Y[From.GetName]§! is a permanent member of another League. They cannot leave of their own volition.§!"
 
  ###OPINION MODIFIERS###
  IW_left_our_league: "Left our League"

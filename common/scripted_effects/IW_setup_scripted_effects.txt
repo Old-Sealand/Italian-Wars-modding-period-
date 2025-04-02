@@ -182,3 +182,28 @@ IW_overlord_scope_league_member_lost_effect = {
 # 		}
 # 	}
 # }
+
+IW_remove_prestige_or_monarch_power = {
+    tooltip = {
+        add_prestige = -$amount$
+    }
+    custom_tooltip = IW_REMOVE_PRESTIGE_OR_MONARCHPOWER
+    hidden_effect = {
+        for = {
+            amount = $amount$
+            effect = "
+                if = {
+                    limit = {
+                        prestige = -99
+                    }
+                    add_prestige = -1
+                }
+                else = {
+                    add_adm_power = -1
+                    add_dip_power = -1
+                    add_mil_power = -1
+                }
+            "
+        }
+    }
+}

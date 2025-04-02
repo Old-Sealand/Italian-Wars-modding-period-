@@ -823,7 +823,7 @@ custom_icon = {
 custom_button = {
     name = IW_province_start
 	trigger = {
-		is_subject = no
+		is_free_or_tributary_trigger = yes
 		custom_trigger_tooltip = {
 			tooltip = IW_not_has_influence_50
 			NOT = { check_variable = { which = IW_map_prov_inf value = 50 } }
@@ -984,45 +984,45 @@ custom_button = {
 
         if = {
             limit = {
-                dip = 0
+                dip = 6
             }
-            add_prestige_or_monarch_power = { amount = -40 }
-        }
-        else_if = {
-            limit = {
-                dip = 1
-            }
-            add_prestige_or_monarch_power = { amount = -35 }
-        }
-        else_if = {
-            limit = {
-                dip = 2
-            }
-            add_prestige_or_monarch_power = { amount = -30 }
-        }
-        else_if = {
-            limit = {
-                dip = 3
-            }
-            add_prestige_or_monarch_power = { amount = -25 }
-        }
-        else_if = {
-            limit = {
-                dip = 4
-            }
-            add_prestige_or_monarch_power = { amount = -20 }
+            IW_remove_prestige_or_monarch_power = { amount = 10 }
         }
         else_if = {
             limit = {
                 dip = 5
             }
-            add_prestige_or_monarch_power = { amount = -15 }
+            IW_remove_prestige_or_monarch_power = { amount = 15 }
         }
         else_if = {
             limit = {
-                dip = 6
+                dip = 4
             }
-            add_prestige_or_monarch_power = { amount = -10 }
+            IW_remove_prestige_or_monarch_power = { amount = 20 }
+        }
+        else_if = {
+            limit = {
+                dip = 3
+            }
+            IW_remove_prestige_or_monarch_power = { amount = 25 }
+        }
+        else_if = {
+            limit = {
+                dip = 2
+            }
+            IW_remove_prestige_or_monarch_power = { amount = 30 }
+        }
+        else_if = {
+            limit = {
+                dip = 1
+            }
+            IW_remove_prestige_or_monarch_power = { amount = 35 }
+        }
+        else_if = {
+            limit = {
+                dip = 0
+            }
+            IW_remove_prestige_or_monarch_power = { amount = 40 }
         }
 
         custom_tooltip = iw_prestige_cost_depends_on_ruler_dip
@@ -1097,6 +1097,14 @@ custom_button = {
 			tooltip = IW_not_has_influence_100
 			NOT = { check_variable = { which = IW_map_prov_inf value = 100 } }
 		}
+        event_target:selected_province = {
+            owner = {
+                has_spy_network_from = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+        }
         iw_province_cooldown_flag_check = yes
 	}
     effect = {
@@ -1134,6 +1142,7 @@ custom_button = {
 			tooltip = IW_not_has_influence_100
 			NOT = { check_variable = { which = IW_map_prov_inf value = 100 } }
 		}
+        manpower_percentage = 0.10
         iw_province_cooldown_flag_check = yes
 	}
     effect = {

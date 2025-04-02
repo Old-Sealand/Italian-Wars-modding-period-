@@ -28,7 +28,7 @@ invite_into_italian_league = {
 				tag = event_target:IW_HRE_league_leader
 			}
 		}
-		is_subject = no
+		# is_subject = no
 		if = {
 			limit = { FROM = { is_subject = yes } }
 			FROM = {
@@ -190,6 +190,13 @@ invite_into_italian_league = {
 						}
 					}
 				}
+			}
+		}
+		if = {
+			limit = { FROM = { is_subject_of_type = IW_league_member_permanent } }
+			custom_trigger_tooltip = {
+				tooltip = FROM_IS_PERMANENT_MEMBER_TT
+				FROM = { NOT = { is_subject_of_type = IW_league_member_permanent } }
 			}
 		}
 	}
@@ -659,9 +666,10 @@ remove_them_from_italian_league = {
 	require_acceptance = no
 
 	is_visible = {
-		FROM = {
-			is_subject_of = ROOT
-			is_subject_of_type = IW_league_member
+		FROM = { is_subject_of = ROOT }
+		OR = {
+			FROM = { is_subject_of_type = IW_league_member }
+			FROM = { is_subject_of_type = IW_league_member_permanent }
 		}
 	}
 	is_allowed = {
@@ -887,7 +895,7 @@ join_italian_league = {
 			is_subject_of_type = IW_league_member
 			NOT = { overlord = { tag = FROM } }
 		}
-		FROM = { is_subject = no }
+		# FROM = { is_subject = no }
 		capital_scope = { continent = europe }
 	}
 	is_allowed = {
@@ -1322,4 +1330,118 @@ join_italian_league = {
 			multiply_variable = { which = ai_value value = -20 }
 		}
 	}
+}
+
+
+# Convert vassal to Perm League member
+convert_to_perm_league_member = {
+	category = influence
+	require_acceptance = no
+
+	alert_index = 4
+	alert_tooltip = convert_to_perm_league_member_alert_tooltip
+
+	is_visible = {
+		OR = {
+			AND = {
+				has_saved_global_event_target = IW_italian_league_leader
+				tag = event_target:IW_italian_league_leader
+			}
+			AND = {
+				has_saved_global_event_target = IW_french_league_leader
+				tag = event_target:IW_french_league_leader
+			}
+			AND = {
+				has_saved_global_event_target = IW_iberian_league_leader
+				tag = event_target:IW_iberian_league_leader
+			}
+			AND = {
+				has_saved_global_event_target = IW_HRE_league_leader
+				tag = event_target:IW_HRE_league_leader
+			}
+		}
+		# is_subject = no
+		FROM = {
+			is_subject_of = ROOT
+			OR = {
+				is_subject_of_type = vassal
+				is_subject_of_type = march
+			}
+			capital_scope = { continent = europe }
+		}
+	}
+	is_allowed = {
+		if = {
+			limit = {
+				has_global_flag = IW_peace_of_lodi_flag
+				tag = event_target:IW_italian_league_leader
+				NOT = {
+					FROM = {
+						capital_scope = {
+							region = italy_region
+						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = PEACE_OF_LODI_OUTSIDE_ITALY_TT
+				FROM = {
+					capital_scope = {
+						region = italy_region
+					}
+				}
+				NOT = { has_global_flag = IW_peace_of_lodi_flag }
+			}
+		}
+	}
+	on_accept = {
+		create_subject = {
+			subject_type = IW_league_member_permanent
+			subject = FROM
+		}
+		if = {
+			limit = { ROOT = { tag = event_target:IW_italian_league_leader } }
+			FROM = {
+				set_country_flag = IW_italian_league_member
+				clr_country_flag = IW_french_league_member
+				clr_country_flag = IW_iberian_league_member
+				clr_country_flag = IW_HRE_league_member
+			}
+		}
+		else_if = {
+			limit = { ROOT = { tag = event_target:IW_french_league_leader } }
+			FROM = {
+				clr_country_flag = IW_italian_league_member
+				set_country_flag = IW_french_league_member
+				clr_country_flag = IW_iberian_league_member
+				clr_country_flag = IW_HRE_league_member
+			}
+		}
+		else_if = {
+			limit = { ROOT = { tag = event_target:IW_iberian_league_leader } }
+			FROM = {
+				clr_country_flag = IW_italian_league_member
+				clr_country_flag = IW_french_league_member
+				set_country_flag = IW_iberian_league_member
+				clr_country_flag = IW_HRE_league_member
+			}
+		}
+		else_if = {
+			limit = { ROOT = { tag = event_target:IW_HRE_league_leader } }
+			FROM = {
+				clr_country_flag = IW_italian_league_member
+				clr_country_flag = IW_french_league_member
+				clr_country_flag = IW_iberian_league_member
+				set_country_flag = IW_HRE_league_member
+			}
+		}
+	}
+	on_decline = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+
+	ai_acceptance = { }
 }

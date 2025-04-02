@@ -22,16 +22,16 @@ country_event = { #Event for choosing to increase influence
 	option = { #Generic peaceful option, just a small money sink
 		name = iw_interaction_events.1.a
 
-        add_years_of_income = -3
+        add_years_of_income = -1
         IW_clr_province_pending_flag = yes
 	}
 
     option = { #Generic peaceful option, being able to use favors for influence
 		name = iw_interaction_events.1.b
 
-        add_dip_power = -50
-        add_mil_power = -50
-        add_adm_power = -50
+        add_dip_power = -25
+        add_mil_power = -25
+        add_adm_power = -25
         IW_clr_province_pending_flag = yes
 	}
 
@@ -44,6 +44,7 @@ country_event = { #Event for choosing to increase influence
                  NOT = { is_rival = ROOT }
                  NOT = { is_enemy = ROOT }
             }
+            army_tradition = 10
         }
 
         add_army_tradition = -10
@@ -135,108 +136,130 @@ country_event = { #Using estate influence
             }
         }
 
-        custom_tooltip = iw_gain_prestige_per_nobles_disloyalty 
-        hidden_effect = {
+        # hidden_effect = {
             if = {
                 limit = {
-                    estate_loyalty = {
-                        estate = estate_nobles
-                        loyalty = 0
+                    event_target:target_country = {
+                        estate_loyalty = {
+                            estate = estate_nobles
+                            loyalty = 49
+                        }
                     }
                 }
-                add_prestige_or_monarch_power = { amount = 20 }
+                add_prestige_or_monarch_power = { amount = 10 }
             }
             else_if = {
                 limit = {
-                    estate_loyalty = {
-                        estate = estate_nobles
-                        loyalty = 5
-                    }
-                }
-                add_prestige_or_monarch_power = { amount = 19 }
-            }
-            else_if = {
-                limit = {
-                    estate_loyalty = {
-                        estate = estate_nobles
-                        loyalty = 10
-                    }
-                }
-                add_prestige_or_monarch_power = { amount = 18 }
-            }
-            else_if = {
-                limit = {
-                    estate_loyalty = {
-                        estate = estate_nobles
-                        loyalty = 15
-                    }
-                }
-                add_prestige_or_monarch_power = { amount = 17 }
-            }
-            else_if = {
-                limit = {
-                    estate_loyalty = {
-                        estate = estate_nobles
-                        loyalty = 20
-                    }
-                }
-                add_prestige_or_monarch_power = { amount = 16 }
-            }
-            else_if = {
-                limit = {
-                    estate_loyalty = {
-                        estate = estate_nobles
-                        loyalty = 25
-                    }
-                }
-                add_prestige_or_monarch_power = { amount = 15 }
-            }
-            else_if = {
-                limit = {
-                    estate_loyalty = {
-                        estate = estate_nobles
-                        loyalty = 30
-                    }
-                }
-                add_prestige_or_monarch_power = { amount = 14 }
-            }
-            else_if = {
-                limit = {
-                    estate_loyalty = {
-                        estate = estate_nobles
-                        loyalty = 35
-                    }
-                }
-                add_prestige_or_monarch_power = { amount = 13 }
-            }
-            else_if = {
-                limit = {
-                    estate_loyalty = {
-                        estate = estate_nobles
-                        loyalty = 40
-                    }
-                }
-                add_prestige_or_monarch_power = { amount = 12 }
-            }
-            else_if = {
-                limit = {
-                    estate_loyalty = {
-                        estate = estate_nobles
-                        loyalty = 45
+                    event_target:target_country = {
+                        estate_loyalty = {
+                            estate = estate_nobles
+                            loyalty = 45
+                        }
                     }
                 }
                 add_prestige_or_monarch_power = { amount = 11 }
             }
             else_if = {
                 limit = {
-                    estate_loyalty = {
-                        estate = estate_nobles
-                        loyalty = 49
+                    event_target:target_country = {
+                        estate_loyalty = {
+                            estate = estate_nobles
+                            loyalty = 40
+                        }
                     }
                 }
-                add_prestige_or_monarch_power = { amount = 10 }
+                add_prestige_or_monarch_power = { amount = 12 }
             }
-        }
+            else_if = {
+                limit = {
+                    event_target:target_country = {
+                        estate_loyalty = {
+                            estate = estate_nobles
+                            loyalty = 35
+                        }
+                    }
+                }
+                add_prestige_or_monarch_power = { amount = 13 }
+            }
+            else_if = {
+                limit = {
+                    event_target:target_country = {
+                        estate_loyalty = {
+                            estate = estate_nobles
+                            loyalty = 30
+                        }
+                    }
+                }
+                add_prestige_or_monarch_power = { amount = 14 }
+            }
+            else_if = {
+                limit = {
+                    event_target:target_country = {
+                        estate_loyalty = {
+                            estate = estate_nobles
+                            loyalty = 25
+                        }
+                    }
+                }
+                add_prestige_or_monarch_power = { amount = 15 }
+            }
+            else_if = {
+                limit = {
+                    event_target:target_country = {
+                        estate_loyalty = {
+                            estate = estate_nobles
+                            loyalty = 20
+                        }
+                    }
+                }
+                add_prestige_or_monarch_power = { amount = 16 }
+            }
+            else_if = {
+                limit = {
+                    event_target:target_country = {
+                        estate_loyalty = {
+                            estate = estate_nobles
+                            loyalty = 15
+                        }
+                    }
+                }
+                add_prestige_or_monarch_power = { amount = 17 }
+            }
+            else_if = {
+                limit = {
+                    event_target:target_country = {
+                        estate_loyalty = {
+                            estate = estate_nobles
+                            loyalty = 10
+                        }
+                    }
+                }
+                add_prestige_or_monarch_power = { amount = 18 }
+            }
+            else_if = {
+                limit = {
+                    event_target:target_country = {
+                        estate_loyalty = {
+                            estate = estate_nobles
+                            loyalty = 5
+                        }
+                    }
+                }
+                add_prestige_or_monarch_power = { amount = 19 }
+            }
+            else_if = {
+                limit = {
+                    event_target:target_country = {
+                        estate_loyalty = {
+                            estate = estate_nobles
+                            loyalty = 0
+                        }
+                    }
+                }
+                add_prestige_or_monarch_power = { amount = 20 }
+            }
+        # }
+        custom_tooltip = iw_gain_prestige_per_nobles_disloyalty 
 	}
 
     option = { #Burghers
@@ -249,36 +272,42 @@ country_event = { #Using estate influence
             }
         }
 
-        custom_tooltip = iw_gain_mercantilism_per_burghers_disloyalty
-        hidden_effect = {
+        # hidden_effect = {
             if = {
                 limit = {
-                    estate_loyalty = {
-                        estate = estate_burghers
-                        loyalty = 0
+                    event_target:target_country = {
+                        estate_loyalty = {
+                            estate = estate_burghers
+                            loyalty = 49
+                        }
                     }
                 }
-                add_mercantilism = 3
+                add_mercantilism = 1
             }
             else_if = {
                 limit = {
-                    estate_loyalty = {
-                        estate = estate_burghers
-                        loyalty = 25
+                    event_target:target_country = {
+                        estate_loyalty = {
+                            estate = estate_burghers
+                            loyalty = 25
+                        }
                     }
                 }
                 add_mercantilism = 2
             }
             else_if = {
                 limit = {
-                    estate_loyalty = {
-                        estate = estate_burghers
-                        loyalty = 49
+                    event_target:target_country = {
+                        estate_loyalty = {
+                            estate = estate_burghers
+                            loyalty = 0
+                        }
                     }
                 }
-                add_mercantilism = 1
+                add_mercantilism = 3
             }
-        }
+        # }
+        custom_tooltip = iw_gain_mercantilism_per_burghers_disloyalty
 	}
 
     option = { #Clergy

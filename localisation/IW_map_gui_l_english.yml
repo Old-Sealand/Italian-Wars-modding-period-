@@ -144,14 +144,14 @@
  iw_interaction_events.2.a: "Let us use the nobles."
  iw_interaction_events.2.b: "Some disloyal burghers can sow discord."
  iw_interaction_events.2.c: "Who are they to deny the divine rights of the clergy?"
- iw_gain_prestige_per_nobles_disloyalty: "The §YPrestige§! will scale with the loyalty of their §YNobles§!."
- iw_gain_mercantilism_per_burghers_disloyalty: "The §YMercantilism§! will scale with the loyalty of their §YBurghers§!."
+ iw_gain_prestige_per_nobles_disloyalty: "The §YPrestige§! will scale with the disloyalty of their §YNobles§!."
+ iw_gain_mercantilism_per_burghers_disloyalty: "The §YMercantilism§! will scale with the disloyalty of their §YBurghers§!."
 
  #Modifiers:
  iw_gave_autonomy_rights_in_province: "Gave Autonomy Rights"
  iw_disloyal_nobility: "Disloyal Nobility"
  iw_disloyal_burghers: "Disloyal Burghers"
- iw_disloyal_clergy: "DIsloyal CLergy"
+ iw_disloyal_clergy: "Disloyal Clergy"
  iw_sent_artisans: "Aided by Artisans"
  iw_city_officials_couped: "New City Officials"
  iw_disloyal_garrison: "Disloyal Garrison"

@@ -214,6 +214,10 @@ IW_league_member_permanent = {
 	#is_free_or_tributary_trigger
 	copy_from = IW_league_member
 
+	can_send_tribute = yes
+	can_fight_independence_war = yes
+	is_voluntary = no
+	counts_for_borders = yes
 }
 
 IW_league_member_dummy = {
