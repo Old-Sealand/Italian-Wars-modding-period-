@@ -413,6 +413,31 @@ allianceaction = {
 			}
 		}
 	}
+	condition = {
+		tooltip = IW_LEAGUE_LEADER_ALLY_EMPEROR
+		potential = {
+			OR = {
+				AND = {
+					has_saved_global_event_target = IW_italian_league_leader
+					tag = event_target:IW_italian_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_french_league_leader
+					tag = event_target:IW_french_league_leader
+				}
+				AND = {
+					has_saved_global_event_target = IW_iberian_league_leader
+					tag = event_target:IW_iberian_league_leader
+				}
+			}
+			FROM = { tag = emperor }
+		}
+		allow = {
+			NOT = {
+				FROM = { tag = emperor }
+			}
+		}
+	}
 	#### End IW Mod ####
 	effect = {
 		change_asha_vahishta = { value = 2 }

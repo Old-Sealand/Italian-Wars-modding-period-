@@ -2195,7 +2195,14 @@ custom_button = {
                 }
                 custom_trigger_tooltip = { tooltip = IW_league_wars_have_begun_tt has_global_flag = IW_league_wars_have_begun_flag }
                 NOT = { any_country = { is_in_war = { casus_belli = IW_cb_italian_war } } } # declare war req
-                NOT = { has_won_war_against = { who = event_target:IW_italian_league_leader max_years_since = 1 } }
+                NOT = { has_won_war_against = { who = event_target:IW_italian_league_leader max_years_since = 5 } }
+                custom_trigger_tooltip = {
+                    tooltip = IW_league_wars_cooldown_tt
+                    OR = {
+                        NOT = { has_global_flag = IW_recent_italian_treaty }
+                        had_global_flag = { flag = IW_recent_italian_treaty days = 3650 }
+                    }
+                }
             }
             else = { hidden_trigger = { always = no } }
         }
@@ -2230,7 +2237,14 @@ custom_button = {
                 }
                 custom_trigger_tooltip = { tooltip = IW_league_wars_have_begun_tt has_global_flag = IW_league_wars_have_begun_flag }
                 NOT = { any_country = { is_in_war = { casus_belli = IW_cb_italian_war } } } # declare war req
-                NOT = { has_won_war_against = { who = event_target:IW_french_league_leader max_years_since = 1 } }
+                NOT = { has_won_war_against = { who = event_target:IW_french_league_leader max_years_since = 5 } }
+                custom_trigger_tooltip = {
+                    tooltip = IW_league_wars_cooldown_tt
+                    OR = {
+                        NOT = { has_global_flag = IW_recent_italian_treaty }
+                        had_global_flag = { flag = IW_recent_italian_treaty days = 3650 }
+                    }
+                }
             }
             else = { hidden_trigger = { always = no } }
         }
@@ -2265,7 +2279,14 @@ custom_button = {
                 }
                 custom_trigger_tooltip = { tooltip = IW_league_wars_have_begun_tt has_global_flag = IW_league_wars_have_begun_flag }
                 NOT = { any_country = { is_in_war = { casus_belli = IW_cb_italian_war } } } # declare war req
-                NOT = { has_won_war_against = { who = event_target:IW_iberian_league_leader max_years_since = 1 } }
+                NOT = { has_won_war_against = { who = event_target:IW_iberian_league_leader max_years_since = 5 } }
+                custom_trigger_tooltip = {
+                    tooltip = IW_league_wars_cooldown_tt
+                    OR = {
+                        NOT = { has_global_flag = IW_recent_italian_treaty }
+                        had_global_flag = { flag = IW_recent_italian_treaty days = 3650 }
+                    }
+                }
             }
             else = { hidden_trigger = { always = no } }
         }
@@ -2317,7 +2338,14 @@ custom_button = {
                 }
                 custom_trigger_tooltip = { tooltip = IW_league_wars_have_begun_tt has_global_flag = IW_league_wars_have_begun_flag }
                 NOT = { any_country = { is_in_war = { casus_belli = IW_cb_italian_war } } } # declare war req
-                NOT = { has_won_war_against = { who = event_target:IW_HRE_league_leader max_years_since = 1 } }
+                NOT = { has_won_war_against = { who = event_target:IW_HRE_league_leader max_years_since = 5 } }
+                custom_trigger_tooltip = {
+                    tooltip = IW_league_wars_cooldown_tt
+                    OR = {
+                        NOT = { has_global_flag = IW_recent_italian_treaty }
+                        had_global_flag = { flag = IW_recent_italian_treaty days = 3650 }
+                    }
+                }
             }
             else = { hidden_trigger = { always = no } }
         }

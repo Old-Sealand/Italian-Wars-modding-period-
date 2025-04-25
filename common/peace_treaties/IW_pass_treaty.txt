@@ -68,6 +68,29 @@ po_pass_IW_treaty = {
 			which = treatyPoints
 			value = 1
 		}
+		set_global_flag = IW_recent_italian_treaty
+		if = {
+			limit = {
+				is_emperor = yes
+				NOT = {
+					REB = {
+						check_variable = {
+							which = IW_HRE_treaties_passed
+							value = 5
+						}
+					}
+				}
+			}
+			add_imperial_influence = 50
+			hidden_effect = {
+				REB = {
+					change_variable = {
+						which = IW_HRE_treaties_passed
+						value = 1
+					}
+				}
+			}
+		}
 		if = {
 			limit = { FROM = { tag = event_target:IW_italian_league_leader } }
 			set_country_flag = IW_beat_italians_flag
@@ -88,7 +111,7 @@ po_pass_IW_treaty = {
 	ai_weight = { # Defaults to always evaluate to 0
 		export_to_variable = {
 			variable_name = ai_value # Mandatory to have entry called "ai_value". Its value at the end of the ai_weight scope is what will be used
-			value = 100
+			value = 1000
 		}
 	}
 }

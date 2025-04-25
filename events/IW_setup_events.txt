@@ -1175,6 +1175,12 @@ country_event = {
 				}
 			}
 			clr_global_flag = IW_peace_of_lodi_flag
+			REB = {
+				set_variable = {
+					which = IW_HRE_treaties_passed
+					value = 0
+				}
+			}
 		}
 	}
 
@@ -1855,6 +1861,9 @@ country_event = {
 				who = event_target:IW_iberian_league_leader
 				casus_belli = IW_cb_italian_war
 			}
+			custom_tooltip = IW_league_overthrow_button_warning_tt
+			custom_tooltip = IW_setup.15a.tt1
+			hidden_effect = { event_target:IW_iberian_league_leader = { country_event = { id = IW_setup.21 } } }
 		}
 		else = {
 			if = {
@@ -1893,6 +1902,9 @@ country_event = {
 					casus_belli = IW_cb_italian_war
 				}
 			}
+			custom_tooltip = IW_league_overthrow_button_warning_tt
+			custom_tooltip = IW_setup.15a.tt2
+			hidden_effect = { event_target:IW_italian_league_leader = { country_event = { id = IW_setup.21 } } }
 		}
 		clr_global_flag = IW_first_war_looming
 
@@ -2084,6 +2096,7 @@ country_event = {
 			}
 			clr_global_flag = IW_franco_iberian_war
 		}
+		custom_tooltip = IW_setup.18.a.tt
 	}
 
 	option = {
@@ -2115,6 +2128,7 @@ country_event = {
 			}
 			clr_global_flag = IW_franco_iberian_war
 		}
+		custom_tooltip = IW_setup.18.b.tt
 	}
 
 	option = {
@@ -2146,6 +2160,7 @@ country_event = {
 			}
 			clr_global_flag = IW_franco_iberian_war
 		}
+		custom_tooltip = IW_setup.18.c.tt
 	}
 
 	option = {
@@ -2192,6 +2207,66 @@ country_event = {
 		custom_tooltip = IW_disband_other_leagues_tt
 	}
 
+}
+
+# country_event = {
+# 	id = IW_setup.20
+# 	title = IW_setup.20.t
+# 	desc = IW_setup.20.d
+# 	picture = SWEDEN_LEAGUE_WAR_eventPicture
+	
+# 	major = yes
+# 	# is_triggered_only = yes
+# 	trigger = {
+# 		has_saved_global_event_target = IW_italian_league_leader
+# 		tag = event_target:IW_italian_league_leader
+# 		has_global_flag = IW_first_war_looming
+# 		alliance_with = emperor
+# 	}
+
+# 	mean_time_to_happen = {
+# 		months = 1
+# 	}
+	
+# 	option = {
+# 		name = IW_setup.20.a
+# 		ai_chance = {
+# 			factor = 1
+# 		}
+# 		break_alliance = emperor
+# 	}
+# }
+
+country_event = {
+	id = IW_setup.21
+	title = IW_setup.21.t
+	desc = IW_setup.21.d
+	picture = muslimgfx_SIEGE_eventPicture
+	
+	major = yes
+	major_trigger = {
+		has_saved_global_event_target = IW_french_league_leader
+		OR = {
+			tag = event_target:IW_french_league_leader
+			is_subject_of = event_target:IW_french_league_leader
+		}
+	}
+	is_triggered_only = yes
+	
+	option = {
+		name = IW_setup.21.a
+		if = {
+			limit = { has_saved_global_event_target = IW_iberian_league_leader tag = event_target:IW_iberian_league_leader }
+			custom_tooltip = IW_setup.21a.tt1
+		}
+		else_if = {
+			limit = { has_saved_global_event_target = IW_italian_league_leader tag = event_target:IW_italian_league_leader }
+			custom_tooltip = IW_setup.21a.tt2
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
 }
 
 # New Leader of the XYZ League (Triggered Only Version)

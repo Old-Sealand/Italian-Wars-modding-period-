@@ -170,10 +170,10 @@ clr_country_flag = IW_province_37_cooldown_flag
 		# 	cede_province = ROOT
         # }
 
-		# change_variable = {            
-		# 	which = treatyPoints
-		# 	value = 1
-		# }
+		change_variable = {            
+			which = treatyPoints
+			value = 1
+		}
 
 # clear_global_event_target = IW_treaty_exclusive_trade_passed
 # clear_global_event_target = IW_treaty_universities_passed
